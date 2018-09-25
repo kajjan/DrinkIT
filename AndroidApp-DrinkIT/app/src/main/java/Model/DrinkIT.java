@@ -18,7 +18,7 @@ public class DrinkIT {
         players.add(new Player(name));
     }
 
-    public List<String> getPlayersName() {
+    public List<String> getPlayerNames() {
         List<String> names = new ArrayList<>();
         for (Player p : players) {
             names.add(p.getName());

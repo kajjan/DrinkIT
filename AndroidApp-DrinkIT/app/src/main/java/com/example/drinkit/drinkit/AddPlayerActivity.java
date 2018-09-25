@@ -21,7 +21,5 @@ public class AddPlayerActivity extends AppCompatActivity {
     public void nextToCategoryPage(View view) {
     }
 
-    //emulator now works
-    //for me toooooooooo
 
 }

@@ -29,4 +29,4 @@ before_install:
 
 
 script:
-  - ./gradlew connectedAndroidTest
+  - ./gradlew 

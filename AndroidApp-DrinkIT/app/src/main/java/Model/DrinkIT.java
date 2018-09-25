@@ -1,5 +1,6 @@
 package Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DrinkIT {
@@ -13,7 +14,16 @@ public class DrinkIT {
         this.challenges = challenges;
     }
 
-    public void addPlayer(String name){
+    public void addPlayer(String name) {
         players.add(new Player(name));
+    }
+
+    public List<String> getPlayersName() {
+        List<String> names = new ArrayList<>();
+        for (Player p : players) {
+            names.add(p.getName());
+        }
+
+        return names;
     }
 }

@@ -11,5 +11,5 @@ public class AddPlayerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_player);
     }
 
-    //emulator now works 
+    //emulator now works
 }

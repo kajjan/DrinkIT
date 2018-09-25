@@ -1,4 +1,4 @@
-language: android
+﻿language: android
 
 before_script: cd AndroidApp-DrinkIT
 
@@ -6,3 +6,8 @@ android:
   components:
     - build-tools-26.0.2
     - android-26
+  licences:
+    - '.+'
+
+before_install:
+- yes | sdkmanager ”platforms;android-26”

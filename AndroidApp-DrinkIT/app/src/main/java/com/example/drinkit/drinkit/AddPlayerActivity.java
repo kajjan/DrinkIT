@@ -13,4 +13,5 @@ public class AddPlayerActivity extends AppCompatActivity {
 
     //emulator now works
     //for me toooooooooo
+
 }

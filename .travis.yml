@@ -30,4 +30,4 @@ before_install:
 
 
 script:
-  - ./gradlew 
+  - ./gradlew build check 

@@ -4,10 +4,6 @@ jdk: oraclejdk8
 
 before_script:
   - cd AndroidApp-DrinkIT/
-  - echo no | android create avd --force -n test -t "android-"$ANDROID_EMULATOR_LEVEL --abi $ANDROID_ABI --tag $ANDROID_TAG
-  - emulator -avd test -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
 
 android:
   components:
@@ -16,8 +12,6 @@ android:
     - tools
     - build-tools-28.0.3
     - android-28
-    - android-$ANDROID_EMULATOR_LEVEL
-    - sys-img-armeabi-v7a-google_apis-$ANDROID_EMULATOR_LEVEL
   licenses:
     - '.+'
 

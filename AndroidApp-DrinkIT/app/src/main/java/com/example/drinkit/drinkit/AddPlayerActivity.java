@@ -10,4 +10,6 @@ public class AddPlayerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
     }
+
+    //emulator now works 
 }

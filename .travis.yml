@@ -25,6 +25,7 @@ env:
     - ADB_INSTALL_TIMEOUT=20
 
 before_install:
+  - yes | sdkmanager "platforms;android-27"
   - yes | sdkmanager "platforms;android-28"
 
 

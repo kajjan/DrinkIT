@@ -1,6 +1,7 @@
 package com.example.drinkit.drinkit;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,10 +21,7 @@ public class AddPlayerActivity extends AppCompatActivity {
     }
 
     public void nextToCategoryPage(View view) {
-
-
-
-
+        startActivity(new Intent(AddPlayerActivity.this, DurationActivity.class));
     }
 
 

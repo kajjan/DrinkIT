@@ -7,8 +7,10 @@ public class DrinkIT {
     private List<Player> players;
     private List<Card> cards;
     private List<Challenge> challenges;
+
+
     //TODO alice list
-    private List<Category> categories;
+    private List<Category> categories = new ArrayList<>();
     private int durationOfGame;
 
     public DrinkIT(List<Player> players, List<Card> cards, List<Challenge> challenges, int durationOfGame) {
@@ -44,18 +46,31 @@ public class DrinkIT {
         for (Player p : players) {
             names.add(p.getName());
         }
-
         return names;
     }
 
     //TODO alice made method
-    public void addCategory(String category){
+    public void selectCategory(String category){
         //if selected put the category in this list.
         categories.add(new Category(category));
+    }
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    //method for test
+    public List<String> getCategoryNames() {
+        List<String> categoryNames = new ArrayList<>();
+        for (Category c : categories) {
+            categoryNames.add(c.getCategoryName());
+        }
+        return categoryNames;
+    }
 
 
 
-}
+
 
 
 

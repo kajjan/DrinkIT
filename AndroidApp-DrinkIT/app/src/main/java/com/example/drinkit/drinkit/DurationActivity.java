@@ -27,7 +27,7 @@ public class DurationActivity extends AppCompatActivity {
         ctrl.setDuration(5);
     }
 
-    public void longDuartion(View view) {
+    public void longDuration(View view) {
         ctrl.setDuration(10);
     }
 

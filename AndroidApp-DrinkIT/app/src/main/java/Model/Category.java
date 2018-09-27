@@ -8,6 +8,9 @@ public class Category {
         this.name = name;
     }
 
+    public String getCategoryName() {
+        return name;
+    }
 
 
 

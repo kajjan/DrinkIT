@@ -25,7 +25,7 @@
             tools:layout_editor_absoluteY="0dp">
 
             <Button
-                android:id="@+id/b1"
+                android:id="@+id/category1"
                 app:layout_row="0"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
@@ -35,28 +35,28 @@
                 />
 
             <Button
-                android:id="@+id/b2"
+                android:id="@+id/category2"
                 android:layout_weight="1"
                 app:layout_row="0"
                 app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1" />
             <Button
-                android:id="@+id/b3"
+                android:id="@+id/category3"
                 android:layout_weight="1"
                 app:layout_row="0"
                 app:layout_column="2"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"/>
             <Button
-                android:id="@+id/b4"
+                android:id="@+id/category4"
                 android:layout_weight="1"
                 app:layout_row="1"
                 app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"/>
             <Button
-                android:id="@+id/b5"
+                android:id="@+id/category5"
                 android:layout_weight="1"
                 app:layout_row="1"
                 app:layout_column="1"
@@ -64,28 +64,28 @@
                 app:layout_rowWeight="1"
                 />
             <Button
-                android:id="@+id/b6"
+                android:id="@+id/category6"
                 android:layout_weight="1"
                 app:layout_row="1"
                 app:layout_column="2"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"/>
             <Button
-                android:id="@+id/b7"
+                android:id="@+id/category7"
                 android:layout_weight="1"
                 app:layout_row="2"
                 app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"/>
             <Button
-                android:id="@+id/b8"
+                android:id="@+id/category8"
                 android:layout_weight="1"
                 app:layout_row="2"
                 app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"/>
             <Button
-                android:id="@+id/b9"
+                android:id="@+id/category9"
                 android:layout_weight="1"
                 app:layout_row="2"
                 app:layout_column="2"

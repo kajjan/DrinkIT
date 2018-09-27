@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import Controller.Controller;
+
 public class ChooseCategoryActivity extends AppCompatActivity {
 
-
+    Controller ctrl = new Controller();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

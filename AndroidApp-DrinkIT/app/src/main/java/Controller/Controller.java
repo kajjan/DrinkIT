@@ -28,7 +28,8 @@ public class Controller {
     }
 
     //TODO method Alice
-    public void categorySelected(){
+    public void selectCategory(String category){
+        model.selectCategory(category);
 
     }
 

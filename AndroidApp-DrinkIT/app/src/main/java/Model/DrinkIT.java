@@ -16,12 +16,17 @@ public class DrinkIT {
         this.duration = duration;
     }
 
+    public DrinkIT(List<Player> players) {
+        this.players = players;
+    }
+
+
     public void addPlayer(String name) {
         players.add(new Player(name));
     }
 
     public void setDuration(List<Player> players, int duration){
-
+        System.out.println("Knappen för vald tid är tryck och antalet spelare multipliceras med "+ duration);
         duration = players.size()*duration;
     }
 

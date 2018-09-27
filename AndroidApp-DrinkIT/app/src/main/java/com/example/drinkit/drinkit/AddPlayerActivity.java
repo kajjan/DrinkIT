@@ -15,42 +15,40 @@ import Controller.Controller;
 
 public class AddPlayerActivity extends AppCompatActivity {
 
-    Controller ctrl;
-
-
-    EditText playerOne;
-    List<EditText> players = new ArrayList();
-
-
+    EditText playerOne, playerTwo, playerThree;
+    List<String> players = new ArrayList<>(10);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
-
-        playerOne = (EditText) findViewById(R.id.player1);
-
-
     }
-
-
 
     public void nextToCategoryPage(View view) {
         //Get to the next page, categoryPage. Make it impossible to go to the next page if there is less than 3 players.
     }
 
 
-    public void namesSubmitClick(View view) {
-        //Method that saves all the names in the textfields of players
-        //Typ adda i controllern
+    public void namesSubmitClick(View view) { //Method that saves all of the players and send it to the controller
+        players.clear();
 
-        System.out.println(playerOne.getText().toString());
+        playerOne = (EditText) findViewById(R.id.player1);
+        playerTwo = (EditText) findViewById(R.id.player2);
+        playerThree = (EditText) findViewById(R.id.player3);
 
+        players.add(playerOne.getText().toString());
+        players.add(playerTwo.getText().toString());
+        players.add(playerThree.getText().toString());
 
-        //for (int i = 0; i < players.size(); i++) {
-            //kollar igenom listan av spelare och OM det är ifyllt ska det skickas till controller.
-        //}
-
-
+        System.out.println(players);
+        for (int i = 0; i <players.size() ; i++) {
+            if (players.get(i).isEmpty()){
+                System.out.println("Nothing in this place of index"); //We dont need this later on, just for now
+            }
+            else{
+                System.out.println(players.get(i));
+                //send the players name to controller here
+            }
+        }
     }
 }

@@ -22,6 +22,10 @@ public class Controller {
 
     }
 
+    public void addPlayer(String player){
+        model.addPlayer(player);
+    }
+
 
     public void setDuration(int duration){
         model.setDuration(players, duration);

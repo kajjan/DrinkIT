@@ -21,8 +21,9 @@ public class AddPlayerActivity extends AppCompatActivity {
     }
 
     public void nextToCategoryPage(View view) {
-        startActivity(new Intent(AddPlayerActivity.this, DurationActivity.class));
+        startActivity(new Intent(AddPlayerActivity.this, ChooseCategoryActivity.class));
     }
+
 
 
 }

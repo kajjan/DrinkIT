@@ -1,5 +1,6 @@
 package com.example.drinkit.drinkit;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,12 +15,15 @@ public class ChooseCategoryActivity extends AppCompatActivity {
     }
 
 
-    public void nextToTimePage(View view) {
-        //ALICE LOOK HERE
+    public void nextToDurationPage(View view) {
+        startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
     }
 
     public void returnToAddPlayersPage(View view) {
-        //ALICE LOOK HERE
+        startActivity(new Intent(ChooseCategoryActivity.this, AddPlayerActivity.class));
 
     }
+
+
+
 }

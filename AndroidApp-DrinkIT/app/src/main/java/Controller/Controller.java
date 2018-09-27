@@ -27,6 +27,13 @@ public class Controller {
         model.setDuration(players, duration);
     }
 
+    //TODO method Alice
+    public void categorySelected(){
+
+    }
+
+
+
 }
 
 

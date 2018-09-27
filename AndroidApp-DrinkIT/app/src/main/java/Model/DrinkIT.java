@@ -8,6 +8,8 @@ public class DrinkIT {
     private List<Card> cards;
     private List<Challenge> challenges;
     private int duration;
+    //TODO alice list
+    private List<Category> categories;
 
     public DrinkIT(List<Player> players, List<Card> cards, List<Challenge> challenges, int duration) {
         this.players = players;
@@ -44,4 +46,17 @@ public class DrinkIT {
 
         return names;
     }
+
+    //TODO alice made method
+    public void addCategory(String category){
+        //if selected put the category in this list.
+        categories.add(new Category(category));
+
+
+
+}
+
+
+
+
 }

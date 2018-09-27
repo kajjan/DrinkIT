@@ -15,6 +15,11 @@ public class DrinkIT {
         this.challenges = challenges;
         this.duration = duration;
     }
+    public DrinkIT(List<Player> players, List<Card> cards, List<Challenge> challenges) {
+        this.players = players;
+        this.cards = cards;
+        this.challenges = challenges;
+    }
 
     public DrinkIT(List<Player> players) {
         this.players = players;

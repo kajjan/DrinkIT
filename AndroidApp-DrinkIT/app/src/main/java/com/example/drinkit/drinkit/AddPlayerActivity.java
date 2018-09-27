@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+
 import java.util.ArrayList;
 
 public class AddPlayerActivity extends AppCompatActivity {
@@ -19,6 +20,10 @@ public class AddPlayerActivity extends AppCompatActivity {
     }
 
     public void nextToCategoryPage(View view) {
+
+
+
+
     }
 
 

@@ -26,7 +26,6 @@ public class Controller {
     public void setDuration(int duration){
         model.setDuration(players, duration);
     }
-
 }
 
 

@@ -1,6 +1,7 @@
 package com.example.drinkit.drinkit;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +26,7 @@ public class AddPlayerActivity extends AppCompatActivity {
     }
 
     public void nextToCategoryPage(View view) {
-        //Get to the next page, categoryPage. Make it impossible to go to the next page if there is less than 3 players.
+        startActivity(new Intent(AddPlayerActivity.this, DurationActivity.class));
     }
 
 

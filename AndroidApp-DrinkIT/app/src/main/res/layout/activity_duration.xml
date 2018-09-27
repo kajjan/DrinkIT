@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DurationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/longTimeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/mediumTimeButton"
+            android:layout_marginBottom="153dp"
+            android:text="LONG"
+            android:onClick="longDuartion"/>
+
+        <Button
+            android:id="@+id/mediumTimeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/shortTimeButton"
+            android:layout_below="@+id/shortTimeButton"
+            android:text="MEDIUM"
+            android:onClick="mediumDuration"/>
+
+        <Button
+            android:id="@+id/shortTimeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="126dp"
+            android:text="SHORT"
+            android:onClick="shortDuration"/>
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

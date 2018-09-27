@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class AddPlayerActivity extends AppCompatActivity {
     }
 
     public void nextToCategoryPage(View view) {
-        startActivity(new Intent(AddPlayerActivity.this, DurationActivity.class));
+        startActivity(new Intent(AddPlayerActivity.this, ChooseCategoryActivity.class));
     }
 
 

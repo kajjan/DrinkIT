@@ -23,22 +23,23 @@ public class ChooseCategoryTest {
         int initialLength = categories.size();
 
 
-        String category = "category1";
-        String CategoryTwo = "category2";
-        String three = "category3";
+        String category = "Charades";
+        String category2 = "Truth or dare";
 
         model.selectCategory(category);
+        model.selectCategory(category2);
 
         for (String s:model.getCategoryNames()){
             if (category.equals(s)){
                 b=true;
             }
+            System.out.println(s);
         }
 
         int endLength = categories.size();
 
         assert(b);
-        assert(initialLength+1==endLength);
+        assert(initialLength+2==endLength);
 
     }
 

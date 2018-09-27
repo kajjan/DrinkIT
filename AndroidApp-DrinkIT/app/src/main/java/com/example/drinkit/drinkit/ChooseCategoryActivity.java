@@ -26,16 +26,23 @@ public class ChooseCategoryActivity extends AppCompatActivity {
 
     }
 
-//The IDs for Category buttons
-    //b1
-    //b2
-    //b3
-    //b4
-    //b5
-    //b6
-    //b7
-    //b8
-    //b9
+    public void category1(View view) {ctrl.selectCategory("Charades");}
+
+    public void category2(View view) {ctrl.selectCategory("Quiz");}
+
+    public void category3(View view) {ctrl.selectCategory("Never have I ever");}
+
+    public void category4(View view) {ctrl.selectCategory("Truth or dare");}
+
+    public void category5(View view) {ctrl.selectCategory("Songs");}
+
+    public void category6(View view) {ctrl.selectCategory("Kategori 6");}
+
+    public void category7(View view) {ctrl.selectCategory("Kategori 7");}
+
+    public void category8(View view) {ctrl.selectCategory("Kategori 8");}
+
+    public void category9(View view) {ctrl.selectCategory("Kategori 9");}
 
 
 

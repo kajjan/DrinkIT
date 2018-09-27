@@ -21,7 +21,7 @@ public class DrinkIT {
     }
 
 
-    //Temporary constructor för duartion method
+    //Temporary constructor för duration method
     public DrinkIT(List<Player> players) {
         this.players = players;
     }

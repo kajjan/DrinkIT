@@ -16,6 +16,8 @@ import Controller.Controller;
 
 public class AddPlayerActivity extends AppCompatActivity {
 
+    Controller ctrl = new Controller();
+
     EditText playerOne, playerTwo, playerThree;
     List<String> players = new ArrayList<>(10);
 
@@ -41,15 +43,30 @@ public class AddPlayerActivity extends AppCompatActivity {
         players.add(playerTwo.getText().toString());
         players.add(playerThree.getText().toString());
 
-        System.out.println(players);
         for (int i = 0; i <players.size() ; i++) {
             if (players.get(i).isEmpty()){
                 System.out.println("Nothing in this place of index"); //We dont need this later on, just for now
             }
             else{
                 System.out.println(players.get(i));
-                //send the players name to controller here
+                if (sameName(players, players.get(i))){
+                    //Error message
+                    System.out.println("Type in names again");
+                    return;
+                }
+                else{
+                    ctrl.addPlayer(players.get(i));
+                }
             }
         }
+    }
+
+    public boolean sameName(List<String> players, String player){ //Method that checks if player already exists in list
+        for (String name: players) {
+            if(name.equals(player)){
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -18,10 +18,11 @@ public class AddPlayerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
+        //setContentView(R.layout.activity_choose_category);
     }
 
     public void nextToCategoryPage(View view) {
-        startActivity(new Intent(AddPlayerActivity.this, DurationActivity.class));
+        startActivity(new Intent(AddPlayerActivity.this, ChooseCategoryActivity.class));
     }
 
 

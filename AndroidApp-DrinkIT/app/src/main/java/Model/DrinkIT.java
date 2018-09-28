@@ -50,36 +50,35 @@ public class DrinkIT {
     }
 
     public void selectCategory(String category) {
-        //if selected put the category in this list.
-
-        if (categories.size() == 0) {
+        if (!isInList(category)) {
             categories.add(new Category(category));
+            System.out.println(getCategoryNames());
         } else {
-            for (int i = 0; i < categories.size() + 1; i++) {
-                if (category.equals(categories.get(i))) {
-                    categories.remove(i);
-                } else {
-                    categories.add(new Category(category));
-                }
+            unSelectCategory(category);
+        }
+    }
+
+    public void unSelectCategory(String category) {
+        for(int i = 0; i<categories.size(); i++){
+            if(category.equals(categories.get(i))){
+               // categories.remove(i);
+                categories.remove(new Category(category));
+                System.out.println(getCategoryNames());
             }
         }
 
-        /*
-        if (categories.size()==0){
-            categories.add(new Category(category));
-        } else {
-            for (Category c : categories) {
-                if (!(category.equals(c.getCategoryName()))) {
-                    categories.add(new Category(category));
-                } else {
-                    System.out.println("this is already added");
-                }
+    }
+
+
+    public boolean isInList(String category) {
+        boolean b = false;
+        for (Category c : categories) {
+            if (category.equals(c.getCategoryName())) {
+                b = true;
             }
         }
-        */
-
-        //categories.add(new Category(category));
-        System.out.println(getCategoryNames());
+        //System.out.println(b);
+        return b;
     }
 
 

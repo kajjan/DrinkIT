@@ -19,5 +19,6 @@ public class StartPageActivity extends AppCompatActivity {
     }
 
     public void instructions(View view) {
+        startActivity(new Intent(StartPageActivity.this, InstructionsActivity.class));
     }
 }

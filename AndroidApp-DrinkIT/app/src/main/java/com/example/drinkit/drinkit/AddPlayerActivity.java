@@ -78,8 +78,13 @@ public class AddPlayerActivity extends AppCompatActivity {
     }
 
     public boolean sameName(List<String> players, String player){ //Method that checks if player already exists in list
+        int numberOfTimes=0;
         for (String name: players) {
             if(name.equals(player)){
+                numberOfTimes++;
+
+            }
+            if(numberOfTimes>1){
                 return true;
             }
         }

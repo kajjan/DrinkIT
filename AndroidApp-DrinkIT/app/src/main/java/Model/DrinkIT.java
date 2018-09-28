@@ -53,7 +53,7 @@ public class DrinkIT {
     public void selectCategory(String category){
         //if selected put the category in this list.
         categories.add(new Category(category));
-    }
+        }
 
     public List<Category> getCategories() {
         return categories;

@@ -28,13 +28,13 @@ public class ChooseCategoryActivity extends AppCompatActivity {
 
     }
 
-    public void category1(View view) {ctrl.selectCategory("Charades");}
+    public void category1(View view) {ctrl.chooseCategory("Charades");}
 
-    public void category2(View view) {ctrl.selectCategory("Quiz");}
+    public void category2(View view) {ctrl.chooseCategory("Quiz");}
 
-    public void category3(View view) {ctrl.selectCategory("NeverhaveIever");}
+    public void category3(View view) {ctrl.chooseCategory("NeverhaveIever");}
 
-    public void category4(View view) {ctrl.selectCategory("Truth or dare");}
+    public void category4(View view) {ctrl.chooseCategory("Truth or dare");}
 
     public void category5(View view) {ctrl.selectCategory("Songs");}
 

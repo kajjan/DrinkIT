@@ -49,6 +49,29 @@ public class DrinkIT {
         return names;
     }
 
+    public void chooseCategory(String category) {
+        if (isInList(category)){
+            unSelectCategory(category);
+        }
+        if (!isInList(category)) {
+            selectCategory(category);
+        }
+    }
+
+    public void selectCategory(String category) {
+        categories.add(new Category(category));
+        System.out.println(getCategoryNames());
+    }
+
+    public void unSelectCategory(String category) {
+        for (int i=0; i<categories.size(); i++) {
+            if (category.equals(categories.get(i))){
+                System.out.println(i);
+            }
+        }
+    }
+
+    /*
     public void selectCategory(String category) {
         if (!isInList(category)) {
             categories.add(new Category(category));
@@ -68,7 +91,7 @@ public class DrinkIT {
         }
 
     }
-
+*/
 
     public boolean isInList(String category) {
         boolean b = false;

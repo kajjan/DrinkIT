@@ -31,9 +31,9 @@ public class DrinkIT {
         players.add(new Player(name));
     }
 
-    public void setDuration(List<Player> players, int duration){
+    public void setDuration(List<Player> players, int duration) {
         //System.out.println("Knappen för vald tid är tryckt och antalet spelare multipliceras med "+ duration);
-        durationOfGame = players.size()*duration;
+        durationOfGame = players.size() * duration;
     }
 
     public int getDurationOfGame() {
@@ -49,10 +49,24 @@ public class DrinkIT {
         return names;
     }
 
-    public void selectCategory(String category){
+    public void selectCategory(String category) {
         //if selected put the category in this list.
-        categories.add(new Category(category));
-        System.out.println(getCategoryNames());
+      if (!isInList(category)) {
+          categories.add(new Category(category));
+          System.out.println(getCategoryNames());
+      }
+      }
+
+
+    public boolean isInList(String category) {
+        boolean b = false;
+        for (Category c : categories) {
+            if (category.equals(c.getCategoryName())) {
+                b = true;
+            }
+        }
+        System.out.println(b);
+        return b;
     }
 
 
@@ -68,8 +82,6 @@ public class DrinkIT {
         }
         return categoryNames;
     }
-
-
 
 
     //Constructor for tests

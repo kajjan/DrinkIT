@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import Controller.Controller;
+import Model.Category;
 
 public class ChooseCategoryActivity extends AppCompatActivity {
 
@@ -45,6 +46,20 @@ public class ChooseCategoryActivity extends AppCompatActivity {
 
     public void category9(View view) {ctrl.selectCategory("Kategori 9");}
 
+
+
+
+
+
+
+    public boolean categoryAlreadyChosen(){
+     //   for (Category c : category) {
+       // }
+
+        return true;
+
+
+    }
 
 
 }

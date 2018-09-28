@@ -9,19 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".AddPlayerActivity">
+        <activity android:name=".StartPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".DurationActivity"></activity>
-
-        <activity android:name=".ChooseCategoryActivity"></activity>
-
+        <activity android:name=".DurationActivity" />
+        <activity android:name=".AddPlayerActivity" />
+        <activity android:name=".InstructionsActivity"></activity>
     </application>
 
 </manifest>
-

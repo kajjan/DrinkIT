@@ -10,7 +10,7 @@ public class DrinkIT {
 
 
     //TODO alice list
-    private List<Category> categories = new ArrayList<>();
+    private List<Category> categories = new ArrayList<>(9);
     private int durationOfGame;
 
     public DrinkIT(List<Player> players, List<Card> cards, List<Challenge> challenges, int durationOfGame) {
@@ -50,12 +50,24 @@ public class DrinkIT {
     }
 
     public void selectCategory(String category) {
-        //if selected put the category in this list.
-      if (!isInList(category)) {
-          categories.add(new Category(category));
-          System.out.println(getCategoryNames());
-      }
-      }
+        if (!isInList(category)) {
+            categories.add(new Category(category));
+            System.out.println(getCategoryNames());
+        } else {
+            unSelectCategory(category);
+        }
+    }
+
+    public void unSelectCategory(String category) {
+        for(int i = 0; i<categories.size(); i++){
+            if(category.equals(categories.get(i))){
+               // categories.remove(i);
+                categories.remove(new Category(category));
+                System.out.println(getCategoryNames());
+            }
+        }
+
+    }
 
 
     public boolean isInList(String category) {
@@ -65,7 +77,7 @@ public class DrinkIT {
                 b = true;
             }
         }
-        System.out.println(b);
+        //System.out.println(b);
         return b;
     }
 

@@ -52,14 +52,4 @@ public class ChooseCategoryActivity extends AppCompatActivity {
 
 
 
-    public boolean categoryAlreadyChosen(){
-     //   for (Category c : category) {
-       // }
-
-        return true;
-
-
-    }
-
-
 }

@@ -18,7 +18,6 @@
         </activity>
 
         <activity android:name=".DurationActivity"></activity>
-
         <activity android:name=".ChooseCategoryActivity"></activity>
 
     </application>

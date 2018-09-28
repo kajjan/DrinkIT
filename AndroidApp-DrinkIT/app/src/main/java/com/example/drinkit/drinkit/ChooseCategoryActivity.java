@@ -31,7 +31,7 @@ public class ChooseCategoryActivity extends AppCompatActivity {
 
     public void category2(View view) {ctrl.selectCategory("Quiz");}
 
-    public void category3(View view) {ctrl.selectCategory("Never have I ever");}
+    public void category3(View view) {ctrl.selectCategory("NeverhaveIever");}
 
     public void category4(View view) {ctrl.selectCategory("Truth or dare");}
 

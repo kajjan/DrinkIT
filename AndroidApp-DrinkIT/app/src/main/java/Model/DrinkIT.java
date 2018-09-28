@@ -49,10 +49,10 @@ public class DrinkIT {
         return names;
     }
 
-    //TODO alice made method
     public void selectCategory(String category){
         //if selected put the category in this list.
         categories.add(new Category(category));
+        System.out.println(getCategoryNames());
     }
 
     public List<Category> getCategories() {
@@ -67,11 +67,6 @@ public class DrinkIT {
         }
         return categoryNames;
     }
-
-
-
-
-
 
 
 

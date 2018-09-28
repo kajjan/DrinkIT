@@ -10,6 +10,7 @@ import Controller.Controller;
 public class ChooseCategoryActivity extends AppCompatActivity {
 
     Controller ctrl = new Controller();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

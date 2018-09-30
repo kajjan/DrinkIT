@@ -27,11 +27,14 @@ public class DurationActivity extends AppCompatActivity {
 
     public void mediumDuration(View view) {
         ctrl.setDuration(5);
+        startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
 
     }
 
-    public void longDuartion(View view) {
+    public void longDuration(View view) {
         ctrl.setDuration(10);
+        startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
+
 
     }
 

@@ -18,7 +18,7 @@
             android:layout_alignStart="@+id/mediumTimeButton"
             android:layout_marginBottom="153dp"
             android:text="LONG"
-            android:onClick="longDuartion"
+            android:onClick="longDuration"
             android:layout_alignLeft="@+id/mediumTimeButton" />
 
         <Button

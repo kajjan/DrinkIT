@@ -39,6 +39,7 @@ public class DrinkIT {
 
         durationOfGame = players.size()*duration;
 
+
     }
 
     public int getDurationOfGame() {
@@ -67,6 +68,27 @@ public class DrinkIT {
     }
 
 
+
+
+    //complete.shuffle(listOfPlayers) funkar inte... ?
+    public List<Player>shufflePlayerList (List<Player>listOfPlayers){
+
+       return listOfPlayers;
+    }
+
+
+    //method to get the name of the player in the list. Need to get so that the index is controlled somewhere else.
+    public String getNameOfPlayer (List<Player>listOfPlayer, int index){
+        String name= listOfPlayer.get(index).getName();
+        System.out.println(name);
+        return name;
+    }
+
+    //Write a method that keep track of what index in the list of players we are at and wich should be shown. Now it only shows the firt in the list to se that the other methods works.
+    public int getIndexForChallenge(){
+        int i=0;
+        return i;
+    }
 
 
 

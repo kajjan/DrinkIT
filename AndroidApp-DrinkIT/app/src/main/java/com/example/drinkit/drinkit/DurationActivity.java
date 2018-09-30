@@ -1,5 +1,6 @@
 package com.example.drinkit.drinkit;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,15 +22,21 @@ public class DurationActivity extends AppCompatActivity {
 
     public void shortDuration(View view) {
         ctrl.setDuration(3);
+        startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
     }
 
     public void mediumDuration(View view) {
         ctrl.setDuration(5);
+
     }
 
     public void longDuartion(View view) {
         ctrl.setDuration(10);
+
     }
+
+
+
 
 }
 

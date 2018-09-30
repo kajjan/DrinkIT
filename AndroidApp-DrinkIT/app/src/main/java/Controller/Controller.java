@@ -30,8 +30,15 @@ public class Controller {
 
     }
 
+
     public void setDuration(int duration){
         model.setDuration(listOfPlayers, duration);
+    }
+
+
+    public String getPlayersName(){
+        String name= model.getNameOfPlayer(listOfPlayers, model.getIndexForChallenge());
+        return name;
     }
 }
 

@@ -7,12 +7,11 @@ import Model.DrinkIT;
 import Model.Player;
 
 public class Controller {
-    //provisorisk sätter vi listan med players
-
-
     DrinkIT model = new DrinkIT();
     static List<Player> listOfPlayers = new ArrayList<>();
 
+
+    //Constructors
     public Controller() {
 
     }
@@ -24,10 +23,12 @@ public class Controller {
     }
 
 
+
+
+    //methods
     public void addPlayer(String player) {
         model.addPlayer(player);
         listOfPlayers = model.getPlayers();
-
     }
 
 

@@ -8,7 +8,7 @@ public class DrinkIT {
     protected List<Player> players = new ArrayList<>();
     private List<Card> cards;
     private List<Challenge> challenges;
-    private int durationOfGame;
+    static int durationOfGame;
     private List<Player> completeListOfPlayers;
 
 
@@ -22,25 +22,21 @@ public class DrinkIT {
 
     }
 
-
-
     //Temporary constructor för duartion method
     public DrinkIT(List<Player> players) {
         this.players = players;
     }
-
 
     public void addPlayer(String name) {
         players.add(new Player(name));
     }
 
 
-
     public void setDuration(List<Player> players, int duration){
         System.out.println("Knappen för vald tid är tryckt och antalet spelare multipliceras med "+ duration);
         durationOfGame = players.size()*duration;
-        // completeListOfPlayers =createCompletedPlayersList(players, durationOfGame);
-        // completeListOfPlayers= shufflePlayerList(completeListOfPlayers);
+      //  completeListOfPlayers =createCompletedPlayersList(players, durationOfGame);
+      //  completeListOfPlayers= shufflePlayerList(completeListOfPlayers);
     }
 
     public int getDurationOfGame() {

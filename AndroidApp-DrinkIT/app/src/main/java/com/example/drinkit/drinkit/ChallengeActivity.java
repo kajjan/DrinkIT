@@ -10,11 +10,13 @@ import Controller.Controller;
 public class ChallengeActivity extends AppCompatActivity {
 
 
-    Controller ctrl =new Controller();
+    Controller ctrl = new Controller();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge);
+        ctrl.setCompleteListOfPlayers();
+
         printPlayersName();
     }
 

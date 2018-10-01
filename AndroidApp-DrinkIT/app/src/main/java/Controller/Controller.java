@@ -23,6 +23,14 @@ public class Controller {
     }
 
 
+    public boolean categoryListEmpty(){
+        boolean b = false;
+        if(model.getCategories().size()==0){
+            b = true;
+        }
+        return b;
+    }
+
     public void setDuration(int duration){
         model.setDuration(players, duration);
     }

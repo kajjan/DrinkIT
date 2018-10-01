@@ -20,8 +20,11 @@ public class ChooseCategoryActivity extends AppCompatActivity {
 
 
     public void nextToDurationPage(View view) {
-        //TODO You sould not be able to move forward without choosing at least one category.
-        startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
+        if (!(ctrl.categoryListEmpty())) {
+            startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
+        } else {
+            System.out.println("Please select a category before moving forward");
+        }
     }
 
     public void returnToAddPlayersPage(View view) {

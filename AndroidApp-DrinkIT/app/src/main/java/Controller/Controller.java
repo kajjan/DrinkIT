@@ -57,6 +57,12 @@ public class Controller {
         roundOfChallenge++;
     }
 
+    public void succeedChallenge(){
+        model.setPointOfPlayer(completeListOfPlayers, roundOfChallenge);
+
+        roundOfChallenge++;
+    }
+
 
 }
 

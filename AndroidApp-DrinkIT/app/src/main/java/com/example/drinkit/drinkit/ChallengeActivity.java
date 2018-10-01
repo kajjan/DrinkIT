@@ -33,6 +33,7 @@ public class ChallengeActivity extends AppCompatActivity {
     }
 
     public void succeedChallenge(View view) {
-
+        ctrl.succeedChallenge();
+        printPlayersName();
     }
 }

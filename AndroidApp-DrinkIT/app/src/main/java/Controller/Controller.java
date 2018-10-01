@@ -53,6 +53,10 @@ public class Controller {
     }
 
 
+    public void failedChallenge() {
+        roundOfChallenge++;
+    }
+
 
 }
 

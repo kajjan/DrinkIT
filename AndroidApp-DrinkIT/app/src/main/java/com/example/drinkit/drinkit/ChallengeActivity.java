@@ -27,4 +27,12 @@ public class ChallengeActivity extends AppCompatActivity {
     }
 
 
+    public void failChallenge(View view) {
+        ctrl.failedChallenge();
+        printPlayersName();
+    }
+
+    public void succeedChallenge(View view) {
+
+    }
 }

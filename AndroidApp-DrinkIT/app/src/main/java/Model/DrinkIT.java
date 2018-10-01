@@ -7,9 +7,6 @@ public class DrinkIT {
     private List<Player> players;
     private List<Card> cards;
     private List<Challenge> challenges;
-
-
-    //TODO alice list
     private List<Category> categories = new ArrayList<>();
     private int durationOfGame;
 
@@ -21,7 +18,7 @@ public class DrinkIT {
     }
 
 
-    //Temporary constructor för duration method
+    //Temporary constructor for duration method
     public DrinkIT(List<Player> players) {
         this.players = players;
     }
@@ -31,10 +28,12 @@ public class DrinkIT {
         players.add(new Player(name));
     }
 
+
     public void setDuration(List<Player> players, int duration) {
         //System.out.println("Knappen för vald tid är tryckt och antalet spelare multipliceras med "+ duration);
         durationOfGame = players.size() * duration;
     }
+
 
     public int getDurationOfGame() {
         return durationOfGame;
@@ -49,58 +48,42 @@ public class DrinkIT {
         return names;
     }
 
+
     public void chooseCategory(String category) {
-        if (isInList(category)){
+        if (isInList(category)) {
             unSelectCategory(category);
-        }
-        if (!isInList(category)) {
+        } else {
             selectCategory(category);
+            System.out.println(getCategoryNames());
         }
+
     }
 
+    //Adds chosen category to categories list
     public void selectCategory(String category) {
         categories.add(new Category(category));
-        System.out.println(getCategoryNames());
     }
 
+    //Method for removing a category, removes the choosen category
     public void unSelectCategory(String category) {
-        for (int i=0; i<categories.size(); i++) {
-            if (category.equals(categories.get(i))){
-                System.out.println(i);
-            }
-        }
-    }
-
-    /*
-    public void selectCategory(String category) {
-        if (!isInList(category)) {
-            categories.add(new Category(category));
-            System.out.println(getCategoryNames());
-        } else {
-            unSelectCategory(category);
-        }
-    }
-
-    public void unSelectCategory(String category) {
-        for(int i = 0; i<categories.size(); i++){
-            if(category.equals(categories.get(i))){
-               // categories.remove(i);
-                categories.remove(new Category(category));
+        for (int i = 0; i < categories.size(); i++) {
+            if (category.equals(categories.get(i).getCategoryName())) {
+                categories.remove(i);
                 System.out.println(getCategoryNames());
+
+
             }
         }
-
     }
-*/
 
-    public boolean isInList(String category) {
+    //Checks if chosen category already is in the categories list
+    private boolean isInList(String category) {
         boolean b = false;
         for (Category c : categories) {
             if (category.equals(c.getCategoryName())) {
                 b = true;
             }
         }
-        //System.out.println(b);
         return b;
     }
 
@@ -108,6 +91,7 @@ public class DrinkIT {
     public List<Category> getCategories() {
         return categories;
     }
+
 
     //method for test
     public List<String> getCategoryNames() {

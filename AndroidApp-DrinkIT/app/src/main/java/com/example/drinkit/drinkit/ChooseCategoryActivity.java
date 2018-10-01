@@ -20,6 +20,7 @@ public class ChooseCategoryActivity extends AppCompatActivity {
 
 
     public void nextToDurationPage(View view) {
+        //TODO You sould not be able to move forward without choosing at least one category.
         startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
     }
 
@@ -36,15 +37,15 @@ public class ChooseCategoryActivity extends AppCompatActivity {
 
     public void category4(View view) {ctrl.chooseCategory("Truth or dare");}
 
-    public void category5(View view) {ctrl.selectCategory("Songs");}
+    public void category5(View view) {ctrl.chooseCategory("Songs");}
 
-    public void category6(View view) {ctrl.selectCategory("Kategori 6");}
+    public void category6(View view) {ctrl.chooseCategory("Kategori 6");}
 
-    public void category7(View view) {ctrl.selectCategory("Kategori 7");}
+    public void category7(View view) {ctrl.chooseCategory("Kategori 7");}
 
-    public void category8(View view) {ctrl.selectCategory("Kategori 8");}
+    public void category8(View view) {ctrl.chooseCategory("Kategori 8");}
 
-    public void category9(View view) {ctrl.selectCategory("Kategori 9");}
+    public void category9(View view) {ctrl.chooseCategory("Kategori 9");}
 
 
 

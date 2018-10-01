@@ -43,5 +43,28 @@ public class ChooseCategoryTest {
 
     }
 
+    @Test
+    public void removeCategory() {
+        DrinkIT model = new DrinkIT(null, null, null );
+        List<Category> categories = model.getCategories();
+
+        String category = "Charades";
+        String category2 = "Truth or dare";
+
+        categories.add(new Category(category));
+        categories.add(new Category(category2));
+
+        int initialLength = categories.size();
+
+        model.unSelectCategory(category);
+
+        int endLength = categories.size();
+
+        assert(endLength==initialLength-1);
+        assert(categories.size()==1);
+
+
+    }
+
 
 }

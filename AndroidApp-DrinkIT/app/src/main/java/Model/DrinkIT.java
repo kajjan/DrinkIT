@@ -1,16 +1,20 @@
 package Model;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class DrinkIT {
-    protected List<Player> players = new ArrayList<>();
+    static List<Player> players = new ArrayList<>();
     private List<Card> cards;
     private List<Challenge> challenges;
     static int durationOfGame;
     private List<Player> completeListOfPlayers;
     private List<Category> categories = new ArrayList<>();
+    private List<Player>playerInPointOrder= new ArrayList<>();
+
 
     public DrinkIT(List<Player> players, List<Card> cards, List<Challenge> challenges, int durationOfGame) {
         this.players = players;
@@ -83,6 +87,7 @@ public class DrinkIT {
         point++;
         listOfPlayer.get(index).setPoint(point);
         System.out.println("Points: " + point);
+        getNumber1(players);
     }
 
     //Write a method that keep track of what index in the list of players we are at and wich should be shown. Now it only shows the firt in the list to se that the other methods works.
@@ -175,5 +180,45 @@ public class DrinkIT {
         this.players = players;
         this.cards = cards;
         this.challenges = challenges;
+    }
+
+    public void getNumber1(List<Player>players) {
+
+        for (int i = 0; i < players.size(); i++) {
+            Player s = players.get(i);
+            Player temp;
+            List<String>lista= playerListString();
+            System.out.println(lista);
+
+           /* while (s.getPoint() < players.get(i + 1).getPoint()) {
+            temp=s;
+            s=players.get(i+1);
+            players.set(i+1, temp);
+            }*/
+
+        }
+
+    }
+
+    public List<String> playerListString(){
+        List<String> playerList = new ArrayList<>();
+        for (Player c : players) {
+            playerList.add(playerToString(c));
+        }
+        return playerList;
+    }
+
+    public String playerToString(Player player){
+        String playerToString =player.getName() + ": " + player.getPoint() + " Points";
+
+        return playerToString;
+    }
+
+    //Method that keep track if the game is done and if the view should change to the finishPage
+    public boolean nextRound(int roundOfChallenge){
+        if(durationOfGame>roundOfChallenge){
+            return true;
+        }
+        return false;
     }
 }

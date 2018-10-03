@@ -13,7 +13,6 @@ public class Controller {
     int roundOfChallenge = 0;
 
 
-
     //Constructors
     public Controller() {
 
@@ -25,13 +24,11 @@ public class Controller {
 
     }
 
-
     //methods
     public void addPlayer(String player) {
         model.addPlayer(player);
         listOfPlayers = model.getPlayers();
     }
-
 
     public void setDuration(int duration){
         model.setDuration(listOfPlayers, duration);

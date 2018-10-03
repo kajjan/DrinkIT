@@ -82,7 +82,7 @@ public class DrinkIT {
         int point = listOfPlayer.get(index).getPoint();
         point++;
         listOfPlayer.get(index).setPoint(point);
-        System.out.println(point);
+        System.out.println("Points: " + point);
     }
 
     //Write a method that keep track of what index in the list of players we are at and wich should be shown. Now it only shows the firt in the list to se that the other methods works.

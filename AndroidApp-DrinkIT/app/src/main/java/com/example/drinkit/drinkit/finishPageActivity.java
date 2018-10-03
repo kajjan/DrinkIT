@@ -8,7 +8,7 @@ import Controller.Controller;
 
 public class finishPageActivity extends AppCompatActivity {
 
-    Controller ctrl;
+    Controller ctrl = new Controller();
 
 
     @Override

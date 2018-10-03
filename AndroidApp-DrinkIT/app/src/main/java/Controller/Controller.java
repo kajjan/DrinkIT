@@ -77,6 +77,7 @@ public class Controller {
 
 
   public void putInPointOrder(){
+    model.putListInPointOrder(listOfPlayers);
   }
 
     public boolean nextRound(){

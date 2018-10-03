@@ -87,7 +87,6 @@ public class DrinkIT {
         point++;
         listOfPlayer.get(index).setPoint(point);
         System.out.println("Points: " + point);
-        getNumber1(players);
     }
 
     //Write a method that keep track of what index in the list of players we are at and wich should be shown. Now it only shows the firt in the list to se that the other methods works.
@@ -182,24 +181,27 @@ public class DrinkIT {
         this.challenges = challenges;
     }
 
-    public void getNumber1(List<Player>players) {
+
+    //method that puts every player in the players list in order of highest point to smallest.
+    public void putListInPointOrder(List<Player>players) {
 
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
             Player temp;
-            List<String>lista= playerListString();
-            System.out.println(lista);
-
-           /* while (s.getPoint() < players.get(i + 1).getPoint()) {
-            temp=s;
-            s=players.get(i+1);
-            players.set(i+1, temp);
-            }*/
+            int nextIndex=i+1;
+            if(i<players.size()-1) {
+                while (s.getPoint() < players.get(nextIndex).getPoint()) {
+                    Collections.swap(players,i,nextIndex);
+                }
+            }
 
         }
+        List<String>lista= playerListString();
+        System.out.println(lista);
 
     }
 
+    //creates a list of strings with the players in a order after points.
     public List<String> playerListString(){
         List<String> playerList = new ArrayList<>();
         for (Player c : players) {
@@ -208,6 +210,8 @@ public class DrinkIT {
         return playerList;
     }
 
+
+    //method that makes a list that write the players name and its point in a list of strings.
     public String playerToString(Player player){
         String playerToString =player.getName() + ": " + player.getPoint() + " Points";
 

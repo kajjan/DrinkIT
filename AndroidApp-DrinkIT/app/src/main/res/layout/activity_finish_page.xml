@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints">
+        tools:ignore="10,MissingConstraints">
 
         <TextView
             android:id="@+id/theWinnerIs"

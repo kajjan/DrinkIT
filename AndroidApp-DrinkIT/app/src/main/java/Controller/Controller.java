@@ -30,6 +30,14 @@ public class Controller {
         listOfPlayers = model.getPlayers();
     }
 
+    public boolean categoryListEmpty(){
+        boolean b = false;
+        if(model.getCategories().size()==0){
+            b = true;
+        }
+        return b;
+    }
+
     public void setDuration(int duration){
         model.setDuration(listOfPlayers, duration);
     }
@@ -61,7 +69,13 @@ public class Controller {
     }
 
 
-}
 
+    public void chooseCategory(String category) {
+        model.chooseCategory(category);
+    }
+
+
+
+}
 
 

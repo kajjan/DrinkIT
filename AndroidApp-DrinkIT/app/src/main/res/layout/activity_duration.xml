@@ -18,7 +18,12 @@
             android:layout_alignStart="@+id/mediumTimeButton"
             android:layout_marginBottom="153dp"
             android:text="LONG"
+<<<<<<< HEAD
             android:onClick="longDuration"/>
+=======
+            android:onClick="longDuration"
+            android:layout_alignLeft="@+id/mediumTimeButton" />
+>>>>>>> develop
 
         <Button
             android:id="@+id/mediumTimeButton"
@@ -27,7 +32,8 @@
             android:layout_alignStart="@+id/shortTimeButton"
             android:layout_below="@+id/shortTimeButton"
             android:text="MEDIUM"
-            android:onClick="mediumDuration"/>
+            android:onClick="mediumDuration"
+            android:layout_alignLeft="@+id/shortTimeButton" />
 
         <Button
             android:id="@+id/shortTimeButton"
@@ -37,7 +43,10 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="126dp"
             android:text="SHORT"
-            android:onClick="shortDuration"/>
+            android:onClick="shortDuration"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="126dp" />
+
 
     </RelativeLayout>
 

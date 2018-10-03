@@ -6,4 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".ChallengeActivity">
 
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/playerOfchallenge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="100dp"
+            android:textSize="14dp"
+            android:layout_marginTop="150dp" />
+
+        <Button
+            android:id="@+id/failButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="93dp"
+            android:layout_marginStart="74dp"
+            android:text="Fail"
+            android:onClick="failChallenge"/>
+
+        <Button
+            android:id="@+id/succeedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/failButton"
+            android:layout_marginEnd="78dp"
+            android:text="Succeed"
+            android:onClick="succeedChallenge"/>
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

@@ -69,4 +69,7 @@ public class AddPlayerActivity extends AppCompatActivity {
         }
         return false;
     }
+
+
+    //TEST för merge med develop
 }

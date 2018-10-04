@@ -15,17 +15,16 @@ public class finishPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish_page);
-        ctrl.putInPointOrder();
+        //ctrl.putInPointOrder();
 
-       // ctrl.getNumber1();
-        //printNumber1();
+        printScoreBoard();
     }
 
 
 
-    public void printNumber1(){
-        TextView text=((TextView)findViewById(R.id.number1));
-        //text.setText(ctrl.getNumber1());
+    public void printScoreBoard(){
+        TextView text=((TextView)findViewById(R.id.printScoreBoard));
+        text.setText(ctrl.putInPointOrder());
     }
 
 }

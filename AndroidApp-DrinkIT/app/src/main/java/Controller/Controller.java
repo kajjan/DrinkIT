@@ -76,8 +76,9 @@ public class Controller {
     }
 
 
-  public void putInPointOrder(){
-    model.putListInPointOrder(listOfPlayers);
+  public String putInPointOrder(){
+        String scoreBoard=model.putListInPointOrder(listOfPlayers);
+        return scoreBoard;
   }
 
     public boolean nextRound(){

@@ -27,7 +27,7 @@
 
 
         <TextView
-            android:id="@+id/number1"
+            android:id="@+id/printScoreBoard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -37,26 +37,6 @@
             android:layout_marginTop="150dp" />
 
 
-        <TextView
-            android:id="@+id/number2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="170dp"
-            android:textSize="14dp"
-            android:layout_marginTop="150dp" />
-
-
-        <TextView
-            android:id="@+id/number3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="190dp"
-            android:textSize="14dp"
-            android:layout_marginTop="150dp" />
 
 
 

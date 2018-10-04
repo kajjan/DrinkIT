@@ -14,6 +14,7 @@ public class DrinkIT {
     private List<Player> completeListOfPlayers;
     private List<Category> categories = new ArrayList<>();
     private List<Player>playerInPointOrder= new ArrayList<>();
+    static List<String> playerList = new ArrayList<>();
 
 
     public DrinkIT(List<Player> players, List<Card> cards, List<Challenge> challenges, int durationOfGame) {
@@ -89,11 +90,6 @@ public class DrinkIT {
         System.out.println("Points: " + point);
     }
 
-    //Write a method that keep track of what index in the list of players we are at and wich should be shown. Now it only shows the firt in the list to se that the other methods works.
-    public int getIndexForChallenge(){
-        int i=0;
-        return i;
-    }
 
 
 
@@ -183,7 +179,7 @@ public class DrinkIT {
 
 
     //method that puts every player in the players list in order of highest point to smallest.
-    public void putListInPointOrder(List<Player>players) {
+    public String putListInPointOrder(List<Player>players) {
 
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
@@ -197,13 +193,12 @@ public class DrinkIT {
 
         }
         List<String>lista= playerListString();
-        System.out.println(lista);
-
+        String scoreText= getScoreBoardText(lista);
+        return scoreText;
     }
 
     //creates a list of strings with the players in a order after points.
     public List<String> playerListString(){
-        List<String> playerList = new ArrayList<>();
         for (Player c : players) {
             playerList.add(playerToString(c));
         }
@@ -213,9 +208,21 @@ public class DrinkIT {
 
     //method that makes a list that write the players name and its point in a list of strings.
     public String playerToString(Player player){
-        String playerToString =player.getName() + ": " + player.getPoint() + " Points";
+        String playerToString =player.getName() + " " + player.getPoint() + " Points";
 
         return playerToString;
+    }
+
+
+    public String getScoreBoardText(List<String>playerInOrder){
+        String scoreText= "";
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i <playerInOrder.size(); i++) {
+
+           sb.append(playerInOrder.get(i) + "\n");
+        }
+        scoreText= sb.toString();
+        return scoreText;
     }
 
     //Method that keep track if the game is done and if the view should change to the finishPage

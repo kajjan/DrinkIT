@@ -183,11 +183,14 @@ public class DrinkIT {
 
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
-            Player temp;
             int nextIndex=i+1;
             if(i<players.size()-1) {
-                while (s.getPoint() < players.get(nextIndex).getPoint()) {
-                    Collections.swap(players,i,nextIndex);
+                for (int j = i; j <players.size() ; j++) {
+
+                    while (s.getPoint() < players.get(j).getPoint()) {
+                        Collections.swap(players, i, j);
+                    }
+
                 }
             }
 

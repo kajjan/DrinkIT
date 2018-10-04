@@ -76,13 +76,17 @@ public class Controller {
     }
 
 
-  public String putInPointOrder(){
+    public String putInPointOrder(){
         String scoreBoard=model.putListInPointOrder(listOfPlayers);
         return scoreBoard;
-  }
+    }
 
     public boolean nextRound(){
         return model.nextRound(roundOfChallenge);
+    }
+
+    public void endTheGame(){
+        model.endTheGame();
     }
 
 

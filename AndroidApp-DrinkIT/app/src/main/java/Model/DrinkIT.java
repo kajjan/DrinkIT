@@ -232,4 +232,10 @@ public class DrinkIT {
         }
         return false;
     }
+
+    public void endTheGame(){
+        playerList.clear();
+        players.clear();
+
+    }
 }

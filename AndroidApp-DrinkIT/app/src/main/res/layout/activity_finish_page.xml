@@ -9,9 +9,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:ignore="10,MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:ignore="10,MissingConstraints">
+        tools:layout_editor_absoluteY="45dp">
 
         <TextView
             android:id="@+id/theWinnerIs"
@@ -25,7 +25,6 @@
             tools:layout_editor_absoluteY="103dp" />
 
 
-
         <TextView
             android:id="@+id/printScoreBoard"
             android:layout_width="wrap_content"
@@ -33,14 +32,28 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_margin="150dp"
-            android:textSize="14dp"
-            android:layout_marginTop="150dp" />
+            android:layout_marginTop="150dp"
+            android:textSize="14dp" />
 
+        <Button
+            android:id="@+id/continueTheGameButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="117dp"
+            android:text="Continue the game"
+            android:onClick="continueTheGame"/>
 
-
-
-
-
+        <Button
+            android:id="@+id/endTheGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="70dp"
+            android:text="End the game"
+            android:onClick="endTheGameButton"/>
 
     </RelativeLayout>
 

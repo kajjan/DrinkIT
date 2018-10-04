@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import Controller.Controller;
 
-public class finishPageActivity extends AppCompatActivity {
+public class FinishPageActivity extends AppCompatActivity {
 
     Controller ctrl = new Controller();
 
@@ -36,7 +36,7 @@ public class finishPageActivity extends AppCompatActivity {
 
     public void endTheGameButton(View view) {
         ctrl.endTheGame();
-        startActivity(new Intent(finishPageActivity.this, StartPageActivity.class));
+        startActivity(new Intent(FinishPageActivity.this, StartPageActivity.class));
 
 
     }

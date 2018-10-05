@@ -8,9 +8,9 @@ import android.widget.TextView;
 
 import Controller.Controller;
 
-public class FinishPageActivity extends AppCompatActivity {
+public class FinishPageActivity extends MainView {
 
-    Controller ctrl = new Controller();
+    //Controller ctrl = new Controller();
 
 
     @Override
@@ -25,7 +25,7 @@ public class FinishPageActivity extends AppCompatActivity {
 
     public void printScoreBoard(){
         TextView text=((TextView)findViewById(R.id.printScoreBoard));
-        text.setText(ctrl.putInPointOrder());
+        text.setText(getCtrl().putInPointOrder());
     }
 
     public void continueTheGame(View view) {
@@ -35,7 +35,7 @@ public class FinishPageActivity extends AppCompatActivity {
 
 
     public void endTheGameButton(View view) {
-        ctrl.endTheGame();
+        getCtrl().endTheGame();
         startActivity(new Intent(FinishPageActivity.this, StartPageActivity.class));
 
 

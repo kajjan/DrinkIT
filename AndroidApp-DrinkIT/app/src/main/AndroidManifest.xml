@@ -12,6 +12,7 @@
         <activity android:name=".StartPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -19,9 +20,8 @@
         <activity android:name=".DurationActivity" />
         <activity android:name=".AddPlayerActivity" />
         <activity android:name=".InstructionsActivity" />
-        <activity android:name=".ChallengeActivity"></activity>
-
+        <activity android:name=".ChallengeActivity" />
+        <activity android:name=".FinishPageActivity"/>
     </application>
 
 </manifest>
-

@@ -1,5 +1,6 @@
 package com.example.drinkit.drinkit;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,11 +30,30 @@ public class ChallengeActivity extends AppCompatActivity {
 
     public void failChallenge(View view) {
         ctrl.failedChallenge();
-        printPlayersName();
+        if(nextRound()) {
+            printPlayersName();
+        }
+        else{
+            changePage(view);
+        }
     }
 
     public void succeedChallenge(View view) {
         ctrl.succeedChallenge();
-        printPlayersName();
+        if(nextRound()) {
+            printPlayersName();
+        }
+        else{
+            changePage(view);
+        }
     }
+
+
+    public void changePage(View view) {
+        startActivity(new Intent(ChallengeActivity.this, FinishPageActivity.class));
+    }
+
+    public boolean nextRound(){
+        return ctrl.nextRound();
+        }
 }

@@ -134,8 +134,6 @@ public class DrinkIT {
             if (category.equals(categories.get(i).getCategoryName())) {
                 categories.remove(i);
                 System.out.println(getCategoryNames());
-
-
             }
         }
     }
@@ -155,8 +153,6 @@ public class DrinkIT {
     public List<Category> getCategories() {
         return categories;
     }
-
-
 
 
 

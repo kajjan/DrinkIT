@@ -50,7 +50,7 @@ public class ChallengeActivity extends AppCompatActivity {
 
 
     public void changePage(View view) {
-        startActivity(new Intent(ChallengeActivity.this, finishPageActivity.class));
+        startActivity(new Intent(ChallengeActivity.this, FinishPageActivity.class));
     }
 
     public boolean nextRound(){

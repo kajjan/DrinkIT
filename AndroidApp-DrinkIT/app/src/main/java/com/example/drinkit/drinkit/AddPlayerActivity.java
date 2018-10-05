@@ -10,8 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import Controller.Controller;
 
@@ -26,6 +28,7 @@ public class AddPlayerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
+
     }
 
     public void nextToCategoryPage(View view) {
@@ -58,6 +61,18 @@ public class AddPlayerActivity extends AppCompatActivity {
         players.add(playerNine.getText().toString());
         players.add(playerTen.getText().toString());
 
+        InputStream is = getResources().openRawResource(getResources().getIdentifier("charades", "raw", getPackageName()));
+
+        Scanner scan = new Scanner(is);
+        while(scan.hasNextLine()){
+            String line = scan.nextLine();
+            String[] parts = line.split("-");
+            String instruction = parts[0];
+            String underCat = parts[1];
+
+            System.out.println(instruction);
+  //          System.out.println(underCat);
+        }
 
         for (int i = 0; i <players.size() ; i++) {
             if (players.get(i).isEmpty()){

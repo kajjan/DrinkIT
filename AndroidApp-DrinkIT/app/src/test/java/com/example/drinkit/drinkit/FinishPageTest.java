@@ -12,5 +12,7 @@ public class FinishPageTest {
     @Test
     public void finishPageTest () {
 
+        //hej vickan, hoppas det funkar nu 
+
     }
 }

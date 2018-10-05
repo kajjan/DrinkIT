@@ -8,7 +8,7 @@
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
-        android:layout_height="47sp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18sp">
@@ -26,7 +26,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
 
-        android:layout_height="47sp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="68sp">
@@ -42,7 +42,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
 
-        android:layout_height="47sp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="118sp">
@@ -58,7 +58,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
 
-        android:layout_height="47sp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="168sp">
@@ -74,7 +74,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
 
-        android:layout_height="47sp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="218sp">
@@ -89,7 +89,7 @@
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
-        android:layout_height="47sp"
+        android:layout_height="53sp"
         android:layout_marginTop="268sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -108,7 +108,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
 
-        android:layout_height="47sp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="318sp">
@@ -125,7 +125,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
 
-        android:layout_height="47sp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="368sp">
@@ -141,7 +141,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
 
-        android:layout_height="47sp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="418sp">
@@ -157,7 +157,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
 
-        android:layout_height="47sp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="468sp">

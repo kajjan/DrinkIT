@@ -2,27 +2,33 @@ package Controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import Model.DrinkIT;
 import Model.Player;
 
 public class Controller {
-    DrinkIT model = new DrinkIT();
+    DrinkIT model;
     static List<Player> listOfPlayers = new ArrayList<>();
     static List<Player> completeListOfPlayers = new ArrayList<>();
     int roundOfChallenge = 0;
 
 
     //Constructors
+
     public Controller() {
 
     }
 
-    public Controller(List<Player> players, DrinkIT model) {
-        this.listOfPlayers = players;
+    public Controller(DrinkIT model) {
         this.model = model;
-
     }
+
+    /*
+        public Controller(List<Player> players, DrinkIT model) {
+            this.listOfPlayers = players;
+            this.model = model;
+
+        }
+    */
 
     //methods
     public void addPlayer(String player) {
@@ -52,7 +58,8 @@ public class Controller {
     }
 
     public void setCompleteListOfPlayers(){
-        completeListOfPlayers = model.createCompletedPlayersList(listOfPlayers, getDuration());
+        model.createCompletedPlayersList(listOfPlayers, getDuration());
+        completeListOfPlayers = model.getCompleteListOfPlayers();
         completeListOfPlayers = model.shufflePlayerList(completeListOfPlayers);
         System.out.println(completeListOfPlayers);
     }
@@ -69,7 +76,6 @@ public class Controller {
     }
 
 
-
     public void chooseCategory(String category) {
         model.chooseCategory(category);
     }
@@ -77,5 +83,3 @@ public class Controller {
 
 
 }
-
-

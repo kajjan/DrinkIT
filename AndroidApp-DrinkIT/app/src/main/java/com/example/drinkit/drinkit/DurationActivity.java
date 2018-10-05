@@ -8,10 +8,10 @@ import android.view.View;
 import Controller.Controller;
 
 
-public class DurationActivity extends AppCompatActivity {
+public class DurationActivity extends MainView {
 
 
-    Controller ctrl = new Controller();
+    //Controller ctrl = new Controller();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,18 +21,18 @@ public class DurationActivity extends AppCompatActivity {
 
 
     public void shortDuration(View view) {
-        ctrl.setDuration(3);
+        getCtrl().setDuration(3);
         startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
     }
 
     public void mediumDuration(View view) {
-        ctrl.setDuration(5);
+        getCtrl().setDuration(5);
         startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
 
     }
 
     public void longDuration(View view) {
-        ctrl.setDuration(10);
+        getCtrl().setDuration(10);
         startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
 
 

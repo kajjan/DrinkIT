@@ -12,21 +12,24 @@ public class DrinkIT {
     private List<Player> completeListOfPlayers;
     private List<Category> categories = new ArrayList<>();
 
+    /*
     public DrinkIT(List<Player> players, List<Card> cards, List<Challenge> challenges, int durationOfGame) {
         this.players = players;
         this.cards = cards;
         this.challenges = challenges;
         this.durationOfGame = durationOfGame;
     }
+    */
     public DrinkIT() {
 
     }
 
     //Temporary constructor for duration method
+    /*
     public DrinkIT(List<Player> players) {
         this.players = players;
     }
-
+*/
 
     public void addPlayer(String name) {
         players.add(new Player(name));
@@ -35,6 +38,7 @@ public class DrinkIT {
 
     public void setDuration(List<Player> players, int duration) {
         System.out.println("Knappen för vald tid är tryckt och antalet spelare multipliceras med "+ duration);
+
         durationOfGame = players.size() * duration;
     }
 
@@ -43,10 +47,13 @@ public class DrinkIT {
         return durationOfGame;
     }
 
+    public List<Player> getCompleteListOfPlayers() {
+        return completeListOfPlayers;
+    }
 
     //method to create a complete list with all the players multiplide with the duration time.
     //connected from setDuration maybe not the best solution?
-    public List<Player> createCompletedPlayersList (List<Player> listOfPlayers, int durationOfGame){
+    public void createCompletedPlayersList (List<Player> listOfPlayers, int durationOfGame){
         List<Player>completePlayerList = new ArrayList<>(durationOfGame);
         int challengePerPlayer = durationOfGame/listOfPlayers.size();
         int i=0;
@@ -61,7 +68,7 @@ public class DrinkIT {
             }
         }
         System.out.println(completePlayerList);
-        return completePlayerList;
+        completeListOfPlayers = completePlayerList;
     }
 
     //shuffle the completePlayerList

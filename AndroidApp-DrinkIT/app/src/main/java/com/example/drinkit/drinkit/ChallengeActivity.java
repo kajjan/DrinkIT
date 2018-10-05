@@ -7,15 +7,15 @@ import android.widget.TextView;
 
 import Controller.Controller;
 
-public class ChallengeActivity extends AppCompatActivity {
+public class ChallengeActivity extends MainView {
 
 
-    Controller ctrl = new Controller();
+    //Controller ctrl = new Controller();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge);
-        ctrl.setCompleteListOfPlayers();
+        getCtrl().setCompleteListOfPlayers();
 
         printPlayersName();
     }
@@ -23,17 +23,17 @@ public class ChallengeActivity extends AppCompatActivity {
     //print the name of the player on the challenge card
     public void printPlayersName(){
         TextView text=((TextView)findViewById(R.id.playerOfchallenge));
-        text.setText(ctrl.getPlayersName());
+        text.setText(getCtrl().getPlayersName());
     }
 
 
     public void failChallenge(View view) {
-        ctrl.failedChallenge();
+        getCtrl().failedChallenge();
         printPlayersName();
     }
 
     public void succeedChallenge(View view) {
-        ctrl.succeedChallenge();
+        getCtrl().succeedChallenge();
         printPlayersName();
     }
 }

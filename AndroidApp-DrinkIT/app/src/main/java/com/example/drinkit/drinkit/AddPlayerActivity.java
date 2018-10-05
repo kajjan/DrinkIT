@@ -15,9 +15,9 @@ import java.util.List;
 
 import Controller.Controller;
 
-public class AddPlayerActivity extends AppCompatActivity {
+public class AddPlayerActivity extends MainView {
 
-    Controller ctrl = new Controller();
+    //Controller ctrl = new Controller();
 
     EditText playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix, playerSeven, playerEight, playerNine, playerTen;
     List<String> players = new ArrayList<>(10);
@@ -71,7 +71,7 @@ public class AddPlayerActivity extends AppCompatActivity {
                     return;
                 }
                 else{
-                    ctrl.addPlayer(players.get(i));
+                    getCtrl().addPlayer(players.get(i)); //LISA DU TESTAR HÄR
                 }
             }
         }

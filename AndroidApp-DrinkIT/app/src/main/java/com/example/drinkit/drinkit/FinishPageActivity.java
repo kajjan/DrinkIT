@@ -10,8 +10,6 @@ import Controller.Controller;
 
 public class FinishPageActivity extends MainView {
 
-    //Controller ctrl = new Controller();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,17 +20,15 @@ public class FinishPageActivity extends MainView {
     }
 
 
-
     public void printScoreBoard(){
         TextView text=((TextView)findViewById(R.id.printScoreBoard));
         text.setText(getCtrl().putInPointOrder());
     }
 
-    public void continueTheGame(View view) {
+    public void continueTheGame(View view) { //hur vill vi göra här? starta om på ifyllda namn
 
 
     }
-
 
     public void endTheGameButton(View view) {
         getCtrl().endTheGame();

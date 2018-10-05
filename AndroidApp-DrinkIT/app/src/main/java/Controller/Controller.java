@@ -7,8 +7,8 @@ import Model.Player;
 
 public class Controller {
     DrinkIT model;
-    static List<Player> listOfPlayers = new ArrayList<>();
-    static List<Player> completeListOfPlayers = new ArrayList<>();
+    static List<Player> listOfPlayers = new ArrayList<>(); //flytta till model ändra static
+    static List<Player> completeListOfPlayers = new ArrayList<>(); //flytta till model rename?
     int roundOfChallenge = 0;
 
 
@@ -22,21 +22,14 @@ public class Controller {
         this.model = model;
     }
 
-    /*
-        public Controller(List<Player> players, DrinkIT model) {
-            this.listOfPlayers = players;
-            this.model = model;
-
-        }
-    */
 
     //methods
     public void addPlayer(String player) {
         model.addPlayer(player);
-        listOfPlayers = model.getPlayers();
+        listOfPlayers = model.getPlayers(); //Red flag, flytta till model och skaffa en get
     }
 
-    public boolean categoryListEmpty(){
+    public boolean categoryListEmpty(){ //ska ligga i modellen istället
         boolean b = false;
         if(model.getCategories().size()==0){
             b = true;
@@ -45,20 +38,20 @@ public class Controller {
     }
 
     public void setDuration(int duration){
-        model.setDuration(listOfPlayers, duration);
+        model.setDuration(listOfPlayers, duration); //skicka bara med antal, skriv en get för size som returnerar en int
     }
 
     public int getDuration(){
-        return model.getDurationOfGame();
+        return model.getDurationOfGame(); //se ovan
     }
 
-    public String getPlayersName(){
+    public String getPlayersName(){ // samma som alla, ta inte in utan allt finns i modellen
             String name = model.getNameOfPlayer(completeListOfPlayers, roundOfChallenge);
             return name;
 
     }
 
-    public void setCompleteListOfPlayers(){
+    public void setCompleteListOfPlayers(){ //ta inte in något utan kalla på modelen som fixar detta i sjig själv.
         model.createCompletedPlayersList(listOfPlayers, getDuration());
         completeListOfPlayers = model.getCompleteListOfPlayers();
         completeListOfPlayers = model.shufflePlayerList(completeListOfPlayers);
@@ -66,29 +59,29 @@ public class Controller {
     }
 
 
-    public void failedChallenge() {
+    public void failedChallenge() { //same
         roundOfChallenge++;
     }
 
-    public void succeedChallenge(){
-        model.setPointOfPlayer(completeListOfPlayers, roundOfChallenge);
+    public void succeedChallenge(){ //same
+        model.setPointOfPlayer(completeListOfPlayers, roundOfChallenge); //skicka inte med något, lös i model
 
         roundOfChallenge++;
     }
 
 
-    public void chooseCategory(String category) {
+    public void chooseCategory(String category) { //ändra i samband med activiteten
         model.chooseCategory(category);
     }
 
 
     public String putInPointOrder(){
-        String scoreBoard=model.putListInPointOrder(listOfPlayers);
+        String scoreBoard=model.putListInPointOrder(listOfPlayers); //same
         return scoreBoard;
     }
 
     public boolean nextRound(){
-        return model.nextRound(roundOfChallenge);
+        return model.nextRound(roundOfChallenge); //same
     }
 
     public void endTheGame(){

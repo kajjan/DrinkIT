@@ -6,12 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import Controller.Controller;
 
 public class ChallengeActivity extends MainView {
 
-
-    //Controller ctrl = new Controller();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

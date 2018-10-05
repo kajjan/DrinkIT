@@ -22,7 +22,6 @@ public class DurationTest {
 
         model.setDuration(playerlist, duration);
 
-        int newDuration = duration*playerlist.size();
 
         System.out.println("List size: "+playerlist.size());
         System.out.println("Duration: "+duration);

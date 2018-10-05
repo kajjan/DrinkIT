@@ -53,8 +53,9 @@ public class Controller {
     }
 
     public String getPlayersName(){
-        String name= model.getNameOfPlayer(completeListOfPlayers, roundOfChallenge);
-        return name;
+            String name = model.getNameOfPlayer(completeListOfPlayers, roundOfChallenge);
+            return name;
+
     }
 
     public void setCompleteListOfPlayers(){
@@ -80,6 +81,19 @@ public class Controller {
         model.chooseCategory(category);
     }
 
+
+    public String putInPointOrder(){
+        String scoreBoard=model.putListInPointOrder(listOfPlayers);
+        return scoreBoard;
+    }
+
+    public boolean nextRound(){
+        return model.nextRound(roundOfChallenge);
+    }
+
+    public void endTheGame(){
+        model.endTheGame();
+    }
 
 
 }

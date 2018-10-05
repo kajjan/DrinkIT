@@ -1,16 +1,21 @@
 package Model;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class DrinkIT {
-    protected List<Player> players = new ArrayList<>();
+    static List<Player> players = new ArrayList<>();
     private List<Card> cards;
     private List<Challenge> challenges;
     static int durationOfGame;
     private List<Player> completeListOfPlayers;
     private List<Category> categories = new ArrayList<>();
+    private List<Player>playerInPointOrder= new ArrayList<>();
+    static List<String> playerList = new ArrayList<>();
+
 
     /*
     public DrinkIT(List<Player> players, List<Card> cards, List<Challenge> challenges, int durationOfGame) {
@@ -92,11 +97,6 @@ public class DrinkIT {
         System.out.println("Points: " + point);
     }
 
-    //Write a method that keep track of what index in the list of players we are at and wich should be shown. Now it only shows the firt in the list to se that the other methods works.
-    public int getIndexForChallenge(){
-        int i=0;
-        return i;
-    }
 
 
 
@@ -141,8 +141,6 @@ public class DrinkIT {
             if (category.equals(categories.get(i).getCategoryName())) {
                 categories.remove(i);
                 System.out.println(getCategoryNames());
-
-
             }
         }
     }
@@ -165,8 +163,6 @@ public class DrinkIT {
 
 
 
-
-
     //method for test
     public List<String> getCategoryNames() {
         List<String> categoryNames = new ArrayList<>();
@@ -182,5 +178,70 @@ public class DrinkIT {
         this.players = players;
         this.cards = cards;
         this.challenges = challenges;
+    }
+
+
+    //method that puts every player in the players list in order of highest point to smallest.
+    public String putListInPointOrder(List<Player>players) {
+
+        for (int i = 0; i < players.size(); i++) {
+            Player s = players.get(i);
+            int nextIndex=i+1;
+            if(i<players.size()-1) {
+                for (int j = i; j <players.size() ; j++) {
+
+                    while (s.getPoint() < players.get(j).getPoint()) {
+                        Collections.swap(players, i, j);
+                    }
+
+                }
+            }
+
+        }
+        List<String>lista= playerListString();
+        String scoreText= getScoreBoardText(lista);
+        return scoreText;
+    }
+
+    //creates a list of strings with the players in a order after points.
+    public List<String> playerListString(){
+        for (Player c : players) {
+            playerList.add(playerToString(c));
+        }
+        return playerList;
+    }
+
+
+    //method that makes a list that write the players name and its point in a list of strings.
+    public String playerToString(Player player){
+        String playerToString =player.getName() + " " + player.getPoint() + " Points";
+
+        return playerToString;
+    }
+
+
+    public String getScoreBoardText(List<String>playerInOrder){
+        String scoreText= "";
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i <playerInOrder.size(); i++) {
+
+           sb.append(playerInOrder.get(i) + "\n");
+        }
+        scoreText= sb.toString();
+        return scoreText;
+    }
+
+    //Method that keep track if the game is done and if the view should change to the finishPage
+    public boolean nextRound(int roundOfChallenge){
+        if(durationOfGame>roundOfChallenge){
+            return true;
+        }
+        return false;
+    }
+
+    public void endTheGame(){
+        playerList.clear();
+        players.clear();
+
     }
 }

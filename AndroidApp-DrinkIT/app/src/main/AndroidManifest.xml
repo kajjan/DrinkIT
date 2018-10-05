@@ -21,6 +21,8 @@
         <activity android:name=".AddPlayerActivity" />
         <activity android:name=".InstructionsActivity" />
         <activity android:name=".ChallengeActivity" />
+        <activity android:name=".FinishPageActivity"/>
+        <activity android:name=".ChallengeActivity" />
         <activity android:name=".StartPageActivity"></activity>
     </application>
 

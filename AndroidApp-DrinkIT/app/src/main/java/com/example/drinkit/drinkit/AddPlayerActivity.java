@@ -93,4 +93,5 @@ public class AddPlayerActivity extends MainView {
 
 
     //TEST för merge med develop
+    //FUNKAR DETTA?
 }

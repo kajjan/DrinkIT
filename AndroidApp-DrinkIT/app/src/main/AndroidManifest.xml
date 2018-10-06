@@ -9,19 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartPageActivity">
+        <activity android:name=".MainAppActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ChooseCategoryActivity" />
         <activity android:name=".DurationActivity" />
         <activity android:name=".AddPlayerActivity" />
         <activity android:name=".InstructionsActivity" />
-        <activity android:name=".ChallengeActivity"></activity>
+        <activity android:name=".ChallengeActivity" />
+        <activity android:name=".FinishPageActivity"/>
+        <activity android:name=".ChallengeActivity" />
+        <activity android:name=".StartPageActivity"></activity>
     </application>
 
 </manifest>

@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class StartPageActivity extends AppCompatActivity {
+public class StartPageActivity extends MainView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

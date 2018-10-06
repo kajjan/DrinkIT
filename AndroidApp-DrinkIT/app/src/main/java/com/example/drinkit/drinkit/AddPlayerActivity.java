@@ -10,16 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-import Controller.Controller;
 
-public class AddPlayerActivity extends AppCompatActivity {
 
-    Controller ctrl = new Controller();
+public class AddPlayerActivity extends MainView {
+
 
     EditText playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix, playerSeven, playerEight, playerNine, playerTen;
     List<String> players = new ArrayList<>(10);
@@ -28,7 +25,6 @@ public class AddPlayerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
-
     }
 
     public void nextToCategoryPage(View view) {
@@ -74,37 +70,19 @@ public class AddPlayerActivity extends AppCompatActivity {
                     return;
                 }
                 else{
-                    ctrl.addPlayer(players.get(i));
+                    getCtrl().addPlayer(players.get(i));
                 }
             }
         }
     }
 
-    InputStream is = getResources().openRawResource(getResources().getIdentifier("charades", "raw", getPackageName()));
-
-
-    public void scanTextFile(InputStream is){
-        Scanner scan = new Scanner(is);
-        String line = scan.nextLine();
-        String[] parts = line.split("-");
-        String instruction = parts[0];
-        System.out.println(instruction);
-        while(scan.hasNextLine()){
-            String newline = scan.nextLine();
-            String[] newsplit = newline.split("-");
-            String underCat = newsplit[0];
-
-            System.out.println(underCat);
-
-        }
-
-    }
-
+    //Kan denna ersätts av en .contains??
     public boolean sameName(List<String> players, String player){ //Method that checks if player already exists in list
         int numberOfTimes=0;
         for (String name: players) {
             if(name.equals(player)){
                 numberOfTimes++;
+
             }
             if(numberOfTimes>1){
                 return true;
@@ -112,4 +90,10 @@ public class AddPlayerActivity extends AppCompatActivity {
         }
         return false;
     }
+
+
+    //TEST för merge med develop
+    //FUNKAR DETTA?
+    //jävla meetings
+    
 }

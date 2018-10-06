@@ -61,18 +61,6 @@ public class AddPlayerActivity extends AppCompatActivity {
         players.add(playerNine.getText().toString());
         players.add(playerTen.getText().toString());
 
-        InputStream is = getResources().openRawResource(getResources().getIdentifier("charades", "raw", getPackageName()));
-
-        Scanner scan = new Scanner(is);
-        while(scan.hasNextLine()){
-            String line = scan.nextLine();
-            String[] parts = line.split("-");
-            String instruction = parts[0];
-            String underCat = parts[1];
-
-            System.out.println(instruction);
-  //          System.out.println(underCat);
-        }
 
         for (int i = 0; i <players.size() ; i++) {
             if (players.get(i).isEmpty()){
@@ -92,12 +80,31 @@ public class AddPlayerActivity extends AppCompatActivity {
         }
     }
 
+    InputStream is = getResources().openRawResource(getResources().getIdentifier("charades", "raw", getPackageName()));
+
+
+    public void scanTextFile(InputStream is){
+        Scanner scan = new Scanner(is);
+        String line = scan.nextLine();
+        String[] parts = line.split("-");
+        String instruction = parts[0];
+        System.out.println(instruction);
+        while(scan.hasNextLine()){
+            String newline = scan.nextLine();
+            String[] newsplit = newline.split("-");
+            String underCat = newsplit[0];
+
+            System.out.println(underCat);
+
+        }
+
+    }
+
     public boolean sameName(List<String> players, String player){ //Method that checks if player already exists in list
         int numberOfTimes=0;
         for (String name: players) {
             if(name.equals(player)){
                 numberOfTimes++;
-
             }
             if(numberOfTimes>1){
                 return true;

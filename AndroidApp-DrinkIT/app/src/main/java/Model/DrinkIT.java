@@ -7,18 +7,37 @@ import java.util.Comparator;
 import java.util.List;
 
 public class DrinkIT {
+    Category cat = new Category();
     static List<Player> players = new ArrayList<>();
     private List<Card> cards;
-    private List<Challenge> challenges;
     static int durationOfGame;
     private List<Player> completeListOfPlayers;
     private List<Category> categories = new ArrayList<>();
     private List<Player>playerInPointOrder= new ArrayList<>();
     static List<String> playerList = new ArrayList<>();
+    private List<Challenge> challenges = new ArrayList<>();
+
 
 
 
     public DrinkIT() {}
+
+
+
+    public void setListOfChallenges(String categoryName, String challenge) {
+        //Skicka till Challenge och skapa en NY challenge dela upp med vilket poäng.
+
+        //Gets out the int from string (points)
+        String numInString = challenge.replaceAll("[^0-9]+", "");
+        int num = Integer.parseInt(numInString);
+
+        Challenge challenge1 = new Challenge(numInString, num); //Creates a new challenge
+        cat.addChallenge(categoryName, challenge1);
+    }
+
+    public void createCategory(String category, String catInstruction) {
+        new Category(category, catInstruction);
+    }
 
 
     public void addPlayer(String name) {
@@ -59,6 +78,8 @@ public class DrinkIT {
         }
         System.out.println(completePlayerList);
         completeListOfPlayers = completePlayerList;
+        System.out.println(cat.getNeverHaveIEverChallenges().toString());
+        System.out.println(cat.getCharadChallenges().toString());
     }
 
     //shuffle the completePlayerList
@@ -66,7 +87,6 @@ public class DrinkIT {
         Collections.shuffle(listOfPlayers);
         return listOfPlayers;
     }
-
 
     //method to get the name of the player in the list. Need to get so that the index is controlled somewhere else.
     public String getNameOfPlayer (List<Player>listOfPlayer, int index){ //om kallas från controller ta bara in index
@@ -226,4 +246,5 @@ public class DrinkIT {
 
         return names;
     }
+
 }

@@ -1,3 +1,5 @@
-här ska det sparas instruktioner
-här ska första utmaningen stå
-här ska andra utmaningen stå
+charades
+charades, write instructions here
+charades first challenge here 2
+charades second challenge here 3
+charades third challenge here 4

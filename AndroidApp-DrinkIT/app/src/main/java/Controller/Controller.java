@@ -24,6 +24,13 @@ public class Controller {
 
 
     //methods
+    public void setChallengeInstruction(String category, String catInstruction){
+        model.createCategory(category, catInstruction);
+    }
+
+    public void setChallenge(String category, String challenge){
+        model.setListOfChallenges(category, challenge);
+    }
     public void addPlayer(String player) {
         model.addPlayer(player);
         listOfPlayers = model.getPlayers(); //Red flag, flytta till model och skaffa en get

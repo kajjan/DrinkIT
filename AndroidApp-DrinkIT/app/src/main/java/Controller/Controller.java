@@ -8,7 +8,6 @@ import Model.Player;
 public class Controller {
     DrinkIT model;
     static List<Player> listOfPlayers = new ArrayList<>(); //flytta till model ändra static
-    static List<Player> completeListOfPlayers = new ArrayList<>(); //flytta till model rename?
 
 
     //Constructors

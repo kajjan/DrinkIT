@@ -10,10 +10,9 @@ public class DrinkIT {
     static List<Player> players = new ArrayList<>();
     private List<Card> cards;
     private List<Challenge> challenges;
-    static int durationOfGame;
+    int durationOfGame;
     private List<Player> completeListOfPlayers = new ArrayList<>();
     private List<Category> categories = new ArrayList<>();
-    private List<Player>playerInPointOrder= new ArrayList<>();
     static List<String> playerList = new ArrayList<>();
     int index=0;
 

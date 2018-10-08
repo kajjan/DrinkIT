@@ -78,6 +78,8 @@ public class Controller {
         return model.nextRound();
     }
 
+
+    //just nu kan vi inte starta om spelet så allt funkar när jag tagit bort saker som är static... klurar på en lösning med det!!
     public void endTheGame(){
         model.endTheGame();
     }

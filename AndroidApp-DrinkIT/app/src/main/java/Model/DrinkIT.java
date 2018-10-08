@@ -7,13 +7,13 @@ import java.util.Comparator;
 import java.util.List;
 
 public class DrinkIT {
-    static List<Player> players = new ArrayList<>();
+    List<Player> players = new ArrayList<>();
     private List<Card> cards;
     private List<Challenge> challenges;
-    int durationOfGame;
+    int durationOfGame=0;
     private List<Player> completeListOfPlayers = new ArrayList<>();
     private List<Category> categories = new ArrayList<>();
-    static List<String> playerList = new ArrayList<>();
+    List<String> playerList = new ArrayList<>();
     int index=0;
 
 
@@ -37,9 +37,6 @@ public class DrinkIT {
         return durationOfGame;
     }
 
-    public List<Player> getCompleteListOfPlayers() {
-        return completeListOfPlayers;
-    } //se över, ev bara skick lista av namn
 
     //method to create a complete list with all the players multiplide with the duration time.
     //connected from setDuration maybe not the best solution?
@@ -197,10 +194,13 @@ public class DrinkIT {
         }
         return false;
     }
-
     public void endTheGame(){
         playerList.clear();
         players.clear();
+        categories.clear();
+        completeListOfPlayers.clear();
+        index=0;
+        durationOfGame=0;
 
     }
 

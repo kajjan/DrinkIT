@@ -14,6 +14,7 @@ public class DrinkIT {
     private List<Player> completeListOfPlayers = new ArrayList<>();
     private List<Category> categories = new ArrayList<>();
     List<String> playerList = new ArrayList<>();
+    private List<String>playerInPointOrder = new ArrayList<>();
     int index=0;
 
 
@@ -138,7 +139,7 @@ public class DrinkIT {
 
 
     //method that puts every player in the players list in order of highest point to smallest.
-    public String putListInPointOrder() {
+    public void putListInPointOrder() {
 
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
@@ -154,9 +155,7 @@ public class DrinkIT {
             }
 
         }
-        List<String>lista= playerListString();
-        String scoreText= getScoreBoardText(lista);
-        return scoreText;
+        playerInPointOrder= playerListString();
     }
 
     //creates a list of strings with the players in a order after points.
@@ -176,12 +175,12 @@ public class DrinkIT {
     }
 
 
-    public String getScoreBoardText(List<String>playerInOrder){ //private
+    public String getScoreBoardText(){ //private
         String scoreText= "";
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i <playerInOrder.size(); i++) {
+        for (int i = 0; i <playerInPointOrder.size(); i++) {
 
-           sb.append(playerInOrder.get(i) + "\n");
+           sb.append(playerInPointOrder.get(i) + "\n");
         }
         scoreText= sb.toString();
         return scoreText;

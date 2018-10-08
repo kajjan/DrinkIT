@@ -68,9 +68,9 @@ public class Controller {
         model.chooseCategory(category);
     }
 
-
-    public String putInPointOrder(){
-        String scoreBoard=model.putListInPointOrder();
+    public String getScoreBoard(){
+        model.putListInPointOrder();
+        String scoreBoard=model.getScoreBoardText();
         return scoreBoard;
     }
 

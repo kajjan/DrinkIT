@@ -22,7 +22,7 @@ public class FinishPageActivity extends MainView {
 
     public void printScoreBoard(){
         TextView text=((TextView)findViewById(R.id.printScoreBoard));
-        text.setText(getCtrl().putInPointOrder());
+        text.setText(getCtrl().getScoreBoard());
     }
 
     public void continueTheGame(View view) { //hur vill vi göra här? starta om på ifyllda namn

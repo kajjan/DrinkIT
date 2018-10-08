@@ -70,8 +70,8 @@ public class Controller {
 
     public String getScoreBoard(){
         model.putListInPointOrder();
-        String scoreBoard=model.getScoreBoardText();
-        return scoreBoard;
+        return model.getScoreBoardText();
+
     }
 
     public boolean nextRound(){

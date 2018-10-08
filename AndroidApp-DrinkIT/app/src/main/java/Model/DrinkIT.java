@@ -143,7 +143,6 @@ public class DrinkIT {
 
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
-            int nextIndex=i+1;
             if(i<players.size()-1) {
                 for (int j = i; j <players.size() ; j++) {
 
@@ -170,12 +169,11 @@ public class DrinkIT {
     //method that makes a list that write the players name and its point in a list of strings.
     private String playerToString(Player player){ //private
         String playerToString =player.getName() + " " + player.getPoint() + " Points";
-
         return playerToString;
     }
 
-
-    public String getScoreBoardText(){ //private
+    //method that returns the whole scoreboard as one string.
+    public String getScoreBoardText(){
         String scoreText= "";
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i <playerInPointOrder.size(); i++) {
@@ -193,6 +191,8 @@ public class DrinkIT {
         }
         return false;
     }
+
+    //Method that clears the model for a possible new round
     public void endTheGame(){
         playerList.clear();
         players.clear();

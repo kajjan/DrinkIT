@@ -27,7 +27,7 @@ public class DrinkIT {
     } //ok
 
 
-    public void setDuration(int duration) {//ta bara in duration och hämta lämgden från listan som ka finnas här i modellen.
+    public void setDuration(int duration) {
         System.out.println("Knappen för vald tid är tryckt och antalet spelare multipliceras med "+ duration);
 
         durationOfGame = players.size() * duration;
@@ -58,9 +58,8 @@ public class DrinkIT {
     }
 
     //shuffle the completePlayerList
-    private List<Player>shufflePlayerList (List<Player>listOfPlayers){ //ev privet, bör va void
+    private void shufflePlayerList (List<Player>listOfPlayers){ //ev privet, bör va void
         Collections.shuffle(listOfPlayers);
-        return listOfPlayers;
     }
 
 

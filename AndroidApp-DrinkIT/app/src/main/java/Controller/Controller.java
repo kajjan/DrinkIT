@@ -36,12 +36,9 @@ public class Controller {
     }
 
     public void setDuration(int duration){
-        model.setDuration(duration); //skicka bara med antal, skriv en get för size som returnerar en int
+        model.setDuration(duration);
     }
 
-    public int getDuration(){
-        return model.getDurationOfGame(); //se ovan
-    }
 
     public String getPlayersName(){
             String name = model.getNameOfPlayer();

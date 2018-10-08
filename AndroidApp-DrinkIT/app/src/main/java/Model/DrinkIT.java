@@ -27,7 +27,7 @@ public class DrinkIT {
     } //ok
 
 
-    public void setDuration(List<Player> players, int duration) {//ta bara in duration och hämta lämgden från listan som ka finnas här i modellen.
+    public void setDuration(int duration) {//ta bara in duration och hämta lämgden från listan som ka finnas här i modellen.
         System.out.println("Knappen för vald tid är tryckt och antalet spelare multipliceras med "+ duration);
 
         durationOfGame = players.size() * duration;

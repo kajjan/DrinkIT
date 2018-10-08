@@ -36,7 +36,7 @@ public class Controller {
     }
 
     public void setDuration(int duration){
-        model.setDuration(listOfPlayers, duration); //skicka bara med antal, skriv en get för size som returnerar en int
+        model.setDuration(duration); //skicka bara med antal, skriv en get för size som returnerar en int
     }
 
     public int getDuration(){

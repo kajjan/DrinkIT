@@ -9,7 +9,6 @@ public class Controller {
     DrinkIT model;
     static List<Player> listOfPlayers = new ArrayList<>(); //flytta till model ändra static
     static List<Player> completeListOfPlayers = new ArrayList<>(); //flytta till model rename?
-    int roundOfChallenge = 0;
 
 
     //Constructors
@@ -45,28 +44,24 @@ public class Controller {
         return model.getDurationOfGame(); //se ovan
     }
 
-    public String getPlayersName(){ // samma som alla, ta inte in utan allt finns i modellen
-            String name = model.getNameOfPlayer(completeListOfPlayers, roundOfChallenge);
+    public String getPlayersName(){
+            String name = model.getNameOfPlayer();
             return name;
 
     }
 
-    public void setCompleteListOfPlayers(){ //ta inte in något utan kalla på modelen som fixar detta i sjig själv.
-        model.createCompletedPlayersList(listOfPlayers, getDuration());
-        completeListOfPlayers = model.getCompleteListOfPlayers();
-        completeListOfPlayers = model.shufflePlayerList(completeListOfPlayers);
-        System.out.println(completeListOfPlayers);
+    public void setCompleteListOfPlayers(){
+        model.createCompletedPlayersList();
     }
 
 
-    public void failedChallenge() { //same
-        roundOfChallenge++;
+    public void failedChallenge() {
+        model.failedChallenge();
+
     }
 
-    public void succeedChallenge(){ //same
-        model.setPointOfPlayer(completeListOfPlayers, roundOfChallenge); //skicka inte med något, lös i model
-
-        roundOfChallenge++;
+    public void succeedChallenge(){
+        model.succeedChallenge();
     }
 
 
@@ -76,12 +71,12 @@ public class Controller {
 
 
     public String putInPointOrder(){
-        String scoreBoard=model.putListInPointOrder(listOfPlayers); //same
+        String scoreBoard=model.putListInPointOrder();
         return scoreBoard;
     }
 
     public boolean nextRound(){
-        return model.nextRound(roundOfChallenge); //same
+        return model.nextRound();
     }
 
     public void endTheGame(){

@@ -11,10 +11,11 @@ public class DrinkIT {
     private List<Card> cards;
     private List<Challenge> challenges;
     static int durationOfGame;
-    private List<Player> completeListOfPlayers;
+    private List<Player> completeListOfPlayers = new ArrayList<>();
     private List<Category> categories = new ArrayList<>();
     private List<Player>playerInPointOrder= new ArrayList<>();
     static List<String> playerList = new ArrayList<>();
+    int index=0;
 
 
 
@@ -43,45 +44,50 @@ public class DrinkIT {
 
     //method to create a complete list with all the players multiplide with the duration time.
     //connected from setDuration maybe not the best solution?
-    public void createCompletedPlayersList (List<Player> listOfPlayers, int durationOfGame){ //privet
-        List<Player>completePlayerList = new ArrayList<>(durationOfGame);
-        int challengePerPlayer = durationOfGame/listOfPlayers.size();
+    public void createCompletedPlayersList (){ //privet
+        int challengePerPlayer = durationOfGame/players.size();
         int i=0;
-        for(Player player: listOfPlayers){
+        for(Player player: players){
 
             while(i!=challengePerPlayer) {
-                completePlayerList.add(player);
+                completeListOfPlayers.add(player);
                 i++;
             }
             if(i==challengePerPlayer){
                 i=0;
             }
         }
-        System.out.println(completePlayerList);
-        completeListOfPlayers = completePlayerList;
+        shufflePlayerList(completeListOfPlayers);
     }
 
     //shuffle the completePlayerList
-    public List<Player>shufflePlayerList (List<Player>listOfPlayers){ //ev privet, bör va void
+    private List<Player>shufflePlayerList (List<Player>listOfPlayers){ //ev privet, bör va void
         Collections.shuffle(listOfPlayers);
         return listOfPlayers;
     }
 
 
     //method to get the name of the player in the list. Need to get so that the index is controlled somewhere else.
-    public String getNameOfPlayer (List<Player>listOfPlayer, int index){ //om kallas från controller ta bara in index
-        String name= listOfPlayer.get(index).getName();
-        System.out.println(name);
+    public String getNameOfPlayer (){ //om kallas från controller ta bara in index
+        String name= completeListOfPlayers.get(index).getName();
         return name;
     }
 
-    public void setPointOfPlayer (List<Player>listOfPlayer, int index){ //samma som ovn, bara index in
-        int point = listOfPlayer.get(index).getPoint();
+    private void setPointOfPlayer (){
+        int point = completeListOfPlayers.get(index).getPoint();
         point++;
-        listOfPlayer.get(index).setPoint(point);
+        completeListOfPlayers.get(index).setPoint(point);
         System.out.println("Points: " + point);
     }
 
+    public void succeedChallenge(){
+        setPointOfPlayer();
+        index++;
+    }
+
+    public void failedChallenge(){
+        index++;
+    }
 
 
 
@@ -136,7 +142,7 @@ public class DrinkIT {
 
 
     //method that puts every player in the players list in order of highest point to smallest.
-    public String putListInPointOrder(List<Player>players) { //ny indata, du får inget men du har allt här i modellen
+    public String putListInPointOrder() {
 
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
@@ -158,7 +164,7 @@ public class DrinkIT {
     }
 
     //creates a list of strings with the players in a order after points.
-    public List<String> playerListString(){ //private
+    private List<String> playerListString(){ //private
         for (Player c : players) {
             playerList.add(playerToString(c));
         }
@@ -167,7 +173,7 @@ public class DrinkIT {
 
 
     //method that makes a list that write the players name and its point in a list of strings.
-    public String playerToString(Player player){ //private
+    private String playerToString(Player player){ //private
         String playerToString =player.getName() + " " + player.getPoint() + " Points";
 
         return playerToString;
@@ -186,8 +192,8 @@ public class DrinkIT {
     }
 
     //Method that keep track if the game is done and if the view should change to the finishPage
-    public boolean nextRound(int roundOfChallenge){ //om round of challenges ligger i modellen löser det denna
-        if(durationOfGame>roundOfChallenge){
+    public boolean nextRound(){
+        if(durationOfGame>index){
             return true;
         }
         return false;

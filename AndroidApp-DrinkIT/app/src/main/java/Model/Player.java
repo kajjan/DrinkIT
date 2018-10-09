@@ -1,6 +1,6 @@
 package Model;
 
-public class Player {
+public class Player { //gör privte om möjligt, se över övriga instanser i klass
 
     private String name;
     private int point;
@@ -21,7 +21,6 @@ public class Player {
     public void setPoint(int point) {
         this.point = point;
     }
-
 
 
 

@@ -2,35 +2,32 @@ package Controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import Model.DrinkIT;
 import Model.Player;
 
 public class Controller {
-    DrinkIT model = new DrinkIT();
-    static List<Player> listOfPlayers = new ArrayList<>();
-    static List<Player> completeListOfPlayers = new ArrayList<>();
-    int roundOfChallenge = 0;
+    DrinkIT model;
+    static List<Player> listOfPlayers = new ArrayList<>(); //flytta till model ändra static
 
 
     //Constructors
+
     public Controller() {
 
     }
 
-    public Controller(List<Player> players, DrinkIT model) {
-        this.listOfPlayers = players;
+    public Controller(DrinkIT model) {
         this.model = model;
-
     }
+
 
     //methods
     public void addPlayer(String player) {
         model.addPlayer(player);
-        listOfPlayers = model.getPlayers();
+        listOfPlayers = model.getPlayers(); //Red flag, flytta till model och skaffa en get
     }
 
-    public boolean categoryListEmpty(){
+    public boolean categoryListEmpty(){ //ska ligga i modellen istället
         boolean b = false;
         if(model.getCategories().size()==0){
             b = true;
@@ -39,43 +36,48 @@ public class Controller {
     }
 
     public void setDuration(int duration){
-        model.setDuration(listOfPlayers, duration);
+        model.setDuration(duration);
     }
 
-    public int getDuration(){
-        return model.getDurationOfGame();
-    }
 
     public String getPlayersName(){
-        String name= model.getNameOfPlayer(completeListOfPlayers, roundOfChallenge);
-        return name;
+            String name = model.getNameOfPlayer();
+            return name;
+
     }
 
     public void setCompleteListOfPlayers(){
-        completeListOfPlayers = model.createCompletedPlayersList(listOfPlayers, getDuration());
-        completeListOfPlayers = model.shufflePlayerList(completeListOfPlayers);
-        System.out.println(completeListOfPlayers);
+        model.createCompletedPlayersList();
     }
 
 
     public void failedChallenge() {
-        roundOfChallenge++;
+        model.failedChallenge();
+
     }
 
     public void succeedChallenge(){
-        model.setPointOfPlayer(completeListOfPlayers, roundOfChallenge);
-
-        roundOfChallenge++;
+        model.succeedChallenge();
     }
 
 
-
-    public void chooseCategory(String category) {
+    public void chooseCategory(String category) { //ändra i samband med activiteten
         model.chooseCategory(category);
     }
 
+    public String getScoreBoard(){
+        model.putListInPointOrder();
+        return model.getScoreBoardText();
+
+    }
+
+    public boolean nextRound(){
+        return model.nextRound();
+    }
+
+    public void endTheGame(){
+        model.endTheGame();
+    }
 
 
 }
-
-

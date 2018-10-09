@@ -1,7 +1,6 @@
 package com.example.drinkit.drinkit;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -13,7 +12,7 @@ public class ChallengeActivity extends MainView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge);
-        getCtrl().setCompleteListOfPlayers();
+        getCtrl().createCompleteListOfPlayers();
 
         printPlayersName();
     }
@@ -35,8 +34,8 @@ public class ChallengeActivity extends MainView {
         }
     }
 
-    public void succeedChallenge(View view) {
-        getCtrl().succeedChallenge();
+    public void succeededChallenge(View view) {
+        getCtrl().succeededChallenge();
         if(nextRound()) {
             printPlayersName();
         }

@@ -46,6 +46,6 @@
             android:layout_alignTop="@+id/failButton"
             android:layout_marginEnd="78dp"
             android:text="Succeed"
-            android:onClick="succeedChallenge"/>
+            android:onClick="succeededChallenge"/>
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

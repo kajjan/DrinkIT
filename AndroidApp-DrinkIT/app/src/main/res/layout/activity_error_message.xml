@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ErrorMessageActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageButton
+            android:id="@+id/exitInstructionsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="14dp"
+            android:layout_marginTop="11dp"
+            android:gravity="top"
+            android:onClick="exitErrorMessage"
+            app:srcCompat="@android:drawable/btn_dialog"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14dp" />
+
+        <TextView
+            android:id="@+id/instructionsText"
+            android:layout_width="wrap_content"
+            android:layout_height="74dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="Please type in the names again"
+            android:layout_alignParentLeft="true" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

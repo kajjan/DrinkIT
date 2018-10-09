@@ -65,7 +65,7 @@ public class AddPlayerActivity extends MainView {
             else{
                 System.out.println(players.get(i));
                 if (sameName(players, players.get(i))){
-                    //Error message
+                    startActivity(new Intent(AddPlayerActivity.this, ErrorMessageActivity.class));
                     System.out.println("Type in names again");
                     return;
                 }

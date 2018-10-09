@@ -5,12 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import Controller.Controller;
-import Model.Category;
-
 public class ChooseCategoryActivity extends MainView {
 
-    //Controller ctrl = new Controller();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +19,7 @@ public class ChooseCategoryActivity extends MainView {
         if (!(getCtrl().categoryListEmpty())) {
             startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
         } else {
-            System.out.println("Please select a category before moving forward");
+            System.out.println("Please select a category before moving forward"); //visual feedback till användaren på skärmen istället
         }
     }
 
@@ -32,7 +28,7 @@ public class ChooseCategoryActivity extends MainView {
 
     }
 
-    public void category1(View view) {getCtrl().chooseCategory("Charades");}
+    public void category1(View view) {getCtrl().chooseCategory("Charades");} //hitta lösning, ev skapa enum i appen? på något sätt inte ge vyn tillåtelse att ändra eller se för mycket
 
     public void category2(View view) {getCtrl().chooseCategory("Quiz");}
 

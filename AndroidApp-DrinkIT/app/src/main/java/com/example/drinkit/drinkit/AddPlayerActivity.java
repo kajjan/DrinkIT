@@ -13,11 +13,10 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
-import Controller.Controller;
+
 
 public class AddPlayerActivity extends MainView {
 
-    //Controller ctrl = new Controller();
 
     EditText playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix, playerSeven, playerEight, playerNine, playerTen;
     List<String> players = new ArrayList<>(10);
@@ -71,12 +70,13 @@ public class AddPlayerActivity extends MainView {
                     return;
                 }
                 else{
-                    getCtrl().addPlayer(players.get(i)); //LISA DU TESTAR HÄR
+                    getCtrl().addPlayer(players.get(i));
                 }
             }
         }
     }
 
+    //Kan denna ersätts av en .contains??
     public boolean sameName(List<String> players, String player){ //Method that checks if player already exists in list
         int numberOfTimes=0;
         for (String name: players) {
@@ -93,4 +93,7 @@ public class AddPlayerActivity extends MainView {
 
 
     //TEST för merge med develop
+    //FUNKAR DETTA?
+    //jävla meetings
+    
 }

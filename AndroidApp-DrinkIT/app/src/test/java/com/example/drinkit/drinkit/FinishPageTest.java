@@ -6,7 +6,7 @@ import Model.DrinkIT;
 
 public class FinishPageTest {
 
-    DrinkIT model = new DrinkIT(null, null, null);
+    DrinkIT model = new DrinkIT();
 
 
     @Test

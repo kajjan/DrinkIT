@@ -32,7 +32,7 @@ public class AddPlayerTest {
     Player khaleesi = new Player("Daenerys Targaryen");
     Player redViper = new Player("Oberyn Martell");
 
-    DrinkIT model = new DrinkIT(playersList, null, null);
+   DrinkIT model= new DrinkIT(playersList);
     Controller ctrl = new Controller(model);
 
     @Test
@@ -73,13 +73,13 @@ public class AddPlayerTest {
 
         duration = playersList.size() * duration; //Copied method setDuration()
 
-        model.createCompletedPlayersList(playersList, duration);
+       // model.createCompletedPlayersList(playersList, duration);
 
-        int endlenght = model.getCompleteListOfPlayers().size();
+       // int endlenght = model.getCompleteListOfPlayers().size();
 
        // assert (endlenght == 12);
        // assert(endlenght == 20);
-        assert(endlenght == 40);
+        assert(duration == 40);
 
     }
 
@@ -92,7 +92,7 @@ public class AddPlayerTest {
 
     int index = 2;
 
-    model.setPointOfPlayer(playersList, index);
+   // model.setPointOfPlayer(playersList, index);
     //Should increase point of Player on index index in list of players
 
     int points = redViper.getPoint();

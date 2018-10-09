@@ -28,6 +28,10 @@ public class AddPlayerTest {
     int initialLength = playersList.size();
     int countName = 0;
 
+    Player noOne = new Player("Arya Stark");
+    Player khaleesi = new Player("Daenerys Targaryen");
+    Player redViper = new Player("Oberyn Martell");
+
     DrinkIT model = new DrinkIT(playersList, null, null);
     Controller ctrl = new Controller(model);
 
@@ -81,9 +85,6 @@ public class AddPlayerTest {
 
     @Test
     public void setPointOfPlayer(){
-    Player noOne = new Player("Arya Stark");
-    Player khaleesi = new Player("Daenerys Targaryen");
-    Player redViper = new Player("Oberyn Martell");
 
     playersList.add(noOne);
     playersList.add(khaleesi);
@@ -100,7 +101,19 @@ public class AddPlayerTest {
 
     }
 
+    @Test
+    public void getScoreBoardText(){
 
+     playersList.add(noOne);
+     playersList.add(khaleesi);
+     playersList.add(redViper);
+
+     noOne.setPoint(3);
+     khaleesi.setPoint(2);
+     redViper.setPoint(0);
+
+
+ }
 
 
 

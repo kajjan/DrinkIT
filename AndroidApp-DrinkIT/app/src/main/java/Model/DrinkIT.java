@@ -153,15 +153,15 @@ public class DrinkIT {
             }
 
         }
-        playerInPointOrder= playerListString();
+        playerListString();
     }
 
     //creates a list of strings with the players in a order after points.
-    private List<String> playerListString(){ //private
+    private void playerListString(){ //private
         for (Player c : players) {
-            playerList.add(playerToString(c));
+            playerInPointOrder.add(playerToString(c));
         }
-        return playerList;
+
     }
 
 

@@ -27,10 +27,6 @@ public class AddPlayerActivity extends MainView {
         setContentView(R.layout.activity_add_player);
     }
 
-    public void nextToCategoryPage(View view) {
-        startActivity(new Intent(AddPlayerActivity.this, ChooseCategoryActivity.class));
-    }
-
 
     public void namesSubmitClick(View view) { //Method that saves all of the players and send it to the controller
         players.clear();
@@ -71,6 +67,7 @@ public class AddPlayerActivity extends MainView {
                 }
                 else{
                     getCtrl().addPlayer(players.get(i));
+                    startActivity(new Intent(AddPlayerActivity.this, ChooseCategoryActivity.class));
                 }
             }
         }
@@ -92,8 +89,6 @@ public class AddPlayerActivity extends MainView {
     }
 
 
-    //TEST för merge med develop
-    //FUNKAR DETTA?
-    //jävla meetings
-    
+
+
 }

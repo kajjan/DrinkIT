@@ -184,17 +184,4 @@
         android:layout_marginLeft="60sp"
         android:text="Submit" />
 
-    <Button
-        android:id="@+id/nextPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="60sp"
-        android:layout_marginRight="60sp"
-        android:layout_marginBottom="20sp"
-        android:onClick="nextToCategoryPage"
-        android:text="Next" />
-
 </RelativeLayout>

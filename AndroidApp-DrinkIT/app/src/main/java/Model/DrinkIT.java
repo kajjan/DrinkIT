@@ -41,7 +41,7 @@ public class DrinkIT {
 
     //method to create a complete list with all the players multiplide with the duration time.
     //connected from setDuration maybe not the best solution?
-    public void createCompletedPlayersList (){ //privet
+    public void createCompletedPlayersList (){
         int challengePerPlayer = durationOfGame/players.size();
         int i=0;
         for(Player player: players){
@@ -65,8 +65,8 @@ public class DrinkIT {
 
     //method to get the name of the player in the list. Need to get so that the index is controlled somewhere else.
     public String getNameOfPlayer (){ //om kallas från controller ta bara in index
-        String name= completeListOfPlayers.get(index).getName();
-        return name;
+         return completeListOfPlayers.get(index).getName();
+
     }
 
     private void setPointOfPlayer (){
@@ -197,6 +197,7 @@ public class DrinkIT {
         players.clear();
         categories.clear();
         completeListOfPlayers.clear();
+        playerInPointOrder.clear();
         index=0;
         durationOfGame=0;
 

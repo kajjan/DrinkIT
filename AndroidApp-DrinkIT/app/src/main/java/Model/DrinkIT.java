@@ -42,7 +42,7 @@ public class DrinkIT {
         int i = 0;
         for (Player player : players) {
 
-            while (i != challengePerPlayer) {
+            while(i!=challengePerPlayer) {
                 completeListOfPlayers.add(player);
                 i++;
             }
@@ -110,10 +110,12 @@ public class DrinkIT {
 
     //method that puts every player in the players list in order of highest point to lowest.
     public void putListInPointOrder() {
+
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
-            if (i < players.size() - 1) {
-                for (int j = i; j < players.size(); j++) {
+            if(i<players.size()-1) {
+                for (int j = i; j <players.size() ; j++) {
+
                     while (s.getPoint() < players.get(j).getPoint()) {
                         Collections.swap(players, i, j);
                     }
@@ -128,9 +130,8 @@ public class DrinkIT {
 
 
     //method that makes a list that write the players name and its point in a list of strings.
-    private String playerToString(Player player) { //private
-        String playerToString = player.getName() + " " + player.getPoint() + " Points";
-        return playerToString;
+    private String playerToString(Player player){ //private
+        return player.getName() + " " + player.getPoint() + " Points";
     }
 
     //method that returns the whole scoreboard as one string.

@@ -50,9 +50,8 @@ public class DrinkIT {
                 completeListOfPlayers.add(player);
                 i++;
             }
-            if(i==challengePerPlayer){
-                i=0;
-            }
+
+            i=0;
         }
         shufflePlayerList(completeListOfPlayers);
     }
@@ -167,8 +166,7 @@ public class DrinkIT {
 
     //method that makes a list that write the players name and its point in a list of strings.
     private String playerToString(Player player){ //private
-        String playerToString =player.getName() + " " + player.getPoint() + " Points";
-        return playerToString;
+        return player.getName() + " " + player.getPoint() + " Points";
     }
 
     //method that returns the whole scoreboard as one string.

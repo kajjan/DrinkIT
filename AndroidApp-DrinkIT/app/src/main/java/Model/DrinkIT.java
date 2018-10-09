@@ -7,15 +7,16 @@ import java.util.Comparator;
 import java.util.List;
 
 public class DrinkIT {
-    List<Player> players = new ArrayList<>();
-    private List<Card> cards;
-    private List<Challenge> challenges;
-    int durationOfGame=0;
+    private List<Player> players = new ArrayList<>();
+    private int durationOfGame=0;
     private List<Player> completeListOfPlayers = new ArrayList<>();
     private List<Category> categories = new ArrayList<>();
-    List<String> playerList = new ArrayList<>();
     private List<String>playerInPointOrder = new ArrayList<>();
-    int index=0;
+    private int index=0;
+
+
+    private List<Card>cards=new ArrayList<>();
+    private List<Challenge>challenges=new ArrayList<>();
 
 
 
@@ -191,7 +192,6 @@ public class DrinkIT {
 
     //Method that clears the model for a possible new round
     public void endTheGame(){
-        playerList.clear();
         players.clear();
         categories.clear();
         completeListOfPlayers.clear();

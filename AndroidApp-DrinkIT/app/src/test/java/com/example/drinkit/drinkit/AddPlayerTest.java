@@ -52,25 +52,24 @@ public class AddPlayerTest {
         assert (initialLength + 1 == endLength);
     }
 
-    @Test
+    @Test //Tests if the list expands to the right size based duration
     public void createCompleteListOfPlayers() {
         //int duration = 3;
         //int duration = 5;
         int duration = 10;
-        List<Player> testPlayerList = new ArrayList<>();
         Player galadriel = new Player("Galadriel");
         Player arwen = new Player("Arwen");
         Player aragorn = new Player("Aragorn");
         Player elrond = new Player("Lord Elrond");
 
-        testPlayerList.add(galadriel);
-        testPlayerList.add(arwen);
-        testPlayerList.add(aragorn);
-        testPlayerList.add(elrond);
+        playersList.add(galadriel);
+        playersList.add(arwen);
+        playersList.add(aragorn);
+        playersList.add(elrond);
 
-        duration = testPlayerList.size() * duration; //Copied method setDuration()
+        duration = playersList.size() * duration; //Copied method setDuration()
 
-        model.createCompletedPlayersList(testPlayerList, duration);
+        model.createCompletedPlayersList(playersList, duration);
 
         int endlenght = model.getCompleteListOfPlayers().size();
 
@@ -78,8 +77,26 @@ public class AddPlayerTest {
        // assert(endlenght == 20);
         assert(endlenght == 40);
 
+    }
 
+    @Test
+    public void setPointOfPlayer(){
+    Player noOne = new Player("Arya Stark");
+    Player khaleesi = new Player("Daenerys Targaryen");
+    Player redViper = new Player("Oberyn Martell");
 
+    playersList.add(noOne);
+    playersList.add(khaleesi);
+    playersList.add(redViper);
+
+    int index = 2;
+
+    model.setPointOfPlayer(playersList, index);
+    //Should increase point of Player on index index in list of players
+
+    int points = redViper.getPoint();
+
+    assert(points==1);
 
     }
 

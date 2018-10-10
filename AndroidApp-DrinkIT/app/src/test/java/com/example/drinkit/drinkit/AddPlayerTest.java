@@ -25,7 +25,7 @@ public class AddPlayerTest {
     int initialLength = playersList.size();
     int countName = 0;
 
-    DrinkIT model= new DrinkIT(playersList, null,null);
+    DrinkIT model= new DrinkIT(playersList);
 
     @Test
     public void addPlayer() {

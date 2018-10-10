@@ -17,7 +17,7 @@ public class ChooseCategoryTest {
     public void selectCategory() {
 
 
-        DrinkIT model = new DrinkIT(null, null, null);
+        DrinkIT model = new DrinkIT();
         boolean b = false;
         List<Category> categories = model.getCategories();
         int initialLength = categories.size();
@@ -26,8 +26,9 @@ public class ChooseCategoryTest {
         String category = "Charades";
         String category2 = "Truth or dare";
 
-        model.selectCategory(category);
-        model.selectCategory(category2);
+
+        categories.add(new Category(category));
+        categories.add(new Category(category2));
 
         for (String s:model.getCategoryNames()){
             if (category.equals(s)){
@@ -45,7 +46,7 @@ public class ChooseCategoryTest {
 
     @Test
     public void removeCategory() {
-        DrinkIT model = new DrinkIT(null, null, null );
+        DrinkIT model = new DrinkIT( );
         List<Category> categories = model.getCategories();
 
         String category = "Charades";

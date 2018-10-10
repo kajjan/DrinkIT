@@ -167,6 +167,8 @@ public class DrinkIT {
 
     }
 
+
+
     //Helpmethods for tests below
 
 
@@ -228,7 +230,5 @@ public class DrinkIT {
         System.out.println("Points: " + point);
         indexPlayer++;
     }
-
-
 
 }

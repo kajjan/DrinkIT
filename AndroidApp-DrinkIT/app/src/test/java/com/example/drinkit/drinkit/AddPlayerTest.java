@@ -61,6 +61,7 @@ public class AddPlayerTest {
         //int duration = 3;
         //int duration = 5;
         int duration = 10;
+        int numberOfRounds = 0;
         Player galadriel = new Player("Galadriel");
         Player arwen = new Player("Arwen");
         Player aragorn = new Player("Aragorn");
@@ -71,7 +72,7 @@ public class AddPlayerTest {
         playersList.add(aragorn);
         playersList.add(elrond);
 
-        int numberOfRounds = playersList.size() * duration; //Copied method setDuration()
+        numberOfRounds = playersList.size() * duration; //Copied method setDuration()
 
         model.testCreateCompletedPlayersList(playersList, numberOfRounds);
 
@@ -80,6 +81,7 @@ public class AddPlayerTest {
        // assert (endlenght == 12);
        // assert(endlenght == 20);
         assert(endlenght == 40);
+
 
     }
 

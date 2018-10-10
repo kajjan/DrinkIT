@@ -224,7 +224,7 @@ public class DrinkIT {
 
 
     //method for test
-    public void testsucceededChallenge(List<Player> p, int indexPlayer) {
+    public void testSucceededChallenge(List<Player> p, int indexPlayer) {
         int point = p.get(indexPlayer).getPoint();
         point++;
         p.get(indexPlayer).setPoint(point);
@@ -232,7 +232,7 @@ public class DrinkIT {
         indexPlayer++;
     }
 
-
+    //method for test
     public void testPutListInPointOrder(List<Player> p, List<String> s) {
 
         for (int i = 0; i < p.size(); i++) {

@@ -19,7 +19,7 @@ public class ChooseCategoryActivity extends MainView {
         if (!(getCtrl().categoryListEmpty())) {
             startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
         } else {
-            System.out.println("Please select a category before moving forward"); //visual feedback till användaren på skärmen istället
+            System.out.println("Please, select a category before moving forward"); //visual feedback till användaren på skärmen istället
         }
     }
 

@@ -94,7 +94,7 @@ public class AddPlayerTest {
 
     int index = 2;
 
-    model.testsucceededChallenge(playersList, index);
+    model.testSucceededChallenge(playersList, index);
     //Should increase point of Player on index index in list of players
 
     int points = redViper.getPoint();

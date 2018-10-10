@@ -29,6 +29,7 @@ public class MainAppActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textFileScanner(charades);
+
         textFileScanner(neverHaveIEver);
     /*    textFileScanner(pointAtPerson);
         textFileScanner(quiz);
@@ -61,7 +62,7 @@ public class MainAppActivity extends AppCompatActivity {
         ctrl.setChallengeInstruction(categoryName, instruction);
         while (scan.hasNextLine()) { //as long as there are challenges to get
             String challenge = scan.nextLine();
-            ctrl.setChallenge(categoryName, challenge);
+            //ctrl.setChallenge(categoryName, challenge);
             System.out.println("hello" + challenge);
         }
 

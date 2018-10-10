@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class DrinkIT {
-    Category cat = new Category();
+    //Category cat = new Category();
     private List<Player> players = new ArrayList<>();
     private int numberOfRounds = 0;
     private List<Player> completeListOfPlayers = new ArrayList<>();
@@ -14,12 +14,16 @@ public class DrinkIT {
     private List<String> playerInPointOrder = new ArrayList<>();
     private int indexOfActivePlayer = 0;
     private List<Challenge> challenges = new ArrayList<>();
+    private List<Category> cats = new ArrayList<>();
 
 
 
     public DrinkIT() {}
 
 
+    void test(){
+        cats.add(new Charade("test",challenges,false));
+    }
 
     public void setListOfChallenges(String categoryName, String challenge) {
         //Skicka till Challenge och skapa en NY challenge dela upp med vilket poäng.
@@ -29,7 +33,7 @@ public class DrinkIT {
         int num = Integer.parseInt(numInString);
 
         Challenge challenge1 = new Challenge(numInString, num); //Creates a new challenge
-        cat.addChallenge(categoryName, challenge1);
+       // cat.addChallenge(categoryName, challenge1);
     }
 
     public void createCategory(String category, String catInstruction) {
@@ -68,10 +72,10 @@ public class DrinkIT {
             i = 0;
         }
         shufflePlayerList(completeListOfPlayers);
-        System.out.println(cat.getNeverHaveIEverChallenges().toString());
-        System.out.println(cat.getCharadChallenges().toString());
+        //System.out.println(cat.getNeverHaveIEverChallenges().toString());
+        //System.out.println(cat.getCharadChallenges().toString());
     }
-    }
+
 
     //shuffle the completePlayerList
     private void shufflePlayerList(List<Player> listOfPlayers) {
@@ -111,7 +115,7 @@ public class DrinkIT {
 
 
     //Method for removing a category, removes the choosen category
-    public void unSelectCategory(String category) { // se ovan
+    public void unSelectCategory(String category) { //public, borde va private men måste va public för test
         for (int i = 0; i < categories.size(); i++) {
             if (category.equals(categories.get(i).getCategoryName())) {
                 categories.remove(i);

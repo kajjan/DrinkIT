@@ -8,23 +8,40 @@ public class Category {
     private String name;
 
     //Kajjan härjar
-    private String instruction;
-    private String charades, neverhaveiever;
-    private List<Challenge> charadChallenges = new ArrayList<>();
-    private List<Challenge> neverHaveIEverChallenges = new ArrayList<>();
+    public String instruction;
+   // private String charades, neverhaveiever;
+    //private List<Challenge> charadChallenges = new ArrayList<>();
+    //private List<Challenge> neverHaveIEverChallenges = new ArrayList<>();
+    public List<Challenge> challenges = new ArrayList<>();
+    public boolean active;
 
+    /*
     public Category(String name) { //I think Alice and Elin uses this method?
         this.name = name;
     }
-
+*/
     public Category() {
     }
 
-    public Category(String name, String instruction){
-        setName(name);
+    public Category(String instruction, List<Challenge> challenges, boolean active){
         this.instruction = instruction;
+        this.challenges = challenges;
+        this.active = active;
     }
 
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public String getInstruction() {
+        return instruction;
+    }
+
+    /*
     private void setName(String name){
         if (name.equals("charades")){
             this.charades = name;
@@ -74,5 +91,5 @@ public class Category {
         return instruction;
     }
 
-
+*/
 }

@@ -196,4 +196,39 @@ public class DrinkIT {
 
         return names;
     }
+
+    // Used in test
+    public List<Player> testCompletedListOfPlayers = new ArrayList<>();
+
+    //method for test
+    public void testCreateCompletedPlayersList(List<Player> p, int numberOfRound ) {
+        int challengePerPlayer = numberOfRound / p.size();
+        int i = 0;
+        for (Player player : p) {
+
+            while(i!=challengePerPlayer) {
+                testCompletedListOfPlayers.add(player);
+                i++;
+            }
+            i = 0;
+        }
+        shufflePlayerList(testCompletedListOfPlayers);
+    }
+
+    //method for test
+    public List<Player> getTestCreateCompletedPlayersList(){
+        return testCompletedListOfPlayers;
+    }
+
+    //method for test
+    public void testsucceededChallenge(List<Player> p, int indexPlayer) {
+        int point = p.get(indexPlayer).getPoint();
+        point++;
+        p.get(indexPlayer).setPoint(point);
+        System.out.println("Points: " + point);
+        indexPlayer++;
+    }
+
+
+
 }

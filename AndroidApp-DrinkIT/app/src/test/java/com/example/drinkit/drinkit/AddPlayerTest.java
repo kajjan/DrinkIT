@@ -71,20 +71,20 @@ public class AddPlayerTest {
         playersList.add(aragorn);
         playersList.add(elrond);
 
-        duration = playersList.size() * duration; //Copied method setDuration()
+        int numberOfRounds = playersList.size() * duration; //Copied method setDuration()
 
-       // model.createCompletedPlayersList(playersList, duration);
+        model.testCreateCompletedPlayersList(playersList, numberOfRounds);
 
-       // int endlenght = model.getCompleteListOfPlayers().size();
+        int endlenght = model.getTestCreateCompletedPlayersList().size();
 
        // assert (endlenght == 12);
        // assert(endlenght == 20);
-        assert(duration == 40);
+        assert(endlenght == 40);
 
     }
 
     @Test
-    public void setPointOfPlayer(){
+    public void succeededChallenge(){
 
     playersList.add(noOne);
     playersList.add(khaleesi);
@@ -92,7 +92,7 @@ public class AddPlayerTest {
 
     int index = 2;
 
-   // model.setPointOfPlayer(playersList, index);
+    model.testsucceededChallenge(playersList, index);
     //Should increase point of Player on index index in list of players
 
     int points = redViper.getPoint();
@@ -115,9 +115,10 @@ public class AddPlayerTest {
 
  }
 
+ @Test
+    public void putListInPointsOrder(){
 
 
-
-
+ }
 
 }

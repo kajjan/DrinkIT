@@ -222,6 +222,7 @@ public class DrinkIT {
         return testCompletedListOfPlayers;
     }
 
+
     //method for test
     public void testsucceededChallenge(List<Player> p, int indexPlayer) {
         int point = p.get(indexPlayer).getPoint();
@@ -231,4 +232,23 @@ public class DrinkIT {
         indexPlayer++;
     }
 
+
+    public void testPutListInPointOrder(List<Player> p, List<String> s) {
+
+        for (int i = 0; i < p.size(); i++) {
+            Player a = p.get(i);
+            if(i<p.size()-1) {
+                for (int j = i; j <p.size() ; j++) {
+
+                    while (a.getPoint() < p.get(j).getPoint()) {
+                        Collections.swap(p, i, j);
+                    }
+
+                }
+            }
+        }
+        for (Player c : p) {
+            s.add(playerToString(c));
+        }
+    }
 }

@@ -104,7 +104,7 @@ public class AddPlayerTest {
     }
 
     @Test
-    public void getScoreBoardText(){
+    public void testPutListInOrder(){
 
      playersList.add(noOne);
      playersList.add(khaleesi);
@@ -114,13 +114,21 @@ public class AddPlayerTest {
      khaleesi.setPoint(2);
      redViper.setPoint(0);
 
+     List<String> playerInPointOrder = new ArrayList<>();
+
+        model.testPutListInPointOrder(playersList, playerInPointOrder);
+
+        System.out.println(playerInPointOrder.toString());
+             //TODO what to assert???????????
+
+
+
 
  }
 
- @Test
-    public void putListInPointsOrder(){
 
 
- }
+
+
 
 }

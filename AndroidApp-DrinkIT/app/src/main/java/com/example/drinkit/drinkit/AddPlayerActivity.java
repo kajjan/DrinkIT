@@ -54,6 +54,7 @@ public class AddPlayerActivity extends MainView {
         players.add(playerTen.getText().toString().trim());
 
         int numberOfSameNames=0;
+        int numberOfNamesAdded=0;
 
          for (int i = 0; i <players.size() ; i++) {
             if (players.get(i).isEmpty()){
@@ -67,9 +68,13 @@ public class AddPlayerActivity extends MainView {
                 }
                 else{
                     getCtrl().addPlayer(players.get(i));
+                    numberOfNamesAdded++;
                     }
                 }
 
+            }
+            if(numberOfNamesAdded<=1){
+             atLeastTwoPlayersErrorMessage();
             }
             if(numberOfSameNames<1) {
                 startActivity(new Intent(AddPlayerActivity.this, ChooseCategoryActivity.class));
@@ -139,6 +144,14 @@ public class AddPlayerActivity extends MainView {
         }
 
     }
+
+   public void atLeastTwoPlayersErrorMessage(){
+
+
+   }
+
+
+
 
 
 }

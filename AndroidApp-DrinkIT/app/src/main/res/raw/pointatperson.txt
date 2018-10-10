@@ -1,4 +1,0 @@
-PointAtPerson, write instructions here
-PointAtPerson first challenge here
-PointAtPerson second challenge here
-PointAtPerson third challenge here

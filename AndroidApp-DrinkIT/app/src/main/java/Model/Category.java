@@ -21,11 +21,11 @@ public class Category {
     }
 
     public Category(String name, String instruction){
-        setNameAndList(name);
+        setName(name);
         this.instruction = instruction;
     }
 
-    private void setNameAndList(String name){
+    private void setName(String name){
         if (name.equals("charades")){
             this.charades = name;
         }

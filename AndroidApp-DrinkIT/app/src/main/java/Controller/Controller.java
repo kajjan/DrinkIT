@@ -25,7 +25,7 @@ public class Controller {
 
     //methods
     public void setChallengeInstruction(String category, String catInstruction){
-        model.createCategory(category, catInstruction);
+        model.createCategory(category, catInstruction);                             //ÄNDRA NAMN!!
     }
 
     public void setChallenge(String category, String challenge){

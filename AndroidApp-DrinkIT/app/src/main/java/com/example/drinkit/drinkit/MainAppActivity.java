@@ -56,9 +56,9 @@ public class MainAppActivity extends AppCompatActivity {
     public void textFileScanner(InputStream is){
         Scanner scan = new Scanner(is);
         String categoryName = scan.nextLine();
-        String instuction = scan.nextLine();
-        System.out.println(instuction);
-        ctrl.setChallengeInstruction(categoryName, instuction);
+        String instruction = scan.nextLine();
+        System.out.println(instruction);
+        ctrl.setChallengeInstruction(categoryName, instruction);
         while (scan.hasNextLine()) { //as long as there are challenges to get
             String challenge = scan.nextLine();
             ctrl.setChallenge(categoryName, challenge);

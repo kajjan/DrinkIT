@@ -9,24 +9,37 @@ public class Category {
 
     //Kajjan härjar
     public String instruction;
-   // private String charades, neverhaveiever;
-    //private List<Challenge> charadChallenges = new ArrayList<>();
-    //private List<Challenge> neverHaveIEverChallenges = new ArrayList<>();
-    public List<Challenge> challenges = new ArrayList<>();
+    public List<String> challengesStrings = new ArrayList<>();
     public boolean active;
+    private List<Challenge> challenges = new ArrayList<>();
+    public int indexOfActiveChallenge = 0;
 
-    /*
-    public Category(String name) { //I think Alice and Elin uses this method?
-        this.name = name;
-    }
-*/
+
     public Category() {
     }
 
-    public Category(String instruction, List<Challenge> challenges, boolean active){
+    public Category(String name){
+        this.name=name;
+    }
+
+    public Category(String instruction, List<String> challengesStrings, boolean active){
         this.instruction = instruction;
-        this.challenges = challenges;
+        this.challengesStrings = challengesStrings;
         this.active = active;
+        setListOfChallenges(challengesStrings);
+    }
+
+
+    public void setListOfChallenges(List<String> challengeString) {
+        for(String s: challengeString){
+            String numberInString = s.replaceAll("[^0-9]+", "");
+            int num = Integer.parseInt(numberInString);
+            String textInString = s.replaceAll("[0-9]+", "");
+            challenges.add(new Challenge(textInString, num)); //Creates a new challenge
+        }
+        System.out.println("LOOK HERE!!!!!! --->>>" +challenges.get(0).getChallenge());
+        System.out.println("LOOK HERE!!!!!! --->>>" +challenges.get(1).getChallenge());
+        System.out.println("LOOK HERE!!!!!! --->>>" +challenges.get(2).getChallenge());
     }
 
     public void setActive(boolean active) {
@@ -41,55 +54,12 @@ public class Category {
         return instruction;
     }
 
-    /*
-    private void setName(String name){
-        if (name.equals("charades")){
-            this.charades = name;
-        }
-        if (name.equals("neverHaveIEver")){
-            this.neverhaveiever = name;
-        }
-        else {
-            //skip for now
-        }
-
-    }
-
-    public void addChallenge(String name, Challenge challenge){ //Adds challenge to the right list
-        if (name.equals("charades")){
-            charadChallenges.add(challenge);
-        }
-        if (name.equals("neverHaveIEver")){
-            neverHaveIEverChallenges.add(challenge);
-        }
-    }
-
     public String getCategoryName() {
         return name;
     }
 
-    public String getName(String name) {
-        if (name.equals(charades)) {
-            return charades;
-        }
-        if (name.equals(neverhaveiever)) {
-            return neverhaveiever;
-        } else {
-            return "Hello";
-        }
+    public String getActiveChallenge(){
+        return challenges.get(indexOfActiveChallenge).getChallenge();
     }
 
-    public List<Challenge> getCharadChallenges() {
-        return charadChallenges;
-    }
-
-    public List<Challenge> getNeverHaveIEverChallenges() {
-        return neverHaveIEverChallenges;
-    }
-
-    public String getInstruction() {
-        return instruction;
-    }
-
-*/
 }

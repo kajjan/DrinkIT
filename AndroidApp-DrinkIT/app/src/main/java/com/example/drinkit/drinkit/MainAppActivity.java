@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.io.*;
 
@@ -56,15 +58,18 @@ public class MainAppActivity extends AppCompatActivity {
 
     public void textFileScanner(InputStream is){
         Scanner scan = new Scanner(is);
+        List<String> challengesToClass = new ArrayList<>();
         String categoryName = scan.nextLine();
         String instruction = scan.nextLine();
         System.out.println(instruction);
-        ctrl.setChallengeInstruction(categoryName, instruction);
+        //ctrl.setChallengeInstruction(categoryName, instruction);
         while (scan.hasNextLine()) { //as long as there are challenges to get
             String challenge = scan.nextLine();
+            challengesToClass.add(challenge);
             //ctrl.setChallenge(categoryName, challenge);
             System.out.println("hello" + challenge);
         }
+        model.createCategoryListOnCreate(categoryName, instruction, challengesToClass);
 
     }
 

@@ -15,12 +15,18 @@ public class ChallengeActivity extends MainView {
         getCtrl().createCompleteListOfPlayers();
 
         printPlayersName();
+        printChallenge();
     }
 
     //print the name of the player on the challenge card
     public void printPlayersName(){
         TextView text=((TextView)findViewById(R.id.playerOfchallenge));
         text.setText(getCtrl().getPlayersName());
+    }
+
+    public void printChallenge(){
+        TextView text=((TextView)findViewById(R.id.challengeText));
+        text.setText(getCtrl().getNextChallenge());
     }
 
 

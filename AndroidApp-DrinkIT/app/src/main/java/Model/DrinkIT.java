@@ -15,32 +15,28 @@ public class DrinkIT {
     private int indexOfActivePlayer = 0;
     private List<Challenge> challenges = new ArrayList<>();
     private List<Category> cats = new ArrayList<>();
+    private int indexOfActiveChallenge = 0;
 
 
 
     public DrinkIT() {}
 
 
-    void test(){
-        cats.add(new Charade("test",challenges,false));
+    public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges ) {
+        if (categoryName.equals("charades")) {
+            cats.add(new Category(instruction, challenges, false));
+        }
+        if (categoryName.equals("neverHaveIEver")) {
+            cats.add(new NeverHaveIEver(instruction, challenges, false));
+        }
+
     }
-
-    public void setListOfChallenges(String categoryName, String challenge) {
-        //Skicka till Challenge och skapa en NY challenge dela upp med vilket poäng.
-
-        //Gets out the int from string (points)
-        String numInString = challenge.replaceAll("[^0-9]+", "");
-        int num = Integer.parseInt(numInString);
-
-        Challenge challenge1 = new Challenge(numInString, num); //Creates a new challenge
-       // cat.addChallenge(categoryName, challenge1);
-    }
-
+/*
     public void createCategory(String category, String catInstruction) {
         new Category(category, catInstruction);
     }
 
-
+*/
     public void addPlayer(String name) {
         players.add(new Player(name));
     } //ok
@@ -87,6 +83,10 @@ public class DrinkIT {
     public String getNameOfPlayer() {
         return completeListOfPlayers.get(indexOfActivePlayer).getName();
 
+    }
+
+    public String getNextChallenge(){
+        return cats.get(indexOfActiveChallenge).getActiveChallenge();
     }
 
 

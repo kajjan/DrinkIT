@@ -17,4 +17,5 @@ public class Challenge {
         return point;
     }
 
+
 }

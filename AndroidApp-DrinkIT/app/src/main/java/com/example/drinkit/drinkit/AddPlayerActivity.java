@@ -76,7 +76,7 @@ public class AddPlayerActivity extends MainView {
             if(numberOfNamesAdded<=1){
              atLeastTwoPlayersErrorMessage();
             }
-            if(numberOfSameNames<1) {
+            if(numberOfSameNames<1 & numberOfNamesAdded>1) {
                 startActivity(new Intent(AddPlayerActivity.this, ChooseCategoryActivity.class));
             }
 
@@ -145,13 +145,19 @@ public class AddPlayerActivity extends MainView {
 
     }
 
+
    public void atLeastTwoPlayersErrorMessage(){
-
-
+       playerOne.setError("Need too at least add two players");
+       playerTwo.setError("Need too at least add two players");
+       playerThree.setError("Need too at least add two players");
+       playerFour.setError("Need too at least add two players");
+       playerFive.setError("Need too at least add two players");
+       playerSix.setError("Need too at least add two players");
+       playerSeven.setError("Need too at least add two players");
+       playerEight.setError("Need too at least add two players");
+       playerNine.setError("Need too at least add two players");
+       playerTen.setError("Need too at least add two players");
    }
-
-
-
 
 
 }

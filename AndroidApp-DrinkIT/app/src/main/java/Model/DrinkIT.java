@@ -15,7 +15,7 @@ public class DrinkIT {
     private int indexOfActivePlayer = 0;
     private List<Challenge> challenges = new ArrayList<>();
     private List<Category> cats = new ArrayList<>();
-    private int indexOfActiveChallenge = 0;
+    private int indexOfActiveChallenge = -1;
 
 
 
@@ -86,7 +86,14 @@ public class DrinkIT {
     }
 
     public String getNextChallenge(){
+        //if(cats.get(indexOfActiveChallenge).isActive()){} //Koppla ihop med knapparna när kategori väljs
+        Collections.shuffle(cats);
+        indexOfActiveChallenge++;
+        if(indexOfActiveChallenge == cats.size()){
+            indexOfActiveChallenge = 0;
+        }
         return cats.get(indexOfActiveChallenge).getActiveChallenge();
+
     }
 
 

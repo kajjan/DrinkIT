@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Category {
@@ -12,7 +13,7 @@ public class Category {
     public List<String> challengesStrings = new ArrayList<>();
     public boolean active;
     private List<Challenge> challenges = new ArrayList<>();
-    public int indexOfActiveChallenge = 0;
+    public int indexOfActiveChallenge = -1;
 
 
     public Category() {
@@ -59,6 +60,11 @@ public class Category {
     }
 
     public String getActiveChallenge(){
+        indexOfActiveChallenge++;
+        if(indexOfActiveChallenge==challenges.size()){
+            Collections.shuffle(challenges);
+            indexOfActiveChallenge=0;
+        }
         return challenges.get(indexOfActiveChallenge).getChallenge();
     }
 

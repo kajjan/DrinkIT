@@ -34,6 +34,7 @@ public class ChallengeActivity extends MainView {
         getCtrl().failedChallenge();
         if(nextRound()) {
             printPlayersName();
+            printChallenge();
         }
         else{
             changePage(view);
@@ -44,6 +45,7 @@ public class ChallengeActivity extends MainView {
         getCtrl().succeededChallenge();
         if(nextRound()) {
             printPlayersName();
+            printChallenge();
         }
         else{
             changePage(view);

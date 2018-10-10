@@ -61,6 +61,7 @@ public class AddPlayerTest {
         //int duration = 3;
         //int duration = 5;
         int duration = 10;
+        int numberOfRounds = 0;
         Player galadriel = new Player("Galadriel");
         Player arwen = new Player("Arwen");
         Player aragorn = new Player("Aragorn");
@@ -71,15 +72,15 @@ public class AddPlayerTest {
         playersList.add(aragorn);
         playersList.add(elrond);
 
-        duration = playersList.size() * duration; //Copied method setDuration()
+        // numberOfRounds = playersList.size() * duration; //Copied method setDuration()
 
-       // model.createCompletedPlayersList(playersList, duration);
+        // model.createCompletedPlayersList();
 
-       // int endlenght = model.getCompleteListOfPlayers().size();
+        // int endlenght = model.getCompleteListOfPlayers().size();
 
-       // assert (endlenght == 12);
-       // assert(endlenght == 20);
-        assert(duration == 40);
+        // assert (endlenght == 12);
+        // assert(endlenght == 40);
+        assert(numberOfRounds == 40);
 
     }
 
@@ -92,8 +93,8 @@ public class AddPlayerTest {
 
     int index = 2;
 
-   // model.setPointOfPlayer(playersList, index);
-    //Should increase point of Player on index index in list of players
+    // model.setPointOfPlayer(playersList, index);
+    // Should increase point of Player on index index in list of players
 
     int points = redViper.getPoint();
 

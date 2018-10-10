@@ -167,6 +167,8 @@ public class DrinkIT {
 
     }
 
+
+
     //Helpmethods for tests below
 
 
@@ -195,5 +197,9 @@ public class DrinkIT {
         }
 
         return names;
+    }
+
+    public List<Player> getCompleteListOfPlayers () {
+        return completeListOfPlayers;
     }
 }

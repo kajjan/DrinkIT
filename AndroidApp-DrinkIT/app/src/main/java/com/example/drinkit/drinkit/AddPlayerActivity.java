@@ -65,12 +65,14 @@ public class AddPlayerActivity extends MainView {
                 if (sameName(players, players.get(i),i)){
                     System.out.println("Type in names again");
                     numberOfSameNames++;
+
                 }
                 else{
                     getCtrl().addPlayer(players.get(i));
-                    numberOfNamesAdded++;
                     }
-                }
+                numberOfNamesAdded++;
+
+            }
 
             }
             if(numberOfNamesAdded<=1){
@@ -145,7 +147,7 @@ public class AddPlayerActivity extends MainView {
 
     }
 
-
+//A method that sends error messages than two players.
    public void atLeastTwoPlayersErrorMessage(){
        playerOne.setError("Need too at least add two players");
        playerTwo.setError("Need too at least add two players");
@@ -158,7 +160,6 @@ public class AddPlayerActivity extends MainView {
        playerNine.setError("Need too at least add two players");
        playerTen.setError("Need too at least add two players");
    }
-
 
 }
 

@@ -20,9 +20,9 @@ import java.util.List;
 
 
 public class AddPlayerActivity extends MainView implements TextWatcher{
-
     EditText playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix, playerSeven, playerEight, playerNine, playerTen;
     List<String> players = new ArrayList<>(10);
+    List<String> submitPlayers = new ArrayList<>(10);
 
 
 
@@ -61,11 +61,25 @@ public class AddPlayerActivity extends MainView implements TextWatcher{
     public void namesSubmitClick(View view) { //Method that saves all of the players and send it to the controller
         players.clear();
         int numberOfNamesAdded=0;
+        int numberOfSameNamesAdded=0;
+
+        players.add(playerOne.getText().toString().trim());
+        players.add(playerTwo.getText().toString().trim());
+        players.add(playerThree.getText().toString().trim());
+        players.add(playerFour.getText().toString().trim());
+        players.add(playerFive.getText().toString().trim());
+        players.add(playerSix.getText().toString().trim());
+        players.add(playerSeven.getText().toString().trim());
+        players.add(playerEight.getText().toString().trim());
+        players.add(playerNine.getText().toString().trim());
+        players.add(playerTen.getText().toString().trim());
 
         for (int i = 0; i <players.size() ; i++) {
             if(players.get(i).isEmpty()){
             }
-
+            /*if(sameName(i)){
+                numberOfSameNamesAdded++;
+            }*/
             else{
                 getCtrl().addPlayer(players.get(i));
                 numberOfNamesAdded++;
@@ -76,6 +90,13 @@ public class AddPlayerActivity extends MainView implements TextWatcher{
 
         if(numberOfNamesAdded<2){
             atLeastTwoPlayersErrorMessage();
+        }
+        if(numberOfSameNamesAdded>0){
+
+        }
+        else{
+            startActivity(new Intent(AddPlayerActivity.this, ChooseCategoryActivity.class));
+
         }
 
     }
@@ -90,10 +111,24 @@ public class AddPlayerActivity extends MainView implements TextWatcher{
 
 
 
+/*
 
 
+    public boolean sameName(int index){
+        int numberOfTimes=0;
+        for (int i = 0; i < players.size(); i++) {
+        if(players.contains(players.get(i))){
+            numberOfTimes++;
+            }
 
-
+        }
+        if(numberOfTimes>=2){
+            return true;
+        }else{
+            return false;
+        }
+    }
+*/
 
     public int sameName(String name){
         int numberOfTimes=0;

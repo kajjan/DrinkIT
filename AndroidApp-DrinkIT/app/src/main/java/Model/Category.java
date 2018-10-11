@@ -41,8 +41,8 @@ public abstract class Category {
         System.out.println("LOOK HERE!!!!!! --->>>" +challenges.get(2).getChallenge());
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setActive() {
+        this.active = true;
     }
 
     public boolean isActive() {

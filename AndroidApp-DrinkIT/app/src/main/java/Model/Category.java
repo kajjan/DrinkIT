@@ -44,7 +44,9 @@ public abstract class Category {
         this.active = true;
     }
 
-    
+    public void setInActive() {
+        this.active = false;
+    }
 
     public boolean isActive() {
         return active;

@@ -7,8 +7,8 @@ import java.util.List;
 public class Charade extends Category {
 
 
-    protected Charade(String instruction, List<String> challenges, boolean active) {
-        super(instruction, challenges, active);
+    protected Charade(String name, String instruction, List<String> challenges, boolean active) {
+        super(name, instruction, challenges, active);
 
     }
 

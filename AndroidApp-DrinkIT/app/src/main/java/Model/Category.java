@@ -7,8 +7,6 @@ import java.util.List;
 public abstract class Category {
 
     private String name;
-
-    //Kajjan härjar
     public String instruction;
     public List<String> challengesStrings = new ArrayList<>();
     public boolean active;
@@ -22,7 +20,8 @@ public abstract class Category {
         this.name=name;
     }
 
-    public Category(String instruction, List<String> challengesStrings, boolean active){
+    public Category(String name, String instruction, List<String> challengesStrings, boolean active){
+        this.name = name;
         this.instruction = instruction;
         this.challengesStrings = challengesStrings;
         this.active = active;
@@ -45,6 +44,8 @@ public abstract class Category {
         this.active = true;
     }
 
+    
+
     public boolean isActive() {
         return active;
     }
@@ -53,7 +54,7 @@ public abstract class Category {
         return instruction;
     }
 
-    public String getCategoryName() {
+    public String getName() {
         return name;
     }
 

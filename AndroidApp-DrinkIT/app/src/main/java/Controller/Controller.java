@@ -10,28 +10,13 @@ public class Controller {
         this.model = model;
     }
 
-
-    //methods
-/*    public void setChallengeInstruction(String category, String catInstruction){
-        model.createCategory(category, catInstruction);                             //ÄNDRA NAMN!!
-    }
-
-    public void setChallenge(String category, String challenge){
-        model.setListOfChallenges(category, challenge);
-    }
-    */
     public void addPlayer(String player) {
         model.addPlayer(player);
-    }
-
-    public boolean categoryListEmpty(){
-        return model.categoryListEmpty();
     }
 
     public void setDuration(int duration){
         model.setNumberOfRounds(duration);
     }
-
 
     public String getPlayersName(){
             return model.getNameOfPlayer();

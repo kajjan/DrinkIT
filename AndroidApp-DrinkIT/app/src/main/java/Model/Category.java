@@ -57,7 +57,7 @@ public abstract class Category {
         return name;
     }
 
-    public String getActiveChallenge(){
+    public String getChallengeToPlay(){
         indexOfActiveChallenge++;
         if(indexOfActiveChallenge==challenges.size()){
             Collections.shuffle(challenges);
@@ -66,4 +66,8 @@ public abstract class Category {
         return challenges.get(indexOfActiveChallenge).getChallenge();
     }
 
+
+    public int getActiveChallengePoint(){
+        return challenges.get(indexOfActiveChallenge).getPoint();
+    }
 }

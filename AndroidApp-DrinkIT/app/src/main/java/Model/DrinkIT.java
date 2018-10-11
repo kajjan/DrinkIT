@@ -81,14 +81,16 @@ public class DrinkIT {
         if(indexOfActiveCategory == cats.size()){
             indexOfActiveCategory = 0;
         }
-        return cats.get(indexOfActiveCategory).getActiveChallenge();
+
+        return cats.get(indexOfActiveCategory).getChallengeToPlay();
 
     }
 
 
     public void succeededChallenge() {
         int point = completeListOfPlayers.get(indexOfActivePlayer).getPoint();
-        point++;
+        int pointToAdd = cats.get(indexOfActiveCategory).getActiveChallengePoint();
+        point += pointToAdd;
         completeListOfPlayers.get(indexOfActivePlayer).setPoint(point);
         System.out.println("Points: " + point);
         indexOfActivePlayer++;

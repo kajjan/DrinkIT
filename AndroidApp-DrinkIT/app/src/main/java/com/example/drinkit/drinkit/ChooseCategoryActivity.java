@@ -16,11 +16,11 @@ public class ChooseCategoryActivity extends MainView {
 
 
     public void nextToDurationPage(View view) {
-        if (!(getCtrl().categoryListEmpty())) {
+        //if (!(getCtrl().categoryListEmpty())) {
             startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
-        } else {
-            System.out.println("Please select a category before moving forward"); //visual feedback till användaren på skärmen istället
-        }
+        //} else {
+           // System.out.println("Please select a category before moving forward"); //visual feedback till användaren på skärmen istället
+        //}
     }
 
     public void returnToAddPlayersPage(View view) {

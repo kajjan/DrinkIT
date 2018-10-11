@@ -23,20 +23,9 @@ public class DrinkIT {
 
 
     public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges ) {
-        if (categoryName.equals("charades")) {
-            cats.add(new Category(instruction, challenges, false));
-        }
-        if (categoryName.equals("neverHaveIEver")) {
-            cats.add(new NeverHaveIEver(instruction, challenges, false));
-        }
-
-    }
-/*
-    public void createCategory(String category, String catInstruction) {
-        new Category(category, catInstruction);
+            cats.add(Factory.createCategory(categoryName,instruction,challenges));
     }
 
-*/
     public void addPlayer(String name) {
         players.add(new Player(name));
     } //ok
@@ -110,11 +99,12 @@ public class DrinkIT {
     }
 
 
+
     public void chooseCategory(String category) { //ska ev inte va string, beror på vad katergori är
         if (categories.contains(category)) {//contains istället
             unSelectCategory(category);
         } else {
-            categories.add(new Category(category));
+            //categories.add(new Category(category));
             System.out.println(getCategoryNames());
         }
 

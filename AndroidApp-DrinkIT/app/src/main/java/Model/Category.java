@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Category {
+public abstract class Category {
 
     private String name;
 
@@ -16,8 +16,7 @@ public class Category {
     public int indexOfActiveChallenge = -1;
 
 
-    public Category() {
-    }
+    public Category() { }
 
     public Category(String name){
         this.name=name;
@@ -29,7 +28,6 @@ public class Category {
         this.active = active;
         setListOfChallenges(challengesStrings);
     }
-
 
     public void setListOfChallenges(List<String> challengeString) {
         for(String s: challengeString){

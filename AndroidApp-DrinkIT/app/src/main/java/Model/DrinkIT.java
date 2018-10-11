@@ -75,15 +75,25 @@ public class DrinkIT {
     }
 
     public String getNextChallenge(){
-        //if(cats.get(indexOfActiveCategory).isActive()){} //Koppla ihop med knapparna när kategori väljs
+        String nextChallenge = "";
+
         Collections.shuffle(cats);
         indexOfActiveCategory++;
+
         if(indexOfActiveCategory == cats.size()){
             indexOfActiveCategory = 0;
         }
 
-        return cats.get(indexOfActiveCategory).getChallengeToPlay();
+        if (cats.get(indexOfActiveCategory).isActive()){
+            nextChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
+        } else {
+            indexOfActiveCategory++;        //Har jag tänkt rätt här??
+        }
 
+        if(indexOfActiveCategory == cats.size()){
+            indexOfActiveCategory = 0;
+        }
+        return nextChallenge;
     }
 
 
@@ -101,11 +111,14 @@ public class DrinkIT {
     }
 
 
-
     public void chooseCategory(String category) { //ska ev inte va string, beror på vad katergori är
         for (Category c : cats) {
             if (c.getName().equals(category)) {
-                c.setActive();
+                if (c.isActive()) {
+                    c.setInActive();
+                } else {
+                    c.setActive();
+                }
             }
         }
         for (int i = 0; i<cats.size(); i++) { // endast för att se att det funkar
@@ -137,6 +150,8 @@ public class DrinkIT {
         }
     }
 
+*/
+
     public boolean categoryListEmpty() {
         boolean b = false;
         if (categories.size() == 0) {
@@ -144,7 +159,7 @@ public class DrinkIT {
         }
         return b;
     }
-    */
+
 
     //method that puts every player in the players list in order of highest point to lowest.
     public void putListInPointOrder() {

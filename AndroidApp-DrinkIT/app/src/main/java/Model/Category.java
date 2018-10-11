@@ -7,8 +7,6 @@ import java.util.List;
 public abstract class Category {
 
     private String name;
-
-    //Kajjan härjar
     public String instruction;
     public List<String> challengesStrings = new ArrayList<>();
     public boolean active;
@@ -42,9 +40,11 @@ public abstract class Category {
         System.out.println("LOOK HERE!!!!!! --->>>" +challenges.get(2).getChallenge());
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setActive() {
+        this.active = true;
     }
+
+    
 
     public boolean isActive() {
         return active;
@@ -54,11 +54,11 @@ public abstract class Category {
         return instruction;
     }
 
-    public String getCategoryName() {
+    public String getName() {
         return name;
     }
 
-    public String getActiveChallenge(){
+    public String getChallengeToPlay(){
         indexOfActiveChallenge++;
         if(indexOfActiveChallenge==challenges.size()){
             Collections.shuffle(challenges);
@@ -67,4 +67,8 @@ public abstract class Category {
         return challenges.get(indexOfActiveChallenge).getChallenge();
     }
 
+
+    public int getActiveChallengePoint(){
+        return challenges.get(indexOfActiveChallenge).getPoint();
+    }
 }

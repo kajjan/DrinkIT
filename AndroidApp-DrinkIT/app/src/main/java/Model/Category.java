@@ -22,7 +22,8 @@ public abstract class Category {
         this.name=name;
     }
 
-    public Category(String instruction, List<String> challengesStrings, boolean active){
+    public Category(String name, String instruction, List<String> challengesStrings, boolean active){
+        this.name = name;
         this.instruction = instruction;
         this.challengesStrings = challengesStrings;
         this.active = active;

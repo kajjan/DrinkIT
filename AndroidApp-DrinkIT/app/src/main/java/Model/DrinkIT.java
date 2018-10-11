@@ -18,7 +18,6 @@ public class DrinkIT {
     private int indexOfActiveChallenge = -1;
 
 
-
     public DrinkIT() {}
 
 
@@ -133,12 +132,10 @@ public class DrinkIT {
 
     //method that puts every player in the players list in order of highest point to lowest.
     public void putListInPointOrder() {
-
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
             if(i<players.size()-1) {
                 for (int j = i; j <players.size() ; j++) {
-
                     while (s.getPoint() < players.get(j).getPoint()) {
                         Collections.swap(players, i, j);
                     }

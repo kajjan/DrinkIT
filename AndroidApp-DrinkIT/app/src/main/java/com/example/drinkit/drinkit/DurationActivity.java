@@ -35,7 +35,18 @@ public class DurationActivity extends MainView {
     }
 
     public void startNextActivity(String category){
+        if (category.equals("quiz") || category.equals("rules") || category.equals("song") || category.equals("charades") ){
+            //Dubbelvy med poäng
+        }
+        else if(category.equals("truthOrDare")){
+            //Enkelvy med poäng
+        }
+        else if(category.equals("mostLikelyTo") || category.equals("neverHaveIEver") || category.equals("theme") || category.equals("thisOrThat") )
+            //en vy utan poäng (ingen spelar)
         startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
+        else{
+            System.out.println("Something is wrong with the code in DurationActivity...");
+        }
 
 
     }

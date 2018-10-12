@@ -81,11 +81,13 @@ public class DrinkIT {
         if(indexOfActiveCategory == cats.size()){
             indexOfActiveCategory = 0;
         }
-
         return cats.get(indexOfActiveCategory).getChallengeToPlay();
 
     }
 
+    public String getInstructions(){
+        return cats.get(indexOfActiveCategory).getInstruction();
+    }
 
     public void succeededChallenge() {
         int point = completeListOfPlayers.get(indexOfActivePlayer).getPoint();
@@ -108,7 +110,7 @@ public class DrinkIT {
                 c.setActive();
             }
         }
-        for (int i = 0; i<cats.size(); i++) { // endast för att se att det funkar
+        for (int i = 0; i < cats.size(); i++) { // endast för att se att det funkar
             System.out.println(cats.get(i).getName());
             System.out.println(cats.get(i).isActive());
         }
@@ -123,8 +125,8 @@ public class DrinkIT {
         }
         */
 
-
     }
+
 
     /*
     //Method for removing a category, removes the choosen category
@@ -136,6 +138,7 @@ public class DrinkIT {
             }
         }
     }
+*/
 
     public boolean categoryListEmpty() {
         boolean b = false;
@@ -144,7 +147,7 @@ public class DrinkIT {
         }
         return b;
     }
-    */
+
 
     //method that puts every player in the players list in order of highest point to lowest.
     public void putListInPointOrder() {

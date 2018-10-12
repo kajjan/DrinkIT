@@ -24,7 +24,7 @@ public class MainAppActivity extends AppCompatActivity {
         InputStream quiz = getResources().openRawResource(getResources().getIdentifier("quiz", "raw", getPackageName()));
         InputStream rules = getResources().openRawResource(getResources().getIdentifier("rules", "raw", getPackageName()));
         InputStream songs = getResources().openRawResource(getResources().getIdentifier("songs", "raw", getPackageName()));
-        InputStream theme = getResources().openRawResource(getResources().getIdentifier("theme", "raw", getPackageName()));
+        InputStream theme = getResources().openRawResource(getResources().getIdentifier("themes", "raw", getPackageName()));
         InputStream thisOrThat = getResources().openRawResource(getResources().getIdentifier("thisorthat", "raw", getPackageName()));
         InputStream truthOrDare = getResources().openRawResource(getResources().getIdentifier("truthordare", "raw", getPackageName()));
 
@@ -48,7 +48,7 @@ public class MainAppActivity extends AppCompatActivity {
 
     DrinkIT model = new DrinkIT();
     Controller ctrl = new Controller(model);
-    MainView view = new MainView(ctrl);
+    // MainView view = new MainView(ctrl);
 
 
     void showStartPage() {
@@ -71,5 +71,7 @@ public class MainAppActivity extends AppCompatActivity {
         }
         model.createCategoryListOnCreate(categoryName, instruction, challengesToClass);
     }
+
+    MainView view = new MainView(ctrl);
 
 }

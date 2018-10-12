@@ -9,7 +9,7 @@ public abstract class Category {
     private String name;
     public String instruction;
     public List<String> challengesStrings = new ArrayList<>();
-    public boolean active;
+    public boolean active = false;
     private List<Challenge> challenges = new ArrayList<>();
     public int indexOfActiveChallenge = -1;
 
@@ -69,8 +69,11 @@ public abstract class Category {
         return challenges.get(indexOfActiveChallenge).getChallenge();
     }
 
-
     public int getActiveChallengePoint(){
         return challenges.get(indexOfActiveChallenge).getPoint();
+    }
+
+    public Challenge getActiveChallenge(){
+        return challenges.get(indexOfActiveChallenge);
     }
 }

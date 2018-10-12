@@ -16,6 +16,7 @@ public class DrinkIT {
     private List<Challenge> challenges = new ArrayList<>();
     private List<Category> cats = new ArrayList<>();
     private int indexOfActiveCategory = -1;
+    private List<GameRound> playedRounds = new ArrayList<>();
 
 
     public DrinkIT() {}
@@ -24,6 +25,15 @@ public class DrinkIT {
     public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges ) {
             cats.add(Factory.createCategory(categoryName,instruction,challenges));
     }
+
+    public List<String> getCategoryNames () {
+        List<String> categoryNames = new ArrayList<>();
+        for (Category c : cats) {
+            categoryNames.add(c.getName());
+        }
+        return categoryNames;
+    }
+
 
     public void addPlayer(String name) {
         players.add(new Player(name));
@@ -74,27 +84,30 @@ public class DrinkIT {
     }
 
     public String getNextChallenge(){
-        String nextChallenge = "";
+        String nextChallenge = "none";
 
         Collections.shuffle(cats);
         indexOfActiveCategory++;
 
-        if(indexOfActiveCategory == cats.size()){
-            indexOfActiveCategory = 0;
-        }
+        while (nextChallenge.equals("none")) {
+            if(indexOfActiveCategory == cats.size()-1){
+                indexOfActiveCategory = 0;
+            }
 
-        if (cats.get(indexOfActiveCategory).isActive()){
-            nextChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
-        } else {
-            indexOfActiveCategory++;        //Har jag tänkt rätt här??
+            if (cats.get(indexOfActiveCategory).isActive()){
+                nextChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
+            } else {
+                indexOfActiveCategory++;
+            }
         }
-
-        if(indexOfActiveCategory == cats.size()){
-            indexOfActiveCategory = 0;
-        }
+        playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
+                cats.get(indexOfActiveCategory).getActiveChallenge()));
         return nextChallenge;
     }
 
+    public String getInstructions(){
+        return cats.get(indexOfActiveCategory).getInstruction();
+    }
 
     public void succeededChallenge() {
         int point = completeListOfPlayers.get(indexOfActivePlayer).getPoint();
@@ -102,11 +115,18 @@ public class DrinkIT {
         point += pointToAdd;
         completeListOfPlayers.get(indexOfActivePlayer).setPoint(point);
         System.out.println("Points: " + point);
+        playedRounds.get(playedRounds.size()-1).setSucceded(true);
         indexOfActivePlayer++;
+        System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
+                " Point "+playedRounds.get(playedRounds.size()-1).getChallenge().getPoint()+" Succeeded = "+playedRounds.get(playedRounds.size()-1).isSucceded());
+
     }
 
     public void failedChallenge() {
+        playedRounds.get(playedRounds.size()-1).setSucceded(false);
         indexOfActivePlayer++;
+        System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
+                " Point "+playedRounds.get(playedRounds.size()-1).getChallenge().getPoint()+" Succeeded = "+playedRounds.get(playedRounds.size()-1).isSucceded());
     }
 
 
@@ -120,11 +140,13 @@ public class DrinkIT {
                 }
             }
         }
-        for (int i = 0; i<cats.size(); i++) { // endast för att se att det funkar
+        // endast för att printa och se att det funkar
+        for (int i = 0; i<cats.size(); i++) {
             System.out.println(cats.get(i).getName());
             System.out.println(cats.get(i).isActive());
         }
 
+    }
 
         /*
         if (categories.contains(category)) {//contains istället
@@ -133,10 +155,10 @@ public class DrinkIT {
             //categories.add(new Category(category));
             System.out.println(getCategoryNames());
         }
-        */
-
 
     }
+    */
+
 
     /*
     //Method for removing a category, removes the choosen category
@@ -150,7 +172,7 @@ public class DrinkIT {
     }
 
 */
-
+    
     public boolean categoryListEmpty() {
         boolean b = false;
         if (categories.size() == 0) {
@@ -194,6 +216,9 @@ public class DrinkIT {
             sb.append(playerInPointOrder.get(i) + "\n");
         }
         scoreText = sb.toString();
+        System.out.println("GAMEROUND HERE -->"+playedRounds);
+        System.out.println(playedRounds.size());
+        System.out.println(playedRounds.toString());
         return scoreText;
     }
 
@@ -224,14 +249,6 @@ public class DrinkIT {
         this.players = players;
     }
 
-    //method for test
-    public List<String> getCategoryNames() {
-        List<String> categoryNames = new ArrayList<>();
-        for (Category c : categories) {
-            categoryNames.add(c.getName());
-        }
-        return categoryNames;
-    }
 
     public List<Category> getCategories() {
         return categories;

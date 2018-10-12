@@ -23,6 +23,8 @@
         <activity android:name=".ChallengeActivity" />
         <activity android:name=".FinishPageActivity" />
         <activity android:name=".StartPageActivity" />
+        <activity android:name=".ChallengeInstructionActivity"/>
+
     </application>
 
 </manifest>

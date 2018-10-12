@@ -1,10 +1,12 @@
 package Controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Model.DrinkIT;
 
 public class Controller {
     DrinkIT model;
-
 
     public Controller(DrinkIT model) {
         this.model = model;
@@ -26,14 +28,23 @@ public class Controller {
         return model.getNextChallenge();
     }
 
+    public String getInstructions(){
+        return model.getInstructions();
+    }
+
     public void createCompleteListOfPlayers(){
         model.createCompletedPlayersList();
     }
 
+    List<String> categoryNames = new ArrayList<>();
+
+    public List<String> getCategories() {
+        categoryNames = model.getCategoryNames();
+        return categoryNames;
+    }
 
     public void failedChallenge() {
         model.failedChallenge();
-
     }
 
     public void succeededChallenge(){

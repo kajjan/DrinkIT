@@ -72,4 +72,8 @@ public abstract class Category {
     public int getActiveChallengePoint(){
         return challenges.get(indexOfActiveChallenge).getPoint();
     }
+
+    public Challenge getActiveChallenge(){
+        return challenges.get(indexOfActiveChallenge);
+    }
 }

@@ -16,6 +16,7 @@ public class DrinkIT {
     private List<Challenge> challenges = new ArrayList<>();
     private List<Category> cats = new ArrayList<>();
     private int indexOfActiveCategory = -1;
+    private List<GameRound> playedRounds = new ArrayList<>();
 
 
     public DrinkIT() {}
@@ -99,7 +100,8 @@ public class DrinkIT {
                 indexOfActiveCategory++;
             }
         }
-
+        playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
+                cats.get(indexOfActiveCategory).getActiveChallenge()));
         return nextChallenge;
     }
 
@@ -113,11 +115,18 @@ public class DrinkIT {
         point += pointToAdd;
         completeListOfPlayers.get(indexOfActivePlayer).setPoint(point);
         System.out.println("Points: " + point);
+        playedRounds.get(playedRounds.size()-1).setSucceded(true);
         indexOfActivePlayer++;
+        System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
+                " Point "+playedRounds.get(playedRounds.size()-1).getChallenge().getPoint()+" Succeeded = "+playedRounds.get(playedRounds.size()-1).isSucceded());
+
     }
 
     public void failedChallenge() {
+        playedRounds.get(playedRounds.size()-1).setSucceded(false);
         indexOfActivePlayer++;
+        System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
+                " Point "+playedRounds.get(playedRounds.size()-1).getChallenge().getPoint()+" Succeeded = "+playedRounds.get(playedRounds.size()-1).isSucceded());
     }
 
 
@@ -207,6 +216,9 @@ public class DrinkIT {
             sb.append(playerInPointOrder.get(i) + "\n");
         }
         scoreText = sb.toString();
+        System.out.println("GAMEROUND HERE -->"+playedRounds);
+        System.out.println(playedRounds.size());
+        System.out.println(playedRounds.toString());
         return scoreText;
     }
 

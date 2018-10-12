@@ -1,6 +1,6 @@
 package Model;
 
-public class Challenge {
+public abstract class Challenge {
     private String challenge;
     private int point;
 

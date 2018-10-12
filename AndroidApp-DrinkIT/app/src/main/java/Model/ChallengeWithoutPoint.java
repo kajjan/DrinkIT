@@ -6,4 +6,6 @@ public class ChallengeWithoutPoint extends Challenge {
         super(challenge, point);
     }
 
+
+
 }

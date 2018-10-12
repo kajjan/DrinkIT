@@ -8,11 +8,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.io.*;
 
 import Controller.Controller;
 import Model.DrinkIT;
-import Model.Factory;
 
 public class MainAppActivity extends AppCompatActivity {
 

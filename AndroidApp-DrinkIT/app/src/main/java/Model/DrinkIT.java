@@ -25,7 +25,7 @@ public class DrinkIT {
 
 
     public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges ) {
-            cats.add(Factory.createCategory(categoryName,instruction,challenges));
+            cats.add(CategoryFactory.createCategory(categoryName,instruction,challenges));
     }
 
     public List<String> getCategoryNames () {
@@ -177,9 +177,10 @@ public class DrinkIT {
 
 */
     
-    public boolean categoryListEmpty() {
+    public boolean atLeastOneCategoryChosen() {
         boolean b = false;
-        if (categories.size() == 0) {
+        for (Category c : cats)
+        if (c.isActive()) {
             b = true;
         }
         return b;

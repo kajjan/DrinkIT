@@ -79,17 +79,18 @@ public class DrinkIT {
         Collections.shuffle(cats);
         indexOfActiveCategory++;
 
-        if(indexOfActiveCategory == cats.size()){
-            indexOfActiveCategory = 0;
-        }
-
         while (nextChallenge.equals("none")) {
+            if(indexOfActiveCategory == cats.size()-1){
+                indexOfActiveCategory = 0;
+            }
+
             if (cats.get(indexOfActiveCategory).isActive()){
                 nextChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
             } else {
                 indexOfActiveCategory++;
             }
         }
+
         return nextChallenge;
     }
 

@@ -159,6 +159,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
                 playerTwo.setVisibility(playerTwo.VISIBLE);
                 playerTwo.setFocusable(true);
                 playerTwo.moveCursorToVisibleOffset();
+                playerTwo.setFocusableInTouchMode(true);
                 playerTwo.setHint("Player 2");
 
             }
@@ -175,6 +176,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
                 playerThree.setVisibility(playerThree.VISIBLE);
                 playerThree.setFocusable(true);
                 playerThree.moveCursorToVisibleOffset();
+                playerThree.setFocusableInTouchMode(true);
                 playerThree.setHint("Player 3");
             }
         }

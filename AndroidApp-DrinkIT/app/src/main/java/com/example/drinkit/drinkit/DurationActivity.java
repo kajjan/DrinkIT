@@ -18,19 +18,26 @@ public class DurationActivity extends MainView {
 
     public void shortDuration(View view) {
         getCtrl().setDuration(3);
-        String s = getCtrl().getNextCategory();
-        startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
+        String nextCategory = getCtrl().getNextCategory();
+        startNextActivity(nextCategory);
     }
 
     public void mediumDuration(View view) {
         getCtrl().setDuration(5);
-        startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
-
+        String nextCategory = getCtrl().getNextCategory();
+        startNextActivity(nextCategory);
     }
 
     public void longDuration(View view) {
         getCtrl().setDuration(10);
+        String nextCategory = getCtrl().getNextCategory();
+        startNextActivity(nextCategory);
+    }
+
+    public void startNextActivity(String category){
         startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
+
+
     }
 
 

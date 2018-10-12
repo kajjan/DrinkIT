@@ -101,7 +101,8 @@ public class DrinkIT {
             }
             if (cats.get(indexOfActiveCategory).isActive()){
                 activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
-                nextCategory = cats.get(indexOfActiveCategory).toString();
+                nextCategory = cats.get(indexOfActiveCategory).getName();
+                System.out.println(nextCategory);
             } else {
                 indexOfActiveCategory++;
             }

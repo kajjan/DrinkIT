@@ -30,14 +30,8 @@ public abstract class Category {
 
     public void setListOfChallenges(List<String> challengeString) {
         for(String s: challengeString){
-            String numberInString = s.replaceAll("[^0-9]+", "");
-            int num = Integer.parseInt(numberInString);
-            String textInString = s.replaceAll("[0-9]+", "");
-            challenges.add(new Challenge(textInString, num)); //Creates a new challenge
+            challenges.add(ChallengeFactory.createChallenge(name, s));
         }
-        System.out.println("LOOK HERE!!!!!! --->>>" +challenges.get(0).getChallenge());
-        System.out.println("LOOK HERE!!!!!! --->>>" +challenges.get(1).getChallenge());
-        System.out.println("LOOK HERE!!!!!! --->>>" +challenges.get(2).getChallenge());
     }
 
     public void setActive() {

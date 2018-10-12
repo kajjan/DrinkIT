@@ -1,12 +1,8 @@
 package com.example.drinkit.drinkit;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +17,7 @@ import java.util.List;
 public class AddPlayerActivity extends MainView implements TextWatcher {
     EditText playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix, playerSeven, playerEight, playerNine, playerTen;
     List<String> players = new ArrayList<>(10);
-
+    Button submitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +56,6 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
         playerEight.setVisibility(playerEight.INVISIBLE);
         playerNine.setVisibility(playerNine.INVISIBLE);
         playerTen.setVisibility(playerTen.INVISIBLE);
-
 
     }
 
@@ -141,6 +136,9 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         Toast.makeText(this, "during chances", Toast.LENGTH_SHORT).show();
+
+
+
     }
 
     @Override
@@ -151,19 +149,21 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
         if (playerOne.getText().hashCode() == s.hashCode()) {
             name = playerOne.getText().toString().trim();
 
-            if (sameName(name) > 1) {
+           if (sameName(name) > 1) {
                 playerOne.setError("Can't type in same name twice");
             } else {
                 players.add(name);
                 playerTwo.setVisibility(playerTwo.VISIBLE);
                 playerTwo.setFocusable(true);
                 playerTwo.moveCursorToVisibleOffset();
+                playerTwo.setHint("Player 2");
 
             }
         }
 
 
         if (playerTwo.getText().hashCode() == s.hashCode()) {
+            name = playerTwo.getText().toString().trim();
 
             if (sameName(name) > 1) {
                 playerTwo.setError("Can't type in same name twice");
@@ -172,7 +172,8 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
                 playerThree.setVisibility(playerThree.VISIBLE);
                 playerThree.setFocusable(true);
                 playerThree.moveCursorToVisibleOffset();
-                playerThree.setFocusableInTouchMode(true);
+                playerThree.setHint("Player 3");
+                //submitButton.setClickable(true);
 
             }
         }
@@ -190,6 +191,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
                 playerFour.setFocusable(true);
                 playerFour.moveCursorToVisibleOffset();
                 playerFour.setFocusableInTouchMode(true);
+                playerFour.setHint("Player 4");
 
             }
         }
@@ -207,6 +209,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
                 playerFive.setFocusable(true);
                 playerFive.moveCursorToVisibleOffset();
                 playerFive.setFocusableInTouchMode(true);
+                playerFive.setHint("Player 5");
 
             }
 
@@ -224,6 +227,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
                 playerSix.setFocusable(true);
                 playerSix.moveCursorToVisibleOffset();
                 playerSix.setFocusableInTouchMode(true);
+                playerSix.setHint("Player 6");
 
             }
         }
@@ -240,6 +244,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
                 playerSeven.setFocusable(true);
                 playerSeven.moveCursorToVisibleOffset();
                 playerSeven.setFocusableInTouchMode(true);
+                playerSeven.setHint("Player 7");
 
             }
         }
@@ -256,6 +261,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
                 playerEight.setFocusable(true);
                 playerEight.moveCursorToVisibleOffset();
                 playerEight.setFocusableInTouchMode(true);
+                playerEight.setHint("Player 8");
 
             }
         }
@@ -272,6 +278,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
                 playerNine.setFocusable(true);
                 playerNine.moveCursorToVisibleOffset();
                 playerNine.setFocusableInTouchMode(true);
+                playerNine.setHint("Player 9");
 
             }
         }
@@ -288,7 +295,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
                 playerTen.setFocusable(true);
                 playerTen.moveCursorToVisibleOffset();
                 playerTen.setFocusableInTouchMode(true);
-
+                playerTen.setHint("Player 10");
             }
         }
 

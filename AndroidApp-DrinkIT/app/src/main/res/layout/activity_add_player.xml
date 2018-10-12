@@ -36,7 +36,7 @@
             android:id="@+id/player2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Player 2"
+            android:autofillHints=""
             android:cursorVisible="false"
             android:focusable="false"
             />
@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/player3"
-            android:hint="Player 3"
+            android:autofillHints=""
             android:cursorVisible="false"
             android:focusable="false"/>
 
@@ -73,7 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/player4"
-            android:hint="Player 4" />
+            android:autofillHints=""
+            />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -89,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/player5"
-            android:hint="Player 5"
+            android:autofillHints=""
             android:cursorVisible="false"
             android:focusable="false"/>
 
@@ -108,7 +109,7 @@
             android:id="@+id/player6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Player 6"
+            android:autofillHints=""
             android:cursorVisible="false"
             android:focusable="false"/>
 
@@ -128,7 +129,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:baselineAligned="true"
-            android:hint="Player 7"
+            android:autofillHints=""
             android:cursorVisible="false"
             android:focusable="false"/>
 
@@ -146,7 +147,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/player8"
-            android:hint="Player 8"
+            android:autofillHints=""
             android:cursorVisible="false"
             android:focusable="false"/>
 
@@ -164,7 +165,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/player9"
-            android:hint="Player 9"
+            android:hint=""
             android:cursorVisible="false"
             android:focusable="false"/>
 
@@ -182,7 +183,7 @@
             android:id="@+id/player10"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Player 10"
+            android:autofillHints=""
             android:cursorVisible="false"
             android:focusable="false"/>
 
@@ -200,6 +201,8 @@
         android:onClick="namesSubmitClick"
         android:layout_marginStart="60sp"
         android:layout_marginLeft="60sp"
-        android:text="Submit" />
+        android:text="Submit"
+        android:clickable="true"
+        />
 
 </RelativeLayout>

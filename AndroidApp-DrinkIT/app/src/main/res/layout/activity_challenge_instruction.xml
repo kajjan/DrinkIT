@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChallengeInstructionActivity">
+
+
+    <TextView
+        android:id="@+id/challengeInstructionsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="314dp" />
+
+    <ImageButton
+        android:id="@+id/exitChallengeInstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        app:srcCompat="@android:drawable/btn_dialog"
+        android:onClick="exitChallengeInstruction"/>
+</RelativeLayout>

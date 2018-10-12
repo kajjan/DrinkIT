@@ -103,6 +103,9 @@ public class DrinkIT {
         return nextChallenge;
     }
 
+    public String getInstructions(){
+        return cats.get(indexOfActiveCategory).getInstruction();
+    }
 
     public void succeededChallenge() {
         int point = completeListOfPlayers.get(indexOfActivePlayer).getPoint();
@@ -134,9 +137,33 @@ public class DrinkIT {
             System.out.println(cats.get(i).isActive());
         }
 
-
     }
 
+        /*
+        if (categories.contains(category)) {//contains istället
+            unSelectCategory(category);
+        } else {
+            //categories.add(new Category(category));
+            System.out.println(getCategoryNames());
+        }
+
+    }
+    */
+
+
+    /*
+    //Method for removing a category, removes the choosen category
+    public void unSelectCategory(String category) { //public, borde va private men måste va public för test
+        for (int i = 0; i < categories.size(); i++) {
+            if (category.equals(categories.get(i).getName())) {
+                categories.remove(i);
+                System.out.println(getCategoryNames());
+            }
+        }
+    }
+
+*/
+    
     public boolean categoryListEmpty() {
         boolean b = false;
         if (categories.size() == 0) {

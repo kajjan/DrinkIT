@@ -8,7 +8,6 @@ import Model.DrinkIT;
 public class Controller {
     DrinkIT model;
 
-
     public Controller(DrinkIT model) {
         this.model = model;
     }
@@ -27,6 +26,10 @@ public class Controller {
 
     public String getNextChallenge(){
         return model.getNextChallenge();
+    }
+
+    public String getInstructions(){
+        return model.getInstructions();
     }
 
     public void createCompleteListOfPlayers(){

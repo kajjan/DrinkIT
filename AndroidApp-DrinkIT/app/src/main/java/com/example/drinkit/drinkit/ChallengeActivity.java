@@ -60,4 +60,8 @@ public class ChallengeActivity extends MainView {
     public boolean nextRound(){
         return getCtrl().nextRound();
         }
+
+    public void challengeInstructionPage(View view) {
+        startActivity(new Intent(ChallengeActivity.this, ChallengeInstructionActivity.class));
+    }
 }

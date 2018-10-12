@@ -61,6 +61,12 @@ public class Controller {
 
     }
 
+    public boolean atLeastOneCategoryChosen() {
+        boolean b = false;
+        model.atLeastOneCategoryChosen();
+        return b;
+    }
+
     public boolean nextRound(){
         return model.nextRound();
     }

@@ -47,7 +47,7 @@ public class Factory {
     }
 
     private static Category createCharade(String categoryName, String instruction, List<String> challenges){
-        return (new Charade(categoryName, instruction, challenges, false));
+        return (new CharadeCategory(categoryName, instruction, challenges, false));
     }
 
     private static Category createNeverHaveIEver(String categoryName, String instruction, List<String> challenges){

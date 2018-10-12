@@ -74,7 +74,7 @@ public class DrinkIT {
     }
 
     public String getNextChallenge(){
-        String nextChallenge = "";
+        String nextChallenge = "none";
 
         Collections.shuffle(cats);
         indexOfActiveCategory++;
@@ -83,14 +83,12 @@ public class DrinkIT {
             indexOfActiveCategory = 0;
         }
 
-        if (cats.get(indexOfActiveCategory).isActive()){
-            nextChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
-        } else {
-            indexOfActiveCategory++;        //Har jag tänkt rätt här??
-        }
-
-        if(indexOfActiveCategory == cats.size()){
-            indexOfActiveCategory = 0;
+        while (nextChallenge.equals("none")) {
+            if (cats.get(indexOfActiveCategory).isActive()){
+                nextChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
+            } else {
+                indexOfActiveCategory++;
+            }
         }
         return nextChallenge;
     }

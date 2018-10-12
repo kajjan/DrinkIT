@@ -22,8 +22,6 @@ import java.util.List;
 public class AddPlayerActivity extends MainView implements TextWatcher{
     EditText playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix, playerSeven, playerEight, playerNine, playerTen;
     List<String> players = new ArrayList<>(10);
-    List<String> submitPlayers = new ArrayList<>(10);
-
 
 
     @Override
@@ -77,28 +75,26 @@ public class AddPlayerActivity extends MainView implements TextWatcher{
         for (int i = 0; i <players.size() ; i++) {
             if(players.get(i).isEmpty()){
             }
-            /*if(sameName(i)){
+            else if(sameName(i)){
                 numberOfSameNamesAdded++;
-            }*/
+            }
             else{
                 getCtrl().addPlayer(players.get(i));
                 numberOfNamesAdded++;
             }
-
         }
 
 
         if(numberOfNamesAdded<2){
             atLeastTwoPlayersErrorMessage();
         }
-        if(numberOfSameNamesAdded>0){
+
+        else if(numberOfSameNamesAdded>0){
 
         }
         else{
             startActivity(new Intent(AddPlayerActivity.this, ChooseCategoryActivity.class));
-
         }
-
     }
 
 
@@ -109,26 +105,20 @@ public class AddPlayerActivity extends MainView implements TextWatcher{
     }
 
 
-
-
-/*
-
-
-    public boolean sameName(int index){
+    public boolean sameName(int i){ //Method that checks if player already exists in list
         int numberOfTimes=0;
-        for (int i = 0; i < players.size(); i++) {
-        if(players.contains(players.get(i))){
-            numberOfTimes++;
-            }
+        for (String name: players) {
+            if(name.equals(players.get(i))){
+                numberOfTimes++;
 
+            }
+            if(numberOfTimes>1){
+                return true;
+            }
         }
-        if(numberOfTimes>=2){
-            return true;
-        }else{
-            return false;
-        }
+        return false;
     }
-*/
+
 
     public int sameName(String name){
         int numberOfTimes=0;
@@ -156,6 +146,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher{
     public void afterTextChanged(Editable s) {
         Toast.makeText(this, "after changes", Toast.LENGTH_SHORT).show();
         String name= s.toString().trim();
+
         if(playerOne.getText().hashCode() == s.hashCode()){
             name=playerOne.getText().toString().trim();
 
@@ -165,8 +156,8 @@ public class AddPlayerActivity extends MainView implements TextWatcher{
                 else{
                     players.add(name);
                 }
-
         }
+
 
         if(playerTwo.getText().hashCode() == s.hashCode()){
             name=playerTwo.getText().toString().trim();

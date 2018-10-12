@@ -29,8 +29,6 @@ public class DurationActivity extends MainView {
     public void longDuration(View view) {
         getCtrl().setDuration(10);
         startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
-
-
     }
 
 

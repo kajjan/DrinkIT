@@ -1,11 +1,21 @@
 package Model;
 
 public class Challenge {
-    private Card card;
-    private Player player;
+    private String challenge;
+    private int point;
 
-    public Challenge(Card card, Player player) {
-        this.card = card;
-        this.player = player;
+    public Challenge(String challenge, int point) {
+        this.challenge = challenge;
+        this.point = point;
     }
+
+    public String getChallenge() {
+        return challenge;
+    }
+
+    public int getPoint() {
+        return point;
+    }
+
+
 }

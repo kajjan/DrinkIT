@@ -28,23 +28,23 @@ public class ChooseCategoryActivity extends MainView {
 
     }
 
-    public void category1(View view) {getCtrl().chooseCategory("NeverHaveIEver");} //hitta lösning, ev skapa enum i appen? på något sätt inte ge vyn tillåtelse att ändra eller se för mycket
+    public void category1(View view) {getCtrl().chooseCategory("neverHaveIEver");} //hitta lösning, ev skapa enum i appen? på något sätt inte ge vyn tillåtelse att ändra eller se för mycket
 
-    public void category2(View view) {getCtrl().chooseCategory("TruthOrDare");}
+    public void category2(View view) {getCtrl().chooseCategory("truthOrDare");}
 
-    public void category3(View view) {getCtrl().chooseCategory("MostLikelyTo");}
+    public void category3(View view) {getCtrl().chooseCategory("mostLikelyTo");}
 
-    public void category4(View view) {getCtrl().chooseCategory("Rules");}
+    public void category4(View view) {getCtrl().chooseCategory("rules");}
 
-    public void category5(View view) {getCtrl().chooseCategory("Themes");}
+    public void category5(View view) {getCtrl().chooseCategory("themes");}
 
-    public void category6(View view) {getCtrl().chooseCategory("ThisOrThat");}
+    public void category6(View view) {getCtrl().chooseCategory("thisOrThat");}
 
-    public void category7(View view) {getCtrl().chooseCategory("Quiz");}
+    public void category7(View view) {getCtrl().chooseCategory("quiz");}
 
-    public void category8(View view) {getCtrl().chooseCategory("Charades");}
+    public void category8(View view) {getCtrl().chooseCategory("charades");}
 
-    public void category9(View view) {getCtrl().chooseCategory("Songs");}
+    public void category9(View view) {getCtrl().chooseCategory("songs");}
 
 
 

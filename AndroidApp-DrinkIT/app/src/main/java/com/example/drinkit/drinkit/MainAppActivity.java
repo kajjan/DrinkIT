@@ -20,28 +20,27 @@ public class MainAppActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         InputStream charades = getResources().openRawResource(getResources().getIdentifier("charades", "raw", getPackageName()));
         InputStream neverHaveIEver = getResources().openRawResource(getResources().getIdentifier("neverhaveiever", "raw", getPackageName()));
-    /*    InputStream pointAtPerson = getResources().openRawResource(getResources().getIdentifier("pointatperson", "raw", getPackageName()));
+        InputStream mostLikelyto = getResources().openRawResource(getResources().getIdentifier("mostlikelyto", "raw", getPackageName()));
         InputStream quiz = getResources().openRawResource(getResources().getIdentifier("quiz", "raw", getPackageName()));
         InputStream rules = getResources().openRawResource(getResources().getIdentifier("rules", "raw", getPackageName()));
         InputStream songs = getResources().openRawResource(getResources().getIdentifier("songs", "raw", getPackageName()));
-        InputStream theme = getResources().openRawResource(getResources().getIdentifier("theme", "raw", getPackageName()));
+        InputStream theme = getResources().openRawResource(getResources().getIdentifier("themes", "raw", getPackageName()));
         InputStream thisOrThat = getResources().openRawResource(getResources().getIdentifier("thisorthat", "raw", getPackageName()));
         InputStream truthOrDare = getResources().openRawResource(getResources().getIdentifier("truthordare", "raw", getPackageName()));
-*/
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         textFileScanner(charades);
-
         textFileScanner(neverHaveIEver);
-    /*    textFileScanner(pointAtPerson);
+        textFileScanner(mostLikelyto);
         textFileScanner(quiz);
         textFileScanner(rules);
         textFileScanner(songs);
         textFileScanner(theme);
         textFileScanner(thisOrThat);
         textFileScanner(truthOrDare);
-        */
+
 
         showStartPage();
 
@@ -71,7 +70,6 @@ public class MainAppActivity extends AppCompatActivity {
             System.out.println("hello" + challenge);
         }
         model.createCategoryListOnCreate(categoryName, instruction, challengesToClass);
-
     }
 
 }

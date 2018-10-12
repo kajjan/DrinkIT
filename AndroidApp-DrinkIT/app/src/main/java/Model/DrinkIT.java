@@ -18,7 +18,6 @@ public class DrinkIT {
     private int indexOfActiveCategory = -1;
 
 
-
     public DrinkIT() {}
 
 
@@ -75,14 +74,24 @@ public class DrinkIT {
     }
 
     public String getNextChallenge(){
-        //if(cats.get(indexOfActiveCategory).isActive()){} //Koppla ihop med knapparna när kategori väljs
+        String nextChallenge = "none";
+
         Collections.shuffle(cats);
         indexOfActiveCategory++;
-        if(indexOfActiveCategory == cats.size()){
-            indexOfActiveCategory = 0;
-        }
-        return cats.get(indexOfActiveCategory).getChallengeToPlay();
 
+        while (nextChallenge.equals("none")) {
+            if(indexOfActiveCategory == cats.size()-1){
+                indexOfActiveCategory = 0;
+            }
+
+            if (cats.get(indexOfActiveCategory).isActive()){
+                nextChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
+            } else {
+                indexOfActiveCategory++;
+            }
+        }
+
+        return nextChallenge;
     }
 
     public String getInstructions(){
@@ -103,11 +112,14 @@ public class DrinkIT {
     }
 
 
-
     public void chooseCategory(String category) { //ska ev inte va string, beror på vad katergori är
         for (Category c : cats) {
             if (c.getName().equals(category)) {
-                c.setActive();
+                if (c.isActive()) {
+                    c.setInActive();
+                } else {
+                    c.setActive();
+                }
             }
         }
         for (int i = 0; i < cats.size(); i++) { // endast för att se att det funkar
@@ -138,6 +150,7 @@ public class DrinkIT {
             }
         }
     }
+
 */
 
     public boolean categoryListEmpty() {
@@ -151,12 +164,10 @@ public class DrinkIT {
 
     //method that puts every player in the players list in order of highest point to lowest.
     public void putListInPointOrder() {
-
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
             if(i<players.size()-1) {
                 for (int j = i; j <players.size() ; j++) {
-
                     while (s.getPoint() < players.get(j).getPoint()) {
                         Collections.swap(players, i, j);
                     }

@@ -1,5 +1,5 @@
 songs
 Songs write instructions here
-Songs first challenge here 2
-Songs second challenge here 3
-Songs third challenge here 5
+Songs first challenge here - answer 2
+Songs second challenge here - answer 3
+Songs third challenge here - answer 5

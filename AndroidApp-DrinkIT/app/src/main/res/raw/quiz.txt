@@ -1,5 +1,5 @@
 quiz
 Quiz, write instructions here
-Quiz first challenge here 2
-Quiz second challenge here 2
-Quiz third challenge here 3
+Quiz first challenge here - first answer here 2
+Quiz second challenge here - second answer here 2
+Quiz third challenge here - third answer here 3

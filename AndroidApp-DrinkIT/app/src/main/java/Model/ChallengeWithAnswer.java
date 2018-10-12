@@ -2,7 +2,10 @@ package Model;
 
 public class ChallengeWithAnswer extends Challenge {
 
-    public ChallengeWithAnswer(String challenge, int point) {
+    String answer;
+
+    public ChallengeWithAnswer(String challenge, String answer, int point) {
         super(challenge, point);
+        this.answer = answer;
     }
 }

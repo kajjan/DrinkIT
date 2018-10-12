@@ -1,5 +1,5 @@
 charades
 charades, Here are the instructions for Charades
-charades first challenge here 2
-charades second challenge here 3
-charades third challenge here 4
+charades first challenge here - answer 2
+charades second challenge here - answer 3
+charades third challenge here - answer 4

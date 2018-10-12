@@ -21,20 +21,22 @@ public class ChallengeFactory {
 
     private static Challenge createChallengeWithPoints(String challenge) {
         String numberInString = challenge.replaceAll("[^0-9]+", "");
-        int num = Integer.parseInt(numberInString);
-        String textInString = challenge.replaceAll("[0-9]+", "");
+        int number = Integer.parseInt(numberInString);
+        String text = challenge.replaceAll("[0-9]+", "");
 
-        return (new ChallengeWithPoints(textInString, num));
+        return (new ChallengeWithPoints(text, number));
     }
 
     private static Challenge createChallengeWithAnswer(String challenge) {
         String numberInString = challenge.replaceAll("[^0-9]+", "");
-        int num = Integer.parseInt(numberInString);
+        int number = Integer.parseInt(numberInString);
         String textInString = challenge.replaceAll("[0-9]+", "");
 
-        //answer också
+        String[] parts = textInString.split("-");
+        String challengeText = parts[0];
+        String answerText = parts[1];
 
-        return (new ChallengeWithAnswer(textInString, num));
+        return (new ChallengeWithAnswer(challengeText, answerText, number));
     }
 
     private static Challenge createChallengeWithoutPoint(String challenge) {

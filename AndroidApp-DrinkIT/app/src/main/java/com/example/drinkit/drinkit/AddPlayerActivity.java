@@ -18,8 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
-public class AddPlayerActivity extends MainView implements TextWatcher{
+public class AddPlayerActivity extends MainView implements TextWatcher {
     EditText playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix, playerSeven, playerEight, playerNine, playerTen;
     List<String> players = new ArrayList<>(10);
 
@@ -52,14 +51,24 @@ public class AddPlayerActivity extends MainView implements TextWatcher{
         playerNine.addTextChangedListener(this);
         playerTen.addTextChangedListener(this);
 
+        playerTwo.setVisibility(playerTwo.INVISIBLE);
+        playerThree.setVisibility(playerThree.INVISIBLE);
+        playerFour.setVisibility(playerFour.INVISIBLE);
+        playerFive.setVisibility(playerFive.INVISIBLE);
+        playerSix.setVisibility(playerSix.INVISIBLE);
+        playerSeven.setVisibility(playerSeven.INVISIBLE);
+        playerEight.setVisibility(playerEight.INVISIBLE);
+        playerNine.setVisibility(playerNine.INVISIBLE);
+        playerTen.setVisibility(playerTen.INVISIBLE);
+
 
     }
 
 
     public void namesSubmitClick(View view) { //Method that saves all of the players and send it to the controller
         players.clear();
-        int numberOfNamesAdded=0;
-        int numberOfSameNamesAdded=0;
+        int numberOfNamesAdded = 0;
+        int numberOfSameNamesAdded = 0;
 
         players.add(playerOne.getText().toString().trim());
         players.add(playerTwo.getText().toString().trim());
@@ -72,47 +81,40 @@ public class AddPlayerActivity extends MainView implements TextWatcher{
         players.add(playerNine.getText().toString().trim());
         players.add(playerTen.getText().toString().trim());
 
-        for (int i = 0; i <players.size() ; i++) {
-            if(players.get(i).isEmpty()){
-            }
-            else if(sameName(i)){
+        for (int i = 0; i < players.size(); i++) {
+            if (players.get(i).isEmpty()) {
+            } else if (sameName(i)) {
                 numberOfSameNamesAdded++;
-            }
-            else{
+            } else {
                 getCtrl().addPlayer(players.get(i));
                 numberOfNamesAdded++;
             }
         }
 
 
-        if(numberOfNamesAdded<2){
+        if (numberOfNamesAdded < 2) {
             atLeastTwoPlayersErrorMessage();
-        }
+        } else if (numberOfSameNamesAdded > 0) {
 
-        else if(numberOfSameNamesAdded>0){
-
-        }
-        else{
+        } else {
             startActivity(new Intent(AddPlayerActivity.this, ChooseCategoryActivity.class));
         }
     }
 
 
-
-
-    public void atLeastTwoPlayersErrorMessage(){
+    public void atLeastTwoPlayersErrorMessage() {
         playerTwo.setError("At least two people must be added");
     }
 
 
-    public boolean sameName(int i){ //Method that checks if player already exists in list
-        int numberOfTimes=0;
-        for (String name: players) {
-            if(name.equals(players.get(i))){
+    public boolean sameName(int i) { //Method that checks if player already exists in list
+        int numberOfTimes = 0;
+        for (String name : players) {
+            if (name.equals(players.get(i))) {
                 numberOfTimes++;
 
             }
-            if(numberOfTimes>1){
+            if (numberOfTimes > 1) {
                 return true;
             }
         }
@@ -120,16 +122,15 @@ public class AddPlayerActivity extends MainView implements TextWatcher{
     }
 
 
-    public int sameName(String name){
-        int numberOfTimes=0;
+    public int sameName(String name) {
+        int numberOfTimes = 0;
         for (int i = 0; i < players.size(); i++) {
-            if(name.equals(players.get(i))){
+            if (name.equals(players.get(i))) {
                 numberOfTimes++;
             }
         }
         return numberOfTimes;
     }
-
 
 
     @Override
@@ -145,120 +146,162 @@ public class AddPlayerActivity extends MainView implements TextWatcher{
     @Override
     public void afterTextChanged(Editable s) {
         Toast.makeText(this, "after changes", Toast.LENGTH_SHORT).show();
-        String name= s.toString().trim();
+        String name = s.toString().trim();
 
-        if(playerOne.getText().hashCode() == s.hashCode()){
-            name=playerOne.getText().toString().trim();
+        if (playerOne.getText().hashCode() == s.hashCode()) {
+            name = playerOne.getText().toString().trim();
 
-                if (sameName(name) > 1) {
-                    playerOne.setError("Can't type in same name twice");
-                }
-                else{
-                    players.add(name);
-                }
+            if (sameName(name) > 1) {
+                playerOne.setError("Can't type in same name twice");
+            } else {
+                players.add(name);
+                playerTwo.setVisibility(playerTwo.VISIBLE);
+                playerTwo.setFocusable(true);
+                playerTwo.moveCursorToVisibleOffset();
+
+            }
         }
 
 
-        if(playerTwo.getText().hashCode() == s.hashCode()){
-            name=playerTwo.getText().toString().trim();
+        if (playerTwo.getText().hashCode() == s.hashCode()) {
 
+            if (sameName(name) > 1) {
+                playerTwo.setError("Can't type in same name twice");
+            } else {
+                players.add(name);
+                playerThree.setVisibility(playerThree.VISIBLE);
+                playerThree.setFocusable(true);
+                playerThree.moveCursorToVisibleOffset();
+                playerThree.setFocusableInTouchMode(true);
 
-                if(sameName(name)>1){
-                    playerTwo.setError("Can't type in same name twice");
-                }
-                else{
-                    players.add(name);
-                }
+            }
         }
 
-        if(playerThree.getText().hashCode() == s.hashCode()){
-            name=playerThree.getText().toString().trim();
+
+        if (playerThree.getText().hashCode() == s.hashCode()) {
+            name = playerThree.getText().toString().trim();
 
 
-                if (sameName(name) > 1) {
-                    playerThree.setError("Can't type in same name twice");
-                }
-                else{
-                    players.add(name);
-                }
+            if (sameName(name) > 1) {
+                playerThree.setError("Can't type in same name twice");
+            } else {
+                players.add(name);
+                playerFour.setVisibility(playerFour.VISIBLE);
+                playerFour.setFocusable(true);
+                playerFour.moveCursorToVisibleOffset();
+                playerFour.setFocusableInTouchMode(true);
+
+            }
         }
 
-        if(playerFour.getText().hashCode() == s.hashCode()){
-            name=playerFour.getText().toString().trim();
+
+        if (playerFour.getText().hashCode() == s.hashCode()) {
+            name = playerFour.getText().toString().trim();
 
 
-                if (sameName(name) > 1) {
-                    playerFour.setError("Can't type in same name twice");
-                }
-                else{
-                    players.add(name);
-                }
+            if (sameName(name) > 1) {
+                playerFour.setError("Can't type in same name twice");
+            } else {
+                players.add(name);
+                playerFive.setVisibility(playerFive.VISIBLE);
+                playerFive.setFocusable(true);
+                playerFive.moveCursorToVisibleOffset();
+                playerFive.setFocusableInTouchMode(true);
+
+            }
+
         }
 
-        if(playerFive.getText().hashCode() == s.hashCode()){
-            name=playerFive.getText().toString().trim();
 
-            if(sameName(name)>1){
+        if (playerFive.getText().hashCode() == s.hashCode()) {
+            name = playerFive.getText().toString().trim();
+
+            if (sameName(name) > 1) {
                 playerFive.setError("Can't type in same name twice");
-            }
-            else{
+            } else {
                 players.add(name);
+                playerSix.setVisibility(playerSix.VISIBLE);
+                playerSix.setFocusable(true);
+                playerSix.moveCursorToVisibleOffset();
+                playerSix.setFocusableInTouchMode(true);
+
             }
         }
 
-        if(playerSix.getText().hashCode() == s.hashCode()){
-            name=playerSix.getText().toString().trim();
 
-            if(sameName(name)>1){
+        if (playerSix.getText().hashCode() == s.hashCode()) {
+            name = playerSix.getText().toString().trim();
+
+            if (sameName(name) > 1) {
                 playerSix.setError("Can't type in same name twice");
-            }
-            else{
+            } else {
                 players.add(name);
+                playerSeven.setVisibility(playerSeven.VISIBLE);
+                playerSeven.setFocusable(true);
+                playerSeven.moveCursorToVisibleOffset();
+                playerSeven.setFocusableInTouchMode(true);
+
             }
         }
 
-        if(playerSeven.getText().hashCode() == s.hashCode()){
-            name=playerSeven.getText().toString().trim();
 
-            if(sameName(name)>1){
+        if (playerSeven.getText().hashCode() == s.hashCode()) {
+            name = playerSeven.getText().toString().trim();
+
+            if (sameName(name) > 1) {
                 playerSeven.setError("Can't type in same name twice");
-            }
-            else{
+            } else {
                 players.add(name);
+                playerEight.setVisibility(playerEight.VISIBLE);
+                playerEight.setFocusable(true);
+                playerEight.moveCursorToVisibleOffset();
+                playerEight.setFocusableInTouchMode(true);
+
             }
         }
 
-        if(playerEight.getText().hashCode() == s.hashCode()){
-            name=playerEight.getText().toString().trim();
 
-            if(sameName(name)>1){
+        if (playerEight.getText().hashCode() == s.hashCode()) {
+            name = playerEight.getText().toString().trim();
+
+            if (sameName(name) > 1) {
                 playerEight.setError("Can't type in same name twice");
-            }
-            else{
+            } else {
                 players.add(name);
+                playerNine.setVisibility(playerNine.VISIBLE);
+                playerNine.setFocusable(true);
+                playerNine.moveCursorToVisibleOffset();
+                playerNine.setFocusableInTouchMode(true);
+
             }
         }
 
-        if(playerNine.getText().hashCode() == s.hashCode()){
-            name=playerNine.getText().toString().trim();
 
-            if(sameName(name)>1){
+        if (playerNine.getText().hashCode() == s.hashCode()) {
+            name = playerNine.getText().toString().trim();
+
+            if (sameName(name) > 1) {
                 playerNine.setError("Can't type in same name twice");
-            }
-            else{
+            } else {
                 players.add(name);
+                playerTen.setVisibility(playerTen.VISIBLE);
+                playerTen.setFocusable(true);
+                playerTen.moveCursorToVisibleOffset();
+                playerTen.setFocusableInTouchMode(true);
+
             }
         }
 
-        if(playerTen.getText().hashCode() == s.hashCode()){
-            name=playerTen.getText().toString().trim();
 
-            if(sameName(name)>1){
+        if (playerTen.getText().hashCode() == s.hashCode()) {
+            name = playerTen.getText().toString().trim();
+
+            if (sameName(name) > 1) {
                 playerTen.setError("Can't type in same name twice");
-            }
-            else{
+            } else {
                 players.add(name);
             }
         }
+
     }
 }

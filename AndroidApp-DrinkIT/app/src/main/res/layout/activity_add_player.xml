@@ -36,7 +36,10 @@
             android:id="@+id/player2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Player 2" />
+            android:hint="Player 2"
+            android:cursorVisible="false"
+            android:focusable="false"
+            />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -52,7 +55,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/player3"
-            android:hint="Player 3" />
+            android:hint="Player 3"
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -84,7 +89,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/player5"
-            android:hint="Player 5" />
+            android:hint="Player 5"
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -101,7 +108,9 @@
             android:id="@+id/player6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Player 6" />
+            android:hint="Player 6"
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -119,7 +128,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:baselineAligned="true"
-            android:hint="Player 7" />
+            android:hint="Player 7"
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -135,7 +146,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/player8"
-            android:hint="Player 8" />
+            android:hint="Player 8"
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -151,7 +164,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/player9"
-            android:hint="Player 9" />
+            android:hint="Player 9"
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -167,7 +182,9 @@
             android:id="@+id/player10"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Player 10" />
+            android:hint="Player 10"
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
 
     </android.support.design.widget.TextInputLayout>

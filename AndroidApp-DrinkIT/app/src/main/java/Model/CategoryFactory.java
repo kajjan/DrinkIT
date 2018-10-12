@@ -1,7 +1,7 @@
 package Model;
 import java.util.List;
 
-public class Factory {
+public class CategoryFactory {
 
     public static Category createCategory(String categoryName, String instruction, List<String> challenges){
         switch (categoryName){

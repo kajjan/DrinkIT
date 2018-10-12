@@ -36,7 +36,7 @@ public class ChooseCategoryActivity extends MainView {
 
     public void category4(View view) {getCtrl().chooseCategory("rules");}
 
-    public void category5(View view) {getCtrl().chooseCategory("theme");}
+    public void category5(View view) {getCtrl().chooseCategory("themes");}
 
     public void category6(View view) {getCtrl().chooseCategory("thisOrThat");}
 

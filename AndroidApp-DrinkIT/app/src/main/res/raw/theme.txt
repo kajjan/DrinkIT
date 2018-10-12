@@ -1,5 +1,0 @@
-theme
-theme write instructions here
-theme first challenge here 3
-theme second challenge here 4
-theme third challenge here 6

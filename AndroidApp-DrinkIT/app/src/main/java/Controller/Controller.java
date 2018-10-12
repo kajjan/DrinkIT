@@ -1,5 +1,8 @@
 package Controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Model.DrinkIT;
 
 public class Controller {
@@ -30,10 +33,15 @@ public class Controller {
         model.createCompletedPlayersList();
     }
 
+    List<String> categoryNames = new ArrayList<>();
+
+    public List<String> getCategories() {
+        categoryNames = model.getCategoryNames();
+        return categoryNames;
+    }
 
     public void failedChallenge() {
         model.failedChallenge();
-
     }
 
     public void succeededChallenge(){

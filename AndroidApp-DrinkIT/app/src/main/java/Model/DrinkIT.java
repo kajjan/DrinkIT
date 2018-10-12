@@ -25,6 +25,15 @@ public class DrinkIT {
             cats.add(Factory.createCategory(categoryName,instruction,challenges));
     }
 
+    public List<String> getCategoryNames () {
+        List<String> categoryNames = new ArrayList<>();
+        for (Category c : cats) {
+            categoryNames.add(c.getName());
+        }
+        return categoryNames;
+    }
+
+
     public void addPlayer(String name) {
         players.add(new Player(name));
     } //ok
@@ -119,36 +128,14 @@ public class DrinkIT {
                 }
             }
         }
-        for (int i = 0; i<cats.size(); i++) { // endast för att se att det funkar
+        // endast för att printa och se att det funkar
+        for (int i = 0; i<cats.size(); i++) {
             System.out.println(cats.get(i).getName());
             System.out.println(cats.get(i).isActive());
         }
 
 
-        /*
-        if (categories.contains(category)) {//contains istället
-            unSelectCategory(category);
-        } else {
-            //categories.add(new Category(category));
-            System.out.println(getCategoryNames());
-        }
-        */
-
-
     }
-
-    /*
-    //Method for removing a category, removes the choosen category
-    public void unSelectCategory(String category) { //public, borde va private men måste va public för test
-        for (int i = 0; i < categories.size(); i++) {
-            if (category.equals(categories.get(i).getName())) {
-                categories.remove(i);
-                System.out.println(getCategoryNames());
-            }
-        }
-    }
-
-*/
 
     public boolean categoryListEmpty() {
         boolean b = false;
@@ -223,14 +210,6 @@ public class DrinkIT {
         this.players = players;
     }
 
-    //method for test
-    public List<String> getCategoryNames() {
-        List<String> categoryNames = new ArrayList<>();
-        for (Category c : categories) {
-            categoryNames.add(c.getName());
-        }
-        return categoryNames;
-    }
 
     public List<Category> getCategories() {
         return categories;

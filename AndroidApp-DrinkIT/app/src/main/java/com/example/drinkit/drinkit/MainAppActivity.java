@@ -48,7 +48,7 @@ public class MainAppActivity extends AppCompatActivity {
 
     DrinkIT model = new DrinkIT();
     Controller ctrl = new Controller(model);
-    MainView view = new MainView(ctrl);
+    // MainView view = new MainView(ctrl);
 
 
     void showStartPage() {
@@ -71,5 +71,7 @@ public class MainAppActivity extends AppCompatActivity {
         }
         model.createCategoryListOnCreate(categoryName, instruction, challengesToClass);
     }
+
+    MainView view = new MainView(ctrl);
 
 }

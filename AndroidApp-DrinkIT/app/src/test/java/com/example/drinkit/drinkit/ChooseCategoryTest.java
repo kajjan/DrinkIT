@@ -27,15 +27,17 @@ public class ChooseCategoryTest {
         String category2 = "Truth or dare";
 
 
-        categories.add(new Category(category));
-        categories.add(new Category(category2));
+        //categories.add(new Category(category));
+        //categories.add(new Category(category2));
 
+        /*
         for (String s:model.getCategoryNames()){
             if (category.equals(s)){
                 b=true;
             }
             System.out.println(s);
         }
+        */
 
         int endLength = categories.size();
 
@@ -52,12 +54,12 @@ public class ChooseCategoryTest {
         String category = "Charades";
         String category2 = "Truth or dare";
 
-        categories.add(new Category(category));
-        categories.add(new Category(category2));
+        //categories.add(new Category(category));
+        //categories.add(new Category(category2));
 
         int initialLength = categories.size();
 
-        model.unSelectCategory(category);
+        //model.unSelectCategory(category);
 
         int endLength = categories.size();
 

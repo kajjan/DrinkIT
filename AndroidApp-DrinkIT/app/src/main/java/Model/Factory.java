@@ -27,7 +27,7 @@ public class Factory {
     }
 
     private static Category createTheme(String categoryName, String instruction, List<String> challenges) {
-        return (new ThemeCategory(categoryName, instruction, challenges, false));
+        return (new ThemesCategory(categoryName, instruction, challenges, false));
     }
 
     private static Category createSongs(String categoryName, String instruction, List<String> challenges) {

@@ -19,6 +19,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
     List<String> players = new ArrayList<>(10);
     Button submitButton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -173,8 +174,6 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
                 playerThree.setFocusable(true);
                 playerThree.moveCursorToVisibleOffset();
                 playerThree.setHint("Player 3");
-                //submitButton.setClickable(true);
-
             }
         }
 

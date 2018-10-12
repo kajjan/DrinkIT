@@ -202,7 +202,6 @@
         android:layout_marginStart="60sp"
         android:layout_marginLeft="60sp"
         android:text="Submit"
-        android:clickable="true"
         />
 
 </RelativeLayout>

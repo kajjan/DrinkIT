@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class DrinkIT {
     private List<Category> cats = new ArrayList<>();
     private int indexOfActiveCategory = -1;
     private List<GameRound> playedRounds = new ArrayList<>();
+    private String activeChallenge;
 
 
     public DrinkIT() {}
@@ -83,26 +85,28 @@ public class DrinkIT {
 
     }
 
-    public String getNextChallenge(){
-        String nextChallenge = "none";
+    public String getActiveChallenge(){
+        playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
+                cats.get(indexOfActiveCategory).getActiveChallenge()));
+        return activeChallenge;
+    }
 
+    public String getNextCategory(){
+        String nextCategory = "none";
         Collections.shuffle(cats);
         indexOfActiveCategory++;
-
-        while (nextChallenge.equals("none")) {
+        while (nextCategory.equals("none")) {
             if(indexOfActiveCategory == cats.size()-1){
                 indexOfActiveCategory = 0;
             }
-
             if (cats.get(indexOfActiveCategory).isActive()){
-                nextChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
+                activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
+                nextCategory = cats.get(indexOfActiveCategory).toString();
             } else {
                 indexOfActiveCategory++;
             }
         }
-        playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
-                cats.get(indexOfActiveCategory).getActiveChallenge()));
-        return nextChallenge;
+        return nextCategory;
     }
 
     public String getInstructions(){

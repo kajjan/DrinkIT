@@ -24,8 +24,8 @@ public class Controller {
             return model.getNameOfPlayer();
     }
 
-    public String getNextChallenge(){
-        return model.getNextChallenge();
+    public String getNextCategory(){
+        return model.getNextCategory();
     }
 
     public String getInstructions(){
@@ -76,4 +76,7 @@ public class Controller {
     }
 
 
+    public String getActiveChallenge() {
+        return model.getActiveChallenge();
+    }
 }

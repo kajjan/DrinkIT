@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,26 @@ public class ChooseCategoryActivity extends MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_category);
         getCategories();
+        Button btn1 = findViewById(R.id.catOne);
+        btn1.setText(categories.get(0));
+        Button btn2 = findViewById(R.id.catTwo);
+        btn2.setText(categories.get(1));
+        Button btn3 = findViewById(R.id.catThree);
+        btn3.setText(categories.get(2));
+        Button btn4 = findViewById(R.id.catFour);
+        btn4.setText(categories.get(3));
+        Button btn5 = findViewById(R.id.catFive);
+        btn5.setText(categories.get(4));
+        Button btn6 = findViewById(R.id.catSix);
+        btn6.setText(categories.get(5));
+        Button btn7 = findViewById(R.id.catSeven);
+        btn7.setText(categories.get(6));
+        Button btn8 = findViewById(R.id.catEight);
+        btn8.setText(categories.get(7));
+        Button btn9 = findViewById(R.id.catNine);
+        btn9.setText(categories.get(8));
+
+
     }
 
     public void nextToDurationPage(View view) {
@@ -30,7 +51,6 @@ public class ChooseCategoryActivity extends MainView {
     public void returnToAddPlayersPage(View view) {
         startActivity(new Intent(ChooseCategoryActivity.this, AddPlayerActivity.class));
     }
-
 
     private List<String> getCategories() {
         categories = getCtrl().getCategories();

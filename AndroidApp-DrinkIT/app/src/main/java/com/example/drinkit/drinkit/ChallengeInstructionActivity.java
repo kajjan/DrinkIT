@@ -19,6 +19,6 @@ public class ChallengeInstructionActivity extends MainView {
         text.setText(getCtrl().getInstructions());
     }
     public void exitChallengeInstruction(View view) {
-        startActivity(new Intent(ChallengeInstructionActivity.this, ChallengeActivity.class));
+        startActivity(new Intent(ChallengeInstructionActivity.this, ChallengeWithPointActivity.class));
     }
 }

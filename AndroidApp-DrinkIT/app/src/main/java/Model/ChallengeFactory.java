@@ -7,7 +7,7 @@ public class ChallengeFactory {
     public static Challenge createChallenge(String categoryName, String challenge){
         switch (categoryName){
             case "charades": return createChallengeWithAnswer(challenge);
-            case "neverHaveIEver": return createChallengeWithPoints(challenge);
+            case "neverHaveIEver": return createChallengeWithoutPoint(challenge);
             case "mostLikelyTo": return createChallengeWithoutPoint(challenge);
             case "quiz": return createChallengeWithAnswer(challenge);
             case "rules": return createChallengeWithoutPoint(challenge);

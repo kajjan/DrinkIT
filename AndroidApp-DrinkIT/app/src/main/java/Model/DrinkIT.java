@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Model class: DrinkIT - DrinkIT is the model in the MCV modelling of the application and acts as the interface to the code.
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ *
+ */
+
 public class DrinkIT {
     //Category cat = new Category();
     private List<Player> players = new ArrayList<>();

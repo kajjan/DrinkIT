@@ -14,6 +14,13 @@ import Controller.Controller;
 import Model.DrinkIT;
 import Model.Factory;
 
+/**
+ * App: MainAppActivity is the applications initiator. It creates the instances of the main view, the controller and the model, DrinkIT.
+ * MainAppActivity also initiates and creates all categories from RAW text-files.
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ *
+ */
+
 public class MainAppActivity extends AppCompatActivity {
 
     @Override
@@ -46,9 +53,9 @@ public class MainAppActivity extends AppCompatActivity {
 
     }
 
+    //Instansiering av Controller och Model (DrinkIT)
     DrinkIT model = new DrinkIT();
     Controller ctrl = new Controller(model);
-    // MainView view = new MainView(ctrl);
 
 
     void showStartPage() {
@@ -72,6 +79,7 @@ public class MainAppActivity extends AppCompatActivity {
         model.createCategoryListOnCreate(categoryName, instruction, challengesToClass);
     }
 
+    // Instansiering av MainView, superclass till nästintill alla vyer
     MainView view = new MainView(ctrl);
 
 }

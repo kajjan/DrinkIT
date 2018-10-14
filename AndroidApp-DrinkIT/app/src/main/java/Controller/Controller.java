@@ -5,6 +5,12 @@ import java.util.List;
 
 import Model.DrinkIT;
 
+/**
+ * Controller is the controller in the MCV modelling of the code and also acts as a connection between views and the model
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ *
+ */
+
 public class Controller {
     DrinkIT model;
 

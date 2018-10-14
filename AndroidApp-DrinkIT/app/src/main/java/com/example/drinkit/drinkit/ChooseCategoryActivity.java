@@ -12,32 +12,32 @@ import java.util.List;
 public class ChooseCategoryActivity extends MainView {
 
     List<String> categories = new ArrayList<>();
+    List<String> presentableCategoryNames = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_category);
         getCategories();
+        getPresentableCategoryNames();
         Button btn1 = findViewById(R.id.catOne);
-        btn1.setText(categories.get(0));
+        btn1.setText(presentableCategoryNames.get(0));
         Button btn2 = findViewById(R.id.catTwo);
-        btn2.setText(categories.get(1));
+        btn2.setText(presentableCategoryNames.get(1));
         Button btn3 = findViewById(R.id.catThree);
-        btn3.setText(categories.get(2));
+        btn3.setText(presentableCategoryNames.get(2));
         Button btn4 = findViewById(R.id.catFour);
-        btn4.setText(categories.get(3));
+        btn4.setText(presentableCategoryNames.get(3));
         Button btn5 = findViewById(R.id.catFive);
-        btn5.setText(categories.get(4));
+        btn5.setText(presentableCategoryNames.get(4));
         Button btn6 = findViewById(R.id.catSix);
-        btn6.setText(categories.get(5));
+        btn6.setText(presentableCategoryNames.get(5));
         Button btn7 = findViewById(R.id.catSeven);
-        btn7.setText(categories.get(6));
+        btn7.setText(presentableCategoryNames.get(6));
         Button btn8 = findViewById(R.id.catEight);
-        btn8.setText(categories.get(7));
+        btn8.setText(presentableCategoryNames.get(7));
         Button btn9 = findViewById(R.id.catNine);
-        btn9.setText(categories.get(8));
-
-
+        btn9.setText(presentableCategoryNames.get(8));
     }
 
     public void nextToDurationPage(View view) {
@@ -55,6 +55,11 @@ public class ChooseCategoryActivity extends MainView {
     private List<String> getCategories() {
         categories = getCtrl().getCategories();
         return categories;
+    }
+
+    private List<String> getPresentableCategoryNames() {
+        presentableCategoryNames = getCtrl().getPresentableCategoryNames();
+        return presentableCategoryNames;
     }
 
 

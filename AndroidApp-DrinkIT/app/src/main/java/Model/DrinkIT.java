@@ -7,18 +7,19 @@ import java.util.List;
 
 public class DrinkIT {
     //Category cat = new Category();
-    private List<Player> players = new ArrayList<>();
-    private int numberOfRounds = 0;
-    private List<Player> completeListOfPlayers = new ArrayList<>();
+    private List<Player> players = new ArrayList<>(); //
+    private int numberOfRounds = 0;                     //
+    private List<Player> completeListOfPlayers = new ArrayList<>(); //
+    private List<String> playerInPointOrder = new ArrayList<>(); //
+    private int indexOfActivePlayer = 0; //
+    private List<Category> cats = new ArrayList<>(); //
+    private int indexOfActiveCategory = -1; //
+    private List<GameRound> playedRounds = new ArrayList<>(); //
+    private String activeChallenge;
+
+    //Uses for tests
     private List<Category> categories = new ArrayList<>();
     private List<String> playerList = new ArrayList<>();
-    private List<String> playerInPointOrder = new ArrayList<>();
-    private int indexOfActivePlayer = 0;
-    private List<Challenge> challenges = new ArrayList<>();
-    private List<Category> cats = new ArrayList<>();
-    private int indexOfActiveCategory = -1;
-    private List<GameRound> playedRounds = new ArrayList<>();
-    private String activeChallenge;
 
 
     public DrinkIT() {}
@@ -134,7 +135,6 @@ public class DrinkIT {
                 " Point "+playedRounds.get(playedRounds.size()-1).getChallenge().getPoint()+" Succeeded = "+playedRounds.get(playedRounds.size()-1).isSucceded());
     }
 
-
     public void chooseCategory(String category) { //ska ev inte va string, beror på vad katergori är
         for (Category c : cats) {
             if (c.getName().equals(category)) {
@@ -153,31 +153,6 @@ public class DrinkIT {
 
     }
 
-        /*
-        if (categories.contains(category)) {//contains istället
-            unSelectCategory(category);
-        } else {
-            //categories.add(new Category(category));
-            System.out.println(getCategoryNames());
-        }
-
-    }
-    */
-
-
-    /*
-    //Method for removing a category, removes the choosen category
-    public void unSelectCategory(String category) { //public, borde va private men måste va public för test
-        for (int i = 0; i < categories.size(); i++) {
-            if (category.equals(categories.get(i).getName())) {
-                categories.remove(i);
-                System.out.println(getCategoryNames());
-            }
-        }
-    }
-
-*/
-    
     public boolean atLeastOneCategoryChosen() {
         boolean b = false;
         for (Category c : cats)
@@ -186,7 +161,6 @@ public class DrinkIT {
         }
         return b;
     }
-
 
     //method that puts every player in the players list in order of highest point to lowest.
     public void putListInPointOrder() {
@@ -205,7 +179,6 @@ public class DrinkIT {
             playerInPointOrder.add(playerToString(c));
         }
     }
-
 
     //method that makes a list that write the players name and its point in a list of strings.
     private String playerToString(Player player){ //private
@@ -248,9 +221,10 @@ public class DrinkIT {
 
     }
 
+
+
+
     //Helpmethods for tests below
-
-
     public DrinkIT(List<Player> players) {
         this.players = players;
     }

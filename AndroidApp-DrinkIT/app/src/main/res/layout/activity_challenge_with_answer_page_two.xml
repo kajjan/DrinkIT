@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChallengeWithAnswerPageOneActivity">
+    tools:context=".ChallengeWithAnswerPageTwoActivity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -27,8 +27,29 @@
             android:textSize="14dp"
             android:layout_marginTop="150dp" />
 
+        <Button
+            android:id="@+id/failButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="93dp"
+            android:layout_marginStart="74dp"
+            android:text="Fail"
+            android:onClick="failChallenge"/>
+
+        <Button
+            android:id="@+id/succeedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/failButton"
+            android:layout_marginEnd="78dp"
+            android:text="Succeed"
+            android:onClick="succeededChallenge"/>
+
         <TextView
-            android:id="@+id/challengeText"
+            android:id="@+id/answerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -53,16 +74,6 @@
             android:layout_marginRight="20dp"
             app:srcCompat="@android:drawable/ic_menu_help"
             android:onClick="challengeInstructionPage"/>
-
-        <Button
-            android:id="@+id/goToNextPageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="128dp"
-            android:onClick="toAnswerPage" />
-
-
     </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

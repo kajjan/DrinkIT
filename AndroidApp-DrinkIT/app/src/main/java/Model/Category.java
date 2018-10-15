@@ -54,6 +54,8 @@ public abstract class Category {
         return name;
     }
 
+    public String getPresentableName() {return name; }
+
     public String getChallengeToPlay(){
         indexOfActiveChallenge++;
         if(indexOfActiveChallenge==challenges.size()){

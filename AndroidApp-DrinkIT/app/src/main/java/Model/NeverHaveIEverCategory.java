@@ -8,4 +8,8 @@ public class NeverHaveIEverCategory extends Category {
         super(name, instruction, challenges, active);
 
     }
+
+    @Override
+    public String getPresentableName() {return "Never Have I Ever"; }
+
 }

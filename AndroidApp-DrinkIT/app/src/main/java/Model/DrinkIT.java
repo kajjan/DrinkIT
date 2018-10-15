@@ -18,6 +18,7 @@ public class DrinkIT {
     private List<Category> cats = new ArrayList<>();
     private int indexOfActiveCategory = -1;
     private List<GameRound> playedRounds = new ArrayList<>();
+    private List<String> categoryNames = new ArrayList<>();
     private String activeChallenge;
 
 
@@ -29,11 +30,19 @@ public class DrinkIT {
     }
 
     public List<String> getCategoryNames () {
-        List<String> categoryNames = new ArrayList<>();
         for (Category c : cats) {
             categoryNames.add(c.getName());
         }
         return categoryNames;
+    }
+
+
+    public List<String> getPresentableCategoryNames() {
+        List<String> presentableCategoryNames = new ArrayList<>();
+        for (Category c : cats) {
+            presentableCategoryNames.add(c.getPresentableName());
+        }
+        return presentableCategoryNames;
     }
 
 

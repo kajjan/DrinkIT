@@ -13,9 +13,7 @@ public abstract class Challenge {
         return challenge;
     }
 
-    public int getPoint() {
-        return point;
-    }
+    public int getPoint() { return point; }
 
 
 }

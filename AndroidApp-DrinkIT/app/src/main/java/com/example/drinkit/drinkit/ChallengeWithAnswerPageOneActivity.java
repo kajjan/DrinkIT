@@ -29,9 +29,12 @@ public class ChallengeWithAnswerPageOneActivity extends MainView {
 
 
     public void toAnswerPage(View view) {
-        //getCtrl().failedChallenge();  //behövs annan metod?
         toAnswerPageActivity();
 
+    }
+
+    public void challengeInstructionPage(View view) {
+        startActivity(new Intent(ChallengeWithAnswerPageOneActivity.this, ChallengeInstructionActivity.class));
     }
 
     public boolean nextRound(){

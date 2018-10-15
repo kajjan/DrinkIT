@@ -15,5 +15,9 @@ public abstract class Challenge {
 
     public int getPoint() { return point; }
 
+    public String getAnswer() {
+        return null;
+    }
+
 
 }

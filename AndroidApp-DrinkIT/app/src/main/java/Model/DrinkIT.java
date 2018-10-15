@@ -13,7 +13,7 @@ public class DrinkIT {
     private List<String> playerInPointOrder = new ArrayList<>(); //
     private int indexOfActivePlayer = 0; //
     private List<Category> cats = new ArrayList<>(); //
-    private int indexOfActiveCategory = -1; //ändrat av Elin, ska se om funkar
+    private int indexOfActiveCategory = -1;
     private List<GameRound> playedRounds = new ArrayList<>(); //
     private String activeChallenge;
 
@@ -82,15 +82,23 @@ public class DrinkIT {
 
     //method to get the name of the player in the list. Need to get so that the indexOfActivePlayer is controlled somewhere else.
     public String getNameOfPlayer() {
+        System.out.println(indexOfActivePlayer);
         return completeListOfPlayers.get(indexOfActivePlayer).getName();
-
     }
 
-    public String getActiveChallenge(){
+    public String getActiveChallenge() {
         playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
                 cats.get(indexOfActiveCategory).getActiveChallenge()));
         activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
         return activeChallenge;
+    }
+
+    //hur i världen ska detta funka - /Elin
+
+    public String getActiveChallengesAnswer() {
+        String activeAnswer;
+        activeAnswer = cats.get(indexOfActiveCategory).getActiveChallenge().getAnswer();
+        return activeAnswer;
     }
 
     public String getNextCategory(){

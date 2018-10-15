@@ -85,6 +85,7 @@ public class DrinkIT {
         return completeListOfPlayers.get(indexOfActivePlayer).getName();
 
     }
+    
 
     public String getActiveChallenge(){
         playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
@@ -208,6 +209,20 @@ public class DrinkIT {
         }
         return false;
     }
+
+    public void setTruthChallenge(){
+        while(!(getActiveChallenge()).contains("truth")) {
+                cats.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
+        }
+    }
+
+
+    public void setDareChallenge(){
+        while(!(getActiveChallenge()).contains("dare")) {
+                cats.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
+        }
+    }
+
 
     //Method that clears the model for a possible new round
     public void endTheGame() {

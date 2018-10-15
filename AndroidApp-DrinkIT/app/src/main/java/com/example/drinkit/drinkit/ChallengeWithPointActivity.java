@@ -38,9 +38,9 @@ public class ChallengeWithPointActivity extends MainView {
         }
         else{
             changePage(view);
-            String nextCategory = getCtrl().getNextCategory();
-            startNextActivity(nextCategory);
         }
+        String nextCategory = getCtrl().getNextCategory();
+        startNextActivity(nextCategory);
     }
 
     public void succeededChallenge(View view) {
@@ -51,9 +51,10 @@ public class ChallengeWithPointActivity extends MainView {
         }
         else{
             changePage(view);
-            String nextCategory = getCtrl().getNextCategory();
-            startNextActivity(nextCategory);
         }
+        String nextCategory = getCtrl().getNextCategory();
+        startNextActivity(nextCategory);
+
     }
 
 

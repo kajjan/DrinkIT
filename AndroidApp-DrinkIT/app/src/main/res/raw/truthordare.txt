@@ -1,5 +1,8 @@
 truthOrDare
-ttuthOrDare write instructions here
-TruthOrDare first challenge here 5
-TruthOrDare second challenge here 6
-TruthOrDare third challenge here 8
+truthOrDare write instructions here
+dare first challenge here 5
+dare second challenge here 6
+dare third challenge here 8
+truth first challenge here 4
+truth second challenge here 2
+truth third challenge here 7

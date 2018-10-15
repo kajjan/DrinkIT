@@ -25,7 +25,8 @@
         <activity android:name=".StartPageActivity" />
         <activity android:name=".ChallengeInstructionActivity" />
         <activity android:name=".ChallengeWithAnswerActivity" />
-        <activity android:name=".ChallengeWithoutPointActivity"></activity>
+        <activity android:name=".ChallengeWithoutPointActivity" />
+        <activity android:name=".TruthOrDarePageActivity"></activity>
     </application>
 
 </manifest>

@@ -13,7 +13,7 @@ public class DrinkIT {
     private List<String> playerInPointOrder = new ArrayList<>(); //
     private int indexOfActivePlayer = 0; //
     private List<Category> cats = new ArrayList<>(); //
-    private int indexOfActiveCategory = -1; //
+    private int indexOfActiveCategory = -1; //ändrat av Elin, ska se om funkar
     private List<GameRound> playedRounds = new ArrayList<>(); //
     private String activeChallenge;
 
@@ -89,6 +89,7 @@ public class DrinkIT {
     public String getActiveChallenge(){
         playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
                 cats.get(indexOfActiveCategory).getActiveChallenge()));
+        activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
         return activeChallenge;
     }
 
@@ -101,13 +102,13 @@ public class DrinkIT {
                 indexOfActiveCategory = 0;
             }
             if (cats.get(indexOfActiveCategory).isActive()){
-                activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
                 nextCategory = cats.get(indexOfActiveCategory).getName();
                 System.out.println(nextCategory);
             } else {
                 indexOfActiveCategory++;
             }
         }
+
         return nextCategory;
     }
 

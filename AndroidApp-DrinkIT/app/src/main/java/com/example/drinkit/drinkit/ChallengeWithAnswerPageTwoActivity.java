@@ -25,8 +25,8 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
 
     public void printAnswer(){
         TextView text=((TextView)findViewById(R.id.answerText));
-        //text.setText(getCtrl().getActiveChallenge());
-        text.setText("funkar detta?");
+        text.setText(getCtrl().getActiveChallenge());
+        //text.setText("funkar detta?");
     }
 
 

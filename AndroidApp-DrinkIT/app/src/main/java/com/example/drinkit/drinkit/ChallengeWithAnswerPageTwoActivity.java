@@ -25,7 +25,7 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
 
     public void printAnswer(){
         TextView text=((TextView)findViewById(R.id.answerText));
-        text.setText(getCtrl().getActiveChallenge());
+        text.setText(getCtrl().getActiveChallengesAnswer());
         //text.setText("funkar detta?");
     }
 
@@ -33,8 +33,10 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
     public void failChallenge(View view) {
         getCtrl().failedChallenge();
         if(nextRound()) {
-            printPlayersName();
-            printAnswer();
+            //printPlayersName();
+            //printAnswer();
+            String nextCategory = getCtrl().getNextCategory();
+            startNextActivity(nextCategory);
         }
         else{
             changePage(view);
@@ -46,8 +48,10 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
     public void succeededChallenge(View view) {
         getCtrl().succeededChallenge();
         if(nextRound()) {
-            printPlayersName();
-            printAnswer();
+            //printPlayersName();
+            //printAnswer();
+            String nextCategory = getCtrl().getNextCategory();
+            startNextActivity(nextCategory);
         }
         else{
             changePage(view);
@@ -63,6 +67,10 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
 
     public void changePage(View view) {
         startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, FinishPageActivity.class));
+    }
+
+    public void challengeInstructionPage(View view) {
+        startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, ChallengeInstructionActivity.class));
     }
 
 

@@ -34,4 +34,5 @@ public class GameRound {
     public void setSucceded(boolean succeded) {
         this.succeded = succeded;
     }
+
 }

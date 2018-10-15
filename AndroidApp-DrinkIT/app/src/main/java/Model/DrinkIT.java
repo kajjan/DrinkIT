@@ -85,7 +85,7 @@ public class DrinkIT {
         return completeListOfPlayers.get(indexOfActivePlayer).getName();
 
     }
-    
+
 
     public String getActiveChallenge(){
         playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),

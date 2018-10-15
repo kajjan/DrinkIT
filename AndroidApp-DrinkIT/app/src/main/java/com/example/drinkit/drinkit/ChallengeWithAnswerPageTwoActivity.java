@@ -33,8 +33,10 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
     public void failChallenge(View view) {
         getCtrl().failedChallenge();
         if(nextRound()) {
-            printPlayersName();
-            printAnswer();
+            //printPlayersName();
+            //printAnswer();
+            String nextCategory = getCtrl().getNextCategory();
+            startNextActivity(nextCategory);
         }
         else{
             changePage(view);
@@ -46,8 +48,10 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
     public void succeededChallenge(View view) {
         getCtrl().succeededChallenge();
         if(nextRound()) {
-            printPlayersName();
-            printAnswer();
+            //printPlayersName();
+            //printAnswer();
+            String nextCategory = getCtrl().getNextCategory();
+            startNextActivity(nextCategory);
         }
         else{
             changePage(view);

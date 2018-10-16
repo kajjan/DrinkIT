@@ -54,6 +54,8 @@ public abstract class Category {
         return name;
     }
 
+    public String getPresentableName() {return name; }
+
     public String getChallengeToPlay(){
         if(indexOfActiveChallenge==challenges.size()-1){
             Collections.shuffle(challenges);

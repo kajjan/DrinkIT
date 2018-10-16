@@ -112,7 +112,6 @@ public class DrinkIT {
         return activeChallenge;
     }
 
-    //hur i världen ska detta funka - /Elin
 
     public String getActiveChallengesAnswer() {
         String activeAnswer;

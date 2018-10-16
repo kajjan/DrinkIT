@@ -87,6 +87,14 @@ public class Controller {
         model.endTheGame();
     }
 
+    public void setTruthChallenge(){
+        model.setTruthChallenge();
+    }
+
+    public void setDareChallenge(){
+        model.setDareChallenge();
+    }
+
 
     public String getActiveChallenge() {
         return model.getActiveChallenge();

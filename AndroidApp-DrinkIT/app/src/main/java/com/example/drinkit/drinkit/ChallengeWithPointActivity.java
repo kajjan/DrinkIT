@@ -37,8 +37,9 @@ public class ChallengeWithPointActivity extends MainView {
             startNextActivity(nextCategory);
         }
         else{
-            changePage(view);
+            toFinishPage(view);
         }
+
     }
 
     public void succeededChallenge(View view) {
@@ -48,11 +49,13 @@ public class ChallengeWithPointActivity extends MainView {
             startNextActivity(nextCategory);
         }
         else{
-            changePage(view);
+            toFinishPage(view);
         }
+
     }
 
-    public void changePage(View view) {
+
+    public void toFinishPage(View view) {
         startActivity(new Intent(ChallengeWithPointActivity.this, FinishPageActivity.class));
     }
 
@@ -71,7 +74,7 @@ public class ChallengeWithPointActivity extends MainView {
         }
         else if(category.equals("truthOrDare")){
             //Enkelvy med poäng
-            startActivity(new Intent(ChallengeWithPointActivity.this, ChallengeWithPointActivity.class));
+            startActivity(new Intent(ChallengeWithPointActivity.this, TruthOrDarePageActivity.class));
         }
         else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("themes") || category.equals("thisOrThat") )
             //en vy utan poäng (ingen spelar)

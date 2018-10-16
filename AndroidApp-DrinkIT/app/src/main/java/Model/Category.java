@@ -69,6 +69,9 @@ public abstract class Category {
         return challenges.get(indexOfActiveChallenge).getPoint();
     }
 
+    public void increaseIndexOfActiveChallenge() {
+        this.indexOfActiveChallenge = indexOfActiveChallenge + 1;
+    }
     public Challenge getActiveChallenge(){
         return challenges.get(indexOfActiveChallenge);
     }

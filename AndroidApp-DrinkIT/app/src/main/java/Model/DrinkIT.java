@@ -105,9 +105,12 @@ public class DrinkIT {
         return completeListOfPlayers.get(indexOfActivePlayer).getName();
     }
 
-    public String getActiveChallenge() {
+    public void addGameRound(){
         playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
                 cats.get(indexOfActiveCategory).getActiveChallenge()));
+    }
+
+    public String getActiveChallenge(){
         activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
         return activeChallenge;
     }
@@ -148,6 +151,7 @@ public class DrinkIT {
         point += pointToAdd;
         completeListOfPlayers.get(indexOfActivePlayer).setPoint(point);
         System.out.println("Points: " + point);
+        addGameRound();
         playedRounds.get(playedRounds.size()-1).setSucceded(true);
         indexOfActivePlayer++;
         System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
@@ -156,6 +160,7 @@ public class DrinkIT {
     }
 
     public void failedChallenge() {
+        addGameRound();
         playedRounds.get(playedRounds.size()-1).setSucceded(false);
         indexOfActivePlayer++;
         System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
@@ -235,6 +240,20 @@ public class DrinkIT {
         }
         return false;
     }
+
+    public void setTruthChallenge(){
+        while(!(getActiveChallenge()).contains("truth")) {
+                cats.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
+        }
+    }
+
+
+    public void setDareChallenge(){
+        while(!(getActiveChallenge()).contains("dare")) {
+                cats.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
+        }
+    }
+
 
     //Method that clears the model for a possible new round
     public void endTheGame() {

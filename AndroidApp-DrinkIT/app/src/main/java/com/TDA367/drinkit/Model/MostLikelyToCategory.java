@@ -9,4 +9,7 @@ public class MostLikelyToCategory extends Category {
 
     }
 
+    @Override
+    public String getPresentableName() {return "Most Likely To"; }
+
 }

@@ -12,4 +12,7 @@ public class CharadeCategory extends Category {
 
     }
 
+    @Override
+    public String getPresentableName() {return "Charades"; }
+
 }

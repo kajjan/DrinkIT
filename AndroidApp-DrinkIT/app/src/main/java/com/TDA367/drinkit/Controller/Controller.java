@@ -36,11 +36,17 @@ public class Controller {
         model.createCompletedPlayersList();
     }
 
-    List<String> categoryNames = new ArrayList<>();
 
     public List<String> getCategories() {
+        List<String> categoryNames;
         categoryNames = model.getCategoryNames();
         return categoryNames;
+    }
+
+    public List<String> getPresentableCategoryNames () {
+        List<String> presentableCategoryNames;
+        presentableCategoryNames = model.getPresentableCategoryNames();
+        return presentableCategoryNames;
     }
 
     public void failedChallenge() {

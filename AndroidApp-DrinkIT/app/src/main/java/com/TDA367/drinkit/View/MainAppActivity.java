@@ -29,15 +29,17 @@ public class MainAppActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textFileScanner(charades);
-        textFileScanner(neverHaveIEver);
-        textFileScanner(mostLikelyto);
-        textFileScanner(quiz);
+
         textFileScanner(rules);
-        textFileScanner(songs);
+        textFileScanner(neverHaveIEver);
+        textFileScanner(quiz);
+        textFileScanner(mostLikelyto);
         textFileScanner(theme);
-        textFileScanner(thisOrThat);
         textFileScanner(truthOrDare);
+        textFileScanner(songs);
+        textFileScanner(thisOrThat);
+        textFileScanner(charades);
+
 
 
         showStartPage();

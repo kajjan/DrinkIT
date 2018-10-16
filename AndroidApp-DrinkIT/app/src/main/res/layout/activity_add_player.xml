@@ -7,161 +7,186 @@
     tools:context=".AddPlayerActivity">
 
     <android.support.design.widget.TextInputLayout
-        android:layout_width="309dp"
-        android:layout_height="47dp"
+        android:layout_width="309sp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp">
+        android:layout_marginTop="18sp"
+        app:errorEnabled="true">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/player1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Player 1" />
+            android:layout_height="match_parent"
+            android:hint="Player 1"
+        />
+
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:layout_width="309dp"
+        android:layout_width="309sp"
 
-        android:layout_height="47dp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp">
+        android:layout_marginTop="68sp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/player2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Player 2" />
+            android:layout_height="match_parent"
+            android:autofillHints=""
+            android:cursorVisible="false"
+            android:focusable="false"
+            />
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:layout_width="309dp"
+        android:layout_width="309sp"
 
-        android:layout_height="47dp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="118dp">
+        android:layout_marginTop="118sp">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/player3"
-            android:hint="Player 3" />
+            android:autofillHints=""
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:layout_width="309dp"
+        android:layout_width="309sp"
 
-        android:layout_height="47dp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="168dp">
+        android:layout_marginTop="168sp">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/player4"
-            android:hint="Player 4" />
+            android:autofillHints=""
+            />
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:layout_width="309dp"
+        android:layout_width="309sp"
 
-        android:layout_height="47dp"
+        android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="218dp">
+        android:layout_marginTop="218sp">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/player5"
-            android:hint="Player 5" />
+            android:autofillHints=""
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:layout_width="309dp"
+        android:layout_width="309sp"
+        android:layout_height="53sp"
+        android:layout_marginTop="268sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        >
 
-        android:layout_height="47dp"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="200dp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/player6"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Player 6" />
+            android:layout_height="match_parent"
+            android:autofillHints=""
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
     </android.support.design.widget.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="309dp"
 
-        android:layout_height="47dp"
-        android:layout_alignParentBottom="true"
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="309sp"
+
+        android:layout_height="53sp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="210dp">
+        android:layout_marginTop="318sp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/player7"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            android:hint="Player 7" />
+            android:layout_height="match_parent"
+            android:baselineAligned="true"
+            android:autofillHints=""
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:layout_width="309dp"
+        android:layout_width="309sp"
 
-        android:layout_height="47dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="53sp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="160dp">
+        android:layout_marginTop="368sp">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/player8"
-            android:hint="Player 8" />
+            android:autofillHints=""
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:layout_width="309dp"
+        android:layout_width="309sp"
 
-        android:layout_height="47dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="53sp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="110dp">
+        android:layout_marginTop="418sp">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/player9"
-            android:hint="Player 9" />
+            android:hint=""
+            android:cursorVisible="false"
+            android:focusable="false"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:layout_width="309dp"
+        android:layout_width="309sp"
 
-        android:layout_height="47dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="53sp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="65dp">
+        android:layout_marginTop="468sp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/player10"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Player 10" />
+            android:layout_height="match_parent"
+            android:autofillHints=""
+            android:cursorVisible="false"
+            android:focusable="false"/>
+
 
     </android.support.design.widget.TextInputLayout>
 
@@ -171,18 +196,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="20sp"
         android:onClick="namesSubmitClick"
-        android:layout_marginStart="57dp"
-        android:text="Submit" />
-
-    <Button
-        android:id="@+id/nextPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="50dp"
-        android:onClick="nextToCategoryPage"
-        android:text="Next" />
+        android:layout_marginStart="60sp"
+        android:layout_marginLeft="60sp"
+        android:text="Submit"
+        />
 
 </RelativeLayout>

@@ -20,10 +20,13 @@
         <activity android:name=".DurationActivity" />
         <activity android:name=".AddPlayerActivity" />
         <activity android:name=".InstructionsActivity" />
-        <activity android:name=".ChallengeActivity" />
-        <activity android:name=".FinishPageActivity"/>
-        <activity android:name=".ChallengeActivity" />
-        <activity android:name=".StartPageActivity"></activity>
+        <activity android:name=".ChallengeWithPointActivity" />
+        <activity android:name=".FinishPageActivity" />
+        <activity android:name=".StartPageActivity" />
+        <activity android:name=".ChallengeInstructionActivity" />
+        <activity android:name=".ChallengeWithAnswerPageOneActivity" />
+        <activity android:name=".ChallengeWithoutPointActivity" />
+        <activity android:name=".ChallengeWithAnswerPageTwoActivity"></activity>
     </application>
 
 </manifest>

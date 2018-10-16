@@ -1,20 +1,50 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public class DrinkIT {
-    private List<Player> players = new ArrayList<>();
-    private int numberOfRounds = 0;
-    private List<Player> completeListOfPlayers = new ArrayList<>();
+    //Category cat = new Category();
+    private List<Player> players = new ArrayList<>(); //
+    private int numberOfRounds = 0;                     //
+    private List<Player> completeListOfPlayers = new ArrayList<>(); //
+    private List<String> playerInPointOrder = new ArrayList<>(); //
+    private int indexOfActivePlayer = 0; //
+    private List<Category> cats = new ArrayList<>(); //
+    private int indexOfActiveCategory = -1;
+    private List<GameRound> playedRounds = new ArrayList<>(); //
+    private String activeChallenge;
+    private List<String> categoryNames = new ArrayList<>();
+    private List<String> completelistOfPlayerNames = new ArrayList<>();
+
+    //Uses for tests
     private List<Category> categories = new ArrayList<>();
     private List<String> playerList = new ArrayList<>();
-    private List<String> playerInPointOrder = new ArrayList<>();
-    private int indexOfActivePlayer = 0;
 
 
-    public DrinkIT() {
+    public DrinkIT() {}
+
+
+    public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges ) {
+            cats.add(CategoryFactory.createCategory(categoryName,instruction,challenges));
+    }
+
+    public List<String> getCategoryNames () {
+        for (Category c : cats) {
+            categoryNames.add(c.getName());
+        }
+        return categoryNames;
+    }
+
+
+    public List<String> getPresentableCategoryNames() {
+        List<String> presentableCategoryNames = new ArrayList<>();
+        for (Category c : cats) {
+            presentableCategoryNames.add(c.getPresentableName());
+        }
+        return presentableCategoryNames;
     }
 
 
@@ -35,7 +65,7 @@ public class DrinkIT {
     }
 
 
-    //method to create a complete list with all the players multiplide with the duration time.
+    //method to create a complete list with all the players multiplied with the duration time.
     //connected from setNumberOfRounds maybe not the best solution?
     public void createCompletedPlayersList() {
         int challengePerPlayer = numberOfRounds / players.size();
@@ -49,7 +79,17 @@ public class DrinkIT {
             i = 0;
         }
         shufflePlayerList(completeListOfPlayers);
+        //System.out.println(cat.getNeverHaveIEverChallenges().toString());
+        //System.out.println(cat.getCharadChallenges().toString());
     }
+
+    public List<String> getCompleteListOfPlayersNames() {
+        for (Player p : completeListOfPlayers) {
+            completelistOfPlayerNames.add(p.getName());
+        }
+        return completelistOfPlayerNames;
+    }
+
 
     //shuffle the completePlayerList
     private void shufflePlayerList(List<Player> listOfPlayers) {
@@ -59,63 +99,101 @@ public class DrinkIT {
 
     //method to get the name of the player in the list. Need to get so that the indexOfActivePlayer is controlled somewhere else.
     public String getNameOfPlayer() {
+        System.out.println(indexOfActivePlayer);
         return completeListOfPlayers.get(indexOfActivePlayer).getName();
-
     }
 
+    public String getActiveChallenge() {
+        playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
+                cats.get(indexOfActiveCategory).getActiveChallenge()));
+        activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
+        return activeChallenge;
+    }
+
+    //hur i världen ska detta funka - /Elin
+
+    public String getActiveChallengesAnswer() {
+        String activeAnswer;
+        activeAnswer = cats.get(indexOfActiveCategory).getActiveChallenge().getAnswer();
+        return activeAnswer;
+    }
+
+    public String getNextCategory(){
+        String nextCategory = "none";
+        Collections.shuffle(cats);
+        indexOfActiveCategory++;
+        while (nextCategory.equals("none")) {
+            if(indexOfActiveCategory == cats.size()-1){
+                indexOfActiveCategory = 0;
+            }
+            if (cats.get(indexOfActiveCategory).isActive()){
+                nextCategory = cats.get(indexOfActiveCategory).getName();
+                System.out.println(nextCategory);
+            } else {
+                indexOfActiveCategory++;
+            }
+        }
+
+        return nextCategory;
+    }
+
+    public String getInstructions(){
+        return cats.get(indexOfActiveCategory).getInstruction();
+    }
 
     public void succeededChallenge() {
         int point = completeListOfPlayers.get(indexOfActivePlayer).getPoint();
-        point++;
+        int pointToAdd = cats.get(indexOfActiveCategory).getActiveChallengePoint();
+        point += pointToAdd;
         completeListOfPlayers.get(indexOfActivePlayer).setPoint(point);
         System.out.println("Points: " + point);
+        playedRounds.get(playedRounds.size()-1).setSucceded(true);
         indexOfActivePlayer++;
+        System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
+                " Point "+playedRounds.get(playedRounds.size()-1).getChallenge().getPoint()+" Succeeded = "+playedRounds.get(playedRounds.size()-1).isSucceded());
+
     }
 
     public void failedChallenge() {
+        playedRounds.get(playedRounds.size()-1).setSucceded(false);
         indexOfActivePlayer++;
+        System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
+                " Point "+playedRounds.get(playedRounds.size()-1).getChallenge().getPoint()+" Succeeded = "+playedRounds.get(playedRounds.size()-1).isSucceded());
     }
-
 
     public void chooseCategory(String category) { //ska ev inte va string, beror på vad katergori är
-        if (categories.contains(category)) {//contains istället
-            unSelectCategory(category);
-        } else {
-            categories.add(new Category(category));
-            System.out.println(getCategoryNames());
-        }
-
-    }
-
-
-    //Method for removing a category, removes the choosen category
-    public void unSelectCategory(String category) { // se ovan
-        for (int i = 0; i < categories.size(); i++) {
-            if (category.equals(categories.get(i).getCategoryName())) {
-                categories.remove(i);
-                System.out.println(getCategoryNames());
+        for (Category c : cats) {
+            if (c.getName().equals(category)) {
+                if (c.isActive()) {
+                    c.setInActive();
+                } else {
+                    c.setActive();
+                }
             }
         }
+        // endast för att printa och se att det funkar
+        for (int i = 0; i<cats.size(); i++) {
+            System.out.println(cats.get(i).getName());
+            System.out.println(cats.get(i).isActive());
+        }
+
     }
 
-
-    public boolean categoryListEmpty() {
+    public boolean atLeastOneCategoryChosen() {
         boolean b = false;
-        if (categories.size() == 0) {
+        for (Category c : cats)
+        if (c.isActive()) {
             b = true;
         }
         return b;
     }
 
-
     //method that puts every player in the players list in order of highest point to lowest.
     public void putListInPointOrder() {
-
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
             if(i<players.size()-1) {
                 for (int j = i; j <players.size() ; j++) {
-
                     while (s.getPoint() < players.get(j).getPoint()) {
                         Collections.swap(players, i, j);
                     }
@@ -127,7 +205,6 @@ public class DrinkIT {
             playerInPointOrder.add(playerToString(c));
         }
     }
-
 
     //method that makes a list that write the players name and its point in a list of strings.
     private String playerToString(Player player){ //private
@@ -144,6 +221,9 @@ public class DrinkIT {
             sb.append(playerInPointOrder.get(i) + "\n");
         }
         scoreText = sb.toString();
+        System.out.println("GAMEROUND HERE -->"+playedRounds);
+        System.out.println(playedRounds.size());
+        System.out.println(playedRounds.toString());
         return scoreText;
     }
 
@@ -169,21 +249,12 @@ public class DrinkIT {
 
 
 
+
     //Helpmethods for tests below
-
-
     public DrinkIT(List<Player> players) {
         this.players = players;
     }
 
-    //method for test
-    public List<String> getCategoryNames() {
-        List<String> categoryNames = new ArrayList<>();
-        for (Category c : categories) {
-            categoryNames.add(c.getCategoryName());
-        }
-        return categoryNames;
-    }
 
     public List<Category> getCategories() {
         return categories;
@@ -199,56 +270,4 @@ public class DrinkIT {
         return names;
     }
 
-    // Used in test
-    public List<Player> testCompletedListOfPlayers = new ArrayList<>();
-
-    //method for test
-    public void testCreateCompletedPlayersList(List<Player> p, int numberOfRound ) {
-        int challengePerPlayer = numberOfRound / p.size();
-        int i = 0;
-        for (Player player : p) {
-
-            while(i!=challengePerPlayer) {
-                testCompletedListOfPlayers.add(player);
-                i++;
-            }
-            i = 0;
-        }
-        shufflePlayerList(testCompletedListOfPlayers);
-    }
-
-    //method for test
-    public List<Player> getTestCreateCompletedPlayersList(){
-        return testCompletedListOfPlayers;
-    }
-
-
-    //method for test
-    public void testSucceededChallenge(List<Player> p, int indexPlayer) {
-        int point = p.get(indexPlayer).getPoint();
-        point++;
-        p.get(indexPlayer).setPoint(point);
-        System.out.println("Points: " + point);
-        indexPlayer++;
-    }
-
-    //method for test
-    public void testPutListInPointOrder(List<Player> p, List<String> s) {
-
-        for (int i = 0; i < p.size(); i++) {
-            Player a = p.get(i);
-            if(i<p.size()-1) {
-                for (int j = i; j <p.size() ; j++) {
-
-                    while (a.getPoint() < p.get(j).getPoint()) {
-                        Collections.swap(p, i, j);
-                    }
-
-                }
-            }
-        }
-        for (Player c : p) {
-            s.add(playerToString(c));
-        }
-    }
 }

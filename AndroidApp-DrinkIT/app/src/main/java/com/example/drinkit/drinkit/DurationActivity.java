@@ -1,7 +1,6 @@
 package com.example.drinkit.drinkit;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,19 +16,40 @@ public class DurationActivity extends MainView {
 
     public void shortDuration(View view) {
         getCtrl().setDuration(3);
-        startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
+        String nextCategory = getCtrl().getNextCategory();
+        startNextActivity(nextCategory);
+        getCtrl().createCompleteListOfPlayers();
     }
 
     public void mediumDuration(View view) {
         getCtrl().setDuration(5);
-        startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
-
+        String nextCategory = getCtrl().getNextCategory();
+        startNextActivity(nextCategory);
+        getCtrl().createCompleteListOfPlayers();
     }
 
     public void longDuration(View view) {
         getCtrl().setDuration(10);
-        startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
+        String nextCategory = getCtrl().getNextCategory();
+        startNextActivity(nextCategory);
+        getCtrl().createCompleteListOfPlayers();
+    }
 
+    public void startNextActivity(String category){
+        if (category.equals("quiz") || category.equals("songs") || category.equals("charades") ){
+            //Dubbelvy med poäng
+            startActivity(new Intent(DurationActivity.this, ChallengeWithAnswerPageOneActivity.class));
+        }
+        else if(category.equals("truthOrDare")){
+            //Enkelvy med poäng
+            startActivity(new Intent(DurationActivity.this, ChallengeWithPointActivity.class));
+        }
+        else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("themes") || category.equals("thisOrThat") )
+            //en vy utan poäng (ingen spelar)
+        startActivity(new Intent(DurationActivity.this, ChallengeWithoutPointActivity .class));
+        else{
+            System.out.println("Something is wrong with the code in DurationActivity...");
+        }
 
     }
 

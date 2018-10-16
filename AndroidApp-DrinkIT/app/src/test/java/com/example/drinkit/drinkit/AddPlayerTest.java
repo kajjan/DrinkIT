@@ -20,7 +20,6 @@ import static org.junit.Assert.assertNotNull;
 public class AddPlayerTest {
     String name = "Viktoria";
     String name2 = "Kajsa";
-    String name3 = "Alice";
     boolean b = false;
     boolean c = true;
     boolean d = true;
@@ -88,13 +87,15 @@ public class AddPlayerTest {
     @Test
     public void succeededChallenge(){
 
+        DrinkIT drinkIT = new DrinkIT(playersList, null, complete);
+
     playersList.add(noOne);
     playersList.add(khaleesi);
     playersList.add(redViper);
 
     int index = 2;
 
-    model.testSucceededChallenge(playersList, index);
+    model.succeededChallenge();
     //Should increase point of Player on index index in list of players
 
     int points = redViper.getPoint();

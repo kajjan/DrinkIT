@@ -8,4 +8,10 @@ public class ChallengeWithAnswer extends Challenge {
         super(challenge, point);
         this.answer = answer;
     }
+
+    @Override
+    public String getAnswer() {
+        return answer;
+    }
+
 }

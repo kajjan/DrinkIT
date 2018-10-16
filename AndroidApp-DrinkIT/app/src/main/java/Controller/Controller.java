@@ -85,4 +85,8 @@ public class Controller {
     public String getActiveChallenge() {
         return model.getActiveChallenge();
     }
+
+    public String getActiveChallengesAnswer() {
+        return model.getActiveChallengesAnswer();
+    }
 }

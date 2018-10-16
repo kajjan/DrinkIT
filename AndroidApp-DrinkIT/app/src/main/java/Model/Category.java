@@ -11,7 +11,7 @@ public abstract class Category {
     public List<String> challengesStrings = new ArrayList<>();
     public boolean active = false;
     private List<Challenge> challenges = new ArrayList<>();
-    public int indexOfActiveChallenge = -1;
+    public int indexOfActiveChallenge = 0;
 
 
     public Category() { }
@@ -57,11 +57,11 @@ public abstract class Category {
     public String getPresentableName() {return name; }
 
     public String getChallengeToPlay(){
-        indexOfActiveChallenge++;
-        if(indexOfActiveChallenge==challenges.size()){
+        if(indexOfActiveChallenge==challenges.size()-1){
             Collections.shuffle(challenges);
             indexOfActiveChallenge=0;
         }
+        indexOfActiveChallenge++;
         return challenges.get(indexOfActiveChallenge).getChallenge();
     }
 

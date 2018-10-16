@@ -67,7 +67,7 @@ public class DrinkIT {
     }
 
 
-    //method to create a complete list with all the players multiplide with the duration time.
+    //method to create a complete list with all the players multiplied with the duration time.
     //connected from setNumberOfRounds maybe not the best solution?
     public void createCompletedPlayersList() {
         int challengePerPlayer = numberOfRounds / players.size();

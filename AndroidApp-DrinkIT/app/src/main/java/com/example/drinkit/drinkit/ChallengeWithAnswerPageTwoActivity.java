@@ -33,30 +33,26 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
     public void failChallenge(View view) {
         getCtrl().failedChallenge();
         if(nextRound()) {
-            //printPlayersName();
-            //printAnswer();
             String nextCategory = getCtrl().getNextCategory();
             startNextActivity(nextCategory);
         }
         else{
             changePage(view);
-            String nextCategory = getCtrl().getNextCategory();
-            startNextActivity(nextCategory);
+            //String nextCategory = getCtrl().getNextCategory();
+            //startNextActivity(nextCategory);
         }
     }
 
     public void succeededChallenge(View view) {
         getCtrl().succeededChallenge();
         if(nextRound()) {
-            //printPlayersName();
-            //printAnswer();
             String nextCategory = getCtrl().getNextCategory();
             startNextActivity(nextCategory);
         }
         else{
             changePage(view);
-            String nextCategory = getCtrl().getNextCategory();
-            startNextActivity(nextCategory);
+            //String nextCategory = getCtrl().getNextCategory();
+            //startNextActivity(nextCategory);
         }
     }
 
@@ -76,7 +72,7 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
 
 
     public void startNextActivity(String category){
-        if (category.equals("quiz") || category.equals("song") || category.equals("charades") ){
+        if (category.equals("quiz") || category.equals("songs") || category.equals("charades") ){
             //Dubbelvy med poäng
             startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, ChallengeWithAnswerPageOneActivity.class));
         }
@@ -84,7 +80,7 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
             //Enkelvy med poäng
             startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, ChallengeWithPointActivity.class));
         }
-        else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("theme") || category.equals("thisOrThat") )
+        else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("themes") || category.equals("thisOrThat") )
             //en vy utan poäng (ingen spelar)
             startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, ChallengeWithoutPointActivity .class));
         else{

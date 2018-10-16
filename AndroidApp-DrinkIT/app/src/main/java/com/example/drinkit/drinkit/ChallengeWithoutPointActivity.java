@@ -33,13 +33,21 @@ public class ChallengeWithoutPointActivity extends MainView {
 
 
     public void nextButtonWithoutPoint(View view) {
-        changePage(view);
         getCtrl().failedChallenge();
-        String nextCategory = getCtrl().getNextCategory();
-        startNextActivity(nextCategory);
-
+        if(nextRound()) {
+            String nextCategory = getCtrl().getNextCategory();
+            startNextActivity(nextCategory);
+        }
+        else{
+            changePage(view);
+            //String nextCategory = getCtrl().getNextCategory();
+            //startNextActivity(nextCategory);
+        }
     }
 
+    public boolean nextRound(){
+        return getCtrl().nextRound();
+    }
 
     public void changePage(View view) {
         startActivity(new Intent(ChallengeWithoutPointActivity.this, FinishPageActivity.class));
@@ -50,7 +58,7 @@ public class ChallengeWithoutPointActivity extends MainView {
     }
 
     public void startNextActivity(String category){
-        if (category.equals("quiz") || category.equals("song") || category.equals("charades") ){
+        if (category.equals("quiz") || category.equals("songs") || category.equals("charades") ){
             //Dubbelvy med poäng
             startActivity(new Intent(ChallengeWithoutPointActivity.this, ChallengeWithAnswerPageOneActivity.class));
         }
@@ -58,7 +66,7 @@ public class ChallengeWithoutPointActivity extends MainView {
             //Enkelvy med poäng
             startActivity(new Intent(ChallengeWithoutPointActivity.this, ChallengeWithPointActivity.class));
         }
-        else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("theme") || category.equals("thisOrThat") )
+        else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("themes") || category.equals("thisOrThat") )
             //en vy utan poäng (ingen spelar)
             startActivity(new Intent(ChallengeWithoutPointActivity.this, ChallengeWithoutPointActivity .class));
         else{

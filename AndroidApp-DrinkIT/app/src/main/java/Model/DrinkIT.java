@@ -105,10 +105,12 @@ public class DrinkIT {
         return completeListOfPlayers.get(indexOfActivePlayer).getName();
     }
 
-
-    public String getActiveChallenge(){
+    public void addGameRound(){
         playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
                 cats.get(indexOfActiveCategory).getActiveChallenge()));
+    }
+
+    public String getActiveChallenge(){
         activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
         return activeChallenge;
     }
@@ -150,6 +152,7 @@ public class DrinkIT {
         point += pointToAdd;
         completeListOfPlayers.get(indexOfActivePlayer).setPoint(point);
         System.out.println("Points: " + point);
+        addGameRound();
         playedRounds.get(playedRounds.size()-1).setSucceded(true);
         indexOfActivePlayer++;
         System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
@@ -158,6 +161,7 @@ public class DrinkIT {
     }
 
     public void failedChallenge() {
+        addGameRound();
         playedRounds.get(playedRounds.size()-1).setSucceded(false);
         indexOfActivePlayer++;
         System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+

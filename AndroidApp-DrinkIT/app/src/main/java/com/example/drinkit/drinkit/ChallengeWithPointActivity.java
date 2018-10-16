@@ -33,32 +33,29 @@ public class ChallengeWithPointActivity extends MainView {
     public void failChallenge(View view) {
         getCtrl().failedChallenge();
         if(nextRound()) {
-            printPlayersName();
-            printChallenge();
+            String nextCategory = getCtrl().getNextCategory();
+            startNextActivity(nextCategory);
         }
         else{
-            changePage(view);
+            toFinishPage(view);
         }
-        String nextCategory = getCtrl().getNextCategory();
-        startNextActivity(nextCategory);
+
     }
 
     public void succeededChallenge(View view) {
         getCtrl().succeededChallenge();
         if(nextRound()) {
-            printPlayersName();
-            printChallenge();
+            String nextCategory = getCtrl().getNextCategory();
+            startNextActivity(nextCategory);
         }
         else{
-            changePage(view);
+            toFinishPage(view);
         }
-        String nextCategory = getCtrl().getNextCategory();
-        startNextActivity(nextCategory);
 
     }
 
 
-    public void changePage(View view) {
+    public void toFinishPage(View view) {
         startActivity(new Intent(ChallengeWithPointActivity.this, FinishPageActivity.class));
     }
 
@@ -77,7 +74,7 @@ public class ChallengeWithPointActivity extends MainView {
         }
         else if(category.equals("truthOrDare")){
             //Enkelvy med poäng
-            startActivity(new Intent(ChallengeWithPointActivity.this, ChallengeWithPointActivity.class));
+            startActivity(new Intent(ChallengeWithPointActivity.this, TruthOrDarePageActivity.class));
         }
         else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("theme") || category.equals("thisOrThat") )
             //en vy utan poäng (ingen spelar)

@@ -24,8 +24,6 @@ public class DrinkIT {
     private List<String> playerList = new ArrayList<>();
 
 
-
-
     public DrinkIT() {}
 
 

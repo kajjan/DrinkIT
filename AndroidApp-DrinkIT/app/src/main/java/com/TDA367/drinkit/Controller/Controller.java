@@ -43,10 +43,16 @@ public class Controller {
         return categoryNames;
     }
 
-    public List<String> getPresentableCategoryNames () {
+    public List<String> getPresentableCategoryNames() {
         List<String> presentableCategoryNames;
         presentableCategoryNames = model.getPresentableCategoryNames();
         return presentableCategoryNames;
+    }
+
+    public List<String> getCompleteListOfPlayersNames() {
+        List<String> completePlayersNames;
+        completePlayersNames = model.getCompleteListOfPlayersNames();
+        return completePlayersNames;
     }
 
     public void failedChallenge() {

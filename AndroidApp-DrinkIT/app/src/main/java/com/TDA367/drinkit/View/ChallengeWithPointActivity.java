@@ -12,7 +12,7 @@ public class ChallengeWithPointActivity extends MainView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_with_point);
-        getCtrl().createCompleteListOfPlayers();
+        getCtrl().getCompleteListOfPlayersNames();
 
         printPlayersName();
         printChallenge();
@@ -33,29 +33,24 @@ public class ChallengeWithPointActivity extends MainView {
     public void failChallenge(View view) {
         getCtrl().failedChallenge();
         if(nextRound()) {
-            printPlayersName();
-            printChallenge();
+            String nextCategory = getCtrl().getNextCategory();
+            startNextActivity(nextCategory);
         }
         else{
             changePage(view);
-            String nextCategory = getCtrl().getNextCategory();
-            startNextActivity(nextCategory);
         }
     }
 
     public void succeededChallenge(View view) {
         getCtrl().succeededChallenge();
         if(nextRound()) {
-            printPlayersName();
-            printChallenge();
-        }
-        else{
-            changePage(view);
             String nextCategory = getCtrl().getNextCategory();
             startNextActivity(nextCategory);
         }
+        else{
+            changePage(view);
+        }
     }
-
 
     public void changePage(View view) {
         startActivity(new Intent(ChallengeWithPointActivity.this, FinishPageActivity.class));
@@ -70,7 +65,7 @@ public class ChallengeWithPointActivity extends MainView {
     }
 
     public void startNextActivity(String category){
-        if (category.equals("quiz") || category.equals("song") || category.equals("charades") ){
+        if (category.equals("quiz") || category.equals("songs") || category.equals("charades") ){
             //Dubbelvy med poäng
             startActivity(new Intent(ChallengeWithPointActivity.this, ChallengeWithAnswerPageOneActivity.class));
         }
@@ -78,7 +73,7 @@ public class ChallengeWithPointActivity extends MainView {
             //Enkelvy med poäng
             startActivity(new Intent(ChallengeWithPointActivity.this, ChallengeWithPointActivity.class));
         }
-        else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("theme") || category.equals("thisOrThat") )
+        else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("themes") || category.equals("thisOrThat") )
             //en vy utan poäng (ingen spelar)
             startActivity(new Intent(ChallengeWithPointActivity.this, ChallengeWithoutPointActivity .class));
         else{

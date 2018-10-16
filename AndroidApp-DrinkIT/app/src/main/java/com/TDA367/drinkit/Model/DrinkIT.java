@@ -17,12 +17,11 @@ public class DrinkIT {
     private List<GameRound> playedRounds = new ArrayList<>(); //
     private String activeChallenge;
     private List<String> categoryNames = new ArrayList<>();
+    private List<String> completelistOfPlayerNames = new ArrayList<>();
 
     //Uses for tests
     private List<Category> categories = new ArrayList<>();
     private List<String> playerList = new ArrayList<>();
-
-
 
 
     public DrinkIT() {}
@@ -66,7 +65,7 @@ public class DrinkIT {
     }
 
 
-    //method to create a complete list with all the players multiplide with the duration time.
+    //method to create a complete list with all the players multiplied with the duration time.
     //connected from setNumberOfRounds maybe not the best solution?
     public void createCompletedPlayersList() {
         int challengePerPlayer = numberOfRounds / players.size();
@@ -82,6 +81,13 @@ public class DrinkIT {
         shufflePlayerList(completeListOfPlayers);
         //System.out.println(cat.getNeverHaveIEverChallenges().toString());
         //System.out.println(cat.getCharadChallenges().toString());
+    }
+
+    public List<String> getCompleteListOfPlayersNames() {
+        for (Player p : completeListOfPlayers) {
+            completelistOfPlayerNames.add(p.getName());
+        }
+        return completelistOfPlayerNames;
     }
 
 

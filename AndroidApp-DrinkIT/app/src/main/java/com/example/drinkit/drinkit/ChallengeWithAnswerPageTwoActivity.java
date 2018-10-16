@@ -12,7 +12,7 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_with_answer_page_two);
-        getCtrl().createCompleteListOfPlayers();
+        //getCtrl().createCompleteListOfPlayers();
 
         printPlayersName();
         printAnswer();

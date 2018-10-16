@@ -24,7 +24,7 @@ public class ChooseCategoryTest {
 
 
         String category = "Charades";
-        String category2 = "Truth or dare";
+        String category2 = "Truth or truthordare";
 
 
         //categories.add(new Category(category));
@@ -52,7 +52,7 @@ public class ChooseCategoryTest {
         List<Category> categories = model.getCategories();
 
         String category = "Charades";
-        String category2 = "Truth or dare";
+        String category2 = "Truth or truthordare";
 
         //categories.add(new Category(category));
         //categories.add(new Category(category2));

@@ -18,18 +18,21 @@ public class DurationActivity extends MainView {
         getCtrl().setDuration(3);
         String nextCategory = getCtrl().getNextCategory();
         startNextActivity(nextCategory);
+        getCtrl().createCompleteListOfPlayers();
     }
 
     public void mediumDuration(View view) {
         getCtrl().setDuration(5);
         String nextCategory = getCtrl().getNextCategory();
         startNextActivity(nextCategory);
+        getCtrl().createCompleteListOfPlayers();
     }
 
     public void longDuration(View view) {
         getCtrl().setDuration(10);
         String nextCategory = getCtrl().getNextCategory();
         startNextActivity(nextCategory);
+        getCtrl().createCompleteListOfPlayers();
     }
 
     public void startNextActivity(String category){
@@ -39,7 +42,7 @@ public class DurationActivity extends MainView {
         }
         else if(category.equals("truthOrDare")){
             //Enkelvy med poäng
-            startActivity(new Intent(DurationActivity.this, ChallengeWithPointActivity.class));
+            startActivity(new Intent(DurationActivity.this, TruthOrDarePageActivity.class));
         }
         else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("themes") || category.equals("thisOrThat") )
             //en vy utan poäng (ingen spelar)

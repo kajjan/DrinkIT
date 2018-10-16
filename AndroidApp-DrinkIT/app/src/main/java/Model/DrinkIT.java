@@ -17,6 +17,7 @@ public class DrinkIT {
     private List<GameRound> playedRounds = new ArrayList<>(); //
     private String activeChallenge;
     private List<String> categoryNames = new ArrayList<>();
+    private List<String> completelistOfPlayerNames = new ArrayList<>();
 
     //Uses for tests
     private List<Category> categories = new ArrayList<>();
@@ -66,7 +67,7 @@ public class DrinkIT {
     }
 
 
-    //method to create a complete list with all the players multiplide with the duration time.
+    //method to create a complete list with all the players multiplied with the duration time.
     //connected from setNumberOfRounds maybe not the best solution?
     public void createCompletedPlayersList() {
         int challengePerPlayer = numberOfRounds / players.size();
@@ -84,6 +85,13 @@ public class DrinkIT {
         //System.out.println(cat.getCharadChallenges().toString());
     }
 
+    public List<String> getCompleteListOfPlayersNames() {
+        for (Player p : completeListOfPlayers) {
+            completelistOfPlayerNames.add(p.getName());
+        }
+        return completelistOfPlayerNames;
+    }
+
 
     //shuffle the completePlayerList
     private void shufflePlayerList(List<Player> listOfPlayers) {
@@ -97,9 +105,12 @@ public class DrinkIT {
         return completeListOfPlayers.get(indexOfActivePlayer).getName();
     }
 
-    public String getActiveChallenge() {
+    public void addGameRound(){
         playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
                 cats.get(indexOfActiveCategory).getActiveChallenge()));
+    }
+
+    public String getActiveChallenge(){
         activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
         return activeChallenge;
     }
@@ -141,6 +152,7 @@ public class DrinkIT {
         point += pointToAdd;
         completeListOfPlayers.get(indexOfActivePlayer).setPoint(point);
         System.out.println("Points: " + point);
+        addGameRound();
         playedRounds.get(playedRounds.size()-1).setSucceded(true);
         indexOfActivePlayer++;
         System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
@@ -149,6 +161,7 @@ public class DrinkIT {
     }
 
     public void failedChallenge() {
+        addGameRound();
         playedRounds.get(playedRounds.size()-1).setSucceded(false);
         indexOfActivePlayer++;
         System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
@@ -228,6 +241,20 @@ public class DrinkIT {
         }
         return false;
     }
+
+    public void setTruthChallenge(){
+        while(!(getActiveChallenge()).contains("truth")) {
+                cats.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
+        }
+    }
+
+
+    public void setDareChallenge(){
+        while(!(getActiveChallenge()).contains("dare")) {
+                cats.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
+        }
+    }
+
 
     //Method that clears the model for a possible new round
     public void endTheGame() {

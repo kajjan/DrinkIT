@@ -1,7 +1,6 @@
 package com.example.drinkit.drinkit;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -35,7 +34,7 @@ public class ChallengeWithoutPointActivity extends MainView {
     public void startNextActivity(String category) {
         if (category.equals("quiz") || category.equals("song") || category.equals("charades")) {
             //Dubbelvy med poäng
-            startActivity(new Intent(ChallengeWithoutPointActivity.this, ChallengeWithAnswerActivity.class));
+            startActivity(new Intent(ChallengeWithoutPointActivity.this, ChallengeWithAnswerPageOneActivity.class));
         } else if (category.equals("truthOrDare")) {
             //Enkelvy med poäng
             startActivity(new Intent(ChallengeWithoutPointActivity.this, ChallengeWithPointActivity.class));

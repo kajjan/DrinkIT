@@ -87,15 +87,20 @@ public class AddPlayerTest {
     @Test
     public void succeededChallenge(){
 
-        DrinkIT drinkIT = new DrinkIT(playersList, null, complete);
+        DrinkIT drinkIT = new DrinkIT(null, 0, playersList, null, 2,
+                null, 0, null, null, null,
+                null, null, null);
 
     playersList.add(noOne);
     playersList.add(khaleesi);
     playersList.add(redViper);
 
+    cats.add
+
+
     int index = 2;
 
-    model.succeededChallenge();
+    drinkIT.succeededChallenge();
     //Should increase point of Player on index index in list of players
 
     int points = redViper.getPoint();

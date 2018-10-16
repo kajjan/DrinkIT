@@ -16,10 +16,14 @@ public class DrinkIT {
     private int indexOfActiveCategory = -1;
     private List<GameRound> playedRounds = new ArrayList<>(); //
     private String activeChallenge;
+    private List<String> categoryNames = new ArrayList<>();
+    private List<String> completelistOfPlayerNames = new ArrayList<>();
 
     //Uses for tests
     private List<Category> categories = new ArrayList<>();
     private List<String> playerList = new ArrayList<>();
+
+
 
 
     public DrinkIT() {}
@@ -30,11 +34,19 @@ public class DrinkIT {
     }
 
     public List<String> getCategoryNames () {
-        List<String> categoryNames = new ArrayList<>();
         for (Category c : cats) {
             categoryNames.add(c.getName());
         }
         return categoryNames;
+    }
+
+
+    public List<String> getPresentableCategoryNames() {
+        List<String> presentableCategoryNames = new ArrayList<>();
+        for (Category c : cats) {
+            presentableCategoryNames.add(c.getPresentableName());
+        }
+        return presentableCategoryNames;
     }
 
 
@@ -71,6 +83,13 @@ public class DrinkIT {
         shufflePlayerList(completeListOfPlayers);
         //System.out.println(cat.getNeverHaveIEverChallenges().toString());
         //System.out.println(cat.getCharadChallenges().toString());
+    }
+
+    public List<String> getCompleteListOfPlayersNames() {
+        for (Player p : completeListOfPlayers) {
+            completelistOfPlayerNames.add(p.getName());
+        }
+        return completelistOfPlayerNames;
     }
 
 

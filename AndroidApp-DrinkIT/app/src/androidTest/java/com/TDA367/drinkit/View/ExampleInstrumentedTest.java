@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.drinkit.drinkit", appContext.getPackageName());
+        assertEquals("com.TDA367.drinkit.View", appContext.getPackageName());
     }
 }

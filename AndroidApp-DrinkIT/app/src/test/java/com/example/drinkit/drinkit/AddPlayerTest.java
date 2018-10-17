@@ -19,6 +19,7 @@ import Model.Player;
 import Model.QuizCategory;
 import Model.TruthOrDareCategory;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -150,23 +151,36 @@ public class AddPlayerTest {
     @Test
     public void testPutListInOrder() {
 
-        playersList.add(noOne);
         playersList.add(khaleesi);
+        playersList.add(noOne);
         playersList.add(redViper);
 
         noOne.setPoint(3);
         khaleesi.setPoint(2);
         redViper.setPoint(0);
 
-        List<String> playerInPointOrder = new ArrayList<>();
+         List<String> playersInPointOrder = new ArrayList<>();
+         List<Player> testList = new ArrayList<>();
 
-        //    model.testPutListInPointOrder(playersList, playerInPointOrder);
+        DrinkIT drinkit = new DrinkIT(playersList, 0, null, playersInPointOrder,
+                0, null, 0, null, null,
+                null, null, null, null);
 
-        System.out.println(playerInPointOrder.toString());
-        //TODO what to assert???????????
 
+            drinkit.putListInPointOrder();
+
+            testList.add(noOne);
+            testList.add(khaleesi);
+            testList.add(redViper);
+
+            assert(playersInPointOrder.equals(testList)); //TODO FIX HERE ALICEEE
+
+
+
+        System.out.println(playersInPointOrder.toString());
+
+        }
 
     }
 
 
-}

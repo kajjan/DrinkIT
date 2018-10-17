@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Model.Category;
+import Model.CategoryFactory;
+import Model.Challenge;
 import Model.DrinkIT;
 import Model.Player;
 
@@ -69,5 +71,32 @@ public class ChooseCategoryTest {
 
     }
 
+    @Test
+    public void chooseCategory(){
+
+        List<Category> cats = new ArrayList<>();
+        List<String> challenges = new ArrayList<>();
+
+        Category quiz = CategoryFactory.createCategory("quiz", "this is an instruction", challenges);
+        Category charades = CategoryFactory.createCategory("charades", "this is an instruction", challenges);
+
+
+        DrinkIT drinkIT = new DrinkIT(null, 0, null, null,
+                0, cats, 0, null, null,
+                null, null, null, null);
+
+        cats.add(quiz);
+        cats.add(charades);
+
+        quiz.setInActive();
+        drinkIT.chooseCategory("quiz");
+
+        charades.setActive();
+        drinkIT.chooseCategory("charades");
+
+        assert(quiz.isActive());
+        assert(!charades.isActive());
+
+    }
 
 }

@@ -67,29 +67,35 @@ public class AddPlayerTest {
 
     @Test //Tests if the list expands to the right size based duration
     public void createCompleteListOfPlayers() {
-        //int duration = 3;
-        //int duration = 5;
-        int duration = 10;
-        int numberOfRounds = 0;
         Player galadriel = new Player("Galadriel");
         Player arwen = new Player("Arwen");
         Player aragorn = new Player("Aragorn");
         Player elrond = new Player("Lord Elrond");
+
+        List<Player> completeListOfPlayers = new ArrayList<>();
 
         playersList.add(galadriel);
         playersList.add(arwen);
         playersList.add(aragorn);
         playersList.add(elrond);
 
-        numberOfRounds = playersList.size() * duration; //Copied method setDuration()
+        int duration = 3;
+        // int duration = 5;
+        // int duration = 10;
 
-        //  model.testCreateCompletedPlayersList(playersList, numberOfRounds);
+        DrinkIT drinkit = new DrinkIT(playersList, 0, completeListOfPlayers, null,
+                0, null, 0, null, null,
+                null, null, null, null);
 
-        // int endlenght = model.getTestCreateCompletedPlayersList().size();
 
-        // assert (endlenght == 12);
-        // assert(endlenght == 20);
-        // assert(endlenght == 40);
+        drinkit.setNumberOfRounds(duration); //multiplies players size with the chosen duration
+        drinkit.createCompletedPlayersList(); //
+
+         int endlenght = completeListOfPlayers.size();
+
+        assert (endlenght == 12);
+        //assert(endlenght == 20);
+        //assert(endlenght == 40);
 
 
     }
@@ -137,8 +143,6 @@ public class AddPlayerTest {
         assert (pointsRedViper == 1);
         assert (pointsKhaleesi == 0);
         assert (pointsNoOne == 0);
-
-
 
 
     }

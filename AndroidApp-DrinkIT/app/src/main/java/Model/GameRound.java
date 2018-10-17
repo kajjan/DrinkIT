@@ -23,16 +23,10 @@ public class GameRound {
         return challenge;
     }
 
-    public void setChallenge(Challenge challenge) {
-        this.challenge = challenge;
-    }
+    public void setChallenge(Challenge challenge) {this.challenge = challenge;}
 
-    public boolean isSucceded() {
-        return succeded;
-    }
+    public boolean isSucceded() {return succeded;}
 
-    public void setSucceded(boolean succeded) {
-        this.succeded = succeded;
-    }
+    public void setSucceded(boolean succeded) {this.succeded = succeded;}
 
 }

@@ -123,6 +123,17 @@ public class DrinkIT {
         return activeAnswer;
     }
 
+    public boolean isAlreadyPlayed(Player player, Challenge challenge) {
+        if(playedRounds.size() < 3){return false;}
+        for (GameRound r : playedRounds) {
+            if (r.getChallenge() == challenge && r.getPlayer() == player) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     public String getNextCategory(){
         String nextCategory = "none";
         Collections.shuffle(cats);
@@ -131,14 +142,15 @@ public class DrinkIT {
             if(indexOfActiveCategory == cats.size()-1){
                 indexOfActiveCategory = 0;
             }
-            if (cats.get(indexOfActiveCategory).isActive()){
-                nextCategory = cats.get(indexOfActiveCategory).getName();
-                System.out.println(nextCategory);
+            if (cats.get(indexOfActiveCategory).isActive()){ //funkar inte, jag återkommer när jag är starkare
+                //if(test(completeListOfPlayers.get(indexOfActivePlayer), cats.get(indexOfActiveCategory).getActiveChallenge())) {
+                    nextCategory = cats.get(indexOfActiveCategory).getName();
+                    System.out.println(nextCategory);
+               // }
             } else {
                 indexOfActiveCategory++;
             }
         }
-
         return nextCategory;
     }
 
@@ -212,7 +224,6 @@ public class DrinkIT {
             playerInPointOrder.add(playerToString(c));
         }
     }
-
     //method that makes a list that write the players name and its point in a list of strings.
     private String playerToString(Player player){ //private
         return player.getName() + " " + player.getPoint() + " Points";
@@ -265,10 +276,9 @@ public class DrinkIT {
         playerInPointOrder.clear();
         indexOfActivePlayer = 0;
         numberOfRounds = 0;
+        playedRounds.getClass();
 
     }
-
-
 
 
     //Helpmethods for tests below

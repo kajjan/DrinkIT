@@ -1,5 +1,6 @@
 package com.TDA367.drinkit.Model;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -106,10 +107,15 @@ public class DrinkIT {
     public void addGameRound(){
         playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
                 cats.get(indexOfActiveCategory).getActiveChallenge()));
+        System.out.println("Added gameround!");
     }
 
     public String getActiveChallenge(){
         activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
+        return activeChallenge;
+    }
+
+    public String getActiveChallengeToPlay(){
         return activeChallenge;
     }
 
@@ -144,7 +150,6 @@ public class DrinkIT {
     }
 
     public void succeededChallenge() {
-
         int point = completeListOfPlayers.get(indexOfActivePlayer).getPoint();
         int pointToAdd = cats.get(indexOfActiveCategory).getActiveChallengePoint();
         point += pointToAdd;
@@ -194,7 +199,7 @@ public class DrinkIT {
     }
 
     //method that puts every player in the players list in order of highest point to lowest.
-    public void putListInPointOrder() {
+    private void putListInPointOrder() {
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
             if(i<players.size()-1) {
@@ -244,6 +249,7 @@ public class DrinkIT {
         while(!(getActiveChallenge()).contains("truth")) {
                 cats.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
         }
+        System.out.println(activeChallenge);
     }
 
 

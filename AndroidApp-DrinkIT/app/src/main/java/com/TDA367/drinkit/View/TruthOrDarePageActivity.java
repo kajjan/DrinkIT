@@ -1,4 +1,4 @@
-package com.example.drinkit.drinkit;
+package com.TDA367.drinkit.View;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,10 +12,11 @@ public class TruthOrDarePageActivity extends MainView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truth_or_dare_page);
+        printPlayersName();
     }
 
     public void printPlayersName(){
-        TextView text=((TextView)findViewById(R.id.playerName));
+        TextView text=((TextView)findViewById(R.id.nameOfPlayer));
         text.setText(getCtrl().getPlayersName());
     }
 

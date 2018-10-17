@@ -7,13 +7,14 @@
     tools:context=".TruthOrDarePageActivity">
 
     <TextView
-        android:id="@+id/playerName"
-        android:layout_width="121dp"
-        android:layout_height="34dp"
+        android:id="@+id/nameOfPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="194dp"
+        android:layout_marginTop="161dp"
         android:text="TextView"
+        android:textSize="19dp"
         tools:layout_editor_absoluteX="132dp"
         tools:layout_editor_absoluteY="90dp" />
 
@@ -21,11 +22,10 @@
         android:id="@+id/truthButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignStart="@+id/textView3"
         android:layout_alignTop="@+id/dareButton"
-        android:layout_marginStart="56dp"
-        android:text="Truth"
         android:onClick="truthButton"
+        android:text="Truth"
         tools:layout_editor_absoluteX="51dp"
         tools:layout_editor_absoluteY="219dp" />
 
@@ -41,4 +41,21 @@
         android:onClick="dareButton"
         tools:layout_editor_absoluteX="253dp"
         tools:layout_editor_absoluteY="219dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="92dp"
+        android:layout_alignBaseline="@+id/truthButton"
+        android:layout_centerHorizontal="true"
+        android:text="or"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Choose between...."
+        android:textSize="30dp" />
 </RelativeLayout>

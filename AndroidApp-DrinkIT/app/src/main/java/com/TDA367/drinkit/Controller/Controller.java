@@ -95,12 +95,18 @@ public class Controller {
         model.setDareChallenge();
     }
 
-
     public String getActiveChallenge() {
         return model.getActiveChallenge();
+    }
+    public String getActiveChallengeToPlay() {
+        return model.getActiveChallengeToPlay();
     }
 
     public String getActiveChallengesAnswer() {
         return model.getActiveChallengesAnswer();
+    }
+
+    public void addGameRound() {
+        model.addGameRound();
     }
 }

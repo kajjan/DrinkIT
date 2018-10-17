@@ -34,11 +34,12 @@ public class ChallengeWithoutPointActivity extends MainView {
     public void nextButtonWithoutPoint(View view) {
         getCtrl().failedChallenge();
         if(nextRound()) {
+            getCtrl().addGameRound();
             String nextCategory = getCtrl().getNextCategory();
             startNextActivity(nextCategory);
         }
         else{
-            changePage(view);
+            toFinishPage(view);
             //String nextCategory = getCtrl().getNextCategory();
             //startNextActivity(nextCategory);
         }
@@ -48,7 +49,7 @@ public class ChallengeWithoutPointActivity extends MainView {
         return getCtrl().nextRound();
     }
 
-    public void changePage(View view) {
+    public void toFinishPage(View view) {
         startActivity(new Intent(ChallengeWithoutPointActivity.this, FinishPageActivity.class));
     }
 

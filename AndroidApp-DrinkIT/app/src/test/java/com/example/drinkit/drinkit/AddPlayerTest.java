@@ -6,8 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Controller.Controller;
+import Model.Category;
+import Model.CategoryFactory;
+import Model.Challenge;
+import Model.ChallengeFactory;
+import Model.ChallengeWithAnswer;
+import Model.ChallengeWithPoints;
+import Model.CharadeCategory;
 import Model.DrinkIT;
+import Model.GameRound;
 import Model.Player;
+import Model.QuizCategory;
+import Model.TruthOrDareCategory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -31,7 +41,7 @@ public class AddPlayerTest {
     Player khaleesi = new Player("Daenerys Targaryen");
     Player redViper = new Player("Oberyn Martell");
 
-   DrinkIT model= new DrinkIT(playersList);
+    DrinkIT model = new DrinkIT(playersList);
     Controller ctrl = new Controller(model);
 
     @Test
@@ -73,68 +83,86 @@ public class AddPlayerTest {
 
         numberOfRounds = playersList.size() * duration; //Copied method setDuration()
 
-        model.testCreateCompletedPlayersList(playersList, numberOfRounds);
+        //  model.testCreateCompletedPlayersList(playersList, numberOfRounds);
 
-        int endlenght = model.getTestCreateCompletedPlayersList().size();
+        // int endlenght = model.getTestCreateCompletedPlayersList().size();
 
-       // assert (endlenght == 12);
-       // assert(endlenght == 20);
-        assert(endlenght == 40);
+        // assert (endlenght == 12);
+        // assert(endlenght == 20);
+        // assert(endlenght == 40);
 
 
     }
 
-    @Test
-    public void succeededChallenge(){
+    @Test //Test to see if Point setting works.
+    public void succeededChallenge() {
+
+        List<Category> cats = new ArrayList<>();
+        List<GameRound> playedRounds = new ArrayList<>();
+        List<String> challenges = new ArrayList<>();
+        boolean a = true;
+
+        playersList.add(noOne);
+        playersList.add(khaleesi);
+        playersList.add(redViper);
+        challenges.add("here is the challenge 1");
+        challenges.add("here is a challenge 1");
+
+        Challenge challenge = ChallengeFactory.createChallenge("truthOrDare", "here lies a challenge 1");
+        Challenge challenge1 = ChallengeFactory.createChallenge("truthOrDare", "here lies another one 2");
+        TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
+        TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
+        cats.add(truthOrDare);
+        cats.add(truthOrDare1);
+
+        GameRound gameRound = new GameRound(redViper, challenge);
+        GameRound gameRound1 = new GameRound(redViper, challenge1);
+        GameRound gameRound2 = new GameRound(noOne, challenge1);
+        playedRounds.add(gameRound);
+        playedRounds.add(gameRound1);
+        playedRounds.add(gameRound2);
 
         DrinkIT drinkIT = new DrinkIT(null, 0, playersList, null, 2,
-                null, 0, null, null, null,
+                cats, 0, playedRounds, null, null,
                 null, null, null);
 
-    playersList.add(noOne);
-    playersList.add(khaleesi);
-    playersList.add(redViper);
+        drinkIT.succeededChallenge(); //Increases the Point of player redViper.
 
-    cats.add
+        int pointsRedViper = redViper.getPoint();
+        System.out.println(pointsRedViper);
+        int pointsNoOne = noOne.getPoint();
+        int pointsKhaleesi = khaleesi.getPoint();
 
 
-    int index = 2;
+        assert (pointsRedViper == 1);
+        assert (pointsKhaleesi == 0);
+        assert (pointsNoOne == 0);
 
-    drinkIT.succeededChallenge();
-    //Should increase point of Player on index index in list of players
 
-    int points = redViper.getPoint();
 
-    assert(points==1);
 
     }
 
     @Test
-    public void testPutListInOrder(){
+    public void testPutListInOrder() {
 
-     playersList.add(noOne);
-     playersList.add(khaleesi);
-     playersList.add(redViper);
+        playersList.add(noOne);
+        playersList.add(khaleesi);
+        playersList.add(redViper);
 
-     noOne.setPoint(3);
-     khaleesi.setPoint(2);
-     redViper.setPoint(0);
+        noOne.setPoint(3);
+        khaleesi.setPoint(2);
+        redViper.setPoint(0);
 
-     List<String> playerInPointOrder = new ArrayList<>();
+        List<String> playerInPointOrder = new ArrayList<>();
 
-        model.testPutListInPointOrder(playersList, playerInPointOrder);
+        //    model.testPutListInPointOrder(playersList, playerInPointOrder);
 
         System.out.println(playerInPointOrder.toString());
-             //TODO what to assert???????????
+        //TODO what to assert???????????
 
 
-
-
- }
-
-
-
-
+    }
 
 
 }

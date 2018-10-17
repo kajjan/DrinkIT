@@ -26,7 +26,13 @@
         <activity android:name=".ChallengeInstructionActivity" />
         <activity android:name=".ChallengeWithAnswerPageOneActivity" />
         <activity android:name=".ChallengeWithoutPointActivity" />
-        <activity android:name=".ChallengeWithAnswerPageTwoActivity"></activity>
+        <activity android:name=".ChallengeWithAnswerPageTwoActivity" />
+        <activity
+            android:name=".QuitDuringGameActivity"
+            android:label="@string/title_activity_quit_during_game" />
+        <activity
+            android:name=".OptionsDuringGameActivity"
+            android:label="@string/title_activity_options_during_game"></activity>
     </application>
 
 </manifest>

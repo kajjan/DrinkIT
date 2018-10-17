@@ -18,6 +18,7 @@ public class ChallengeInstructionActivity extends MainView {
         TextView text=((TextView)findViewById(R.id.challengeInstructionsText));
         text.setText(getCtrl().getInstructions());
     }
+
     public void exitChallengeInstruction(View view) {
         startActivity(new Intent(ChallengeInstructionActivity.this, ChallengeWithPointActivity.class));
     }

@@ -198,7 +198,7 @@ public class DrinkIT {
     }
 
     //method that puts every player in the players list in order of highest point to lowest.
-    private void putListInPointOrder() {
+    public void putListInPointOrder() {
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
             if(i<players.size()-1) {

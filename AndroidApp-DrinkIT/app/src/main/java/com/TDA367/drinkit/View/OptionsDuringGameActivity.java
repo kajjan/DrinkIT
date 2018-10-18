@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 
-public class OptionsDuringGameActivity extends Activity {
+public class OptionsDuringGameActivity extends MainView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,16 +13,17 @@ public class OptionsDuringGameActivity extends Activity {
         setContentView(R.layout.activity_options_during_game);
     }
 
+    // need to go back to previous page instead, now that we have different challenge-pages
     public void exitOptionsPage(View view) {
         startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeWithPointActivity.class));
     }
 
     public void addNewPlayerDuringGame(View view) {
-        startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeWithPointActivity.class));
+        startActivity(new Intent(OptionsDuringGameActivity.this, AddPlayerDuringGameActivity.class));
     }
 
     public void removeExistingPlayerDuringGame(View view) {
-        startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeWithPointActivity.class));
+        startActivity(new Intent(OptionsDuringGameActivity.this, RemovePlayerDuringGamePageOneActivity.class));
     }
 
     public void quitDuringGame(View view) {

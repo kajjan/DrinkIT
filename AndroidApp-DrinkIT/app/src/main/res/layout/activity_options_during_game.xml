@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         tools:context=".ChallengeInstructionActivity"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="77dp">
 
 
         <ImageButton
@@ -35,9 +35,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="211dp"
-            android:text="Add New Player"
-            android:onClick="addNewPlayerDuringGame"/>
+            android:layout_marginTop="221dp"
+            android:onClick="addNewPlayerDuringGame"
+            android:text="Add New Player" />
 
         <TextView
             android:id="@+id/optionsText"
@@ -52,11 +52,9 @@
             android:id="@+id/removeExistingPlayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="278dp"
-            android:text="Remove Existing Player"
-            android:onClick="removeExistingPlayerDuringGame"/>
+            android:layout_centerInParent="true"
+            android:onClick="removeExistingPlayerDuringGame"
+            android:text="Remove Existing Player" />
 
         <Button
             android:id="@+id/quitGame"
@@ -64,9 +62,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="272dp"
-            android:text="Quit Game"
-            android:onClick="quitDuringGame"/>
+            android:layout_marginBottom="219dp"
+            android:onClick="quitDuringGame"
+            android:text="Quit Game" />
 
         <Button
             android:id="@+id/resumeGame"
@@ -74,9 +72,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="180dp"
-            android:text="Resume Game"
-            android:onClick="exitOptionsPage"/>
+            android:layout_marginBottom="126dp"
+            android:onClick="exitOptionsPage"
+            android:text="Resume Game" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

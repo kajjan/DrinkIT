@@ -19,6 +19,7 @@ public class ChallengeInstructionActivity extends MainView {
         text.setText(getCtrl().getInstructions());
     }
 
+    // need to change to go back to previous page instead, now that we have several challengepages
     public void exitChallengeInstruction(View view) {
         startActivity(new Intent(ChallengeInstructionActivity.this, ChallengeWithPointActivity.class));
     }

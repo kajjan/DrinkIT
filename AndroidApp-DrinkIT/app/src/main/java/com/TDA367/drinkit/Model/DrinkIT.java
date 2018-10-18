@@ -18,6 +18,7 @@ public class DrinkIT {
     private String activeChallenge;
     private List<String> categoryNames = new ArrayList<>();
     private List<String> completelistOfPlayerNames = new ArrayList<>();
+    private List<String> playerNames = new ArrayList<>(10);
 
     //Uses for tests
     private List<Category> categories = new ArrayList<>();
@@ -51,6 +52,13 @@ public class DrinkIT {
     public void addPlayer(String name) {
         players.add(new Player(name));
     } //ok
+
+    public List<String> getAllPlayerNames() {
+        for (Player p : players) {
+            playerNames.add(p.getName());
+        }
+        return playerNames;
+    }
 
 
     public void setNumberOfRounds(int duration) {

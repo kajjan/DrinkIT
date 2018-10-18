@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.view.View;
 
 
-public class QuitDuringGameActivity extends Activity {
+public class QuitDuringGameActivity extends MainView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,8 +14,14 @@ public class QuitDuringGameActivity extends Activity {
         setContentView(R.layout.activity_quit_during_game);
     }
 
+    public void exitOptionQuitPage(View view) {
+        finish();
+
+    }
+
     public void quitGame(View view) {
         startActivity(new Intent(QuitDuringGameActivity.this, FinishPageActivity.class));
     }
+
 
 }

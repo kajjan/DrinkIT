@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.TDA367.drinkit.View.QuitDuringGameActivity">
+    tools:context=".RemovePlayerDuringGamePageTwoActivity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -27,11 +27,11 @@
             android:layout_marginEnd="31dp"
             android:layout_marginRight="31dp"
             android:layout_marginTop="26dp"
-            android:onClick="exitOptionQuitPage"
+            android:onClick="exitOptionRemovePlayerPage"
             app:srcCompat="@android:drawable/btn_dialog" />
 
         <TextView
-            android:id="@+id/challengeText"
+            android:id="@+id/removePlayerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -42,20 +42,21 @@
             android:layout_marginBottom="257dp"
             android:layout_marginEnd="162dp"
             android:layout_marginRight="162dp"
-            android:text="Are you sure you want to quit the game?" />
+            android:text="Are you sure you want to remove this player from the game?" />
 
         <Button
-            android:id="@+id/quitButton"
+            android:id="@+id/removePlayerButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="180dp"
-            android:text="QUIT"
-            android:onClick="quitGame"/>
+            android:text="REMOVE PLAYER"
+            android:onClick="removePlayer"/>
 
 
 
     </RelativeLayout>
+
 
 </android.support.constraint.ConstraintLayout>

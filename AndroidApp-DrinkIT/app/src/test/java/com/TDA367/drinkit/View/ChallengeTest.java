@@ -1,4 +1,4 @@
-package com.example.drinkit.drinkit;
+package com.TDA367.drinkit.View;
 
 import org.junit.Test;
 

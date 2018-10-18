@@ -16,6 +16,18 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
 
         printPlayersName();
         printAnswer();
+        printCategory();
+        printChallengePoints();
+    }
+
+    private void printChallengePoints() {
+        TextView text=((TextView)findViewById(R.id.challengePoints));
+        text.setText(getCtrl().getActiveChallengePoints() + " Points");
+    }
+
+    private void printCategory() {
+        TextView text=((TextView)findViewById(R.id.challengeCategory));
+        text.setText(getCtrl().getActiveCategory());
     }
 
     public void printPlayersName(){

@@ -79,6 +79,10 @@ public class Controller {
 
     }
 
+    public String getActiveCategory(){
+        return model.getActiveCategory();
+    }
+
     public boolean atLeastOneCategoryChosen() {
         boolean b = false;
         model.atLeastOneCategoryChosen();
@@ -110,6 +114,10 @@ public class Controller {
 
     public String getActiveChallengesAnswer() {
         return model.getActiveChallengesAnswer();
+    }
+
+    public int getActiveChallengePoints(){
+        return model.getActiveChallengePoints();
     }
 
     public void addGameRound() {

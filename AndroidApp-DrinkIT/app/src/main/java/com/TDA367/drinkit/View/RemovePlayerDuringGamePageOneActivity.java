@@ -11,15 +11,15 @@ import java.util.List;
 
 public class RemovePlayerDuringGamePageOneActivity extends MainView {
 
+    List<String> playerNames = new ArrayList<>(10);
+    List <Button> buttons = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remove_player_during_game_page_one);
 
-        List<String> playerNames = new ArrayList<>(10);
         playerNames = getCtrl().getAllPlayerNames();
-
-        List <Button> buttons = new ArrayList<>();
 
         Button btn1 = findViewById(R.id.playerOneButton);
         Button btn2 = findViewById(R.id.playerTwoButton);
@@ -60,10 +60,13 @@ public class RemovePlayerDuringGamePageOneActivity extends MainView {
 
 
     public void playerOneSelected(View view) {
+        Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);
+        intent.putExtra("PLAYER_NAME", buttons.get(0).getText());
+        startActivity(intent);
 
-        // how do we send the player to be removed to the next page?
+        //String playerName = (String) getIntent().getStringExtra("PLAYER_NAME");
 
-        startActivity(new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class));
+        //startActivity(new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class));
     }
 
 }

@@ -106,7 +106,7 @@ public class DrinkIT {
     public void addGameRound(){
         playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
                 cats.get(indexOfActiveCategory).getActiveChallenge()));
-        System.out.println("Added gameround!");
+        //System.out.println("Added gameround!");
     }
 
     public String getActiveChallenge(){

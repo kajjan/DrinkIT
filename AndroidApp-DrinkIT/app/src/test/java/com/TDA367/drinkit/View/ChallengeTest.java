@@ -46,8 +46,14 @@ public class ChallengeTest {
         playersList.add(khaleesi);
         playersList.add(redViper);
 
-        DrinkIT drinkIT = new DrinkIT(null, 0, null,
-                null, 1, null, 0,
+        TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
+        TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
+
+        cats.add(truthOrDare);
+        cats.add(truthOrDare1);
+
+        DrinkIT drinkIT = new DrinkIT(null, 0, playersList,
+                null, 1, null, 1,
                 playedRounds, null, null,
                 null, null, null);
 

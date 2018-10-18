@@ -1,5 +1,6 @@
 package com.TDA367.drinkit.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
@@ -46,14 +47,23 @@ public class RemovePlayerDuringGamePageOneActivity extends MainView {
             if (i<playerNames.size()) {
                 buttons.get(i).setText(playerNames.get(i));
             } else {
-                buttons.get(i).setText("no player at this index");
+                buttons.get(i).setVisibility(View.INVISIBLE);
+                //buttons.get(i).setText("no player at this index");
             }
         }
 
     }
 
     public void exitOptionRemovePlayerPage(View view) {
+        finish();
+    }
 
+
+    public void playerOneSelected(View view) {
+
+        // how do we send the player to be removed to the next page?
+
+        startActivity(new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class));
     }
 
 }

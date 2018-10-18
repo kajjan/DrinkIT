@@ -13,6 +13,10 @@ public class AddPlayerDuringGameActivity extends MainView {
     }
 
     public void exitOptionAddPlayerPage(View view) {
+        finish();
+    }
+
+    public void addPlayerToGame(View view) {
 
     }
 

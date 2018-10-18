@@ -41,7 +41,8 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="144dp"
-            android:text="Button" />
+            android:text="Button"
+            android:onClick="playerOneSelected"/>
 
         <Button
             android:id="@+id/playerTwoButton"
@@ -50,7 +51,8 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="179dp"
-            android:text="Button" />
+            android:text="Button"
+            android:onClick="playerTwoSelected"/>
 
         <Button
             android:id="@+id/playerThreeButton"

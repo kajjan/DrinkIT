@@ -13,9 +13,8 @@ public class OptionsDuringGameActivity extends MainView {
         setContentView(R.layout.activity_options_during_game);
     }
 
-    // need to go back to previous page instead, now that we have different challenge-pages
     public void exitOptionsPage(View view) {
-        startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeWithPointActivity.class));
+        finish();
     }
 
     public void addNewPlayerDuringGame(View view) {
@@ -28,6 +27,10 @@ public class OptionsDuringGameActivity extends MainView {
 
     public void quitDuringGame(View view) {
         startActivity(new Intent(OptionsDuringGameActivity.this, QuitDuringGameActivity.class));
+    }
+
+    public void resumeGame(View view) {
+        finish();
     }
 
 }

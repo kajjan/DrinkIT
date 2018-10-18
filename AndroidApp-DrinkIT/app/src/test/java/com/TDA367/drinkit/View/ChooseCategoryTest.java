@@ -19,6 +19,7 @@ public class ChooseCategoryTest {
     List<Category> cats = new ArrayList<>();
     List<String> challenges = new ArrayList<>();
 
+
     Category quiz = CategoryFactory.createCategory("quiz", "this is an instruction", challenges);
     Category charades = CategoryFactory.createCategory("charades", "this is an instruction", challenges);
 

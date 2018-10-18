@@ -125,6 +125,16 @@ public class DrinkIT {
         return activeAnswer;
     }
 
+    public boolean isAlreadyPlayed(Player player, Challenge challenge) {
+        if(playedRounds.size() < 3){return false;}
+        for (GameRound r : playedRounds) {
+            if (r.getChallenge() == challenge && r.getPlayer() == player) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public String getNextCategory(){
         String nextCategory = "none";
         Collections.shuffle(cats);
@@ -292,6 +302,17 @@ public class DrinkIT {
         }
 
         return names;
+    }
+
+    //setters for tests
+
+
+    public void setIndexOfActivePlayer(int indexOfActivePlayer) {
+        this.indexOfActivePlayer = indexOfActivePlayer;
+    }
+
+    public void setIndexOfActiveCategory(int indexOfActiveCategory) {
+        this.indexOfActiveCategory = indexOfActiveCategory;
     }
 
     //Constructor for tests

@@ -63,7 +63,6 @@
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
-
         android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

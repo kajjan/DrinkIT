@@ -92,7 +92,7 @@ public class AddPlayerTest {
         drinkit.setNumberOfRounds(duration); //multiplies players size with the chosen duration
         drinkit.createCompletedPlayersList(); //
 
-         int endlenght = completeListOfPlayers.size();
+        int endlenght = completeListOfPlayers.size();
 
         assert (endlenght == 12);
         //assert(endlenght == 20);
@@ -101,54 +101,10 @@ public class AddPlayerTest {
 
     }
 
-    @Test //Test to see if Point setting works.
-    public void succeededChallenge() {
-
-        List<Category> cats = new ArrayList<>();
-        List<GameRound> playedRounds = new ArrayList<>();
-        List<String> challenges = new ArrayList<>();
-        boolean a = true;
-
-        playersList.add(noOne);
-        playersList.add(khaleesi);
-        playersList.add(redViper);
-        challenges.add("here is the challenge 1");
-        challenges.add("here is a challenge 1");
-
-        Challenge challenge = ChallengeFactory.createChallenge("truthOrDare", "here lies a challenge 1");
-        Challenge challenge1 = ChallengeFactory.createChallenge("truthOrDare", "here lies another one 2");
-        TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
-        TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
-        cats.add(truthOrDare);
-        cats.add(truthOrDare1);
-
-        GameRound gameRound = new GameRound(redViper, challenge);
-        GameRound gameRound1 = new GameRound(redViper, challenge1);
-        GameRound gameRound2 = new GameRound(noOne, challenge1);
-        playedRounds.add(gameRound);
-        playedRounds.add(gameRound1);
-        playedRounds.add(gameRound2);
-
-        DrinkIT drinkIT = new DrinkIT(null, 0, playersList, null, 2,
-                cats, 0, playedRounds, null, null,
-                null, null, null);
-
-        drinkIT.succeededChallenge(); //Increases the Point of player redViper.
-
-        int pointsRedViper = redViper.getPoint();
-        System.out.println(pointsRedViper);
-        int pointsNoOne = noOne.getPoint();
-        int pointsKhaleesi = khaleesi.getPoint();
+}
 
 
-        assert (pointsRedViper == 1);
-        assert (pointsKhaleesi == 0);
-        assert (pointsNoOne == 0);
-
-
-    }
-
-    @Test
+   /* @Test
     public void testPutListInOrder() {
 
         playersList.add(khaleesi);
@@ -181,6 +137,6 @@ public class AddPlayerTest {
 
         }
 
-    }
+    } */
 
 

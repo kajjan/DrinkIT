@@ -1,5 +1,6 @@
 package com.TDA367.drinkit.View;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.GridLayout;
 
 import com.TDA367.drinkit.Controller.Controller;
 public class MainView extends AppCompatActivity {
@@ -15,5 +16,6 @@ public class MainView extends AppCompatActivity {
     public Controller getCtrl() {
         return ctrl;
     }
+
 }
 

@@ -109,4 +109,7 @@ public class Controller {
     public void addGameRound() {
         model.addGameRound();
     }
+
+    public boolean buttonActive(int i){ return model.buttonActive(i);
+    }
 }

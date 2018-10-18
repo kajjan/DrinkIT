@@ -3,6 +3,7 @@ package com.TDA367.drinkit.View;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.GridLayout;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import com.TDA367.drinkit.Controller.Controller;
 import com.TDA367.drinkit.Model.DrinkIT;
 
 public class MainAppActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

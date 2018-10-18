@@ -95,4 +95,7 @@ public class Controller {
     public String getActiveChallengesAnswer() {
         return model.getActiveChallengesAnswer();
     }
+
+    public boolean buttonActive(int i){ return model.buttonActive(i);
+    }
 }

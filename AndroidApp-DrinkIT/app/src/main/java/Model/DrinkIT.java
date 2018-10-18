@@ -188,6 +188,14 @@ public class DrinkIT {
         return b;
     }
 
+    public boolean buttonActive(int i){
+        boolean b = false;
+        if(cats.get(i).isActive()){
+            b=true;
+        }
+        return b;
+    }
+
     //method that puts every player in the players list in order of highest point to lowest.
     public void putListInPointOrder() {
         for (int i = 0; i < players.size(); i++) {

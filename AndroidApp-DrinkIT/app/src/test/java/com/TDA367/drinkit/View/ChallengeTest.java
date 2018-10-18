@@ -38,25 +38,36 @@ public class ChallengeTest {
     @Test
     public void failedChallenge(){
 
-        playedRounds.add(gameRound);
-        playedRounds.add(gameRound1);
-        playedRounds.add(gameRound2);
-
         playersList.add(noOne);
         playersList.add(khaleesi);
         playersList.add(redViper);
+        challenges.add("here is the challenge 1");
+        challenges.add("here is a challenge 1");
 
-        DrinkIT drinkIT = new DrinkIT(null, 0, null,
-                null, 1, null, 0,
-                playedRounds, null, null,
+        TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
+        TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
+
+        cats.add(truthOrDare);
+        cats.add(truthOrDare1);
+
+        playedRounds.add(gameRound);
+        playedRounds.add(gameRound1);
+
+        DrinkIT drinkIT = new DrinkIT(null, 0, playersList, null, 2,
+                cats, 0, playedRounds, null, null,
                 null, null, null);
 
-        khaleesi.setPoint(1);
-        drinkIT.failedChallenge();
+        drinkIT.failedChallenge();//don't give the player a point for the game
+
+        int pointsNoOne = noOne.getPoint();
+        int pointsRedViper = redViper.getPoint();
         int khaleesiPoint = khaleesi.getPoint();
 
 
-        assert(khaleesiPoint==1);
+        assert(pointsNoOne==0);
+        assert (pointsRedViper==0);
+        assert(khaleesiPoint==0);
+
     }
 
     @Test //Test to see if Point setting works.

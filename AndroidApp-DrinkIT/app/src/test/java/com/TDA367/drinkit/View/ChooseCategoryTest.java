@@ -9,11 +9,21 @@ import com.TDA367.drinkit.Model.Category;
 import com.TDA367.drinkit.Model.DrinkIT;
 import com.TDA367.drinkit.Model.Player;
 
+
+import com.TDA367.drinkit.Model.CategoryFactory;
+
 import static org.junit.Assert.*;
 
 public class ChooseCategoryTest {
 
-    @Test
+    List<Category> cats = new ArrayList<>();
+    List<String> challenges = new ArrayList<>();
+
+    Category quiz = CategoryFactory.createCategory("quiz", "this is an instruction", challenges);
+    Category charades = CategoryFactory.createCategory("charades", "this is an instruction", challenges);
+
+
+    /* @Test
     public void selectCategory() {
 
 
@@ -37,37 +47,55 @@ public class ChooseCategoryTest {
             }
             System.out.println(s);
         }
-        */
+
 
         int endLength = categories.size();
 
-        assert(b);
-        assert(initialLength+2==endLength);
+        assert (b);
+        assert (initialLength + 2 == endLength);
 
     }
+*/
+   /* @Test
+    public void getNextCategory() {
+        DrinkIT drinkIT = new DrinkIT(null, 0, null, null,
+                0, cats, 0, null, null,
+                null, null, null, null);
 
-    @Test
-    public void removeCategory() {
-        DrinkIT model = new DrinkIT( );
-        List<Category> categories = model.getCategories();
+        cats.add(quiz);
+        cats.add(charades);
 
         String category = "Charades";
         String category2 = "Truth or truthordare";
+        String nextCategory = drinkIT.getNextCategory();
 
-        //categories.add(new Category(category));
-        //categories.add(new Category(category2));
 
-        int initialLength = categories.size();
+        assert(nextCategory.equals("charades"));
 
-        //model.unSelectCategory(category);
 
-        int endLength = categories.size();
 
-        assert(endLength==initialLength-1);
-        assert(categories.size()==1);
 
+    } */
+
+    @Test
+    public void chooseCategory() {
+
+        DrinkIT drinkIT = new DrinkIT(null, 0, null, null,
+                0, cats, 0, null, null,
+                null, null, null, null);
+
+        cats.add(quiz);
+        cats.add(charades);
+
+        quiz.setInActive();
+        drinkIT.chooseCategory("quiz");
+
+        charades.setActive();
+        drinkIT.chooseCategory("charades");
+
+        assert (quiz.isActive());
+        assert (!charades.isActive());
 
     }
-
 
 }

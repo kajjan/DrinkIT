@@ -15,4 +15,10 @@ public class FinishPageTest {
         //hej vickan, hoppas det funkar nu 
 
     }
+
+   @Test
+    public void nextRound(){
+
+
+    }
 }

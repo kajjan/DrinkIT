@@ -8,25 +8,24 @@ import java.util.List;
 
 public class DrinkIT {
     //Category cat = new Category();
-    private List<Player> players = new ArrayList<>(); //
-    private int numberOfRounds = 0;                     //
-    private List<Player> completeListOfPlayers = new ArrayList<>(); //
-    private List<String> playerInPointOrder = new ArrayList<>(); //
-    private int indexOfActivePlayer = 0; //
-    private List<Category> cats = new ArrayList<>(); //
-    private int indexOfActiveCategory = -1;
-    private List<GameRound> playedRounds = new ArrayList<>(); //
-    private String activeChallenge;
-    private List<String> categoryNames = new ArrayList<>();
-    private List<String> completelistOfPlayerNames = new ArrayList<>();
+    private List<Player> players = new ArrayList<>(); //                    1
+    private int numberOfRounds = 0;                     //                  2
+    private List<Player> completeListOfPlayers = new ArrayList<>(); //      3
+    private List<String> playerInPointOrder = new ArrayList<>(); //         4
+    private int indexOfActivePlayer = 0; //                                 5
+    private List<Category> cats = new ArrayList<>(); //                     6
+    private int indexOfActiveCategory = -1;   //                            7
+    private List<GameRound> playedRounds = new ArrayList<>(); //            8
+    private String activeChallenge;//                                       9
+    private List<String> categoryNames = new ArrayList<>();//               10
+    private List<String> completelistOfPlayerNames = new ArrayList<>();//   11
 
     //Uses for tests
-    private List<Category> categories = new ArrayList<>();
-    private List<String> playerList = new ArrayList<>();
+    private List<Category> categories = new ArrayList<>();//                12
+    private List<String> playerList = new ArrayList<>();//                  13
 
 
     public DrinkIT() {}
-
 
     public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges ) {
             cats.add(CategoryFactory.createCategory(categoryName,instruction,challenges));
@@ -293,6 +292,27 @@ public class DrinkIT {
         }
 
         return names;
+    }
+
+    //Constructor for tests
+    public DrinkIT(List<Player> players, int numberOfRounds, List<Player> completeListOfPlayers,
+                   List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> cats,
+                   int indexOfActiveCategory, List<GameRound> playedRounds, String activeChallenge,
+                   List<String> categoryNames, List<String> completelistOfPlayerNames,
+                   List<Category> categories, List<String> playerList) {
+        this.players = players;
+        this.numberOfRounds = numberOfRounds;
+        this.completeListOfPlayers = completeListOfPlayers;
+        this.playerInPointOrder = playerInPointOrder;
+        this.indexOfActivePlayer = indexOfActivePlayer;
+        this.cats = cats;
+        this.indexOfActiveCategory = indexOfActiveCategory;
+        this.playedRounds = playedRounds;
+        this.activeChallenge = activeChallenge;
+        this.categoryNames = categoryNames;
+        this.completelistOfPlayerNames = completelistOfPlayerNames;
+        this.categories = categories;
+        this.playerList = playerList;
     }
 
 }

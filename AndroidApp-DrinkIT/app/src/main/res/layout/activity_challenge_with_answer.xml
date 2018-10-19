@@ -25,6 +25,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="227dp"
+            android:gravity="center"
             android:text="This is just a test to see how much space we need so that the challenge will fit on the display"
             android:textSize="20sp" />
 

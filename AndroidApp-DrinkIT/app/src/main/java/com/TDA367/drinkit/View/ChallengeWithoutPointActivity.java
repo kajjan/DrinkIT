@@ -73,7 +73,7 @@ public class ChallengeWithoutPointActivity extends MainView {
         }
         else if(category.equals("Truth or Dare")){
             //Enkelvy med poäng
-            startActivity(new Intent(ChallengeWithoutPointActivity.this, ChallengeWithPointActivity.class));
+            startActivity(new Intent(ChallengeWithoutPointActivity.this, TruthOrDarePageActivity.class));
         }
         else if(category.equals("Most Likely To") || category.equals("Rules")  || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That") )
             //en vy utan poäng (ingen spelar)

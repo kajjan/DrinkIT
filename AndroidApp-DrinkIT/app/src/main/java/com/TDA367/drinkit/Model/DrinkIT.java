@@ -17,8 +17,8 @@ public class DrinkIT {
     private List<GameRound> playedRounds = new ArrayList<>(); //
     private String activeChallenge;
     private List<String> categoryNames = new ArrayList<>();
-    private List<String> completelistOfPlayerNames = new ArrayList<>();
-    private List<String> playerNames = new ArrayList<>(10);
+    private List<String> completelistOfPlayerNames = new ArrayList<>(null);
+
 
     //Uses for tests
     private List<Category> categories = new ArrayList<>();
@@ -54,10 +54,28 @@ public class DrinkIT {
     } //ok
 
     public List<String> getAllPlayerNames() {
+        List<String> playerNames = new ArrayList<>(10);
         for (Player p : players) {
             playerNames.add(p.getName());
         }
         return playerNames;
+    }
+
+    public void removePlayerDuringGame(String playerName) {
+        for (int i=0; i<players.size(); i++) {
+            if (players.get(i).getName().equals(playerName)) {
+                players.remove(i);
+            }
+        }
+
+        for (int i=0; i<completeListOfPlayers.size(); i++) {
+            if (completeListOfPlayers.get(i).getName().equals(playerName)) {
+                completeListOfPlayers.remove(i);
+            }
+        }
+
+
+
     }
 
 
@@ -117,8 +135,6 @@ public class DrinkIT {
         activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
         return activeChallenge;
     }
-
-    //hur i världen ska detta funka - /Elin
 
     public String getActiveChallengesAnswer() {
         String activeAnswer;

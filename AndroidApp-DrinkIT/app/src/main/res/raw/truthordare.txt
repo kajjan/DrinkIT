@@ -1,4 +1,4 @@
-truthOrDare
+TruthOrDare
 truthOrDare write instructions here
 dare first challenge here 5
 truth second challenge here 6

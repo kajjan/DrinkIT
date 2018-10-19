@@ -67,15 +67,15 @@ public class ChallengeWithoutPointActivity extends MainView {
     }
 
     public void startNextActivity(String category){
-        if (category.equals("quiz") || category.equals("songs") || category.equals("charades") ){
+        if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades") ){
             //Dubbelvy med poäng
             startActivity(new Intent(ChallengeWithoutPointActivity.this, ChallengeWithAnswerPageOneActivity.class));
         }
-        else if(category.equals("truthOrDare")){
+        else if(category.equals("TruthOrDare")){
             //Enkelvy med poäng
             startActivity(new Intent(ChallengeWithoutPointActivity.this, ChallengeWithPointActivity.class));
         }
-        else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("themes") || category.equals("thisOrThat") )
+        else if(category.equals("MostLikelyTo") || category.equals("Rules")  || category.equals("NeverHaveIEver") || category.equals("Themes") || category.equals("ThisOrThat") )
             //en vy utan poäng (ingen spelar)
             startActivity(new Intent(ChallengeWithoutPointActivity.this, ChallengeWithoutPointActivity .class));
         else{

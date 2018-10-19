@@ -1,4 +1,4 @@
-rules
+Rules
 Rules, write instructions here
 Rules first challenge here 1
 Rules second challenge here 2

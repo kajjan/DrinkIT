@@ -19,41 +19,39 @@
 
         <ImageButton
             android:id="@+id/exitOptionsPage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="31dp"
-            android:layout_marginRight="31dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginRight="23dp"
+            android:layout_marginTop="23dp"
             android:onClick="exitOptionQuitPage"
             app:srcCompat="@android:drawable/btn_dialog" />
 
         <TextView
-            android:id="@+id/challengeText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:id="@+id/removePlayerText"
+            android:layout_width="319dp"
+            android:layout_height="112dp"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginBottom="257dp"
-            android:layout_marginEnd="162dp"
-            android:layout_marginRight="162dp"
-            android:text="Are you sure you want to quit the game?" />
+            android:layout_marginTop="256dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:text="Are you sure you want to quit the game?"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/quitButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="210dp"
+            android:layout_height="60dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="180dp"
             android:text="QUIT"
+            android:textSize="20dp"
             android:onClick="quitGame"/>
-
 
 
     </RelativeLayout>

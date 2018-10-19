@@ -18,25 +18,26 @@
 
         <ImageButton
             android:id="@+id/exitOptionsPage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="31dp"
-            android:layout_marginRight="31dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginRight="23dp"
+            android:layout_marginTop="23dp"
             android:onClick="exitOptionsPage"
             app:srcCompat="@android:drawable/btn_dialog" />
 
         <Button
             android:id="@+id/addNewPlayer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="221dp"
             android:onClick="addNewPlayerDuringGame"
+            android:textSize="20dp"
             android:text="Add New Player" />
 
         <TextView

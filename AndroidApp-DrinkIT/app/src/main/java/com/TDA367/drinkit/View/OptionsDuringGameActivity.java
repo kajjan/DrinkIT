@@ -15,7 +15,7 @@ public class OptionsDuringGameActivity extends MainView {
         setContentView(R.layout.activity_options_during_game);
     }
 
-    public void exitOptionsPage(View view) {
+    public void exitOptionsPage(View view) {        //player and category can be the same as earlier, but it won't be the same challenge, because that is ++ in Category
         String currentPlayer = getCtrl().getPlayersName();
         List<String> playerNames = getCtrl().getAllPlayerNames();
         String category;
@@ -47,19 +47,19 @@ public class OptionsDuringGameActivity extends MainView {
     }
 
     public void startNextActivity(String category){
-        if (category.equals("quiz") || category.equals("songs") || category.equals("charades") ){
+        if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades") ){
             //Dubbelvy med poäng
             startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeWithAnswerPageOneActivity.class));
         }
-        else if(category.equals("truthOrDare")){
+        else if(category.equals("Truth or Dare")){
             //Enkelvy med poäng
-            startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeWithPointActivity.class));
+            startActivity(new Intent(OptionsDuringGameActivity.this, TruthOrDarePageActivity.class));
         }
-        else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("themes") || category.equals("thisOrThat") )
+        else if(category.equals("Most Likely To") || category.equals("Rules")  || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That") )
             //en vy utan poäng (ingen spelar)
             startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeWithoutPointActivity .class));
         else{
-            System.out.println("Something is wrong with the code in DurationActivity...");
+            System.out.println("Something is wrong with the code in OptionsDuringGameActivity..." + category);
         }
 
     }

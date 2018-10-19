@@ -22,7 +22,7 @@ public class ChallengeWithoutPointActivity extends MainView {
 
     public void printPlayersName(){
         TextView text=((TextView)findViewById(R.id.textViewPlayerChallengeWithoutPoint));
-        text.setText(getCtrl().getPlayersName() + "HÄR SKA VI INTE ENS HA NAMN??");
+        text.setText(getCtrl().getPlayersName());
     }
 
     public void printCategory(){
@@ -79,7 +79,7 @@ public class ChallengeWithoutPointActivity extends MainView {
             //en vy utan poäng (ingen spelar)
             startActivity(new Intent(ChallengeWithoutPointActivity.this, ChallengeWithoutPointActivity .class));
         else{
-            System.out.println("Something is wrong with the code in DurationActivity...");
+            System.out.println("Something is wrong with the code in ChallengeWithoutPointActivity..." + category);
         }
 
     }

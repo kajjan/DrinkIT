@@ -99,7 +99,7 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
             //en vy utan poäng (ingen spelar)
             startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, ChallengeWithoutPointActivity .class));
         else{
-            System.out.println("Something is wrong with the code in DurationActivity...");
+            System.out.println("Something is wrong with the code in ChallengeWithAnswerActivity..." + category);
         }
 
     }

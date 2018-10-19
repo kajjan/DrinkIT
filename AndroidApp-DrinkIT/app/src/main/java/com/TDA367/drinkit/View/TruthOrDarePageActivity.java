@@ -13,12 +13,20 @@ public class TruthOrDarePageActivity extends MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truth_or_dare_page);
         printPlayersName();
+        printChallengePoints();
+
     }
 
     public void printPlayersName(){
         TextView text=((TextView)findViewById(R.id.nameOfPlayer));
         text.setText(getCtrl().getPlayersName());
     }
+
+    public void printChallengePoints(){
+        TextView text=((TextView)findViewById(R.id.challengePoints));
+        text.setText(getCtrl().getActiveChallengePoints());
+    }
+
 
 
     public void truthButton(View view) {

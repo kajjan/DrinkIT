@@ -68,7 +68,7 @@ public class DrinkIT {
             }
         }
 
-        for (int i=0; i<completeListOfPlayers.size(); i++) {
+        for (int i=indexOfActivePlayer; i<completeListOfPlayers.size(); i++) {
             if (completeListOfPlayers.get(i).getName().equals(playerName)) {
                 completeListOfPlayers.remove(i);
             }
@@ -160,6 +160,14 @@ public class DrinkIT {
         }
 
         return nextCategory;
+    }
+
+    public String getCurrentCategory() {
+        String currentCategory = "none";
+        if (cats.get(indexOfActiveCategory).isActive()) {
+            currentCategory = cats.get(indexOfActiveCategory).getName();
+        }
+        return currentCategory;
     }
 
     public String getInstructions(){

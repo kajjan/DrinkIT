@@ -38,6 +38,7 @@ public class ChallengeWithAnswerPageOneActivity extends MainView {
     }
 
     public void optionsDuringGamePage(View view) {
+        //startActivityForResult();
         startActivity(new Intent(ChallengeWithAnswerPageOneActivity.this, OptionsDuringGameActivity.class));
     }
 

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 
+import java.util.List;
+
 public class OptionsDuringGameActivity extends MainView {
 
     @Override
@@ -14,7 +16,18 @@ public class OptionsDuringGameActivity extends MainView {
     }
 
     public void exitOptionsPage(View view) {
-        finish();
+        String currentPlayer = getCtrl().getPlayersName();
+        List<String> playerNames = getCtrl().getAllPlayerNames();
+        String category;
+
+        if (playerNames.contains(currentPlayer)) {
+            category = getCtrl().getCurrentCategory();
+
+        } else {
+            category = getCtrl().getNextCategory();
+        }
+
+        startNextActivity(category);
     }
 
     public void addNewPlayerDuringGame(View view) {
@@ -30,7 +43,25 @@ public class OptionsDuringGameActivity extends MainView {
     }
 
     public void resumeGame(View view) {
-        finish();
+        exitOptionsPage(view);
+    }
+
+    public void startNextActivity(String category){
+        if (category.equals("quiz") || category.equals("songs") || category.equals("charades") ){
+            //Dubbelvy med poäng
+            startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeWithAnswerPageOneActivity.class));
+        }
+        else if(category.equals("truthOrDare")){
+            //Enkelvy med poäng
+            startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeWithPointActivity.class));
+        }
+        else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("themes") || category.equals("thisOrThat") )
+            //en vy utan poäng (ingen spelar)
+            startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeWithoutPointActivity .class));
+        else{
+            System.out.println("Something is wrong with the code in DurationActivity...");
+        }
+
     }
 
 }

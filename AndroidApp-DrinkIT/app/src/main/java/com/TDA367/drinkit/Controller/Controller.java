@@ -17,7 +17,7 @@ public class Controller {
     }
 
     public List<String> getAllPlayerNames() {
-        List<String> playerNames = new ArrayList<>(10);
+        List<String> playerNames;
         playerNames = model.getAllPlayerNames();
         return playerNames;
     }
@@ -37,6 +37,8 @@ public class Controller {
     public String getNextCategory(){
         return model.getNextCategory();
     }
+
+    public String getCurrentCategory() { return model.getCurrentCategory(); }
 
     public String getInstructions(){
         return model.getInstructions();

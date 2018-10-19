@@ -31,4 +31,12 @@ public class TruthOrDarePageActivity extends MainView {
         startActivity(new Intent(TruthOrDarePageActivity.this, ChallengeWithPointActivity .class));
 
     }
+
+    public void challengeInstructionPage(View view) {
+        startActivity(new Intent(TruthOrDarePageActivity.this, ChallengeInstructionActivity.class));
+    }
+
+    public void optionsDuringGamePage(View view) {
+        startActivity(new Intent(TruthOrDarePageActivity.this, OptionsDuringGameActivity.class));
+    }
 }

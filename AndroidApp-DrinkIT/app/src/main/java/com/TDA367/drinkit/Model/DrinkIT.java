@@ -28,6 +28,14 @@ public class DrinkIT {
 
     public DrinkIT() {}
 
+    public String getActiveCategory() {
+        return cats.get(indexOfActiveCategory).getName();
+    }
+
+    public int getActiveChallengePoints() {
+        return cats.get(indexOfActiveCategory).getActiveChallengePoint();
+    }
+
     public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges ) {
             cats.add(CategoryFactory.createCategory(categoryName,instruction,challenges));
     }

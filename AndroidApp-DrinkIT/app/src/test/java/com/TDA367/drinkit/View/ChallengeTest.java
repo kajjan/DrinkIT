@@ -54,7 +54,10 @@ public class ChallengeTest {
 
         DrinkIT drinkIT = new DrinkIT(null, 0, playersList, null, 2,
                 cats, 0, playedRounds, null, null,
-                null, null, null);
+
+        cats.add(truthOrDare);
+        cats.add(truthOrDare1);
+
 
         drinkIT.failedChallenge();//don't give the player a point for the game
 

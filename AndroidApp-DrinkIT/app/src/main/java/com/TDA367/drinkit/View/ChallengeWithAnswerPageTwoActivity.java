@@ -93,13 +93,13 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
         }
         else if(category.equals("Truth or Dare")){
             //Enkelvy med poäng
-            startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, ChallengeWithPointActivity.class));
+            startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, TruthOrDarePageActivity.class));
         }
         else if(category.equals("Most Likely To") || category.equals("Rules")  || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That") )
             //en vy utan poäng (ingen spelar)
             startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, ChallengeWithoutPointActivity .class));
         else{
-            System.out.println("Something is wrong with the code in DurationActivity...");
+            System.out.println("Something is wrong with the code in ChallengeWithAnswerActivity..." + category);
         }
 
     }

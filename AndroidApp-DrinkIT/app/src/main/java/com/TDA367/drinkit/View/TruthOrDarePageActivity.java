@@ -13,6 +13,7 @@ public class TruthOrDarePageActivity extends MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truth_or_dare_page);
         printPlayersName();
+
     }
 
     public void printPlayersName(){

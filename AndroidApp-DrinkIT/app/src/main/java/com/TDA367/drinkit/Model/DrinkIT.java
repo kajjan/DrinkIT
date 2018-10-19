@@ -17,7 +17,7 @@ public class DrinkIT {
     private List<GameRound> playedRounds = new ArrayList<>(); //
     private String activeChallenge;
     private List<String> categoryNames = new ArrayList<>();
-    private List<String> completelistOfPlayerNames = new ArrayList<>(null);
+    private List<String> completelistOfPlayerNames = new ArrayList<>();
 
 
     //Uses for tests
@@ -74,6 +74,7 @@ public class DrinkIT {
             }
         }
 
+        numberOfRounds = completeListOfPlayers.size();
 
 
     }
@@ -261,15 +262,24 @@ public class DrinkIT {
     }
 
     //Method that clears the model for a possible new round
-    public void endTheGame() {
-        playerList.clear();
+    public void clearTheGame() {
         players.clear();
         categories.clear();
         completeListOfPlayers.clear();
         playerInPointOrder.clear();
+        cats.clear();
+        playedRounds.clear();
+        categoryNames.clear();
+        completelistOfPlayerNames.clear();
+
+        indexOfActiveCategory = -1;
         indexOfActivePlayer = 0;
         numberOfRounds = 0;
+        activeChallenge = null;
 
+        //for tests
+        categories.clear();
+        playerList.clear();
     }
 
 

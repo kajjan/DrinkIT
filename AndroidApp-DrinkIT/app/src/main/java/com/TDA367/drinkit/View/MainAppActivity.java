@@ -14,6 +14,9 @@ import com.TDA367.drinkit.Model.DrinkIT;
 
 public class MainAppActivity extends AppCompatActivity {
 
+    DrinkIT model = new DrinkIT();
+    Controller ctrl = new Controller(model);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         InputStream charades = getResources().openRawResource(getResources().getIdentifier("charades", "raw", getPackageName()));
@@ -29,6 +32,9 @@ public class MainAppActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        showStartPage();
+
+        model.clearTheGame();
 
         textFileScanner(rules);
         textFileScanner(neverHaveIEver);
@@ -40,14 +46,9 @@ public class MainAppActivity extends AppCompatActivity {
         textFileScanner(thisOrThat);
         textFileScanner(charades);
 
-
-
-        showStartPage();
-
     }
 
-    DrinkIT model = new DrinkIT();
-    Controller ctrl = new Controller(model);
+
     // MainView view = new MainView(ctrl);
 
 

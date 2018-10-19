@@ -94,7 +94,7 @@ public class Controller {
     }
 
     public void endTheGame(){
-        model.endTheGame();
+        model.clearTheGame();
     }
 
 

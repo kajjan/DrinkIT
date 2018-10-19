@@ -62,6 +62,9 @@ public class RemovePlayerDuringGamePageOneActivity extends MainView {
     public void playerOneSelected(View view) {
         Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);
         intent.putExtra("PLAYER_NAME", buttons.get(0).getText());
+
+        System.out.println(buttons.get(0).getText());
+
         startActivity(intent);
 
         //String playerName = (String) getIntent().getStringExtra("PLAYER_NAME");

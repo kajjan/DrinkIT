@@ -76,7 +76,7 @@ public class ChooseCategoryTest {
 
         model = new DrinkIT(null, 0, null, null,
                 0, cats, -1, null, null,
-                null, null, null, null);
+                null, null);
 
 
         System.out.println(cats.get(0).isActive());
@@ -102,7 +102,7 @@ public class ChooseCategoryTest {
 
         model = new DrinkIT(null, 0, null, null,
                 0, cats, 0, null, null,
-                null, null, null);
+                null, null);
 
 
         nextCategory = model.getNextCategory();

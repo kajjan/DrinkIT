@@ -31,10 +31,6 @@ public class DrinkIT {
     private List<String> playerNames = new ArrayList<>(10);
 
 
-    //Uses for tests
-    private List<Category> categories = new ArrayList<>();//                12
-
-
     public DrinkIT() {}
 
     public String getActiveCategory() {
@@ -100,12 +96,13 @@ public class DrinkIT {
             }
         }
 
-        for (int i=0; i<completeListOfPlayers.size(); i++) {
+        for (int i=indexOfActivePlayer; i<completeListOfPlayers.size(); i++) {
             if (completeListOfPlayers.get(i).getName().equals(playerName)) {
                 completeListOfPlayers.remove(i);
             }
         }
 
+        numberOfRounds = completeListOfPlayers.size();
 
 
     }
@@ -178,7 +175,11 @@ public class DrinkIT {
     }
 
     public String getActiveChallenge(){
-        activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
+        if(activeChallenge==""){
+        }
+        else {
+            activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
+        }
         return activeChallenge;
     }
 
@@ -219,6 +220,14 @@ public class DrinkIT {
             }
         }
         return nextCategory;
+    }
+
+    public String getCurrentCategory() {
+        String currentCategory = "none";
+        if (cats.get(indexOfActiveCategory).isActive()) {
+            currentCategory = cats.get(indexOfActiveCategory).getName();
+        }
+        return currentCategory;
     }
 
     public String getInstructions(){
@@ -359,20 +368,30 @@ public class DrinkIT {
         while(!(getActiveChallenge()).contains("dare")) {
                 cats.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
         }
+        if(!getActiveCategory().contains("dare")){
+            System.out.println("There is no darechallenge left...");
+        }
     }
 
 
     /**
      *  Method that clears the model for a possible new round
      */
-    public void endTheGame() {
+    public void clearTheGame() {
         players.clear();
         completeListOfPlayers.clear();
         playerInPointOrder.clear();
+        cats.clear();
+        playedRounds.clear();
+        categoryNames.clear();
+        completelistOfPlayerNames.clear();
+
+        indexOfActiveCategory = -1;
         indexOfActivePlayer = 0;
         numberOfRounds = 0;
+        activeChallenge= "";
 
-    }
+        }
 
 
     /**
@@ -383,13 +402,10 @@ public class DrinkIT {
         this.players = players;
     }
 
-    /**
-     * helpmethod for tests
-     * @return
-     */
-    public List<Category> getCategories() {
+  /*  public List<Category> getCategories() {
         return categories;
     }
+    */
 
     /**
      * method for test
@@ -412,11 +428,15 @@ public class DrinkIT {
 
     public List<Player> getCompleteListOfPlayers(){ return completeListOfPlayers;}
 
+    public List<GameRound> getPlayedRounds(){return playedRounds; }
 
-    /**
-     * setter for tests
-     * @param indexOfActivePlayer
-     */
+    public List<Category> getCats() {
+        return cats;
+    }
+
+    //setters for tests
+
+
     public void setIndexOfActivePlayer(int indexOfActivePlayer) {
         this.indexOfActivePlayer = indexOfActivePlayer;
     }
@@ -428,6 +448,9 @@ public class DrinkIT {
     public void setIndexOfActiveCategory(int indexOfActiveCategory) {
         this.indexOfActiveCategory = indexOfActiveCategory;
     }
+
+    public int getIndexOfActiveCategory(){ return indexOfActiveCategory;}
+
 
     /**
      * Constructor for tests
@@ -442,13 +465,11 @@ public class DrinkIT {
      * @param activeChallenge
      * @param categoryNames
      * @param completelistOfPlayerNames
-     * @param categories
      */
     public DrinkIT(List<Player> players, int numberOfRounds, List<Player> completeListOfPlayers,
                    List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> cats,
                    int indexOfActiveCategory, List<GameRound> playedRounds, String activeChallenge,
-                   List<String> categoryNames, List<String> completelistOfPlayerNames,
-                   List<Category> categories) {
+                   List<String> categoryNames, List<String> completelistOfPlayerNames) {
         this.players = players;
         this.numberOfRounds = numberOfRounds;
         this.completeListOfPlayers = completeListOfPlayers;
@@ -460,7 +481,6 @@ public class DrinkIT {
         this.activeChallenge = activeChallenge;
         this.categoryNames = categoryNames;
         this.completelistOfPlayerNames = completelistOfPlayerNames;
-        this.categories = categories;
 
     }
 
@@ -476,13 +496,11 @@ public class DrinkIT {
      * @param activeChallenge
      * @param categoryNames
      * @param completelistOfPlayerNames
-     * @param categories
      */
     public DrinkIT(List<Player> players, int numberOfRounds,
                    List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> cats,
                    int indexOfActiveCategory, List<GameRound> playedRounds, String activeChallenge,
-                   List<String> categoryNames, List<String> completelistOfPlayerNames,
-                   List<Category> categories) {
+                   List<String> categoryNames, List<String> completelistOfPlayerNames) {
         this.players = players;
         this.numberOfRounds = numberOfRounds;
         this.playerInPointOrder = playerInPointOrder;

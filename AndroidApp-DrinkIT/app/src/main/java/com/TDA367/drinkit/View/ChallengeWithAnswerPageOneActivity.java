@@ -13,9 +13,9 @@ public class ChallengeWithAnswerPageOneActivity extends MainView {
         setContentView(R.layout.activity_challenge_with_answer);
         getCtrl().getCompleteListOfPlayersNames();
 
-        printPlayersName();
         printChallenge();
         printCategory();
+        printPlayersName();
         printChallengePoints();
     }
 
@@ -50,6 +50,7 @@ public class ChallengeWithAnswerPageOneActivity extends MainView {
     }
 
     public void optionsDuringGamePage(View view) {
+        //startActivityForResult();
         startActivity(new Intent(ChallengeWithAnswerPageOneActivity.this, OptionsDuringGameActivity.class));
     }
 

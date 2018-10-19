@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 
+import java.util.List;
+
 public class OptionsDuringGameActivity extends MainView {
 
     @Override
@@ -13,8 +15,19 @@ public class OptionsDuringGameActivity extends MainView {
         setContentView(R.layout.activity_options_during_game);
     }
 
-    public void exitOptionsPage(View view) {
-        finish();
+    public void exitOptionsPage(View view) {        //player and category can be the same as earlier, but it won't be the same challenge, because that is ++ in Category
+        String currentPlayer = getCtrl().getPlayersName();
+        List<String> playerNames = getCtrl().getAllPlayerNames();
+        String category;
+
+        if (playerNames.contains(currentPlayer)) {
+            category = getCtrl().getCurrentCategory();
+
+        } else {
+            category = getCtrl().getNextCategory();
+        }
+
+        startNextActivity(category);
     }
 
     public void addNewPlayerDuringGame(View view) {
@@ -30,7 +43,25 @@ public class OptionsDuringGameActivity extends MainView {
     }
 
     public void resumeGame(View view) {
-        finish();
+        exitOptionsPage(view);
+    }
+
+    public void startNextActivity(String category){
+        if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades") ){
+            //Dubbelvy med poäng
+            startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeWithAnswerPageOneActivity.class));
+        }
+        else if(category.equals("Truth or Dare")){
+            //Enkelvy med poäng
+            startActivity(new Intent(OptionsDuringGameActivity.this, TruthOrDarePageActivity.class));
+        }
+        else if(category.equals("Most Likely To") || category.equals("Rules")  || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That") )
+            //en vy utan poäng (ingen spelar)
+            startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeWithoutPointActivity .class));
+        else{
+            System.out.println("Something is wrong with the code in OptionsDuringGameActivity..." + category);
+        }
+
     }
 
 }

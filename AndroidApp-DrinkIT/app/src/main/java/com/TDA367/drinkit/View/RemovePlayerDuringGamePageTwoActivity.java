@@ -1,5 +1,6 @@
 package com.TDA367.drinkit.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
@@ -31,17 +32,7 @@ public class RemovePlayerDuringGamePageTwoActivity extends MainView {
 
     public void removePlayer(View view) {
         getCtrl().removePlayerDuringGame(playerName);
-
-
-
-        List<String> allPlayers = new ArrayList<>();
-        allPlayers=getCtrl().getAllPlayerNames();
-
-        for (int i=0; i<allPlayers.size();i++) {
-            System.out.println(allPlayers.get(i));
-        }
-
-        //finish();
+        startActivity(new Intent(RemovePlayerDuringGamePageTwoActivity.this, OptionsDuringGameActivity.class));
 
     }
 

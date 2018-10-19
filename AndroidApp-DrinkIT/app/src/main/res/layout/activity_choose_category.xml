@@ -7,77 +7,75 @@
     tools:context=".ChooseCategoryActivity">
 
 
-
-    <ImageButton
-        android:id="@+id/returnToAddPlayersButton"
+    <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:contentDescription="TODO"
-        android:onClick="returnToAddPlayersPage"
-        android:rotation="90"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Categories"
+        android:textColor="#000000"
+        android:layout_marginTop="15dp"
+        android:textSize="40sp" />
 
     <ImageButton
         android:id="@+id/toTimePage"
-        android:layout_width="wrap_content"
+        android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:contentDescription="TODO"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="22dp"
+        android:background="#499273"
         android:onClick="nextToDurationPage"
         android:rotation="-90"
         app:srcCompat="@android:drawable/arrow_down_float" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/Categories"
-        android:textSize="70px"
-        android:textStyle="italic" />
 
     <android.support.v7.widget.GridLayout
         android:id="@+id/categoryGrid"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="570dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="@dimen/default_gap"
+        android:layout_marginLeft="@dimen/default_gap"
+        android:layout_marginRight="@dimen/default_gap"
         android:layout_marginTop="55dp"
         app:columnCount="3"
         app:rowCount="3"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
+        android:padding="2dp"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="2dp">
 
 
         <Button
             android:id="@+id/catOne"
+            android:background="#FFFFFF"
             android:onClick="category1"
             app:layout_column="0"
             app:layout_columnWeight="1"
             app:layout_row="0"
             app:layout_rowWeight="1"
-            />
+            android:padding="@dimen/default_gap"/>
 
         <Button
             android:id="@+id/catTwo"
             android:layout_weight="1"
+            android:background="#FFFFFF"
             android:onClick="category2"
             app:layout_column="1"
             app:layout_columnWeight="1"
             app:layout_row="0"
             app:layout_rowWeight="1"
-            />
+            android:padding="@dimen/default_gap"/>
 
         <Button
             android:id="@+id/catThree"
             android:layout_weight="1"
+            android:background="#FFFFFF"
             android:onClick="category3"
             app:layout_column="2"
             app:layout_columnWeight="1"
@@ -87,6 +85,7 @@
         <Button
             android:id="@+id/catFour"
             android:layout_weight="1"
+            android:background="#FFFFFF"
             android:onClick="category4"
             app:layout_column="0"
             app:layout_columnWeight="1"
@@ -96,6 +95,7 @@
         <Button
             android:id="@+id/catFive"
             android:layout_weight="1"
+            android:background="#FFFFFF"
             android:onClick="category5"
             app:layout_column="1"
             app:layout_columnWeight="1"
@@ -105,6 +105,7 @@
         <Button
             android:id="@+id/catSix"
             android:layout_weight="1"
+            android:background="#FFFFFF"
             android:onClick="category6"
             app:layout_column="2"
             app:layout_columnWeight="1"
@@ -114,6 +115,7 @@
         <Button
             android:id="@+id/catSeven"
             android:layout_weight="1"
+            android:background="#FFFFFF"
             android:onClick="category7"
             app:layout_column="0"
             app:layout_columnWeight="1"
@@ -123,6 +125,7 @@
         <Button
             android:id="@+id/catEight"
             android:layout_weight="1"
+            android:background="#FFFFFF"
             android:onClick="category8"
             app:layout_column="1"
             app:layout_columnWeight="1"
@@ -132,6 +135,7 @@
         <Button
             android:id="@+id/catNine"
             android:layout_weight="1"
+            android:background="#FFFFFF"
             android:onClick="category9"
             app:layout_column="2"
             app:layout_columnWeight="1"

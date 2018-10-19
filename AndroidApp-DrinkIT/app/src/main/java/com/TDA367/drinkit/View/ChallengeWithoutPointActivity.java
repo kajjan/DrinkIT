@@ -15,14 +15,19 @@ public class ChallengeWithoutPointActivity extends MainView {
         getCtrl().getCompleteListOfPlayersNames();
 
         printPlayersName();
-
+        printCategory();
         printChallenge();
     }
 
 
     public void printPlayersName(){
         TextView text=((TextView)findViewById(R.id.textViewPlayerChallengeWithoutPoint));
-        text.setText(getCtrl().getPlayersName());
+        text.setText(getCtrl().getPlayersName() + "HÄR SKA VI INTE ENS HA NAMN??");
+    }
+
+    public void printCategory(){
+        TextView text=((TextView)findViewById(R.id.challengeCategory));
+        text.setText(getCtrl().getActiveCategory());
     }
 
     public void printChallenge(){

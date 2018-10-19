@@ -1,45 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DurationActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="DrinkIT"
+        android:textColor="#000000"
+        android:layout_marginTop="15dp"
+        android:textSize="40sp" />
 
-        <Button
-            android:id="@+id/longTimeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/mediumTimeButton"
-            android:layout_marginBottom="153dp"
-            android:text="LONG"
-            android:onClick="longDuration"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="258dp"
+        android:text="Choose duration of the game.."
+        android:textColor="#000000"
+        android:textSize="25sp" />
 
-        <Button
-            android:id="@+id/mediumTimeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/shortTimeButton"
-            android:layout_below="@+id/shortTimeButton"
-            android:text="MEDIUM"
-            android:onClick="mediumDuration"/>
+    <Button
+        android:id="@+id/longTimeButton"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="118dp"
+        android:onClick="longDuration"
+        android:text="LONG"
+        android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/shortTimeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="126dp"
-            android:text="SHORT"
-            android:onClick="shortDuration"/>
+    <Button
+        android:id="@+id/mediumTimeButton"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="194dp"
+        android:onClick="mediumDuration"
+        android:text="MEDIUM"
+        android:textSize="20sp" />
 
-    </RelativeLayout>
+
+    <Button
+        android:id="@+id/shortTimeButton"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="274dp"
+        android:onClick="shortDuration"
+        android:text="SHORT"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="109dp"
+        android:layout_height="112dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        app:srcCompat="@drawable/icon_alarm" />
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

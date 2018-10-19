@@ -11,7 +11,7 @@
         android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18sp"
+        android:layout_marginTop="90sp"
         app:errorEnabled="true">
 
         <android.support.design.widget.TextInputEditText
@@ -30,7 +30,7 @@
         android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="68sp">
+        android:layout_marginTop="140sp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/player2"
@@ -49,7 +49,7 @@
         android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="118sp">
+        android:layout_marginTop="190sp">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
@@ -63,11 +63,10 @@
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
-
         android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="168sp">
+        android:layout_marginTop="240sp">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
@@ -84,7 +83,7 @@
         android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="218sp">
+        android:layout_marginTop="290sp">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
@@ -99,7 +98,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="309sp"
         android:layout_height="53sp"
-        android:layout_marginTop="268sp"
+        android:layout_marginTop="340sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         >
@@ -122,7 +121,7 @@
         android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="318sp">
+        android:layout_marginTop="390sp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/player7"
@@ -141,7 +140,7 @@
         android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="368sp">
+        android:layout_marginTop="440sp">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
@@ -159,7 +158,7 @@
         android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="418sp">
+        android:layout_marginTop="490sp">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
@@ -177,7 +176,7 @@
         android:layout_height="53sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="468sp">
+        android:layout_marginTop="540sp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/player10"
@@ -185,23 +184,36 @@
             android:layout_height="match_parent"
             android:autofillHints=""
             android:cursorVisible="false"
-            android:focusable="false"/>
+            android:focusable="false" />
 
 
     </android.support.design.widget.TextInputLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/submitButton"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="22dp"
+        android:background="#499273"
+        android:onClick="namesSubmitClick"
+        android:rotation="-90"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="20sp"
-        android:onClick="namesSubmitClick"
-        android:layout_marginStart="60sp"
-        android:layout_marginLeft="60sp"
-        android:text="Submit"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Add Players"
+        android:textColor="#000000"
+        android:layout_marginTop="15dp"
+        android:textSize="40sp" />
+
 
 </RelativeLayout>

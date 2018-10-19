@@ -23,66 +23,96 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_margin="100dp"
-            android:textSize="14dp"
-            android:layout_marginTop="150dp" />
+            android:layout_marginTop="144dp"
+            android:text="Player1"
+            android:textColor="#000000"
+            android:textSize="50sp" />
+
 
         <Button
             android:id="@+id/failButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="93dp"
-            android:layout_marginStart="74dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginBottom="120dp"
+            android:layout_marginStart="60dp"
+            android:background="#ffcc77"
+            android:onClick="failChallenge"
             android:text="Fail"
-            android:onClick="failChallenge"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/succeedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="60dp"
             android:layout_alignTop="@+id/failButton"
-            android:layout_marginEnd="78dp"
+            android:layout_marginEnd="60dp"
+            android:onClick="succeededChallenge"
+            android:background="#00b300"
             android:text="Succeed"
-            android:onClick="succeededChallenge"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/answerText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:layout_width="319dp"
+            android:layout_height="112dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginEnd="162dp"
-            android:layout_marginRight="162dp"
-            android:layout_marginBottom="257dp"
-            android:text="TextView" />
+            android:layout_marginBottom="227dp"
+            android:text="This is just a test to see how much space we need so that the challenge will fit on the display"
+            android:textSize="20sp" />
+
 
         <ImageButton
             android:id="@+id/challengeInstructionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="17dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
-            app:srcCompat="@android:drawable/ic_menu_help"
-            android:onClick="challengeInstructionPage"/>
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="23dp"
+            android:layout_marginRight="23dp"
+            android:layout_marginTop="23dp"
+            android:onClick="challengeInstructionPage"
+            app:srcCompat="@android:drawable/ic_menu_help" />
 
         <ImageButton
             android:id="@+id/optionsDuringGameButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginLeft="23dp"
+            android:onClick="optionsDuringGamePage"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+        <TextView
+            android:id="@+id/challengeCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/succeedButton"
-            android:layout_alignTop="@+id/challengeInstructionButton"
-            android:onClick="optionsDuringGamePage"
-            app:srcCompat="@android:drawable/ic_menu_help" />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="218dp"
+            android:text="Category"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/challengePoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="71dp"
+            android:text="3 points"
+            android:textSize="18sp" />
 
     </RelativeLayout>
 

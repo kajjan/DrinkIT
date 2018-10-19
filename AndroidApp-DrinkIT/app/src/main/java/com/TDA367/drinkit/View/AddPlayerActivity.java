@@ -314,4 +314,5 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
         }
 
     }
+
 }

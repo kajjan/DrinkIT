@@ -57,6 +57,10 @@ public class ChallengeWithoutPointActivity extends MainView {
         startActivity(new Intent(ChallengeWithoutPointActivity.this, ChallengeInstructionActivity.class));
     }
 
+    public void optionsDuringGamePage(View view) {
+        startActivity(new Intent(ChallengeWithoutPointActivity.this, OptionsDuringGameActivity.class));
+    }
+
     public void startNextActivity(String category){
         if (category.equals("quiz") || category.equals("songs") || category.equals("charades") ){
             //Dubbelvy med poäng

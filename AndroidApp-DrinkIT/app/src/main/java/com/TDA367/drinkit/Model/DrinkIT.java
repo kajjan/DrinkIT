@@ -19,6 +19,7 @@ public class DrinkIT {
     private String activeChallenge;//                                       9
     private List<String> categoryNames = new ArrayList<>();//               10
     private List<String> completelistOfPlayerNames = new ArrayList<>();//   11
+    private List<String> playerNames = new ArrayList<>(10);
 
     //Uses for tests
     private List<Category> categories = new ArrayList<>();//                12
@@ -51,6 +52,13 @@ public class DrinkIT {
     public void addPlayer(String name) {
         players.add(new Player(name));
     } //ok
+
+    public List<String> getAllPlayerNames() {
+        for (Player p : players) {
+            playerNames.add(p.getName());
+        }
+        return playerNames;
+    }
 
 
     public void setNumberOfRounds(int duration) {
@@ -193,6 +201,14 @@ public class DrinkIT {
         for (Category c : cats)
         if (c.isActive()) {
             b = true;
+        }
+        return b;
+    }
+
+    public boolean buttonActive(int i){
+        boolean b = false;
+        if(cats.get(i).isActive()){
+            b=true;
         }
         return b;
     }

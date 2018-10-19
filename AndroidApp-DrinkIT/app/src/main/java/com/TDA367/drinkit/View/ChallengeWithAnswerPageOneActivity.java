@@ -37,6 +37,10 @@ public class ChallengeWithAnswerPageOneActivity extends MainView {
         startActivity(new Intent(ChallengeWithAnswerPageOneActivity.this, ChallengeInstructionActivity.class));
     }
 
+    public void optionsDuringGamePage(View view) {
+        startActivity(new Intent(ChallengeWithAnswerPageOneActivity.this, OptionsDuringGameActivity.class));
+    }
+
     public boolean nextRound(){
         return getCtrl().nextRound();
     }

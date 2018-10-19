@@ -63,6 +63,14 @@
             android:layout_marginBottom="128dp"
             android:onClick="toAnswerPage" />
 
+        <ImageButton
+            android:id="@+id/optionsDuringGameButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/succeedButton"
+            android:layout_alignTop="@+id/challengeInstructionButton"
+            android:onClick="optionsDuringGamePage"
+            app:srcCompat="@android:drawable/ic_menu_help" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

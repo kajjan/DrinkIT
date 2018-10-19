@@ -69,6 +69,9 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
         startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, ChallengeInstructionActivity.class));
     }
 
+    public void optionsDuringGamePage(View view) {
+        startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, OptionsDuringGameActivity.class));
+    }
 
 
     public void startNextActivity(String category){

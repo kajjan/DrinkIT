@@ -16,6 +16,12 @@ public class Controller {
         model.addPlayer(player);
     }
 
+    public List<String> getAllPlayerNames() {
+        List<String> playerNames = new ArrayList<>(10);
+        playerNames = model.getAllPlayerNames();
+        return playerNames;
+    }
+
     public void setDuration(int duration){
         model.setNumberOfRounds(duration);
     }
@@ -108,5 +114,8 @@ public class Controller {
 
     public void addGameRound() {
         model.addGameRound();
+    }
+
+    public boolean buttonActive(int i){ return model.buttonActive(i);
     }
 }

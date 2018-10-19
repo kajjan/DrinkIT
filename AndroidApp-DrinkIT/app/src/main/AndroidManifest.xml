@@ -27,7 +27,22 @@
         <activity android:name=".ChallengeWithAnswerPageOneActivity" />
         <activity android:name=".ChallengeWithoutPointActivity" />
         <activity android:name=".TruthOrDarePageActivity"/>
-        <activity android:name=".ChallengeWithAnswerPageTwoActivity"></activity>
+        <activity android:name=".ChallengeWithAnswerPageTwoActivity" />
+        <activity
+            android:name=".QuitDuringGameActivity"
+            android:label="@string/title_activity_quit_during_game" />
+        <activity
+            android:name=".OptionsDuringGameActivity"
+            android:label="@string/title_activity_options_during_game" />
+        <activity
+            android:name=".RemovePlayerDuringGamePageOneActivity"
+            android:label="@string/title_activity_remove_player_during_game" />
+        <activity
+            android:name=".AddPlayerDuringGameActivity"
+            android:label="@string/title_activity_add_player_during_game" />
+        <activity
+            android:name=".RemovePlayerDuringGamePageTwoActivity"
+            android:label="@string/title_activity_remove_player_during_game_page_two"></activity>
     </application>
 
 </manifest>

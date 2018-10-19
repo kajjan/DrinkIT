@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">DrinkIT</string>
     <string name="Categories">Categories</string>
+    <string name="title_activity_quit_during_game">QuitDuringGameActivity</string>
+    <string name="title_activity_options_during_game">OptionsDuringGameActivity</string>
+    <string name="title_activity_remove_player_during_game">RemovePlayerDuringGameActivity</string>
+    <string name="title_activity_add_player_during_game">AddPlayerDuringGameActivity</string>
+    <string name="title_activity_remove_player_during_game_page_two">
+        RemovePlayerDuringGamePageTwoActivity
+    </string>
 </resources>

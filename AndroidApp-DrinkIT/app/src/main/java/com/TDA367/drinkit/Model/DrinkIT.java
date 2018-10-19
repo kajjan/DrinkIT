@@ -151,7 +151,14 @@ public class DrinkIT {
     public String getActiveChallenge(){
         if(activeChallenge!="") {
             activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
+            if(!isAlreadyPlayed(completeListOfPlayers.get(indexOfActivePlayer),activeChallenge)){
+                return activeChallenge;
+            }
+            else{
+                getActiveChallenge();
+            }
         }
+
         return activeChallenge;
     }
 
@@ -166,10 +173,10 @@ public class DrinkIT {
         return activeAnswer;
     }
 
-    public boolean isAlreadyPlayed(Player player, Challenge challenge) {
+    public boolean isAlreadyPlayed(Player player, String challenge) {
         if(playedRounds.size() < 3){return false;}
         for (GameRound r : playedRounds) {
-            if (r.getChallenge() == challenge && r.getPlayer() == player) {
+            if (r.getChallenge().equals(challenge) && r.getPlayer() == player) {
                 return true;
             }
         }

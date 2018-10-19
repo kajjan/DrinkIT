@@ -1,4 +1,4 @@
-themes
+Themes
 themes write instructions here
 themes first challenge here 3
 themes second challenge here 4

@@ -106,26 +106,28 @@ public class FinishPageTest {
 
         cats.add(truthOrDare);
         cats.add(truthOrDare1);
+        List<String>playerInPointOrder1= new ArrayList<>();
 
-
-        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 0,
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, playerInPointOrder1, 0,
                 cats, 0, playedRounds, null, null,
                 null, null);
 
         drinkIT.setNumberOfRounds(3);
         drinkIT.createCompletedPlayersList();
-
-
+        drinkIT.putListInPointOrder();
         drinkIT.endTheGame();
+
+        List<Player>completeListOfPlayer = drinkIT.getCompleteListOfPlayers();
+        List<String>playerInPointOrder= drinkIT.getPlayerInPointOrder();
+        List<Player>players=drinkIT.getPlayers();
+        int indexOfActivePlayer= drinkIT.getIndexOfActivePlayer();
+        int numberOfRounds=drinkIT.getNumberOfRounds();
+
         assert (playersList.isEmpty());
-
-
-
-
-
-
-
-
-
+        assert (players.isEmpty());
+        assert (completeListOfPlayer.isEmpty());
+        assert (playerInPointOrder.isEmpty());
+        assert (indexOfActivePlayer==0);
+        assert (numberOfRounds==0);
     }
 }

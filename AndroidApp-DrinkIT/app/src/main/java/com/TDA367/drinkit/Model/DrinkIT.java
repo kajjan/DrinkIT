@@ -312,9 +312,7 @@ public class DrinkIT {
 
     //Method that clears the model for a possible new round
     public void endTheGame() {
-      //  playerList.clear();
         players.clear();
-        categories.clear();
         completeListOfPlayers.clear();
         playerInPointOrder.clear();
         indexOfActivePlayer = 0;
@@ -348,6 +346,10 @@ public class DrinkIT {
     public int getIndexOfActivePlayer(){
         return indexOfActivePlayer;
     }
+
+    public List<Player> getPlayers(){ return players;}
+
+    public List<Player> getCompleteListOfPlayers(){ return completeListOfPlayers;}
 
 
 
@@ -387,7 +389,10 @@ public class DrinkIT {
         this.activeChallenge = activeChallenge;
         this.categoryNames = categoryNames;
         this.completelistOfPlayerNames = completelistOfPlayerNames;
-        this.categories = categories;
+    }
+
+    public List<String> getPlayerInPointOrder() {
+        return playerInPointOrder;
     }
 
 }

@@ -38,7 +38,7 @@ public class ChallengeWithPointActivity extends MainView {
 
     public void printChallenge(){
         TextView text=((TextView)findViewById(R.id.challengeText));
-        text.setText(getCtrl().getActiveChallengeToPlay());
+        text.setText(getCtrl().getActiveChallengeWithoutUpdating());
     }
 
 

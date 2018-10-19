@@ -33,7 +33,6 @@ public class DrinkIT {
 
     //Uses for tests
     private List<Category> categories = new ArrayList<>();//                12
-    private List<String> playerList = new ArrayList<>();//                  13
 
 
     public DrinkIT() {}
@@ -313,7 +312,7 @@ public class DrinkIT {
 
     //Method that clears the model for a possible new round
     public void endTheGame() {
-        playerList.clear();
+      //  playerList.clear();
         players.clear();
         categories.clear();
         completeListOfPlayers.clear();
@@ -358,7 +357,7 @@ public class DrinkIT {
                    List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> cats,
                    int indexOfActiveCategory, List<GameRound> playedRounds, String activeChallenge,
                    List<String> categoryNames, List<String> completelistOfPlayerNames,
-                   List<Category> categories, List<String> playerList) {
+                   List<Category> categories) {
         this.players = players;
         this.numberOfRounds = numberOfRounds;
         this.completeListOfPlayers = completeListOfPlayers;
@@ -371,13 +370,13 @@ public class DrinkIT {
         this.categoryNames = categoryNames;
         this.completelistOfPlayerNames = completelistOfPlayerNames;
         this.categories = categories;
-        this.playerList = playerList;
+
     }
     public DrinkIT(List<Player> players, int numberOfRounds,
                    List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> cats,
                    int indexOfActiveCategory, List<GameRound> playedRounds, String activeChallenge,
                    List<String> categoryNames, List<String> completelistOfPlayerNames,
-                   List<Category> categories, List<String> playerList) {
+                   List<Category> categories) {
         this.players = players;
         this.numberOfRounds = numberOfRounds;
         this.playerInPointOrder = playerInPointOrder;
@@ -389,7 +388,6 @@ public class DrinkIT {
         this.categoryNames = categoryNames;
         this.completelistOfPlayerNames = completelistOfPlayerNames;
         this.categories = categories;
-        this.playerList = playerList;
     }
 
 }

@@ -82,7 +82,7 @@ public class ChooseCategoryTest {
 
         DrinkIT drinkIT = new DrinkIT(null, 0, null, null,
                 0, cats, 0, null, null,
-                null, null, null, null);
+                null, null, null);
 
         cats.add(quiz);
         cats.add(charades);

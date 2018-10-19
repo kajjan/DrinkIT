@@ -77,7 +77,7 @@ public class AddPlayerTest {
 
         DrinkIT drinkit = new DrinkIT(playersList, 0, completeListOfPlayers, null,
                 0, null, 0, null, null,
-                null, null, null, null);
+                null, null, null);
 
 
         drinkit.setNumberOfRounds(duration); //multiplies players size with the chosen duration
@@ -109,7 +109,7 @@ public class AddPlayerTest {
 
         DrinkIT drinkit = new DrinkIT(playersList, 0, null, playersInPointOrder,
                 0, null, 0, null, null,
-                null, null, null, null);
+                null, null, null);
 
 
             drinkit.putListInPointOrder();

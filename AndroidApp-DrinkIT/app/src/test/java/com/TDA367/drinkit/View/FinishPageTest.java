@@ -65,7 +65,7 @@ public class FinishPageTest {
 
        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 0,
                cats, 0, playedRounds, null, null,
-               null, null, null);
+               null, null);
 
        drinkIT.setNumberOfRounds(3);
        drinkIT.createCompletedPlayersList();
@@ -92,12 +92,40 @@ public class FinishPageTest {
     }
 
     @Test
-    public void endTheGame(){
+    public void endTheGame() {
+
+        playersList.add(player1);
+        playersList.add(player2);
+
+        int i = playersList.size();
+        challenges.add("here is the challenge 1");
+        challenges.add("here is a challenge 2");
+
+        TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
+        TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
+
+        cats.add(truthOrDare);
+        cats.add(truthOrDare1);
+
+
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 0,
+                cats, 0, playedRounds, null, null,
+                null, null);
+
+        drinkIT.setNumberOfRounds(3);
+        drinkIT.createCompletedPlayersList();
+
+
+        drinkIT.endTheGame();
+        assert (playersList.isEmpty());
+
+
+
+
+
 
 
 
 
     }
-
-
 }

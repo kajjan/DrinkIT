@@ -16,7 +16,7 @@ public class GameRoundTest {
 
     DrinkIT model = new DrinkIT(null, 0, completeListOfPlayers,
             null, 0, cats, 0, playedRounds, null,
-            null, null, null, null);
+            null, null, null);
 
 
 

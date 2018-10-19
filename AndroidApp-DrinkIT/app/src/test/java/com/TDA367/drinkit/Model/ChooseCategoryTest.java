@@ -29,9 +29,14 @@ public class ChooseCategoryTest {
         cats.add(quiz);
         cats.add(charades);
 
-    }
+        model = new DrinkIT(null, 0, null, null,
+                0, cats, -1, null, null,
+                null, null, null, null);
 
-    /* @Test
+
+    }
+/*
+    @Test
     public void selectCategory() {
 
         DrinkIT model = new DrinkIT();
@@ -45,7 +50,7 @@ public class ChooseCategoryTest {
         //categories.add(new Category(category));
         //categories.add(new Category(category2));
 
-        /*
+
         for (String s:model.getCategoryNames()){
             if (category.equals(s)){
                 b=true;
@@ -58,12 +63,10 @@ public class ChooseCategoryTest {
         assert (b);
         assert (initialLength + 2 == endLength);
 
-    }
-*/
-    @Test
-    public void getNextCategory() {
+    }*/
 
-        System.out.println(cats.get(1).isActive());
+    @Test
+    public void getNextCategory(){
 
         for(Category c: cats){
             if(c.getName().equals("charades")){
@@ -74,18 +77,8 @@ public class ChooseCategoryTest {
             }
         }
 
-        model = new DrinkIT(null, 0, null, null,
-                0, cats, -1, null, null,
-                null, null, null, null);
-
-
-        System.out.println(cats.get(0).isActive());
-        System.out.println(cats.get(1).isActive());
-
         String nextCategory = model.getNextCategory();
-        System.out.println(nextCategory);
         assert(nextCategory.equals("charades"));
-
 
         for(Category c: cats){
             if(c.getName().equals("charades")){
@@ -96,18 +89,7 @@ public class ChooseCategoryTest {
             }
         }
 
-
-        System.out.println(cats.get(0).isActive());
-        System.out.println(cats.get(1).isActive());
-
-        model = new DrinkIT(null, 0, null, null,
-                0, cats, 0, null, null,
-                null, null, null, null);
-
-
         nextCategory = model.getNextCategory();
-        System.out.println(nextCategory);
-
         assert(!nextCategory.equals("charades"));
         assert(nextCategory.equals("quiz"));
    }
@@ -125,6 +107,25 @@ public class ChooseCategoryTest {
         assert (quiz.isActive());
         assert (!charades.isActive());
 
+    }
+
+
+    @Test
+    public void atLeastOneCategoryChosen(){
+
+        cats.get(0).setActive();
+
+        assert(model.atLeastOneCategoryChosen());
+
+        for(Category c: cats){
+            if(c.getName().equals("charades")){
+                c.setInActive();
+            }
+            if(c.getName().equals("quiz")){
+                c.setInActive();
+            }
+        }
+        assert(!model.atLeastOneCategoryChosen());
     }
 
 }

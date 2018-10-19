@@ -45,6 +45,13 @@ public class DrinkIT {
         return cats.get(indexOfActiveCategory).getActiveChallengePoint();
     }
 
+
+    /**
+     * A method with creates and adds a category to the list cats
+     * @param categoryName
+     * @param instruction
+     * @param challenges
+     */
     public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges ) {
             cats.add(CategoryFactory.createCategory(categoryName,instruction,challenges));
     }
@@ -66,6 +73,10 @@ public class DrinkIT {
     }
 
 
+    /** Method which adds a player to the player list
+     *
+     * @param name
+     */
     public void addPlayer(String name) {
         players.add(new Player(name));
     } //ok
@@ -78,6 +89,10 @@ public class DrinkIT {
         return playerNames;
     }
 
+    /**
+     * Mathod removes a player from the lists players and completeListOfPlayer
+     * @param playerName
+     */
     public void removePlayerDuringGame(String playerName) {
         for (int i=0; i<players.size(); i++) {
             if (players.get(i).getName().equals(playerName)) {
@@ -108,8 +123,11 @@ public class DrinkIT {
     }
 
 
-    //method to create a complete list with all the players multiplied with the duration time.
-    //connected from setNumberOfRounds maybe not the best solution?
+    /**
+     * Method adds player to the list completeListOfPlayers, which is a list with the players
+     * multiple times based on numberOfRounds
+     *
+     */
     public void createCompletedPlayersList() {
         int challengePerPlayer = numberOfRounds / players.size();
         int i = 0;
@@ -134,7 +152,10 @@ public class DrinkIT {
     }
 
 
-    //shuffle the completePlayerList
+    /**
+     * Shuffles the list listOfPlayers
+     * @param listOfPlayers
+     */
     private void shufflePlayerList(List<Player> listOfPlayers) {
         Collections.shuffle(listOfPlayers);
     }
@@ -146,6 +167,10 @@ public class DrinkIT {
         return completeListOfPlayers.get(indexOfActivePlayer).getName();
     }
 
+
+    /**
+     * Method which adds a gameRound.
+     */
     public void addGameRound(){
         playedRounds.add(new GameRound(completeListOfPlayers.get(indexOfActivePlayer),
                 cats.get(indexOfActiveCategory).getActiveChallenge()));
@@ -200,6 +225,9 @@ public class DrinkIT {
         return cats.get(indexOfActiveCategory).getInstruction();
     }
 
+    /**
+     * Method gives active player points, and moves on to next gameRound
+     */
     public void succeededChallenge() {
         int point = completeListOfPlayers.get(indexOfActivePlayer).getPoint();
         int pointToAdd = cats.get(indexOfActiveCategory).getActiveChallengePoint();
@@ -212,12 +240,20 @@ public class DrinkIT {
 
     }
 
+
+    /**
+     * Method moves on to next gameRound without giving active player points
+     */
     public void failedChallenge() {
         addGameRound();
         playedRounds.get(playedRounds.size() - 1).setSucceded(false);
         indexOfActivePlayer++;
     }
 
+    /**
+     * Method which sets chosen Cetegories to active and inactive based onClick, in view
+     * @param category
+     */
     public void chooseCategory(String category) {
         for (Category c : cats) {
             if (c.getName().equals(category)) {
@@ -245,6 +281,11 @@ public class DrinkIT {
         return b;
     }
 
+    /**
+     * Checks if category button in list cats is Active
+     * @param i
+     * @return
+     */
     public boolean buttonActive(int i){
         boolean b = false;
         if(cats.get(i).isActive()){
@@ -253,7 +294,10 @@ public class DrinkIT {
         return b;
     }
 
-    //method that puts every player in the players list in order of highest point to lowest.
+
+    /**
+     * Checks list players in based on Player points and adds to the list playerInPointOrder
+     */
     public void putListInPointOrder() {
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
@@ -292,7 +336,10 @@ public class DrinkIT {
         return scoreText;
     }
 
-    //Method that keep track if the game is done and if the view should change to the finishPage
+    /**
+     * Method that keep track if the game is done and if the view should change to the finishPage
+     * @return
+     */
     public boolean nextRound() {
         if (numberOfRounds > indexOfActivePlayer) {
             return true;
@@ -315,7 +362,9 @@ public class DrinkIT {
     }
 
 
-    //Method that clears the model for a possible new round
+    /**
+     *  Method that clears the model for a possible new round
+     */
     public void endTheGame() {
         players.clear();
         completeListOfPlayers.clear();
@@ -326,19 +375,26 @@ public class DrinkIT {
     }
 
 
-
-
-    //Helpmethods for tests below
+    /**
+     *  Helpmethods for tests
+     * @param players
+     */
     public DrinkIT(List<Player> players) {
         this.players = players;
     }
 
-
+    /**
+     * helpmethod for tests
+     * @return
+     */
     public List<Category> getCategories() {
         return categories;
     }
 
-    //method for test
+    /**
+     * method for test
+     * @return
+     */
     public List<String> getPlayerNames() {
         List<String> names = new ArrayList<>();
         for (Player p : players) {
@@ -357,20 +413,37 @@ public class DrinkIT {
     public List<Player> getCompleteListOfPlayers(){ return completeListOfPlayers;}
 
 
-
-
-    //setters for tests
-
-
+    /**
+     * setter for tests
+     * @param indexOfActivePlayer
+     */
     public void setIndexOfActivePlayer(int indexOfActivePlayer) {
         this.indexOfActivePlayer = indexOfActivePlayer;
     }
 
+    /**
+     * setter for tests
+     * @param indexOfActiveCategory
+     */
     public void setIndexOfActiveCategory(int indexOfActiveCategory) {
         this.indexOfActiveCategory = indexOfActiveCategory;
     }
 
-    //Constructor for tests
+    /**
+     * Constructor for tests
+      * @param players
+     * @param numberOfRounds
+     * @param completeListOfPlayers
+     * @param playerInPointOrder
+     * @param indexOfActivePlayer
+     * @param cats
+     * @param indexOfActiveCategory
+     * @param playedRounds
+     * @param activeChallenge
+     * @param categoryNames
+     * @param completelistOfPlayerNames
+     * @param categories
+     */
     public DrinkIT(List<Player> players, int numberOfRounds, List<Player> completeListOfPlayers,
                    List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> cats,
                    int indexOfActiveCategory, List<GameRound> playedRounds, String activeChallenge,
@@ -390,6 +463,21 @@ public class DrinkIT {
         this.categories = categories;
 
     }
+
+    /**
+     * Constructor for tests
+     * @param players
+     * @param numberOfRounds
+     * @param playerInPointOrder
+     * @param indexOfActivePlayer
+     * @param cats
+     * @param indexOfActiveCategory
+     * @param playedRounds
+     * @param activeChallenge
+     * @param categoryNames
+     * @param completelistOfPlayerNames
+     * @param categories
+     */
     public DrinkIT(List<Player> players, int numberOfRounds,
                    List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> cats,
                    int indexOfActiveCategory, List<GameRound> playedRounds, String activeChallenge,

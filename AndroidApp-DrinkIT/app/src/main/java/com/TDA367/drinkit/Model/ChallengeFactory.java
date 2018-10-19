@@ -6,15 +6,15 @@ public class ChallengeFactory {
 
     public static Challenge createChallenge(String categoryName, String challenge){
         switch (categoryName){
-            case "charades": return createChallengeWithAnswer(challenge);
-            case "neverHaveIEver": return createChallengeWithoutPoint(challenge);
-            case "mostLikelyTo": return createChallengeWithoutPoint(challenge);
-            case "quiz": return createChallengeWithAnswer(challenge);
-            case "rules": return createChallengeWithoutPoint(challenge);
-            case "songs": return createChallengeWithAnswer(challenge);
-            case "themes": return createChallengeWithoutPoint(challenge);
-            case "thisOrThat": return createChallengeWithoutPoint(challenge);
-            case "truthOrDare": return createChallengeWithPoints(challenge);
+            case "Charades": return createChallengeWithAnswer(challenge);
+            case "Never Have I Ever": return createChallengeWithoutPoint(challenge);
+            case "Most Likely To": return createChallengeWithoutPoint(challenge);
+            case "Quiz": return createChallengeWithAnswer(challenge);
+            case "Rules": return createChallengeWithoutPoint(challenge);
+            case "Songs": return createChallengeWithAnswer(challenge);
+            case "Themes": return createChallengeWithoutPoint(challenge);
+            case "This or That": return createChallengeWithoutPoint(challenge);
+            case "Truth or Dare": return createChallengeWithPoints(challenge);
         }
         return null;
     }

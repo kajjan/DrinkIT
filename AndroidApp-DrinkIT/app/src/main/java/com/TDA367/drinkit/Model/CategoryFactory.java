@@ -12,8 +12,8 @@ public class CategoryFactory {
             case "Rules": return createRules(categoryName, instruction, challenges);
             case "Songs": return createSongs(categoryName, instruction, challenges);
             case "Themes": return createTheme(categoryName, instruction, challenges);
-            case "ThisOrThat": return createThisOrThat(categoryName, instruction, challenges);
-            case "TruthOrDare": return createTruthOrDare(categoryName, instruction, challenges);
+            case "ThisOrThat": return createThisOrThat("This or That", instruction, challenges);
+            case "TruthOrDare": return createTruthOrDare("Truth or Dare", instruction, challenges);
         }
         return null;
     }

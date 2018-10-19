@@ -27,7 +27,7 @@ public class RemovePlayerDuringGamePageTwoActivity extends MainView {
 
 
     public void exitOptionRemovePlayerPage(View view) {
-        finish();
+        startActivity(new Intent(RemovePlayerDuringGamePageTwoActivity.this, OptionsDuringGameActivity.class));
     }
 
     public void removePlayer(View view) {

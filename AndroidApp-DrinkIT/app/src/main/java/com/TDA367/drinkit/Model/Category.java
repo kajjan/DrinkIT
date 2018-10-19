@@ -56,13 +56,17 @@ public abstract class Category {
 
     public String getPresentableName() {return name; }
 
-    public String getChallengeToPlay(){
+    public String getChallengeToPlay() {
         if(indexOfActiveChallenge==challenges.size()-1){
             Collections.shuffle(challenges);
             indexOfActiveChallenge=0;
         }
         indexOfActiveChallenge++;
         return challenges.get(indexOfActiveChallenge).getChallenge();
+    }
+
+    public String getPreviousChallenge() {
+        return challenges.get(indexOfActiveChallenge-1).getChallenge();
     }
 
     public int getActiveChallengePoint(){

@@ -1,6 +1,5 @@
 package com.TDA367.drinkit.Controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.TDA367.drinkit.Model.DrinkIT;
@@ -75,7 +74,6 @@ public class Controller {
         model.succeededChallenge();
     }
 
-
     public void chooseCategory(String category) { //ändra i samband med activiteten
         model.chooseCategory(category);
     }
@@ -111,11 +109,10 @@ public class Controller {
         model.setDareChallenge();
     }
 
-    public String getActiveChallenge() {
-        return model.getActiveChallenge();
-    }
-    public String getActiveChallengeToPlay() {
-        return model.getActiveChallengeToPlay();
+    public String getActiveChallenge() { return model.getActiveChallenge();}
+
+    public String getActiveChallengeWithoutUpdating() {
+        return model.getActiveChallengeWithoutUpdating();
     }
 
     public String getActiveChallengesAnswer() {
@@ -125,6 +122,8 @@ public class Controller {
     public int getActiveChallengePoints(){
         return model.getActiveChallengePoints();
     }
+
+    public String getPreviousChallenge() { return model.getPreviousChallenge(); }
 
     public void addGameRound() {
         model.addGameRound();

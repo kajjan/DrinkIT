@@ -56,8 +56,8 @@ public class RemovePlayerDuringGamePageOneActivity extends MainView {
 
     public void exitOptionRemovePlayerPage(View view) {
         finish();
+        //startActivity(new Intent(RemovePlayerDuringGamePageOneActivity.this, OptionsDuringGameActivity.class));
     }
-
 
     public void playerOneSelected(View view) {
         Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);

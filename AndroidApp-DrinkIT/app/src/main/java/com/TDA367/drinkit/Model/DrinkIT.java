@@ -310,6 +310,13 @@ public class DrinkIT {
         return names;
     }
 
+    public int getIndexOfActivePlayer(){
+        return indexOfActivePlayer;
+    }
+
+
+
+
     //Constructor for tests
     public DrinkIT(List<Player> players, int numberOfRounds, List<Player> completeListOfPlayers,
                    List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> cats,
@@ -319,6 +326,24 @@ public class DrinkIT {
         this.players = players;
         this.numberOfRounds = numberOfRounds;
         this.completeListOfPlayers = completeListOfPlayers;
+        this.playerInPointOrder = playerInPointOrder;
+        this.indexOfActivePlayer = indexOfActivePlayer;
+        this.cats = cats;
+        this.indexOfActiveCategory = indexOfActiveCategory;
+        this.playedRounds = playedRounds;
+        this.activeChallenge = activeChallenge;
+        this.categoryNames = categoryNames;
+        this.completelistOfPlayerNames = completelistOfPlayerNames;
+        this.categories = categories;
+        this.playerList = playerList;
+    }
+    public DrinkIT(List<Player> players, int numberOfRounds,
+                   List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> cats,
+                   int indexOfActiveCategory, List<GameRound> playedRounds, String activeChallenge,
+                   List<String> categoryNames, List<String> completelistOfPlayerNames,
+                   List<Category> categories, List<String> playerList) {
+        this.players = players;
+        this.numberOfRounds = numberOfRounds;
         this.playerInPointOrder = playerInPointOrder;
         this.indexOfActivePlayer = indexOfActivePlayer;
         this.cats = cats;

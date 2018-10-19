@@ -37,7 +37,6 @@ public class ChallengeTest {
 
     @Test
     public void failedChallenge(){
-
         playersList.add(noOne);
         playersList.add(khaleesi);
         playersList.add(redViper);
@@ -63,16 +62,13 @@ public class ChallengeTest {
         int pointsRedViper = redViper.getPoint();
         int khaleesiPoint = khaleesi.getPoint();
 
-
         assert(pointsNoOne==0);
         assert (pointsRedViper==0);
         assert(khaleesiPoint==0);
-
     }
 
     @Test //Test to see if Point setting works.
     public void succeededChallenge() {
-
         playersList.add(noOne);
         playersList.add(khaleesi);
         playersList.add(redViper);
@@ -100,12 +96,9 @@ public class ChallengeTest {
         int pointsNoOne = noOne.getPoint();
         int pointsKhaleesi = khaleesi.getPoint();
 
-
         assert (pointsRedViper == 1);
         assert (pointsKhaleesi == 0);
         assert (pointsNoOne == 0);
-
-
     }
 
 }

@@ -36,15 +36,6 @@ public class FinishPageTest {
     String activeChallenge;
     Boolean a= true;
 
-
-
-    @Test
-    public void finishPageTest () {
-
-        //hej vickan, hoppas det funkar nu 
-
-    }
-
    @Test
     public void nextRound(){
        playersList.add(player1);

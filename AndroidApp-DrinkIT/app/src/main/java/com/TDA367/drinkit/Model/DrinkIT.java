@@ -390,6 +390,7 @@ public class DrinkIT {
 
     public int getIndexOfActiveCategory(){ return indexOfActiveCategory;}
 
+
     //Constructor for tests
     public DrinkIT(List<Player> players, int numberOfRounds, List<Player> completeListOfPlayers,
                    List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> cats,

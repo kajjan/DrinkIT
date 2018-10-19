@@ -7,7 +7,7 @@ public class CategoryFactory {
         switch (categoryName){
             case "Charades": return createCharade(categoryName, instruction, challenges);
             case "NeverHaveIEver": return createNeverHaveIEver("Never Have I Ever", instruction, challenges);
-            case "MostLikelyTo": return createMostLikelyto("Most Likely to", instruction, challenges);
+            case "MostLikelyTo": return createMostLikelyto("Most Likely To", instruction, challenges);
             case "Quiz": return createQuiz(categoryName, instruction, challenges);
             case "Rules": return createRules(categoryName, instruction, challenges);
             case "Songs": return createSongs(categoryName, instruction, challenges);

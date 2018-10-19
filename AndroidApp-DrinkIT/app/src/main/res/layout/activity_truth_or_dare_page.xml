@@ -19,15 +19,6 @@
         android:textColor="#000000"
         android:textSize="50sp" />
 
-    <TextView
-        android:id="@+id/challengePoints"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:text="3 points"
-        android:textSize="18sp" />
-
     <Button
         android:id="@+id/truthButton"
         android:layout_width="120dp"

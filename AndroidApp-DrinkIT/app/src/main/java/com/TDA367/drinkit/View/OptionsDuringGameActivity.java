@@ -15,7 +15,7 @@ public class OptionsDuringGameActivity extends MainView {
         setContentView(R.layout.activity_options_during_game);
     }
 
-    public void exitOptionsPage(View view) {        //player and category can be the same as earlier, but it won't be the same challenge, because that is ++ in Category
+    public void exitOptionsPage(View view) {        //player and category can be the same as earlier, but we haven't yet solved so it's the same challenge
         String currentPlayer = getCtrl().getPlayersName();
         List<String> playerNames = getCtrl().getAllPlayerNames();
         String category;
@@ -29,6 +29,7 @@ public class OptionsDuringGameActivity extends MainView {
 
         startNextActivity(category);
     }
+
 
     public void addNewPlayerDuringGame(View view) {
         startActivity(new Intent(OptionsDuringGameActivity.this, AddPlayerDuringGameActivity.class));

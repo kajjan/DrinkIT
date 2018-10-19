@@ -86,10 +86,7 @@ public class DrinkIT {
                 completeListOfPlayers.remove(i);
             }
         }
-
         numberOfRounds = completeListOfPlayers.size();
-
-
     }
 
 
@@ -158,7 +155,7 @@ public class DrinkIT {
         return activeChallenge;
     }
 
-    public String getActiveChallengeToPlay(){
+    public String getActiveChallengeWithoutUpdating(){
         return activeChallenge;
     }
 
@@ -177,6 +174,10 @@ public class DrinkIT {
             }
         }
         return false;
+    }
+
+    public String getPreviousChallenge() {
+        return cats.get(indexOfActiveCategory).getPreviousChallenge();
     }
 
     public String getNextCategory(){

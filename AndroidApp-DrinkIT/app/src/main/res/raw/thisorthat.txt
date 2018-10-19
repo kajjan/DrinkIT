@@ -1,5 +1,5 @@
 ThisOrThat
 thisOrThat write instructions here
-ThisOrThat first challenge here 4
-ThisOrThat second challenge here 2
-ThisOrThat third challenge here 6
+ThisOrThat first challenge here
+ThisOrThat second challenge here
+ThisOrThat third challenge here

@@ -322,6 +322,9 @@ public class DrinkIT {
         while(!(getActiveChallenge()).contains("dare")) {
                 cats.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
         }
+        if(!getActiveCategory().contains("dare")){
+            System.out.println("There is no darechallenge left...");
+        }
     }
 
 

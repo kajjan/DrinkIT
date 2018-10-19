@@ -140,7 +140,7 @@ public class DrinkIT {
         Collections.shuffle(cats);
         indexOfActiveCategory++;
         while (nextCategory.equals("none")) {
-            if(indexOfActiveCategory == cats.size()-1){
+            if(indexOfActiveCategory == cats.size()){
                 indexOfActiveCategory = 0;
             }
             if (cats.get(indexOfActiveCategory).isActive()){
@@ -150,7 +150,6 @@ public class DrinkIT {
                 indexOfActiveCategory++;
             }
         }
-
         return nextCategory;
     }
 
@@ -163,24 +162,20 @@ public class DrinkIT {
         int pointToAdd = cats.get(indexOfActiveCategory).getActiveChallengePoint();
         point += pointToAdd;
         completeListOfPlayers.get(indexOfActivePlayer).setPoint(point);
-        System.out.println("Points: " + point);
+        //System.out.println("Points: " + point);
         addGameRound();
         playedRounds.get(playedRounds.size()-1).setSucceded(true);
         indexOfActivePlayer++;
-        System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
-                " Point "+playedRounds.get(playedRounds.size()-1).getChallenge().getPoint()+" Succeeded = "+playedRounds.get(playedRounds.size()-1).isSucceded());
 
     }
 
     public void failedChallenge() {
         addGameRound();
-        playedRounds.get(playedRounds.size()-1).setSucceded(false);
+        playedRounds.get(playedRounds.size() - 1).setSucceded(false);
         indexOfActivePlayer++;
-        System.out.println("Player "+playedRounds.get(playedRounds.size()-1).getPlayer().getName()+
-                " Point "+playedRounds.get(playedRounds.size()-1).getChallenge().getPoint()+" Succeeded = "+playedRounds.get(playedRounds.size()-1).isSucceded());
     }
 
-    public void chooseCategory(String category) { //ska ev inte va string, beror på vad katergori är
+    public void chooseCategory(String category) {
         for (Category c : cats) {
             if (c.getName().equals(category)) {
                 if (c.isActive()) {

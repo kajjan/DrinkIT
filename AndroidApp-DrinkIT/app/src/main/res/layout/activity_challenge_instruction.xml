@@ -6,27 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".ChallengeInstructionActivity">
 
+    <ImageButton
+        android:id="@+id/exitInstructionsButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="23dp"
+        android:gravity="top"
+        android:onClick="exitChallengeInstruction"
+        app:srcCompat="@android:drawable/btn_dialog"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="23dp" />
 
     <TextView
         android:id="@+id/challengeInstructionsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_width="319dp"
+        android:layout_height="175dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="314dp" />
+        android:layout_marginTop="256dp"
+        android:gravity="center"
+        android:text="Here you will find the instructions for the game"
+        android:textColor="#000000"
+        android:textSize="20sp" />
 
-    <ImageButton
-        android:id="@+id/exitChallengeInstruction"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginRight="31dp"
-        app:srcCompat="@android:drawable/btn_dialog"
-        android:onClick="exitChallengeInstruction"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="201dp"
+        android:text="Instructions"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textChallengeCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="126dp"
+        android:text="Category"
+        android:textColor="#000000"
+        android:textSize="50sp" />
+
 </RelativeLayout>

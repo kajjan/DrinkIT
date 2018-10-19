@@ -12,6 +12,13 @@ public class ChallengeInstructionActivity extends MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_instruction);
         printChallengeInstruction();
+        printCategory();
+    }
+
+
+    private void printCategory() {
+        TextView text=((TextView)findViewById(R.id.textChallengeCategory));
+        text.setText(getCtrl().getActiveCategory());
     }
 
     public void printChallengeInstruction(){

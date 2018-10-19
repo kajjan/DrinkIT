@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         tools:context=".ChallengeInstructionActivity"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="77dp">
+        tools:layout_editor_absoluteY="0dp">
 
 
         <ImageButton
@@ -31,14 +31,14 @@
 
         <Button
             android:id="@+id/addNewPlayer"
-            android:layout_width="240dp"
+            android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="221dp"
+            android:layout_marginTop="183dp"
             android:onClick="addNewPlayerDuringGame"
-            android:textSize="20dp"
-            android:text="Add New Player" />
+            android:text="Add New Player"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/optionsText"
@@ -46,36 +46,43 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="119dp"
-            android:text="Options:" />
+            android:layout_marginTop="70dp"
+            android:text="Options"
+            android:textColor="#000000"
+            android:textSize="35sp" />
 
         <Button
             android:id="@+id/removeExistingPlayer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="278dp"
             android:onClick="removeExistingPlayerDuringGame"
-            android:text="Remove Existing Player" />
+            android:text="Remove Existing Player"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/quitGame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="219dp"
+            android:layout_marginBottom="226dp"
             android:onClick="quitDuringGame"
-            android:text="Quit Game" />
+            android:text="Quit Game"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/resumeGame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="126dp"
+            android:layout_marginBottom="131dp"
             android:onClick="exitOptionsPage"
-            android:text="Resume Game" />
+            android:text="Resume Game"
+            android:textSize="20sp" />
     </RelativeLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

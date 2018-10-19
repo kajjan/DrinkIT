@@ -31,6 +31,7 @@ public class DrinkIT {
     private List<String> playerNames = new ArrayList<>(10);
 
 
+
     //Uses for tests
     private List<Category> categories = new ArrayList<>();//                12
 
@@ -85,12 +86,13 @@ public class DrinkIT {
             }
         }
 
-        for (int i=0; i<completeListOfPlayers.size(); i++) {
+        for (int i=indexOfActivePlayer; i<completeListOfPlayers.size(); i++) {
             if (completeListOfPlayers.get(i).getName().equals(playerName)) {
                 completeListOfPlayers.remove(i);
             }
         }
 
+        numberOfRounds = completeListOfPlayers.size();
 
 
     }
@@ -194,6 +196,14 @@ public class DrinkIT {
             }
         }
         return nextCategory;
+    }
+
+    public String getCurrentCategory() {
+        String currentCategory = "none";
+        if (cats.get(indexOfActiveCategory).isActive()) {
+            currentCategory = cats.get(indexOfActiveCategory).getName();
+        }
+        return currentCategory;
     }
 
     public String getInstructions(){
@@ -316,13 +326,22 @@ public class DrinkIT {
 
 
     //Method that clears the model for a possible new round
-    public void endTheGame() {
+    public void clearTheGame() {
         players.clear();
         completeListOfPlayers.clear();
         playerInPointOrder.clear();
+        cats.clear();
+        playedRounds.clear();
+        categoryNames.clear();
+        completelistOfPlayerNames.clear();
+
+        indexOfActiveCategory = -1;
         indexOfActivePlayer = 0;
         numberOfRounds = 0;
+        activeChallenge = null;
 
+        //for tests
+        categories.clear();
     }
 
 

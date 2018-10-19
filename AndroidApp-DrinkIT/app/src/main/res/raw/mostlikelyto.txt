@@ -1,4 +1,4 @@
-mostLikelyTo
+MostLikelyTo
 mostLikelyTo write instructions here
 mostLikelyTo first challenge here 3
 mostLikelyTo second challenge here 5

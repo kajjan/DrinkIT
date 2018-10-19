@@ -1,4 +1,4 @@
-quiz
+Quiz
 Quiz, write instructions here
 Quiz first challenge here - quiz first answer here 2
 Quiz second challenge here - quiz second answer here 2

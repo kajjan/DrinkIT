@@ -1,4 +1,4 @@
-thisOrThat
+ThisOrThat
 thisOrThat write instructions here
 ThisOrThat first challenge here 4
 ThisOrThat second challenge here 2

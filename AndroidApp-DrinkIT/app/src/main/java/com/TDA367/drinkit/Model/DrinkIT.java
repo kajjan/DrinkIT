@@ -21,6 +21,7 @@ public class DrinkIT {
     private List<String> completelistOfPlayerNames = new ArrayList<>();//   11
     private List<String> playerNames = new ArrayList<>(10);
 
+
     //Uses for tests
     private List<Category> categories = new ArrayList<>();//                12
     private List<String> playerList = new ArrayList<>();//                  13
@@ -62,10 +63,28 @@ public class DrinkIT {
     } //ok
 
     public List<String> getAllPlayerNames() {
+        List<String> playerNames = new ArrayList<>(10);
         for (Player p : players) {
             playerNames.add(p.getName());
         }
         return playerNames;
+    }
+
+    public void removePlayerDuringGame(String playerName) {
+        for (int i=0; i<players.size(); i++) {
+            if (players.get(i).getName().equals(playerName)) {
+                players.remove(i);
+            }
+        }
+
+        for (int i=0; i<completeListOfPlayers.size(); i++) {
+            if (completeListOfPlayers.get(i).getName().equals(playerName)) {
+                completeListOfPlayers.remove(i);
+            }
+        }
+
+
+
     }
 
 

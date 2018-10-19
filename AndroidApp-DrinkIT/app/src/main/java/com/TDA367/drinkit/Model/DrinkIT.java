@@ -28,7 +28,6 @@ public class DrinkIT {
     private String activeChallenge;//                                       9
     private List<String> categoryNames = new ArrayList<>();//               10
     private List<String> completelistOfPlayerNames = new ArrayList<>();//   11
-    private List<String> playerNames = new ArrayList<>(10);
 
 
     public DrinkIT() {}
@@ -150,9 +149,7 @@ public class DrinkIT {
     }
 
     public String getActiveChallenge(){
-        if(activeChallenge==""){
-        }
-        else {
+        if(activeChallenge!="") {
             activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
         }
         return activeChallenge;

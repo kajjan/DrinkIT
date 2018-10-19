@@ -27,10 +27,6 @@ public class GameRound {
         this.challenge = challenge;
     }
 
-    public boolean isSucceded() {
-        return succeded;
-    }
-
     public void setSucceded(boolean succeded) {
         this.succeded = succeded;
     }

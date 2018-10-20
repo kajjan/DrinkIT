@@ -31,7 +31,7 @@ public class ChallengeWithAnswerPageOneActivity extends MainView {
 
     public void printPlayersName(){
         TextView text=((TextView)findViewById(R.id.playerOfchallenge));
-        text.setText(getCtrl().getPlayersName());
+        text.setText(getCtrl().getNameOfPlayer());
     }
 
     public void printChallenge(){

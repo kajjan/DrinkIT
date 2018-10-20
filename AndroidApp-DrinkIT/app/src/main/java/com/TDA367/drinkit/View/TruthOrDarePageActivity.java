@@ -1,7 +1,6 @@
 package com.TDA367.drinkit.View;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -18,7 +17,7 @@ public class TruthOrDarePageActivity extends MainView {
 
     public void printPlayersName(){
         TextView text=((TextView)findViewById(R.id.nameOfPlayer));
-        text.setText(getCtrl().getPlayersName());
+        text.setText(getCtrl().getNameOfPlayer());
     }
 
 

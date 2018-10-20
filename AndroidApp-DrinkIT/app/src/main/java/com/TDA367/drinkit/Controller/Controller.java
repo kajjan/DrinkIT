@@ -29,7 +29,7 @@ public class Controller {
         model.setNumberOfRounds(duration);
     }
 
-    public String getPlayersName(){
+    public String getNameOfPlayer(){
             return model.getNameOfPlayer();
     }
 
@@ -48,16 +48,10 @@ public class Controller {
     }
 
 
-    public List<String> getCategories() {
+    public List<String> getCategoryNames() {
         List<String> categoryNames;
         categoryNames = model.getCategoryNames();
         return categoryNames;
-    }
-
-    public List<String> getPresentableCategoryNames() {
-        List<String> presentableCategoryNames;
-        presentableCategoryNames = model.getPresentableCategoryNames();
-        return presentableCategoryNames;
     }
 
     public List<String> getCompleteListOfPlayersNames() {

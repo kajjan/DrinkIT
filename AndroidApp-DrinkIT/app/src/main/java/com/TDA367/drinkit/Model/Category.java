@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class Category {
+public class Category {
 
     private String name;
     public String instruction;
@@ -76,6 +76,7 @@ public abstract class Category {
     public void increaseIndexOfActiveChallenge() {
         this.indexOfActiveChallenge = indexOfActiveChallenge + 1;
     }
+
     public Challenge getActiveChallenge(){
         return challenges.get(indexOfActiveChallenge);
     }

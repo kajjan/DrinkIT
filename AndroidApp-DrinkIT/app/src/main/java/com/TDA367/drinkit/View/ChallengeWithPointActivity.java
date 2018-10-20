@@ -33,7 +33,7 @@ public class ChallengeWithPointActivity extends MainView {
     //print the name of the player on the challenge card
     public void printPlayersName(){
         TextView text=((TextView)findViewById(R.id.playerOfchallenge));
-        text.setText(getCtrl().getPlayersName());
+        text.setText(getCtrl().getNameOfPlayer());
     }
 
     public void printChallenge(){

@@ -22,7 +22,7 @@ public class ChallengeWithoutPointActivity extends MainView {
 
     public void printPlayersName(){
         TextView text=((TextView)findViewById(R.id.textViewPlayerChallengeWithoutPoint));
-        text.setText(getCtrl().getPlayersName());
+        text.setText(getCtrl().getNameOfPlayer());
     }
 
     public void printCategory(){

@@ -13,8 +13,20 @@ public class ChallengeWithAnswerPageOneActivity extends MainView {
         setContentView(R.layout.activity_challenge_with_answer);
         getCtrl().getCompleteListOfPlayersNames();
 
-        printPlayersName();
         printChallenge();
+        printCategory();
+        printPlayersName();
+        printChallengePoints();
+    }
+
+    private void printChallengePoints() {
+        TextView text=((TextView)findViewById(R.id.challengePoints));
+        text.setText(getCtrl().getActiveChallengePoints() + " Points");
+    }
+
+    private void printCategory() {
+        TextView text=((TextView)findViewById(R.id.challengeCategory));
+        text.setText(getCtrl().getActiveCategory());
     }
 
     public void printPlayersName(){
@@ -35,6 +47,11 @@ public class ChallengeWithAnswerPageOneActivity extends MainView {
 
     public void challengeInstructionPage(View view) {
         startActivity(new Intent(ChallengeWithAnswerPageOneActivity.this, ChallengeInstructionActivity.class));
+    }
+
+    public void optionsDuringGamePage(View view) {
+        //startActivityForResult();
+        startActivity(new Intent(ChallengeWithAnswerPageOneActivity.this, OptionsDuringGameActivity.class));
     }
 
     public boolean nextRound(){

@@ -1,5 +1,5 @@
-themes
+Themes
 themes write instructions here
-themes first challenge here 3
-themes second challenge here 4
-themes third challenge here 6
+themes first challenge here
+themes second challenge here
+themes third challenge here

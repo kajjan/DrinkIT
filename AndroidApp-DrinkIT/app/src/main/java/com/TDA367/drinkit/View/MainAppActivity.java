@@ -3,6 +3,7 @@ package com.TDA367.drinkit.View;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.GridLayout;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -13,6 +14,10 @@ import com.TDA367.drinkit.Controller.Controller;
 import com.TDA367.drinkit.Model.DrinkIT;
 
 public class MainAppActivity extends AppCompatActivity {
+
+
+    DrinkIT model = new DrinkIT();
+    Controller ctrl = new Controller(model);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,9 @@ public class MainAppActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        showStartPage();
+
+        model.clearTheGame();
 
         textFileScanner(rules);
         textFileScanner(neverHaveIEver);
@@ -40,14 +48,9 @@ public class MainAppActivity extends AppCompatActivity {
         textFileScanner(thisOrThat);
         textFileScanner(charades);
 
-
-
-        showStartPage();
-
     }
 
-    DrinkIT model = new DrinkIT();
-    Controller ctrl = new Controller(model);
+
     // MainView view = new MainView(ctrl);
 
 

@@ -16,6 +16,16 @@ public class Controller {
         model.addPlayer(player);
     }
 
+    public List<String> getAllPlayerNames() {
+        List<String> playerNames;
+        playerNames = model.getAllPlayerNames();
+        return playerNames;
+    }
+
+    public void removePlayerDuringGame(String playerName) {
+        model.removePlayerDuringGame(playerName);
+    }
+
     public void setDuration(int duration){
         model.setNumberOfRounds(duration);
     }
@@ -27,6 +37,8 @@ public class Controller {
     public String getNextCategory(){
         return model.getNextCategory();
     }
+
+    public String getCurrentCategory() { return model.getCurrentCategory(); }
 
     public String getInstructions(){
         return model.getInstructions();
@@ -73,6 +85,10 @@ public class Controller {
 
     }
 
+    public String getActiveCategory(){
+        return model.getActiveCategory();
+    }
+
     public boolean atLeastOneCategoryChosen() {
         boolean b = false;
         model.atLeastOneCategoryChosen();
@@ -84,7 +100,7 @@ public class Controller {
     }
 
     public void endTheGame(){
-        model.endTheGame();
+        model.clearTheGame();
     }
 
     public void setTruthChallenge(){
@@ -106,7 +122,14 @@ public class Controller {
         return model.getActiveChallengesAnswer();
     }
 
+    public int getActiveChallengePoints(){
+        return model.getActiveChallengePoints();
+    }
+
     public void addGameRound() {
         model.addGameRound();
+    }
+
+    public boolean buttonActive(int i){ return model.buttonActive(i);
     }
 }

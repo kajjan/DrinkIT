@@ -1,5 +1,5 @@
-rules
+Rules
 Rules, write instructions here
-Rules first challenge here 1
-Rules second challenge here 2
-Rules third challenge here 5
+Rules first challenge here
+Rules second challenge here
+Rules third challenge here

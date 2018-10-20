@@ -1,5 +1,5 @@
-neverHaveIEver
+NeverHaveIEver
 neverHaveIEver, write instructions here
-neverHaveIEver first challenge here 3
-NeverHaveIEver second challenge here 4
-NeverHaveIEver third challenge here 7
+neverHaveIEver first challenge here
+NeverHaveIEver second challenge here
+NeverHaveIEver third challenge here

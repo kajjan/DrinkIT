@@ -16,6 +16,18 @@ public class ChallengeWithPointActivity extends MainView {
 
         printPlayersName();
         printChallenge();
+        printCategory();
+        printChallengePoints();
+    }
+
+    private void printChallengePoints() {
+        TextView text=((TextView)findViewById(R.id.challengePoints));
+        text.setText(getCtrl().getActiveChallengePoints() + " Points");
+    }
+
+    private void printCategory() {
+        TextView text=((TextView)findViewById(R.id.challengeCategory));
+        text.setText(getCtrl().getActiveCategory());
     }
 
     //print the name of the player on the challenge card
@@ -67,20 +79,24 @@ public class ChallengeWithPointActivity extends MainView {
         startActivity(new Intent(ChallengeWithPointActivity.this, ChallengeInstructionActivity.class));
     }
 
+    public void optionsDuringGamePage(View view) {
+        startActivity(new Intent(ChallengeWithPointActivity.this, OptionsDuringGameActivity.class));
+    }
+
     public void startNextActivity(String category){
-        if (category.equals("quiz") || category.equals("songs") || category.equals("charades") ){
+        if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades") ){
             //Dubbelvy med poäng
             startActivity(new Intent(ChallengeWithPointActivity.this, ChallengeWithAnswerPageOneActivity.class));
         }
-        else if(category.equals("truthOrDare")){
+        else if(category.equals("Truth or Dare")){
             //Enkelvy med poäng
             startActivity(new Intent(ChallengeWithPointActivity.this, TruthOrDarePageActivity.class));
         }
-        else if(category.equals("mostLikelyTo") || category.equals("rules")  || category.equals("neverHaveIEver") || category.equals("themes") || category.equals("thisOrThat") )
+        else if(category.equals("Most Likely To") || category.equals("Rules")  || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That") )
             //en vy utan poäng (ingen spelar)
             startActivity(new Intent(ChallengeWithPointActivity.this, ChallengeWithoutPointActivity .class));
         else{
-            System.out.println("Something is wrong with the code in DurationActivity...");
+            System.out.println("Something is wrong with the code in ChallengeWithPointActivity..." + category);
         }
 
     }

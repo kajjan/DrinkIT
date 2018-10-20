@@ -5,15 +5,15 @@ public class CategoryFactory {
 
     public static Category createCategory(String categoryName, String instruction, List<String> challenges){
         switch (categoryName){
-            case "charades": return createCharade(categoryName, instruction, challenges);
-            case "neverHaveIEver": return createNeverHaveIEver(categoryName, instruction, challenges);
-            case "mostLikelyTo": return createMostLikelyto(categoryName, instruction, challenges);
-            case "quiz": return createQuiz(categoryName, instruction, challenges);
-            case "rules": return createRules(categoryName, instruction, challenges);
-            case "songs": return createSongs(categoryName, instruction, challenges);
-            case "themes": return createTheme(categoryName, instruction, challenges);
-            case "thisOrThat": return createThisOrThat(categoryName, instruction, challenges);
-            case "truthOrDare": return createTruthOrDare(categoryName, instruction, challenges);
+            case "Charades": return createCharade(categoryName, instruction, challenges);
+            case "NeverHaveIEver": return createNeverHaveIEver("Never Have I Ever", instruction, challenges);
+            case "MostLikelyTo": return createMostLikelyto("Most Likely To", instruction, challenges);
+            case "Quiz": return createQuiz(categoryName, instruction, challenges);
+            case "Rules": return createRules(categoryName, instruction, challenges);
+            case "Songs": return createSongs(categoryName, instruction, challenges);
+            case "Themes": return createTheme(categoryName, instruction, challenges);
+            case "ThisOrThat": return createThisOrThat("This or That", instruction, challenges);
+            case "TruthOrDare": return createTruthOrDare("Truth or Dare", instruction, challenges);
         }
         return null;
     }

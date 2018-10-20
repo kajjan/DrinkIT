@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.icu.util.ValueIterator;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class ChallengeActivity extends MainView {
@@ -33,8 +34,18 @@ public class ChallengeActivity extends MainView {
         View contentView = findViewById(R.id.challenge_base);
 
         decorateNextActivity("Rules", contentView);
-    }
+        printPlayersName();
+        printCategory();
 
+    }
+    public void printPlayersName(){
+        TextView text=((TextView)findViewById(R.id.playerOfChallenge));
+        text.setText(getCtrl().getNameOfPlayer());
+    }
+    public void printCategory(){
+        TextView text=((TextView)findViewById(R.id.challengeCategory));
+        text.setText(getCtrl().getActiveCategory());
+    }
     public void challengeInstructionPage(View view) {
         startActivity(new Intent(ChallengeActivity.this, ChallengeInstructionActivity.class));
     }

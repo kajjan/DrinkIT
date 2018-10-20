@@ -2,7 +2,7 @@ package com.TDA367.drinkit.Model;
 
 import java.util.List;
 
-public class ChallengeFactory {
+public abstract class ChallengeFactory {
 
     public static Challenge createChallenge(String categoryName, String challenge){
         switch (categoryName){

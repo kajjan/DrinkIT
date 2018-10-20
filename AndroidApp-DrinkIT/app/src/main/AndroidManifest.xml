@@ -44,7 +44,6 @@
             android:name=".RemovePlayerDuringGamePageTwoActivity"
             android:label="@string/title_activity_remove_player_during_game_page_two" />
         <activity android:name=".ChallengeActivity" />
-        <activity android:name=".ChallengeDecorator"></activity>
     </application>
 
 </manifest>

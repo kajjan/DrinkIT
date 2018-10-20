@@ -20,4 +20,10 @@ public class ChallengeActivity extends AppCompatActivity {
 
     public void toAnswerPage(View view) {
     }
+
+    public void failChallenge(View view) {
+    }
+
+    public void succeededChallenge(View view) {
+    }
 }

@@ -16,7 +16,6 @@ import java.util.List;
 
 public class AddPlayerActivity extends MainView implements TextWatcher {
 
-
     EditText playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix, playerSeven, playerEight, playerNine, playerTen;
     List<String> players = new ArrayList<>(10);
     Button submitButton;

@@ -1,16 +1,16 @@
 package com.TDA367.drinkit.Model;
 
 public abstract class Challenge {
-    private String challenge;
+    private String challengeText;
     private int point;
 
     public Challenge(String challenge, int point) {
-        this.challenge = challenge;
+        this.challengeText = challenge;
         this.point = point;
     }
 
-    public String getChallenge() {
-        return challenge;
+    public String getChallengeText() {
+        return challengeText;
     }
 
     public int getPoint() { return point; }

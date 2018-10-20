@@ -1,8 +1,8 @@
 TruthOrDare
 truthOrDare write instructions here
-dare first challenge here 5
-truth first challenge here 4
-truth second challenge here 2
-dare second challenge here 6
-dare third challenge here 8
-truth third challenge here 7
+dare Do five squats 5
+dare Down your neighbours drink 6
+dare Eat the strongest thing you can find in the room 8
+truth What makes you cry? 6
+truth What's the most embarrassing thing that's happened to you in school? 4
+truth What's the lowest score you've ever gotten on an exam? 7

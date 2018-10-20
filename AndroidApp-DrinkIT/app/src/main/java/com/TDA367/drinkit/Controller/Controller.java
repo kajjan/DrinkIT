@@ -25,6 +25,10 @@ public class Controller {
         model.removePlayerDuringGame(playerName);
     }
 
+    public void addPlayerDuringGame(String playerName) {
+        model.addPlayerDuringGame(playerName);
+    }
+
     public void setDuration(int duration){
         model.setNumberOfRounds(duration);
     }

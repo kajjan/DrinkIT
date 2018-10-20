@@ -57,7 +57,7 @@ public class DrinkIT {
      */
     public void addPlayer(String name) {
         players.add(new Player(name));
-    } //ok
+    }
 
     public List<String> getAllPlayerNames() {
         List<String> playerNames = new ArrayList<>(10);
@@ -77,6 +77,12 @@ public class DrinkIT {
                 players.remove(i);
             }
         }
+    }
+
+    public void addPlayerDuringGame(String playerName) {
+        System.out.println("I want to add player " + playerName + " to the game!");
+        addPlayer(playerName);
+        Collections.shuffle(players);
     }
 
     public void setNumberOfRounds(int duration) {
@@ -103,7 +109,7 @@ public class DrinkIT {
     public boolean isAlreadyPlayed(Player player, String challenge) {
         //if(playedRounds.size() < 3){return false;}
         for (GameRound r : playedRounds) {
-            if (r.getChallenge().getChallenge().equals(challenge) && r.getPlayer().equals(player)) {
+            if (r.getChallenge().getChallengeText().equals(challenge) && r.getPlayer().equals(player)) {
                 return true;
             }
         }

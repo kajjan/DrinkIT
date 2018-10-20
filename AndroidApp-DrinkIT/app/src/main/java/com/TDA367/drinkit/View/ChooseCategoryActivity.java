@@ -23,6 +23,7 @@ public class ChooseCategoryActivity extends MainView {
     final int unActiveBackgroundColor= Color.WHITE;
     final int activeBackgroundColor= Color.GRAY;
     List<Button> categoryButtons = new ArrayList<>();
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -31,15 +32,15 @@ public class ChooseCategoryActivity extends MainView {
         setContentView(R.layout.activity_choose_category);
         getCategoryNames();
 
-        Button btn1; categoryButtons.add(btn1 = findViewById(R.id.catOne));
-        Button btn2; categoryButtons.add(btn2 = findViewById(R.id.catTwo));
-        Button btn3; categoryButtons.add(btn3 = findViewById(R.id.catThree));
-        Button btn4; categoryButtons.add(btn4 = findViewById(R.id.catFour));
-        Button btn5; categoryButtons.add(btn5 = findViewById(R.id.catFive));
-        Button btn6; categoryButtons.add(btn6 = findViewById(R.id.catSix));
-        Button btn7; categoryButtons.add(btn7 = findViewById(R.id.catSeven));
-        Button btn8; categoryButtons.add(btn8 = findViewById(R.id.catEight));
-        Button btn9; categoryButtons.add(btn9 = findViewById(R.id.catNine));
+        categoryButtons.add(btn1 = findViewById(R.id.catOne));
+        categoryButtons.add(btn2 = findViewById(R.id.catTwo));
+        categoryButtons.add(btn3 = findViewById(R.id.catThree));
+        categoryButtons.add(btn4 = findViewById(R.id.catFour));
+        categoryButtons.add(btn5 = findViewById(R.id.catFive));
+        categoryButtons.add(btn6 = findViewById(R.id.catSix));
+        categoryButtons.add(btn7 = findViewById(R.id.catSeven));
+        categoryButtons.add(btn8 = findViewById(R.id.catEight));
+        categoryButtons.add(btn9 = findViewById(R.id.catNine));
 
         for (int i=0; i<categoryButtons.size(); i++) {
             categoryButtons.get(i).setText(categoryNames.get(i));

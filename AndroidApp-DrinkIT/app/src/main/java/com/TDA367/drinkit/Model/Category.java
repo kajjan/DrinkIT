@@ -55,12 +55,12 @@ public class Category {
     }
 
     public String getChallengeToPlay() {
-        return challenges.get(indexOfActiveChallenge).getChallenge();
+        return challenges.get(indexOfActiveChallenge).getChallengeText();
     }
 
     //want to get rid of this one
     public String getPreviousChallenge() {
-        return challenges.get(indexOfActiveChallenge-1).getChallenge();
+        return challenges.get(indexOfActiveChallenge-1).getChallengeText();
     }
 
     public int getActiveChallengePoint(){

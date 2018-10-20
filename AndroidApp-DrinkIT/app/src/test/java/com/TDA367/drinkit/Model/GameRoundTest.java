@@ -79,10 +79,10 @@ public class GameRoundTest {
 
 
         model.addGameRound();
-        System.out.println(cats.get(0).getActiveChallenge().getChallenge());
-        System.out.println(playedRounds.get(0).getChallenge().getChallenge());
+        System.out.println(cats.get(0).getActiveChallenge().getChallengeText());
+        System.out.println(playedRounds.get(0).getChallenge().getChallengeText());
 
-        System.out.println(model.isAlreadyPlayed(players.get(0), cats.get(0).getActiveChallenge().getChallenge()));
+        System.out.println(model.isAlreadyPlayed(players.get(0), cats.get(0).getActiveChallenge().getChallengeText()));
 
         assert (playedRounds.get(0).getPlayer()== players.get(0));
 

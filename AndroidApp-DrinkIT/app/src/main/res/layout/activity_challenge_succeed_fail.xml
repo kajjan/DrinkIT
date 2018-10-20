@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+
+    <Button
+        android:id="@+id/failButton"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="120dp"
+        android:layout_marginStart="60dp"
+        android:background="#ffcc77"
+        android:onClick="failChallenge"
+        android:text="Fail"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/succeedButton"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="60dp"
+        android:layout_alignTop="@+id/failButton"
+        android:layout_marginEnd="60dp"
+        android:onClick="succeededChallenge"
+        android:background="#00b300"
+        android:text="Succeed"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>

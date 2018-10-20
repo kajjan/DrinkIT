@@ -1,9 +1,8 @@
 TruthOrDare
 truthOrDare write instructions here
 dare first challenge here 5
-truth second challenge here 6
-truth third challenge here 8
 truth first challenge here 4
 truth second challenge here 2
+dare second challenge here 6
+dare third challenge here 8
 truth third challenge here 7
-dare first challenge here 5

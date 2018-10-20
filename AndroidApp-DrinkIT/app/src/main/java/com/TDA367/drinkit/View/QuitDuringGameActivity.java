@@ -23,5 +23,4 @@ public class QuitDuringGameActivity extends MainView {
         startActivity(new Intent(QuitDuringGameActivity.this, FinishPageActivity.class));
     }
 
-
 }

@@ -3,6 +3,18 @@ import java.util.List;
 
 public class CategoryFactory {
 
+    public static Category createCategory(String categoryName, String instruction, List<String> challenges) {
+        switch (categoryName) {
+            case "NeverHaveIEver": return createCategory("Never Have I Ever", instruction, challenges);
+            case "MostLikelyTo": return createCategory("Most Likely To", instruction, challenges);
+            case "ThisOrThat": return createCategory("This or That", instruction, challenges);
+            case "TruthOrDare": return createCategory("Truth or Dare", instruction, challenges);
+        }
+        return (new Category(categoryName, instruction, challenges, false));
+    }
+
+
+    /*
     public static Category createCategory(String categoryName, String instruction, List<String> challenges){
         switch (categoryName){
             case "Charades": return createCharade(categoryName, instruction, challenges);
@@ -14,6 +26,7 @@ public class CategoryFactory {
             case "Themes": return createTheme(categoryName, instruction, challenges);
             case "ThisOrThat": return createThisOrThat("This or That", instruction, challenges);
             case "TruthOrDare": return createTruthOrDare("Truth or Dare", instruction, challenges);
+            default: System.out.println("Category dose not exist");
         }
         return null;
     }
@@ -53,4 +66,6 @@ public class CategoryFactory {
     private static Category createNeverHaveIEver(String categoryName, String instruction, List<String> challenges){
         return (new NeverHaveIEverCategory(categoryName, instruction, challenges, false));
     }
+    */
+
 }

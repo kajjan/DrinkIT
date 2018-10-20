@@ -2,7 +2,6 @@ package com.TDA367.drinkit.View;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.View;
 
 import java.util.List;
@@ -16,7 +15,7 @@ public class OptionsDuringGameActivity extends MainView {
     }
 
     public void exitOptionsPage(View view) {        //player and category can be the same as earlier, but we haven't yet solved so it's the same challenge
-        String currentPlayer = getCtrl().getPlayersName();
+        String currentPlayer = getCtrl().getNameOfPlayer();
         List<String> playerNames = getCtrl().getAllPlayerNames();
         String category;
 

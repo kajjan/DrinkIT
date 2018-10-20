@@ -21,15 +21,18 @@ public class MainAppActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        InputStream charades = getResources().openRawResource(getResources().getIdentifier("charades", "raw", getPackageName()));
-        InputStream neverHaveIEver = getResources().openRawResource(getResources().getIdentifier("neverhaveiever", "raw", getPackageName()));
-        InputStream mostLikelyto = getResources().openRawResource(getResources().getIdentifier("mostlikelyto", "raw", getPackageName()));
-        InputStream quiz = getResources().openRawResource(getResources().getIdentifier("quiz", "raw", getPackageName()));
-        InputStream rules = getResources().openRawResource(getResources().getIdentifier("rules", "raw", getPackageName()));
-        InputStream songs = getResources().openRawResource(getResources().getIdentifier("songs", "raw", getPackageName()));
-        InputStream theme = getResources().openRawResource(getResources().getIdentifier("themes", "raw", getPackageName()));
-        InputStream thisOrThat = getResources().openRawResource(getResources().getIdentifier("thisorthat", "raw", getPackageName()));
-        InputStream truthOrDare = getResources().openRawResource(getResources().getIdentifier("truthordare", "raw", getPackageName()));
+
+        List<InputStream> inputStream = new ArrayList<>();
+
+        InputStream charades = getResources().openRawResource(getResources().getIdentifier("charades", "raw", getPackageName())); inputStream.add(charades);
+        InputStream neverHaveIEver = getResources().openRawResource(getResources().getIdentifier("neverhaveiever", "raw", getPackageName())); inputStream.add(neverHaveIEver);
+        InputStream mostLikelyto = getResources().openRawResource(getResources().getIdentifier("mostlikelyto", "raw", getPackageName())); inputStream.add(mostLikelyto);
+        InputStream quiz = getResources().openRawResource(getResources().getIdentifier("quiz", "raw", getPackageName())); inputStream.add(quiz);
+        InputStream rules = getResources().openRawResource(getResources().getIdentifier("rules", "raw", getPackageName())); inputStream.add(rules);
+        InputStream songs = getResources().openRawResource(getResources().getIdentifier("songs", "raw", getPackageName())); inputStream.add(songs);
+        InputStream themes = getResources().openRawResource(getResources().getIdentifier("themes", "raw", getPackageName())); inputStream.add(themes);
+        InputStream thisOrThat = getResources().openRawResource(getResources().getIdentifier("thisorthat", "raw", getPackageName())); inputStream.add(thisOrThat);
+        InputStream truthOrDare = getResources().openRawResource(getResources().getIdentifier("truthordare", "raw", getPackageName())); inputStream.add(truthOrDare);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -38,20 +41,10 @@ public class MainAppActivity extends AppCompatActivity {
 
         model.clearTheGame();
 
-        textFileScanner(rules);
-        textFileScanner(neverHaveIEver);
-        textFileScanner(quiz);
-        textFileScanner(mostLikelyto);
-        textFileScanner(theme);
-        textFileScanner(truthOrDare);
-        textFileScanner(songs);
-        textFileScanner(thisOrThat);
-        textFileScanner(charades);
-
+        for (InputStream is : inputStream) {
+            textFileScanner(is);
+        }
     }
-
-
-    // MainView view = new MainView(ctrl);
 
 
     void showStartPage() {
@@ -70,7 +63,7 @@ public class MainAppActivity extends AppCompatActivity {
             String challenge = scan.nextLine();
             challengesToClass.add(challenge);
             //ctrl.setChallenge(categoryName, challenge);
-            System.out.println("hello" + challenge);
+            //System.out.println("hello" + challenge);
         }
         model.createCategoryListOnCreate(categoryName, instruction, challengesToClass);
     }

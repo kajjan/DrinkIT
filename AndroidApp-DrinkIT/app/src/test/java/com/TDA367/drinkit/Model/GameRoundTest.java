@@ -32,8 +32,8 @@ public class GameRoundTest {
         challengesTwo.add("test3");
         challengesTwo.add("test4");
 
-        neverHaveIever = CategoryFactory.createCategory("neverHaveIEver", "this is an instruction", challengesOne);
-        ToD = CategoryFactory.createCategory("truthOrDare", "this is an instruction", challengesTwo);
+        neverHaveIever = CategoryFactory.createCategory("NeverHaveIEver", "this is an instruction", challengesOne);
+        ToD = CategoryFactory.createCategory("TruthOrDare", "this is an instruction", challengesTwo);
 
         cats.add(neverHaveIever);
         cats.add(ToD);
@@ -72,6 +72,10 @@ public class GameRoundTest {
         assert(playerNotInGameRounds(thirdPlayer,playedRounds));
         assert(playedRounds.get(1).getChallenge()==cats.get(1).getActiveChallenge());
 
+
+    }
+
+    public void isAlreadyPlayedTest(){
 
     }
 

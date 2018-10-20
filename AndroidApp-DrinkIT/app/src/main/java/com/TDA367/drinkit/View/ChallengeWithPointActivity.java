@@ -12,7 +12,6 @@ public class ChallengeWithPointActivity extends MainView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_with_point);
-        getCtrl().getCompleteListOfPlayersNames();
 
         printPlayersName();
         printChallenge();
@@ -33,14 +32,13 @@ public class ChallengeWithPointActivity extends MainView {
     //print the name of the player on the challenge card
     public void printPlayersName(){
         TextView text=((TextView)findViewById(R.id.playerOfchallenge));
-        text.setText(getCtrl().getPlayersName());
+        text.setText(getCtrl().getNameOfPlayer());
     }
 
     public void printChallenge(){
         TextView text=((TextView)findViewById(R.id.challengeText));
-        text.setText(getCtrl().getActiveChallengeWithoutUpdating());
+        text.setText(getCtrl().getActiveChallenge());
     }
-
 
     public void failChallenge(View view) {
         getCtrl().failedChallenge();
@@ -51,7 +49,6 @@ public class ChallengeWithPointActivity extends MainView {
         else{
             toFinishPage(view);
         }
-
     }
 
     public void succeededChallenge(View view) {
@@ -63,9 +60,7 @@ public class ChallengeWithPointActivity extends MainView {
         else{
             toFinishPage(view);
         }
-
     }
-
 
     public void toFinishPage(View view) {
         startActivity(new Intent(ChallengeWithPointActivity.this, FinishPageActivity.class));

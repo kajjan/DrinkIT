@@ -10,7 +10,7 @@ public class ChallengeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_challenge);
+        setContentView(R.layout.activity_challenge_base);
 
     }
 
@@ -19,5 +19,11 @@ public class ChallengeActivity extends AppCompatActivity {
     }
 
     public void toAnswerPage(View view) {
+    }
+
+    public void truthButton(View view) {
+    }
+
+    public void dareButton(View view) {
     }
 }

@@ -1,12 +1,15 @@
 package com.TDA367.drinkit.View;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.icu.util.ValueIterator;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.TDA367.drinkit.Controller.Controller;
+
 
 public class ChallengeActivity extends MainView {
 
@@ -16,6 +19,9 @@ public class ChallengeActivity extends MainView {
     RelativeLayout challengeSucceedFailed = (RelativeLayout)findViewById(R.id.challenge_succeed_fail);
     View challengePoints = (View) findViewById(R.id.challenge_points);
     *///RelativeLayout challengeNextButton;
+    Context context;
+    Controller controller=getCtrl();
+
 
 
 
@@ -26,23 +32,22 @@ public class ChallengeActivity extends MainView {
         super.onCreate(savedInstanceState);
 //setContentView(R.layout.activity_challenge_task);
         setContentView(R.layout.activity_challenge_base);
-        setTheme(R.style.Theme_Transparent);
-
-
-        RelativeLayout row2 = (RelativeLayout) findViewById(R.id.challenge_base);
-        Button ivBowl = new Button(this);
-        ivBowl.setText("hi");
-        LinearLayout.LayoutParams layoutParams = new  LinearLayout.LayoutParams(200, 200);
-        layoutParams.setMargins(200, 300, 0, 0); // left, top, right, bottom
-        ivBowl.setLayoutParams(layoutParams);
-        row2.addView(ivBowl);
         activate();
+        View contentView = findViewById(R.id.challenge_base);
 
-        //getCtrl().getNextCategory();
+        decorateNextActivity("Rules", contentView);
+        printPlayersName();
+        printCategory();
 
-   //     decorateNextActivity("Rules");
     }
-
+    public void printPlayersName(){
+        TextView text=((TextView)findViewById(R.id.playerOfChallenge));
+        text.setText(getCtrl().getNameOfPlayer());
+    }
+    public void printCategory(){
+        TextView text=((TextView)findViewById(R.id.challengeCategory));
+        text.setText(getCtrl().getActiveCategory());
+    }
     public void challengeInstructionPage(View view) {
         startActivity(new Intent(ChallengeActivity.this, ChallengeInstructionActivity.class));
     }
@@ -51,11 +56,9 @@ public class ChallengeActivity extends MainView {
     }
 
     public void truthButton(View view) {
-
     }
 
     public void dareButton(View view) {
-
     }
 
 
@@ -72,7 +75,7 @@ public class ChallengeActivity extends MainView {
     }
 
 
-    public void decorateNextActivity(String category) {
+    public void decorateNextActivity(String category, View view) {
         if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades")) {
            // new ChallengeWithoutPointView(challengeTask,challengeNextButton);
             //kalla på svarssidan, vart???
@@ -83,7 +86,7 @@ public class ChallengeActivity extends MainView {
 
             //startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, TruthOrDarePageActivity.class));
         }else if (category.equals("Most Likely To") || category.equals("Rules") || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That")) {
-//            new ChallengeWithoutPointView(challengeTask,challengeNextButton);
+            new ChallengeWithoutPointView(view,ChallengeActivity.this, controller);
 
         }else{
             System.out.println("Something is wrong with the code in ChallengeWithAnswerActivity..." + category);

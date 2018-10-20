@@ -38,8 +38,8 @@ public class PlayerDuringGame {
         challenges.add("here is the challenge 1");
         challenges.add("here is a challenge 2");
 
-        TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
-        TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
+        TruthOrDareCategory truthOrDare = new TruthOrDareCategory("Truth or Dare", "how to play", challenges, a);
+        TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("Truth or Dare", "how to play", challenges, a );
 
         cats.add(truthOrDare);
         cats.add(truthOrDare1);

@@ -14,6 +14,7 @@ public class CategoryFactory {
             case "Themes": return createTheme(categoryName, instruction, challenges);
             case "ThisOrThat": return createThisOrThat("This or That", instruction, challenges);
             case "TruthOrDare": return createTruthOrDare("Truth or Dare", instruction, challenges);
+            default: System.out.println("Category dose not exist");
         }
         return null;
     }

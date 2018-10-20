@@ -170,6 +170,18 @@ public class DrinkIT {
         //System.out.println("Added gameround!");
     }
 
+
+    public boolean isAlreadyPlayed(Player player, String challenge) {
+        if(playedRounds.size() < 3){return false;}
+        for (GameRound r : playedRounds) {
+            if (r.getChallenge().equals(challenge) && r.getPlayer() == player) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     public String getActiveChallenge(){
         if(activeChallenge!="") {
             activeChallenge = cats.get(indexOfActiveCategory).getChallengeToPlay();
@@ -177,10 +189,10 @@ public class DrinkIT {
                 return activeChallenge;
             }
             else{
+                indexOfActiveCategory++;
                 getActiveChallenge();
             }
         }
-
         return activeChallenge;
     }
 
@@ -193,16 +205,6 @@ public class DrinkIT {
         String activeAnswer;
         activeAnswer = cats.get(indexOfActiveCategory).getActiveChallenge().getAnswer();
         return activeAnswer;
-    }
-
-    public boolean isAlreadyPlayed(Player player, String challenge) {
-        if(playedRounds.size() < 3){return false;}
-        for (GameRound r : playedRounds) {
-            if (r.getChallenge().equals(challenge) && r.getPlayer() == player) {
-                return true;
-            }
-        }
-        return false;
     }
 
     public String getPreviousChallenge() {

@@ -21,8 +21,8 @@ public class ChallengeTest {
     Player khaleesi = new Player("Denaerys Targaryen");
     Player redViper = new Player("Oberyn Martell");
 
-    Challenge challenge = ChallengeFactory.createChallenge("truthOrDare", "here lies a challenge 1");
-    Challenge challenge1 = ChallengeFactory.createChallenge("truthOrDare", "here lies another one 2");
+    Challenge challenge = ChallengeFactory.createChallenge("Truth or Dare", "here lies a challenge 1");
+    Challenge challenge1 = ChallengeFactory.createChallenge("Truth or Dare", "here lies another one 2");
 
     GameRound gameRound = new GameRound(redViper, challenge);
     GameRound gameRound1 = new GameRound(redViper, challenge1);
@@ -43,8 +43,8 @@ public class ChallengeTest {
         challenges.add("here is the challenge 1");
         challenges.add("here is a challenge 1");
 
-        TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
-        TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
+        TruthOrDareCategory truthOrDare = new TruthOrDareCategory("Truth or Dare", "how to play", challenges, a);
+        TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("Truth or Dare", "how to play", challenges, a );
 
         cats.add(truthOrDare);
         cats.add(truthOrDare1);
@@ -79,8 +79,8 @@ public class ChallengeTest {
         challenges.add("here is the challenge 1");
         challenges.add("here is a challenge 1");
 
-        TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
-        TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
+        TruthOrDareCategory truthOrDare = new TruthOrDareCategory("Truth or Dare", "how to play", challenges, a);
+        TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("Truth or Dare", "how to play", challenges, a );
 
         cats.add(truthOrDare);
         cats.add(truthOrDare1);

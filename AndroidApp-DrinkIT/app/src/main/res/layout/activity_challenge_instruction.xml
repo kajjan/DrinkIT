@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ChallengeInstructionActivity">
 
+
     <ImageButton
         android:id="@+id/exitInstructionsButton"
         android:layout_width="30dp"

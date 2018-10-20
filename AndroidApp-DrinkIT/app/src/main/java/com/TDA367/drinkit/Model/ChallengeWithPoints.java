@@ -7,4 +7,5 @@ public class ChallengeWithPoints extends Challenge {
     }
 
 
+
 }

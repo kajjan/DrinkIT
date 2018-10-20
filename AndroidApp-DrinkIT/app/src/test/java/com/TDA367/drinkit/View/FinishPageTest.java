@@ -44,8 +44,8 @@ public class FinishPageTest {
        challenges.add("here is the challenge 1");
        challenges.add("here is a challenge 2");
 
-       Category truthOrDare = CategoryFactory.createCategory("truthOrDare", "how to play", challenges);
-       Category truthOrDare1 = CategoryFactory.createCategory("truthOrDare", "how to play", challenges);
+       Category truthOrDare = CategoryFactory.createCategory("TruthOrDare", "how to play", challenges);
+       Category truthOrDare1 = CategoryFactory.createCategory("TruthOrDare", "how to play", challenges);
 
        //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
        //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
@@ -54,23 +54,17 @@ public class FinishPageTest {
        cats.add(truthOrDare1);
 
 
-       DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 0,
-               cats, 0, playedRounds, null, null,
-               null);
+       DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 0, cats, 0, playedRounds, categoryNames);
 
        drinkIT.setNumberOfRounds(3);
-       drinkIT.createCompletedPlayersList();
+       //drinkIT.createCompletedPlayersList();
 
        playedRounds.add(gameRound);
        playedRounds.add(gameRound1);
        playedRounds.add(gameRound);
        playedRounds.add(gameRound1);
        playedRounds.add(gameRound);
-       playedRounds.add(gameRound1);
-       playedRounds.add(gameRound1);
 
-       drinkIT.failedChallenge();
-       drinkIT.failedChallenge();
 
        assert(drinkIT.nextRound());
 
@@ -78,6 +72,7 @@ public class FinishPageTest {
        drinkIT.failedChallenge();
        drinkIT.succeededChallenge();
        drinkIT.succeededChallenge();
+
        assert(!drinkIT.nextRound());
 
     }
@@ -92,8 +87,8 @@ public class FinishPageTest {
         challenges.add("here is the challenge 1");
         challenges.add("here is a challenge 2");
 
-        Category truthOrDare = CategoryFactory.createCategory("truthOrDare", "how to play", challenges);
-        Category truthOrDare1 = CategoryFactory.createCategory("truthOrDare", "how to play", challenges);
+        Category truthOrDare = CategoryFactory.createCategory("TruthOrDare", "how to play", challenges);
+        Category truthOrDare1 = CategoryFactory.createCategory("TruthOrDare", "how to play", challenges);
 
         //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
         //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
@@ -102,40 +97,30 @@ public class FinishPageTest {
         cats.add(truthOrDare1);
         List<String>playerInPointOrder1= new ArrayList<>();
 
-        DrinkIT drinkIT = new DrinkIT(playersList, 0, playerInPointOrder1, 0,
-                cats, 0, playedRounds, activeChallenge, categoryNames,
-                completeListOfPlayerNames);
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, playerInPointOrder1, 0, cats, 0, playedRounds, categoryNames);
 
         drinkIT.setNumberOfRounds(3);
-        drinkIT.createCompletedPlayersList();
         drinkIT.putListInPointOrder();
         drinkIT.clearTheGame();
 
-        List<Player>completeListOfPlayer = drinkIT.getCompleteListOfPlayers();
+
         List<String>playerInPointOrder= drinkIT.getPlayerInPointOrder();
         List<Player>players=drinkIT.getPlayers();
-        completeListOfPlayerNames= drinkIT.getCompleteListOfPlayersNames();
         playedRounds = drinkIT.getPlayedRounds();
         categoryNames= drinkIT.getCategoryNames();
         cats=drinkIT.getCategories();
         int indexOfActivePlayer= drinkIT.getIndexOfActivePlayer();
         int numberOfRounds=drinkIT.getNumberOfRounds();
         int indexOfActiveCategory=drinkIT.getIndexOfActiveCategory();
-        activeChallenge= drinkIT.getActiveChallenge();
-
-
 
         assert (playersList.isEmpty());
         assert (players.isEmpty());
-        assert (completeListOfPlayer.isEmpty());
         assert (playerInPointOrder.isEmpty());
         assert (indexOfActivePlayer==0);
         assert (numberOfRounds==0);
-        assert (completeListOfPlayerNames.isEmpty());
         assert (indexOfActiveCategory==-1);
         assert (playedRounds.isEmpty());
         assert (cats.isEmpty());
         assert (categoryNames.isEmpty());
-        assert (activeChallenge=="");
     }
 }

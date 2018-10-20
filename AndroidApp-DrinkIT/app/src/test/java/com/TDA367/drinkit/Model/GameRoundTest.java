@@ -7,7 +7,7 @@ import java.util.List;
 
 public class GameRoundTest {
 
-    List<Player> completeListOfPlayers = new ArrayList<>();
+    List<Player> players = new ArrayList<>();
     List<Category> cats = new ArrayList<>();
     List<GameRound> playedRounds = new ArrayList<>();
     List<String> challengesOne = new ArrayList<>();
@@ -15,17 +15,18 @@ public class GameRoundTest {
     Category neverHaveIever;
     Category ToD;
     DrinkIT model;
+    String activeChallenge;
 
 
-    Player firstPlayer = new Player ("firstPlayer");
+    Player firstPlayer = new Player ("Zlatan");
     Player secondPlayer = new Player ("Captain America");
     Player thirdPlayer = new Player ("Severus Snape");
 
 
     public GameRoundTest() {
-        completeListOfPlayers.add(firstPlayer);
-        completeListOfPlayers.add(secondPlayer);
-        completeListOfPlayers.add(thirdPlayer);
+        players.add(firstPlayer);
+        players.add(secondPlayer);
+        players.add(thirdPlayer);
 
         challengesOne.add("test1");
         challengesOne.add("test2");
@@ -38,9 +39,7 @@ public class GameRoundTest {
         cats.add(neverHaveIever);
         cats.add(ToD);
 
-        model = new DrinkIT(null, 0, completeListOfPlayers,
-                null, 0, cats, 0, playedRounds, null,
-                null, null);
+        model = new DrinkIT(players, 0, null, 0,  cats, 0, playedRounds, null);
     }
 
     public boolean playerNotInGameRounds(Player p, List<GameRound> r){
@@ -75,7 +74,18 @@ public class GameRoundTest {
 
     }
 
+    @Test
     public void isAlreadyPlayedTest(){
+
+
+        model.addGameRound();
+        System.out.println(cats.get(0).getActiveChallenge().getChallenge());
+        System.out.println(playedRounds.get(0).getChallenge().getChallenge());
+
+        System.out.println(model.isAlreadyPlayed(players.get(0), cats.get(0).getActiveChallenge().getChallenge()));
+
+        assert (playedRounds.get(0).getPlayer()== players.get(0));
+
 
     }
 

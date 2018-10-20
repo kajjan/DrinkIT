@@ -80,8 +80,6 @@ public class DrinkIT {
     }
 
     public void setNumberOfRounds(int duration) {
-        System.out.println("Knappen för vald tid är tryckt och antalet spelare multipliceras med " + duration);
-
         numberOfRounds = players.size() * duration;
     }
 
@@ -101,8 +99,28 @@ public class DrinkIT {
                 categories.get(indexOfActiveCategory).getActiveChallenge()));
     }
 
+
+    public boolean isAlreadyPlayed(Player player, String challenge) {
+        //if(playedRounds.size() < 3){return false;}
+        for (GameRound r : playedRounds) {
+            if (r.getChallenge().getChallenge().equals(challenge) && r.getPlayer().equals(player)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     public String getActiveChallenge(){
-        return categories.get(indexOfActiveCategory).getChallengeToPlay();
+            if(indexOfActiveCategory < 0) { indexOfActiveCategory=0;}
+            String activeChallenge = categories.get(indexOfActiveCategory).getChallengeToPlay();
+            if (!isAlreadyPlayed(players.get(indexOfActivePlayer), activeChallenge)) {
+                return activeChallenge;
+            } else {
+                updateActiveChallenge();
+                getActiveChallenge();
+            }
+        return activeChallenge;
     }
 
     public String getActiveChallengesAnswer() {
@@ -294,7 +312,6 @@ public class DrinkIT {
         indexOfActiveCategory = -1;
         indexOfActivePlayer = 0;
         numberOfRounds = 0;
-
         }
 
     /**

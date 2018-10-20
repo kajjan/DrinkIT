@@ -47,11 +47,9 @@ public class PlayerDuringGame {
         cats.add(truthOrDare);
         cats.add(truthOrDare1);
 
-        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 0,
-                null, 0, null, null, null,
-                null);
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 0, null, 0, null, null);
         drinkIT.setNumberOfRounds(3);
-        drinkIT.createCompletedPlayersList();
+        //drinkIT.createCompletedPlayersList();
         drinkIT.removePlayerDuringGame(player2.getName());
 
         for(Player p: playersList){
@@ -68,8 +66,6 @@ public class PlayerDuringGame {
     public void addPlayerDuringGame(){
 
 
-
     }
-
 
 }

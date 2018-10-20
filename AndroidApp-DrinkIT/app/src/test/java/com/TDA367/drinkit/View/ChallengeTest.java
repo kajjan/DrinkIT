@@ -53,9 +53,7 @@ public class ChallengeTest {
         playedRounds.add(gameRound);
         playedRounds.add(gameRound1);
 
-        DrinkIT drinkIT = new DrinkIT(null, 0, playersList, null, 2,
-                cats, 0, playedRounds, null, null,
-                null);
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 2, cats, 0, playedRounds, null);
 
         cats.add(truthOrDare);
         cats.add(truthOrDare1);
@@ -80,8 +78,8 @@ public class ChallengeTest {
         challenges.add("here is the challenge 1");
         challenges.add("here is a challenge 1");
 
-        Category truthOrDare = CategoryFactory.createCategory("truthOrDare", "how to play", challenges);
-        Category truthOrDare1 = CategoryFactory.createCategory("truthOrDare", "how to play", challenges);
+        Category truthOrDare = CategoryFactory.createCategory("TruthOrDare", "how to play", challenges);
+        Category truthOrDare1 = CategoryFactory.createCategory("TruthOrDare", "how to play", challenges);
 
         //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
         //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
@@ -93,9 +91,7 @@ public class ChallengeTest {
         playedRounds.add(gameRound1);
         playedRounds.add(gameRound2);
 
-        DrinkIT drinkIT = new DrinkIT(null, 0, playersList, null, 2,
-                cats, 0, playedRounds, null, null,
-                null);
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 2, cats, 0, playedRounds, null);
 
         drinkIT.succeededChallenge(); //Increases the Point of player redViper.
 

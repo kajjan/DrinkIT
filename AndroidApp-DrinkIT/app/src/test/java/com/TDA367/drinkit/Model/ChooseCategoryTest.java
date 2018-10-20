@@ -31,7 +31,7 @@ public class ChooseCategoryTest {
 
         DrinkIT model = new DrinkIT();
         boolean b = false;
-        List<Category> categories = model.getCategories();
+        List<Category> categories = model.getCategoryNames();
         int initialLength = categories.size();
 
         String category = "Charades";

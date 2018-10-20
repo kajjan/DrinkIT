@@ -1,5 +1,6 @@
 package com.TDA367.drinkit.View;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.RelativeLayout;
 
 public class DurationActivity extends MainView {
 
+    Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,17 +27,16 @@ public class DurationActivity extends MainView {
         getCtrl().setDuration(5);
         String nextCategory = getCtrl().getNextCategory();
         startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
-
     }
 
     public void longDuration(View view) {
         getCtrl().setDuration(10);
-        String nextCategory = getCtrl().getNextCategory();
+        startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
     }
 
     }
 
 
 
-}
+
 

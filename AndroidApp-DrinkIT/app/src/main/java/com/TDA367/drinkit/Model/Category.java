@@ -7,11 +7,11 @@ import java.util.List;
 public class Category {
 
     private String name;
-    public String instruction;
-    public List<String> challengesStrings = new ArrayList<>();
-    public boolean active = false;
+    private String instruction;
+    private List<String> challengesStrings = new ArrayList<>();
+    private boolean active = false;
     private List<Challenge> challenges = new ArrayList<>();
-    public int indexOfActiveChallenge = 0;
+    private int indexOfActiveChallenge = 0;
 
 
     public Category() { }
@@ -28,7 +28,7 @@ public class Category {
         setListOfChallenges(challengesStrings);
     }
 
-    public void setListOfChallenges(List<String> challengeString) {
+    private void setListOfChallenges(List<String> challengeString) {
         for(String s: challengeString){
             challenges.add(ChallengeFactory.createChallenge(name, s));
         }
@@ -54,17 +54,11 @@ public class Category {
         return name;
     }
 
-    public String getPresentableName() {return name; }
-
     public String getChallengeToPlay() {
-        if(indexOfActiveChallenge==challenges.size()-1){
-            Collections.shuffle(challenges);
-            indexOfActiveChallenge=0;
-        }
-        indexOfActiveChallenge++;
         return challenges.get(indexOfActiveChallenge).getChallenge();
     }
 
+    //want to get rid of this one
     public String getPreviousChallenge() {
         return challenges.get(indexOfActiveChallenge-1).getChallenge();
     }
@@ -74,7 +68,12 @@ public class Category {
     }
 
     public void increaseIndexOfActiveChallenge() {
-        this.indexOfActiveChallenge = indexOfActiveChallenge + 1;
+        indexOfActiveChallenge++;
+
+        if(indexOfActiveChallenge==challenges.size()-1){
+            Collections.shuffle(challenges);
+            indexOfActiveChallenge=0;
+        }
     }
 
     public Challenge getActiveChallenge(){

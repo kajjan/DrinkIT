@@ -11,7 +11,7 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_with_answer_page_two);
-        getCtrl().getCompleteListOfPlayersNames();
+        //getCtrl().getCompleteListOfPlayersNames();
 
         printPlayersName();
         printAnswer();
@@ -37,7 +37,6 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
     public void printAnswer(){
         TextView text=((TextView)findViewById(R.id.answerText));
         text.setText(getCtrl().getActiveChallengesAnswer());
-        //text.setText("funkar detta?");
     }
 
 
@@ -48,9 +47,7 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
             startNextActivity(nextCategory);
         }
         else{
-            changePage(view);
-            //String nextCategory = getCtrl().getNextCategory();
-            //startNextActivity(nextCategory);
+            toFinishPage(view);
         }
     }
 
@@ -61,9 +58,7 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
             startNextActivity(nextCategory);
         }
         else{
-            changePage(view);
-            //String nextCategory = getCtrl().getNextCategory();
-            //startNextActivity(nextCategory);
+            toFinishPage(view);
         }
     }
 
@@ -71,8 +66,7 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
         return getCtrl().nextRound();
     }
 
-
-    public void changePage(View view) {
+    public void toFinishPage(View view) {
         startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, FinishPageActivity.class));
     }
 
@@ -83,7 +77,6 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
     public void optionsDuringGamePage(View view) {
         startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, OptionsDuringGameActivity.class));
     }
-
 
     public void startNextActivity(String category){
         if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades") ){

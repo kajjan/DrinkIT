@@ -23,13 +23,12 @@ public class TruthOrDarePageActivity extends MainView {
 
     public void truthButton(View view) {
         getCtrl().setTruthChallenge();
-        startActivity(new Intent(TruthOrDarePageActivity.this, ChallengeWithPointActivity .class));
+        startActivity(new Intent(TruthOrDarePageActivity.this, ChallengeWithPointActivity.class));
     }
 
     public void dareButton(View view) {
         getCtrl().setDareChallenge();
-        startActivity(new Intent(TruthOrDarePageActivity.this, ChallengeWithPointActivity .class));
-
+        startActivity(new Intent(TruthOrDarePageActivity.this, ChallengeWithPointActivity.class));
     }
 
     public void challengeInstructionPage(View view) {

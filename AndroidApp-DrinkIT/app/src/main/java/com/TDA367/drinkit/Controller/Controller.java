@@ -43,21 +43,11 @@ public class Controller {
         return model.getInstructions();
     }
 
-    public void createCompleteListOfPlayers(){
-        model.createCompletedPlayersList();
-    }
-
 
     public List<String> getCategoryNames() {
         List<String> categoryNames;
         categoryNames = model.getCategoryNames();
         return categoryNames;
-    }
-
-    public List<String> getCompleteListOfPlayersNames() {
-        List<String> completePlayersNames;
-        completePlayersNames = model.getCompleteListOfPlayersNames();
-        return completePlayersNames;
     }
 
     public void failedChallenge() {
@@ -74,17 +64,10 @@ public class Controller {
 
     public String getScoreBoard(){
         return model.getScoreBoardText();
-
     }
 
     public String getActiveCategory(){
         return model.getActiveCategory();
-    }
-
-    public boolean atLeastOneCategoryChosen() {
-        boolean b = false;
-        model.atLeastOneCategoryChosen();
-        return b;
     }
 
     public boolean nextRound(){
@@ -105,22 +88,12 @@ public class Controller {
 
     public String getActiveChallenge() { return model.getActiveChallenge();}
 
-    public String getActiveChallengeWithoutUpdating() {
-        return model.getActiveChallengeWithoutUpdating();
-    }
-
     public String getActiveChallengesAnswer() {
         return model.getActiveChallengesAnswer();
     }
 
     public int getActiveChallengePoints(){
         return model.getActiveChallengePoints();
-    }
-
-    public String getPreviousChallenge() { return model.getPreviousChallenge(); }
-
-    public void addGameRound() {
-        model.addGameRound();
     }
 
     public boolean buttonActive(int i){ return model.buttonActive(i);

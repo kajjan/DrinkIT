@@ -13,26 +13,22 @@ public class DurationActivity extends MainView {
         setContentView(R.layout.activity_duration);
     }
 
-
     public void shortDuration(View view) {
         getCtrl().setDuration(3);
         String nextCategory = getCtrl().getNextCategory();
         startNextActivity(nextCategory);
-        getCtrl().createCompleteListOfPlayers();
     }
 
     public void mediumDuration(View view) {
         getCtrl().setDuration(5);
         String nextCategory = getCtrl().getNextCategory();
         startNextActivity(nextCategory);
-        getCtrl().createCompleteListOfPlayers();
     }
 
     public void longDuration(View view) {
         getCtrl().setDuration(10);
         String nextCategory = getCtrl().getNextCategory();
         startNextActivity(nextCategory);
-        getCtrl().createCompleteListOfPlayers();
     }
 
     public void startNextActivity(String category){

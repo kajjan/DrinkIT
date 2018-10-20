@@ -12,7 +12,6 @@ public class ChallengeWithoutPointActivity extends MainView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_without_point);
-        getCtrl().getCompleteListOfPlayersNames();
 
         printPlayersName();
         printCategory();
@@ -35,18 +34,14 @@ public class ChallengeWithoutPointActivity extends MainView {
         text.setText(getCtrl().getActiveChallenge());
     }
 
-
     public void nextButtonWithoutPoint(View view) {
         getCtrl().failedChallenge();
         if(nextRound()) {
-            getCtrl().addGameRound();
             String nextCategory = getCtrl().getNextCategory();
             startNextActivity(nextCategory);
         }
         else{
             toFinishPage(view);
-            //String nextCategory = getCtrl().getNextCategory();
-            //startNextActivity(nextCategory);
         }
     }
 

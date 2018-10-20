@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.TDA367.drinkit.Controller.Controller;
+
 
 public class ChallengeActivity extends MainView {
 
@@ -18,7 +20,7 @@ public class ChallengeActivity extends MainView {
     View challengePoints = (View) findViewById(R.id.challenge_points);
     *///RelativeLayout challengeNextButton;
     Context context;
-
+    Controller controller=getCtrl();
 
 
 
@@ -84,7 +86,7 @@ public class ChallengeActivity extends MainView {
 
             //startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, TruthOrDarePageActivity.class));
         }else if (category.equals("Most Likely To") || category.equals("Rules") || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That")) {
-            new ChallengeWithoutPointView(view,ChallengeActivity.this);
+            new ChallengeWithoutPointView(view,ChallengeActivity.this, controller);
 
         }else{
             System.out.println("Something is wrong with the code in ChallengeWithAnswerActivity..." + category);

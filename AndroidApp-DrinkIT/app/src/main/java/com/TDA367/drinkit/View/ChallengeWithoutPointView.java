@@ -9,13 +9,15 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.TDA367.drinkit.Controller.Controller;
+
 public class ChallengeWithoutPointView extends ChallengeDecorator {
     protected RelativeLayout challengeTask;
     protected RelativeLayout challengeNextButton;
 
 
-    public ChallengeWithoutPointView(View view, Context context) {
-        super(view,context);
+    public ChallengeWithoutPointView(View view, Context context, Controller controller) {
+        super(view,context, controller);
     }
 
 
@@ -35,8 +37,13 @@ public class ChallengeWithoutPointView extends ChallengeDecorator {
         layoutParams.setMargins(200, 800, 0, 0); // left, top, right, bottom
         challengeText.setLayoutParams(layoutParams);
         row2.addView(challengeText);
-       // view.setBackground(context.getResources().getDrawable(drawableId));
+        challengeText.setText(controller.getActiveChallenge());       // view.setBackground(context.getResources().getDrawable(drawableId));
 
+    }
+
+    public void printChallenge(){
+        TextView text=((TextView)view.findViewById(R.id.challenge_base));
+        text.setText(controller.getActiveChallenge());
     }
 
 }

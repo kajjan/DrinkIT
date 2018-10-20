@@ -41,9 +41,4 @@ public class ChallengeWithoutPointView extends ChallengeDecorator {
 
     }
 
-    public void printChallenge(){
-        TextView text=((TextView)view.findViewById(R.id.challenge_base));
-        text.setText(controller.getActiveChallenge());
-    }
-
 }

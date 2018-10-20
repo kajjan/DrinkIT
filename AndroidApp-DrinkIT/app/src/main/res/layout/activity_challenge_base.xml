@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/challengeBase"
+    android:id="@+id/challenge_base"
     tools:context=".ChallengeActivity">
 
     <TextView

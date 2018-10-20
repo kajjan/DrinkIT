@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class ChallengeActivity extends AppCompatActivity {
+public class ChallengeActivity extends MainView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +32,23 @@ public class ChallengeActivity extends AppCompatActivity {
     }
 
     public void succeededChallenge(View view) {
+    }
+
+    public void startNextActivity(String category) {
+        if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades")) {
+            //Dubbelvy med poäng
+            //startActivity(new Intent(.this, ChallengeWithAnswerPageOneActivity.class));
+        } else if (category.equals("Truth or Dare")) {
+            //Enkelvy med poäng
+            //startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, TruthOrDarePageActivity.class));
+        } else if (category.equals("Most Likely To") || category.equals("Rules") || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That")) {
+            //en vy utan poäng (ingen spelar)
+            //startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, ChallengeWithoutPointActivity .class));
+        }else{
+            System.out.println("Something is wrong with the code in ChallengeWithAnswerActivity..." + category);
+        }
+    }
+
+    public void optionsDuringGamePage(View view) {
     }
 }

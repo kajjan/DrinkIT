@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ChallengeSucceedFail"
+    android:id="@+id/challenge_succeed_fail"
     tools:context=".ChallengeActivity">
 
     <RelativeLayout

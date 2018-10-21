@@ -62,7 +62,7 @@ public class AddPlayerDuringGameActivity extends MainView implements TextWatcher
         if (playerToAdd.getText().hashCode() == s.hashCode()) {
             name = playerToAdd.getText().toString().trim();
 
-            if (sameName(name) > 1) {
+            if (sameName(name) >= 1) {
                 playerToAdd.setError("A new player cannot have the same name as an existing player");
             } else {
                 playerName =name;

@@ -11,8 +11,8 @@ public class ChallengeTruthOrDare extends ChallengeDecorator {
     protected RelativeLayout challengeTruthOrDare;
 
 
-    public ChallengeTruthOrDare(View view, Context context, Controller controller) {
-        super(view, context,controller);
+    public ChallengeTruthOrDare(View view, Context context, Controller controller, Boolean hasButton, Boolean hasChallenge) {
+        super(view, context,controller, hasButton, hasChallenge);
     }
 
 

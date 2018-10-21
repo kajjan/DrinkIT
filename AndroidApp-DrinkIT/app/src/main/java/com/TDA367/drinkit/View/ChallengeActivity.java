@@ -25,6 +25,7 @@ public class ChallengeActivity extends MainView {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+//setContentView(R.layout.activity_challenge_task);
         setContentView(R.layout.activity_challenge_base);
         View contentView = findViewById(R.id.challenge_base);
         nextCategory = getCtrl().getNextCategory();
@@ -53,6 +54,7 @@ public class ChallengeActivity extends MainView {
     }
 
     public void truthButton(View view) {
+
     }
 
     public void dareButton(View view) {

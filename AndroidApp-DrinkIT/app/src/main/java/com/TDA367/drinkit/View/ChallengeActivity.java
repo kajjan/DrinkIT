@@ -86,7 +86,7 @@ public class ChallengeActivity extends MainView {
 
             //startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, TruthOrDarePageActivity.class));
         }else if (category.equals("Most Likely To") || category.equals("Rules") || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That")) {
-            new ChallengeWithoutPointView(view,ChallengeActivity.this, controller);
+            new ChallengeSucceedFail(view,ChallengeActivity.this, controller);
 
         }else{
             System.out.println("Something is wrong with the code in ChallengeWithAnswerActivity..." + category);

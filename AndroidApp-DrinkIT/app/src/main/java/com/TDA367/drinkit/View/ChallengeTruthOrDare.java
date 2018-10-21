@@ -15,19 +15,16 @@ public class ChallengeTruthOrDare extends ChallengeDecorator {
 
 
     public ChallengeTruthOrDare(View view, Context context, Controller controller) {
-        super(view, context,controller);
+        super(view, context, controller);
     }
 
 
     @Override
     public void decorate() {
-        challengeTruthOrDare.setVisibility(challengeTruthOrDare.VISIBLE);
-    }
+       // challengeTruthOrDare.setVisibility(challengeTruthOrDare.VISIBLE);
 
-    public void makingButtonsMethod(){
-
-        RelativeLayout truthOrDare = (RelativeLayout) findViewById(R.id.challenge_base);
-        Button dareButton = new Button(this);
+        RelativeLayout truthOrDare = (RelativeLayout) view.findViewById(R.id.challenge_base);
+        Button dareButton = new Button(context);
         dareButton.setText("Dare");
         dareButton.setTextSize(25);
         LinearLayout.LayoutParams layoutParamsDare = new LinearLayout.LayoutParams(380, 180);
@@ -35,7 +32,7 @@ public class ChallengeTruthOrDare extends ChallengeDecorator {
         dareButton.setLayoutParams(layoutParamsDare);
         truthOrDare.addView(dareButton);
 
-        Button truthButton = new Button(this);
+        Button truthButton = new Button(context);
         truthButton.setText("Truth");
         truthButton.setTextSize(25);
         LinearLayout.LayoutParams layoutParamsTruth = new LinearLayout.LayoutParams(380, 180);
@@ -44,8 +41,12 @@ public class ChallengeTruthOrDare extends ChallengeDecorator {
         truthOrDare.addView(truthButton);
 
 
-
     }
+
+
+
+
+
 
 
 }

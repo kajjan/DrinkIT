@@ -108,24 +108,33 @@ public class DrinkIT {
 
     public boolean isAlreadyPlayed(Player player, String challenge) {
         //if(playedRounds.size() < 3){return false;}
+        Boolean b = false;
         for (GameRound r : playedRounds) {
             if (r.getChallenge().getChallengeText().equals(challenge) && r.getPlayer().equals(player)) {
-                return true;
+                b = true;
             }
         }
-        return false;
+        return b;
     }
 
 
     public String getActiveChallenge(){
-            if(indexOfActiveCategory < 0) { indexOfActiveCategory=0;}
+            if(indexOfActiveCategory < 0) { indexOfActiveCategory = 0;}
             String activeChallenge = categories.get(indexOfActiveCategory).getChallengeToPlay();
-            if (!isAlreadyPlayed(players.get(indexOfActivePlayer), activeChallenge)) {
-                return activeChallenge;
-            } else {
-                updateActiveChallenge();
-                getActiveChallenge();
+
+            /* isPlayedAgain makes the app crash inconsistently, unsure of why - needs more work before it can be used
+            boolean b = true;
+            while (b) {
+                if (!isAlreadyPlayed(players.get(indexOfActivePlayer), activeChallenge)) {
+                    //return activeChallenge;
+                    b = false;
+                } else {
+                    updateActiveChallenge();
+                    //getActiveChallenge();
+                }
             }
+            */
+
         return activeChallenge;
     }
 

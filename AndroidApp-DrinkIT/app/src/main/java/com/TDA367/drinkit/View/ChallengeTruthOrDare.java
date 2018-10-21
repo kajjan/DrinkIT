@@ -6,12 +6,14 @@ import android.widget.RelativeLayout;
 import android.content.Context;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.TDA367.drinkit.Controller.Controller;
 
 public class ChallengeTruthOrDare extends ChallengeDecorator {
 
     protected RelativeLayout challengeTruthOrDare;
+
 
 
     public ChallengeTruthOrDare(View view, Context context, Controller controller) {
@@ -39,6 +41,15 @@ public class ChallengeTruthOrDare extends ChallengeDecorator {
         layoutParamsTruth.setMargins(100, 1100, 0, 0); //left, top, right, bottom
         truthButton.setLayoutParams(layoutParamsTruth);
         truthOrDare.addView(truthButton);
+
+        TextView orText = new TextView(context);
+        orText.setText("or");
+        orText.setTextSize(24);
+        LinearLayout.LayoutParams layoutParamsOrText = new LinearLayout.LayoutParams(500, 200);
+        layoutParamsOrText.setMargins(510, 1150, 0, 0);
+        orText.setLayoutParams(layoutParamsOrText);
+        truthOrDare.addView(orText);
+
 
 
     }

@@ -94,5 +94,7 @@ public class ChallengeActivity extends MainView {
     }
 
     public void optionsDuringGamePage(View view) {
+        startActivity(new Intent(ChallengeActivity.this, OptionsDuringGameActivity.class));
+
     }
 }

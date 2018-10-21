@@ -6,6 +6,7 @@ import android.widget.RelativeLayout;
 import android.content.Context;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.TDA367.drinkit.Controller.Controller;
 
@@ -14,20 +15,18 @@ public class ChallengeTruthOrDare extends ChallengeDecorator {
     protected RelativeLayout challengeTruthOrDare;
 
 
-    public ChallengeTruthOrDare(View view, Context context, Controller controller) {
-        super(view, context,controller);
+    public ChallengeTruthOrDare(View view, Context context, Controller controller, Boolean hasButton, Boolean hasChallenge) {
+        super(view, context, controller, hasButton, hasChallenge);
+
     }
 
 
     @Override
     public void decorate() {
-        challengeTruthOrDare.setVisibility(challengeTruthOrDare.VISIBLE);
-    }
+       // challengeTruthOrDare.setVisibility(challengeTruthOrDare.VISIBLE);
 
-    public void makingButtonsMethod(){
-
-        RelativeLayout truthOrDare = (RelativeLayout) findViewById(R.id.challenge_base);
-        Button dareButton = new Button(this);
+        RelativeLayout truthOrDare = (RelativeLayout) view.findViewById(R.id.challenge_base);
+        Button dareButton = new Button(context);
         dareButton.setText("Dare");
         dareButton.setTextSize(25);
         LinearLayout.LayoutParams layoutParamsDare = new LinearLayout.LayoutParams(380, 180);
@@ -35,7 +34,7 @@ public class ChallengeTruthOrDare extends ChallengeDecorator {
         dareButton.setLayoutParams(layoutParamsDare);
         truthOrDare.addView(dareButton);
 
-        Button truthButton = new Button(this);
+        Button truthButton = new Button(context);
         truthButton.setText("Truth");
         truthButton.setTextSize(25);
         LinearLayout.LayoutParams layoutParamsTruth = new LinearLayout.LayoutParams(380, 180);
@@ -43,9 +42,22 @@ public class ChallengeTruthOrDare extends ChallengeDecorator {
         truthButton.setLayoutParams(layoutParamsTruth);
         truthOrDare.addView(truthButton);
 
+        TextView orText = new TextView(context);
+        orText.setText("or");
+        orText.setTextSize(24);
+        LinearLayout.LayoutParams layoutParamsOrText = new LinearLayout.LayoutParams(500, 200);
+        layoutParamsOrText.setMargins(510, 1150, 0, 0);
+        orText.setLayoutParams(layoutParamsOrText);
+        truthOrDare.addView(orText);
+
 
 
     }
+
+
+
+
+
 
 
 }

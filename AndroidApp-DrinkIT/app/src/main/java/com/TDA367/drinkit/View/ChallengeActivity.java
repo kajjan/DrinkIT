@@ -3,9 +3,9 @@ package com.TDA367.drinkit.View;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.icu.util.ValueIterator;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.TDA367.drinkit.Controller.Controller;
@@ -13,16 +13,11 @@ import com.TDA367.drinkit.Controller.Controller;
 
 public class ChallengeActivity extends MainView {
 
-   // RelativeLayout challengeTask;
-   /* RelativeLayout challengeTruthOrDare = (RelativeLayout)findViewById(R.id.challenge_truth_or_dare);
-    RelativeLayout challengePageOne = (RelativeLayout)findViewById(R.id.challenge_page_one_of_two);
-    RelativeLayout challengeSucceedFailed = (RelativeLayout)findViewById(R.id.challenge_succeed_fail);
-    View challengePoints = (View) findViewById(R.id.challenge_points);
-    *///RelativeLayout challengeNextButton;
     Context context;
     Controller controller=getCtrl();
-
-
+    String nextCategory;
+    Boolean hasButton=true;
+    Boolean hasChallenge=true;
 
 
     @SuppressLint("ResourceType")
@@ -30,16 +25,18 @@ public class ChallengeActivity extends MainView {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-//setContentView(R.layout.activity_challenge_task);
         setContentView(R.layout.activity_challenge_base);
-        activate();
         View contentView = findViewById(R.id.challenge_base);
-
-        decorateNextActivity("Rules", contentView);
+        nextCategory = getCtrl().getNextCategory();
+        decorateNextActivity(nextCategory, contentView);
         printPlayersName();
         printCategory();
+        }
 
-    }
+        public ChallengeActivity(){
+      //  this.recreate();
+        }
+
     public void printPlayersName(){
         TextView text=((TextView)findViewById(R.id.playerOfChallenge));
         text.setText(getCtrl().getNameOfPlayer());
@@ -69,11 +66,6 @@ public class ChallengeActivity extends MainView {
     }
 
 
-    public void activate(){
-      //  challengeTask=(RelativeLayout)findViewById(R.id.challenge_task);
-        //challengeNextButton=(RelativeLayout)findViewById(R.id.challenge_next_button);
-    }
-
 
     public void decorateNextActivity(String category, View view) {
         if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades")) {
@@ -86,7 +78,7 @@ public class ChallengeActivity extends MainView {
 
             //startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, TruthOrDarePageActivity.class));
         }else if (category.equals("Most Likely To") || category.equals("Rules") || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That")) {
-            new ChallengePointsView(view,ChallengeActivity.this, controller);
+            new ChallengeWithoutPointView(view,ChallengeActivity.this, controller, hasButton, hasChallenge);
 
         }else{
             System.out.println("Something is wrong with the code in ChallengeWithAnswerActivity..." + category);
@@ -94,5 +86,7 @@ public class ChallengeActivity extends MainView {
     }
 
     public void optionsDuringGamePage(View view) {
+        startActivity(new Intent(ChallengeActivity.this, OptionsDuringGameActivity.class));
+
     }
 }

@@ -18,7 +18,6 @@ public class DurationActivity extends MainView {
 
     public void shortDuration(View view) {
         getCtrl().setDuration(3);
-        String nextCategory = getCtrl().getNextCategory();
         startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
 
     }

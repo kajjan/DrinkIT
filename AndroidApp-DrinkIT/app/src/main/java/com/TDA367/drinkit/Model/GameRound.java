@@ -4,7 +4,7 @@ public class GameRound {
 
     private Player player;
     private Challenge challenge;
-    private boolean succeded;
+    private boolean succeeded;
 
     public GameRound(Player player, Challenge challenge) {
         this.player = player;
@@ -27,8 +27,8 @@ public class GameRound {
         this.challenge = challenge;
     }
 
-    public void setSucceded(boolean succeded) {
-        this.succeded = succeded;
+    public void setSucceeded(boolean succeeded) {
+        this.succeeded = succeeded;
     }
 
 }

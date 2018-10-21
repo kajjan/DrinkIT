@@ -184,7 +184,7 @@ public class DrinkIT {
         players.get(indexOfActivePlayer).setPoint(point);
 
         addGameRound();
-        playedRounds.get(playedRounds.size()-1).setSucceded(true);
+        playedRounds.get(playedRounds.size()-1).setSucceeded(true);
         updateActivePlayer();
         updateActiveChallenge();
     }
@@ -194,7 +194,7 @@ public class DrinkIT {
      */
     public void failedChallenge() {
         addGameRound();
-        playedRounds.get(playedRounds.size()-1).setSucceded(false);
+        playedRounds.get(playedRounds.size()-1).setSucceeded(false);
         updateActivePlayer();
         updateActiveChallenge();
     }

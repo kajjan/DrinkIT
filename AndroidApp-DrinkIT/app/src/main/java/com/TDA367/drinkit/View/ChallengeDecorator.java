@@ -1,6 +1,7 @@
 package com.TDA367.drinkit.View;
 
 import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -9,7 +10,7 @@ import android.widget.TextView;
 
 import com.TDA367.drinkit.Controller.Controller;
 
-public abstract class ChallengeDecorator implements Decorator {
+public abstract class ChallengeDecorator extends AppCompatActivity implements Decorator {
     protected View view;
     protected Context context;
     protected Controller controller;

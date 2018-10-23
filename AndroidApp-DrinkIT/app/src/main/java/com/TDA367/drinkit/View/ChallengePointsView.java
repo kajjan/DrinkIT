@@ -18,8 +18,8 @@ public class ChallengePointsView extends ChallengeDecorator {
     protected RelativeLayout challengePointsView;
 
 
-    public ChallengePointsView(View view, Context context, Controller controller) {
-        super(view, context, controller);
+    public ChallengePointsView(View view, Context context, Controller controller, Boolean hasButton, Boolean hasNextButton) {
+        super(view, context, controller, hasButton, hasNextButton );
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/challenge_task"
+    tools:context=".ChallengeActivity">
+
+
+<RelativeLayout
+    android:id="@+id/relativeLayout"
+    android:layout_width="0dp"
+    android:layout_height="0dp" />
+
+
+<TextView
+android:id="@+id/challengeText"
+android:layout_width="319dp"
+android:layout_height="112dp"
+android:layout_alignParentBottom="true"
+android:layout_centerHorizontal="true"
+android:layout_marginBottom="252dp"
+android:gravity="center"
+android:text="This is just a test to see how much space we need so that the challenge will fit on the display"
+android:textSize="20sp" />
+
+
+    <ImageButton
+        android:id="@+id/optionsDuringGameButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginLeft="23dp"
+        android:onClick="optionsDuringGamePage"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+
+</RelativeLayout>

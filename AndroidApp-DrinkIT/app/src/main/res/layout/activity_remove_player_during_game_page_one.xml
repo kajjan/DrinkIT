@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RemovePlayerDuringGamePageOneActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageButton
+            android:id="@+id/exitOptionsPage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="23dp"
+            android:layout_marginRight="23dp"
+            android:layout_marginTop="23dp"
+            android:onClick="exitOptionRemovePlayerPage"
+            app:srcCompat="@android:drawable/btn_dialog" />
+
+        <TextView
+            android:id="@+id/selectPlayerToRemove"
+            android:layout_width="388dp"
+            android:layout_height="31dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="91dp"
+            android:gravity="center"
+            android:text="Select the player you would like to remove from the game"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/playerOneButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:text="Button"
+            android:textSize="20sp"
+            android:onClick="playerOneSelected"/>
+
+        <Button
+            android:id="@+id/playerTwoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="190dp"
+            android:textSize="20sp"
+            android:text="Button"
+            android:onClick="playerTwoSelected"
+            />
+
+        <Button
+            android:id="@+id/playerThreeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="230dp"
+            android:textSize="20sp"
+            android:text="Button"
+            android:onClick="playerThreeSelected"/>
+
+        <Button
+            android:id="@+id/playerFourButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="270dp"
+            android:textSize="20sp"
+            android:text="Button"
+            android:onClick="playerFourSelected"/>
+
+        <Button
+            android:id="@+id/playerFiveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="310dp"
+            android:textSize="20sp"
+            android:text="Button"
+            android:onClick="playerFiveSelected"/>
+
+        <Button
+            android:id="@+id/playerSixButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="350dp"
+            android:textSize="20sp"
+            android:text="Button"
+            android:onClick="playerSixSelected"/>
+
+        <Button
+            android:id="@+id/playerSevenButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="390dp"
+            android:textSize="20sp"
+            android:text="Button"
+            android:onClick="playerSevenSelected"/>
+
+        <Button
+            android:id="@+id/playerEightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="430dp"
+            android:textSize="20sp"
+            android:text="Button"
+            android:onClick="playerEightSelected"/>
+
+        <Button
+            android:id="@+id/playerNineButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="470dp"
+            android:textSize="20sp"
+            android:text="Button"
+            android:onClick="playerNineSelected"/>
+
+        <Button
+            android:id="@+id/playerTenButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="510dp"
+            android:textSize="20sp"
+            android:text="Button"
+            android:onClick="playerTenSelected"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,6 @@
+ThisOrThat
+thisOrThat write instructions here
+Would you rather code in Java or C?
+Would you rather be super rich pr super smart?
+Would you rather never be able to close your mouth or open your eyes?
+Would you rather never drink again or forever be slightly hungover?

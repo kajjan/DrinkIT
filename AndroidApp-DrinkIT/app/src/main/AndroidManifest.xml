@@ -1,21 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.drinkit.drinkit">
+    package="com.TDA367.drinkit.View">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".AddPlayerActivity">
+        android:supportsRtl="false"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".MainAppActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ChooseCategoryActivity" />
+        <activity android:name=".DurationActivity" />
+        <activity android:name=".AddPlayerActivity" />
+        <activity android:name=".InstructionsActivity" />
+        <activity android:name=".ChallengeWithPointActivity" />
+        <activity android:name=".FinishPageActivity" />
+        <activity android:name=".StartPageActivity" />
+        <activity android:name=".ChallengeInstructionActivity" />
+        <activity android:name=".ChallengeWithAnswerPageOneActivity" />
+        <activity android:name=".ChallengeWithoutPointActivity" />
+        <activity android:name=".TruthOrDarePageActivity"/>
+        <activity android:name=".ChallengeWithAnswerPageTwoActivity" />
+        <activity
+            android:name=".QuitDuringGameActivity"
+            android:label="@string/title_activity_quit_during_game" />
+        <activity
+            android:name=".OptionsDuringGameActivity"
+            android:label="@string/title_activity_options_during_game" />
+        <activity
+            android:name=".RemovePlayerDuringGamePageOneActivity"
+            android:label="@string/title_activity_remove_player_during_game" />
+        <activity
+            android:name=".AddPlayerDuringGameActivity"
+            android:label="@string/title_activity_add_player_during_game" />
+        <activity
+            android:name=".RemovePlayerDuringGamePageTwoActivity"
+            android:label="@string/title_activity_remove_player_during_game_page_two"></activity>
     </application>
 
 </manifest>

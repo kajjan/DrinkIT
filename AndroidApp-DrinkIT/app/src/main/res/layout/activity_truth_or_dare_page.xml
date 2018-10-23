@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TruthOrDarePageActivity">
+
+
+
+    <TextView
+        android:id="@+id/nameOfPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="144dp"
+        android:text="Player1"
+        android:textColor="#000000"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/truthButton"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/dareButton"
+        android:layout_marginStart="68dp"
+        android:onClick="truthButton"
+        android:text="Truth"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="219dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="68dp" />
+
+    <Button
+        android:id="@+id/dareButton"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="198dp"
+        android:layout_marginEnd="67dp"
+        android:text="Dare"
+        android:onClick="dareButton"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="219dp"
+        android:layout_alignParentRight="true"
+        android:textSize="20sp"
+        android:layout_marginRight="67dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="92dp"
+        android:layout_alignBaseline="@+id/truthButton"
+        android:layout_centerHorizontal="true"
+        android:text="or"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Choose between...."
+        android:textSize="30dp" />
+
+    <ImageButton
+        android:id="@+id/challengeInstructionButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="23dp"
+        android:onClick="challengeInstructionPage"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <ImageButton
+        android:id="@+id/optionsDuringGameButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginLeft="23dp"
+        android:onClick="optionsDuringGamePage"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+</RelativeLayout>

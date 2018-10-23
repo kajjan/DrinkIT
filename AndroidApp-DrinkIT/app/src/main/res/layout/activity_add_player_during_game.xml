@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPlayerDuringGameActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="36dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/exitOptionsPage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="31dp"
+            android:layout_marginRight="23dp"
+            android:layout_marginTop="23dp"
+            android:onClick="exitOptionAddPlayerPage"
+            app:srcCompat="@android:drawable/btn_dialog" />
+
+        <TextView
+            android:id="@+id/addPlayerDuringGame"
+            android:layout_width="353dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="99dp"
+            android:gravity="center"
+            android:text="Type the name of the new player to be added"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/addPlayerButton"
+            android:layout_width="330dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:onClick="addPlayerToGame"
+            android:text="Add this player to the game"
+            android:textSize="20sp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="278dp"
+            android:layout_height="57dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="196dp"
+            android:textColor="#000000">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/playerToAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="New Player" />
+        </android.support.design.widget.TextInputLayout>
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

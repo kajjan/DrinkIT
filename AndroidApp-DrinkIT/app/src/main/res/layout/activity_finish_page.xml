@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FinishPageActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="10,MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="45dp">
+
+        <TextView
+            android:id="@+id/theWinnerIs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="73dp"
+            android:text="The Winner is..."
+            android:textColor="#000000"
+            android:textSize="40dp"
+            tools:layout_editor_absoluteY="103dp" />
+
+
+        <TextView
+            android:id="@+id/printScoreBoard"
+            android:layout_width="339dp"
+            android:layout_height="303dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="147dp"
+            android:gravity="center_horizontal"
+            android:text="Kajsa 20 Points"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+        <Button
+            android:id="@+id/continueTheGameButton"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_above="@+id/endTheGame"
+            android:layout_centerHorizontal="true"
+            android:onClick="continueTheGame"
+            android:text="Continue the game"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/endTheGame"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="70dp"
+            android:text="End the game"
+            android:textSize="20sp"
+            android:onClick="endTheGameButton"/>
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

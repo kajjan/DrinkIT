@@ -3,11 +3,7 @@ package com.TDA367.drinkit.View;
 import org.junit.Test;
 
 import com.TDA367.drinkit.Model.Category;
-import com.TDA367.drinkit.Model.CategoryFactory;
-import com.TDA367.drinkit.Model.Challenge;
-import com.TDA367.drinkit.Model.ChallengeFactory;
 import com.TDA367.drinkit.Model.DrinkIT;
-import com.TDA367.drinkit.Model.GameRound;
 import com.TDA367.drinkit.Model.Player;
 import java.util.ArrayList;
 import java.util.List;

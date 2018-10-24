@@ -78,7 +78,7 @@ public class CategoryStore {
         String answer = null; // "No answer available. :-(";
 
         try {
-            object.getString("answer");
+            answer = object.getString("answer");
         } catch (JSONException e) {
             e.printStackTrace();
         }

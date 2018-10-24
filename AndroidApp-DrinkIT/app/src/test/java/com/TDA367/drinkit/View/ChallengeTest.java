@@ -12,7 +12,7 @@ import com.TDA367.drinkit.Model.Challenge;
 
 
 public class ChallengeTest {
- /*   List<Player> playersList = new ArrayList<>();
+   List<Player> playersList = new ArrayList<>();
     Player noOne = new Player("Arya Stark");
     Player khaleesi = new Player("Denaerys Targaryen");
     Player redViper = new Player("Oberyn Martell");
@@ -96,5 +96,5 @@ public class ChallengeTest {
         assert (pointsKhaleesi == 0);
         assert (pointsNoOne == 0);
     }
-*/
+
 }

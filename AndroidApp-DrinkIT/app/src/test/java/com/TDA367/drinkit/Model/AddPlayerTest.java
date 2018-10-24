@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.TDA367.drinkit.Model.DrinkIT;
-import com.TDA367.drinkit.Model.Player;
 import com.TDA367.drinkit.Controller.Controller;
 
 

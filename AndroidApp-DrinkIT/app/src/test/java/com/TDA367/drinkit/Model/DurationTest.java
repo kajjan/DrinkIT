@@ -4,8 +4,6 @@ import org.junit.Test;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.TDA367.drinkit.Model.DrinkIT;
-import com.TDA367.drinkit.Model.Player;
 
 public class DurationTest {
 

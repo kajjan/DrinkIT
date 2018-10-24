@@ -2,11 +2,6 @@ package com.TDA367.drinkit.Model;
 
 import org.junit.Test;
 
-import com.TDA367.drinkit.Model.Category;
-import com.TDA367.drinkit.Model.Challenge;
-import com.TDA367.drinkit.Model.DrinkIT;
-import com.TDA367.drinkit.Model.Player;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,7 +62,6 @@ public class FinishPageTest {
         playersList.add(player1);
         playersList.add(player2);
 
-        int i = playersList.size();
         challenges.add(challenge);
         challenges.add(challenge1);
 

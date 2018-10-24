@@ -5,7 +5,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameRoundTest {
+
+public class GameRoundTest  {
 
     List<Player> players = new ArrayList<>();
     List<Category> cats = new ArrayList<>();
@@ -19,6 +20,7 @@ public class GameRoundTest {
     Player firstPlayer = new Player("Zlatan");
     Player secondPlayer = new Player("Captain America");
     Player thirdPlayer = new Player("Severus Snape");
+
 
 
     public GameRoundTest() {
@@ -123,6 +125,36 @@ public class GameRoundTest {
         System.out.println(gameRound1.getPlayedRounds().get(0).getChallenge().getChallengeText());
 
         assert (model.isAlreadyPlayed(gameRound1));
+    }
+
+
+    @Test
+    public void initiaGame(){
+
+        players.clear();
+        players.add(firstPlayer);
+        players.add(secondPlayer);
+        players.add(thirdPlayer);
+
+
+        neverHaveIever = new Category("NeverHaveIEver", "this is an instruction", challengesOne);
+        ToD = new Category("TruthOrDare", "this is an instruction", challengesTwo);
+
+        cats.clear();
+        cats.add(neverHaveIever);
+        cats.add(ToD);
+        cats.add(neverHaveIever);
+
+        challengesOne.add(new Challenge("test1", null, 2));
+        challengesTwo.add(new Challenge("test2", null, 5));
+
+        DrinkIT drinkIT = new DrinkIT(players, 0, 0, cats, 0);
+        List<Player>listOfPlayerFromDrinkIT = model.getPlayers();
+
+        drinkIT.initiateGame();
+        players= drinkIT.getPlayers();
+        assert (players==listOfPlayerFromDrinkIT);
+
     }
 
 }

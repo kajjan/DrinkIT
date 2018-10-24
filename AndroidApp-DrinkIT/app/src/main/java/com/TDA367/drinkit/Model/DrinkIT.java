@@ -171,10 +171,10 @@ public class DrinkIT {
 
     public String getNextCategory() {
         String nextCategory = "none";
-        Collections.shuffle(categories);
         indexOfActiveCategory++;
         while (nextCategory.equals("none")) {
             if (indexOfActiveCategory == categories.size()) {
+                Collections.shuffle(categories);
                 indexOfActiveCategory = 0;
             }
             if (categories.get(indexOfActiveCategory).isActive()) {
@@ -343,7 +343,7 @@ public class DrinkIT {
      * Method which sets truthChallenge
      */
     public void setTruthChallenge() {
-        while (!(getActiveChallenge()).contains("truth")) {
+        while (!(getActiveChallenge()).contains("Truth")) {
             categories.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
         }
     }
@@ -352,7 +352,7 @@ public class DrinkIT {
      * Method which sets dare challenge
      */
     public void setDareChallenge() {
-        while (!(getActiveChallenge()).contains("dare")) {
+        while (!(getActiveChallenge()).contains("Dare")) {
             categories.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
         }
     }

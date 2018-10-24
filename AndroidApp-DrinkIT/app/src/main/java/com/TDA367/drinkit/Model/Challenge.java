@@ -33,6 +33,6 @@ public class Challenge {
      * @returns null since the answer get set later SE HIT NÄR CHALLENGES ÄR FIXAT
      */
     public String getAnswer() {
-        return null;
+        return answerText;
     }
 }

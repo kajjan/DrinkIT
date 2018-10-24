@@ -27,19 +27,25 @@ public class DrinkIT {
 
     public DrinkIT() {}
 
+    /**
+     * @return the name of the indexOfActiveCategory from the categories list
+     */
     public String getActiveCategory() {
         return categories.get(indexOfActiveCategory).getName();
     }
 
+    /**
+     * @return the ActiveChallengePoint from the indexOfActiveCategory in the categories list
+     */
     public int getActiveChallengePoints() {
         return categories.get(indexOfActiveCategory).getActiveChallengePoint();
     }
 
     /**
      * A method with creates and adds a category to the list categories
-     * @param categoryName
-     * @param instruction
-     * @param challenges
+     * @param categoryName String Category name
+     * @param instruction String Instruction
+     * @param challenges List of strings Challenges
      */
     public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges ) {
             categories.add(CategoryFactory.createCategory(categoryName,instruction,challenges));
@@ -57,8 +63,7 @@ public class DrinkIT {
     }
 
     /** Method which adds a player to the player list
-     *
-     * @param name
+     * @param name Player name
      */
     public void addPlayer(String name) {
         players.add(new Player(name));
@@ -79,7 +84,7 @@ public class DrinkIT {
 
     /**
      * Mathod removes a player from the lists players and completeListOfPlayer
-     * @param playerName
+     * @param playerName String of Player name
      */
     public void removePlayerDuringGame(String playerName) {
         for (int i=0; i<players.size(); i++) {
@@ -112,7 +117,7 @@ public class DrinkIT {
     }
 
     /**
-     * @returns name of indexOfActivePlayer from the players list
+     * @return name of indexOfActivePlayer from the players list
      */
     public String getNameOfPlayer() {
         return players.get(indexOfActivePlayer).getName();
@@ -127,9 +132,10 @@ public class DrinkIT {
     }
 
     /**
-     * @param player
-     * @param challenge
-     * @returns boolean b as true if
+     * TODO!!!!!!!!!!!!!!!!!!!!!!!!
+     * @param player Player
+     * @param challenge Challenge
+     * @return this to be done
      */
     public boolean isAlreadyPlayed(Player player, String challenge) {
         //if(playedRounds.size() < 3){return false;}
@@ -143,8 +149,14 @@ public class DrinkIT {
     }
 
 
+    /**
+     * TODO work in progress??
+     * @return activeChallenge
+     */
     public String getActiveChallenge(){
-            if(indexOfActiveCategory < 0) { indexOfActiveCategory = 0;}
+            if(indexOfActiveCategory < 0) {
+                indexOfActiveCategory = 0;
+            }
             String activeChallenge = categories.get(indexOfActiveCategory).getChallengeToPlay();
 
             /* isPlayedAgain makes the app crash inconsistently, unsure of why - needs more work before it can be used
@@ -163,10 +175,17 @@ public class DrinkIT {
         return activeChallenge;
     }
 
+    /**
+     * Gets answer of the activeChallenge of the activeCategory in the list categories
+     * @return nextCategory string
+     */
     public String getActiveChallengesAnswer() {
         return categories.get(indexOfActiveCategory).getActiveChallenge().getAnswer();
     }
 
+    /** TODO den här medoden skulle ändras?? bytas namn på? javadoc avaktar
+     * @return String nextCategory
+     */
     public String getNextCategory(){
         String nextCategory = "none";
         Collections.shuffle(categories);
@@ -185,6 +204,11 @@ public class DrinkIT {
         return nextCategory;
     }
 
+    /**
+     * If the indexOfActiveCategory in categories is active, the name of the currentCategory is
+     * returned
+     * @return the currentCategory
+     */
     public String getCurrentCategory() {
         String currentCategory = "none";
         if (categories.get(indexOfActiveCategory).isActive()) {
@@ -193,6 +217,9 @@ public class DrinkIT {
         return currentCategory;
     }
 
+    /**
+     * @return Instruction of indexOfActiveCategory in list categories
+     */
     public String getInstructions(){
         return categories.get(indexOfActiveCategory).getInstruction();
     }
@@ -225,7 +252,7 @@ public class DrinkIT {
     }
 
     /**
-     * This method makes sure the players ASK ELIN!!!
+     * This method makes sure the players TODO ASK ELIN!!!
      */
     private void updateActivePlayer() {
         indexOfActivePlayer++;
@@ -249,7 +276,7 @@ public class DrinkIT {
 
     /**
      * Method which sets chosen Cetegories to active and inactive based onClick, in view
-     * @param category
+     * @param category String
      */
     public void chooseCategory(String category) {
         for (Category c : categories) {
@@ -261,7 +288,7 @@ public class DrinkIT {
                 }
             }
         }
-        // endast för att printa och se att det funkar
+        // only for printing to see if it works
         for (int i = 0; i< categories.size(); i++) {
             System.out.println(categories.get(i).getName());
             System.out.println(categories.get(i).isActive());
@@ -271,8 +298,8 @@ public class DrinkIT {
 
     /**
      * Checks if category button in list categories is Active
-     * @param i
-     * @return
+     * @param i int
+     * @return boolean b
      */
     public boolean buttonActive(int i){
         boolean b = false;
@@ -302,8 +329,10 @@ public class DrinkIT {
         }
     }
 
-    //method that makes a list that write the players name and its point in a list of strings.
-    private String playerToString(Player player){ //private
+    /**
+     * method that makes a list that write the players name and its point in a String list
+    */
+     private String playerToString(Player player){ //private
         return player.getName() + " " + player.getPoint() + " Points";
     }
 
@@ -328,7 +357,7 @@ public class DrinkIT {
 
     /**
      * Method that keep track if the game is done and if the view should change to the finishPage
-     * @return
+     * @return false or true boolean
      */
     public boolean nextRound() {
         if (numberOfRounds > playedRounds.size()) {
@@ -337,6 +366,9 @@ public class DrinkIT {
         return false;
     }
 
+    /**
+     * Method which sets truthChallenge
+     */
     public void setTruthChallenge(){
         while(!(getActiveChallenge()).contains("truth")) {
                 categories.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
@@ -344,6 +376,9 @@ public class DrinkIT {
     }
 
 
+    /**
+     * Method which sets dare challenge
+     */
     public void setDareChallenge(){
         while(!(getActiveChallenge()).contains("dare")) {
                 categories.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
@@ -365,8 +400,8 @@ public class DrinkIT {
         }
 
     /**
-     *  Helpmethods for tests
-     * @param players
+     *  Helpmethods for tests, constructor
+     * @param players list
      */
     public DrinkIT(List<Player> players) {
         this.players = players;
@@ -374,7 +409,7 @@ public class DrinkIT {
 
     /**
      * method for test
-     * @return
+     * @return names
      */
     public List<String> getPlayerNames() {
         List<String> names = new ArrayList<>();
@@ -397,33 +432,36 @@ public class DrinkIT {
         return categories;
     }
 
-    //setters for tests
-
+    /**
+     * setter for test
+     * @param indexOfActivePlayer int
+     */
     public void setIndexOfActivePlayer(int indexOfActivePlayer) {
         this.indexOfActivePlayer = indexOfActivePlayer;
     }
 
     /**
      * setter for tests
-     * @param indexOfActiveCategory
+     * @param indexOfActiveCategory int
      */
     public void setIndexOfActiveCategory(int indexOfActiveCategory) {
         this.indexOfActiveCategory = indexOfActiveCategory;
     }
+
 
     public int getIndexOfActiveCategory(){ return indexOfActiveCategory;}
 
 
     /**
      * Constructor for tests
-     * @param players
-     * @param numberOfRounds
-     * @param playerInPointOrder
-     * @param indexOfActivePlayer
-     * @param categories
-     * @param indexOfActiveCategory
-     * @param playedRounds
-     * @param categoryNames
+     * @param players list Players
+     * @param numberOfRounds int
+     * @param playerInPointOrder String list
+     * @param indexOfActivePlayer int
+     * @param categories Category list
+     * @param indexOfActiveCategory int
+     * @param playedRounds List GameRound
+     * @param categoryNames String List
      */
     public DrinkIT(List<Player> players, int numberOfRounds,
                    List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> categories,

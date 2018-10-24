@@ -10,17 +10,22 @@ import android.widget.TextView;
 
 import com.TDA367.drinkit.Controller.Controller;
 
-public abstract class ChallengeDecorator extends AppCompatActivity implements Decorator {
+public class ChallengeDecorator extends AppCompatActivity implements Decorator {
     protected View view;
     protected Context context;
     protected Controller controller;
-
+    protected Decorator decorator;
 
     boolean hasChallenge;
     boolean hasButton;
     RelativeLayout row2;
     LinearLayout.LayoutParams layoutParams;
 
+
+    public ChallengeDecorator(Decorator d){
+        this.decorator=d;
+
+    }
 
     protected ChallengeDecorator(View view, Context context, Controller controller, Boolean hasButton, Boolean hasChallenge){
         this.view=view;
@@ -31,6 +36,12 @@ public abstract class ChallengeDecorator extends AppCompatActivity implements De
         this.row2 = (RelativeLayout) view.findViewById(R.id.challenge_base);
         this.layoutParams = new LinearLayout.LayoutParams(500, 200);
         decorate();
+    }
+
+    @Override
+    public void decorate() {
+        this.decorator.decorate();
+
     }
 
 
@@ -52,5 +63,6 @@ public abstract class ChallengeDecorator extends AppCompatActivity implements De
         row2.addView(challengeText);
         challengeText.setText(controller.getActiveChallenge());
     }
+
 
 }

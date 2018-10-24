@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.TDA367.drinkit.Controller.Controller;
 
 
-public class ChallengeActivity extends MainView {
+public class ChallengeActivity extends MainView implements Decorator {
 
     Context context;
     Controller controller=getCtrl();
@@ -37,6 +37,11 @@ public class ChallengeActivity extends MainView {
         public ChallengeActivity(){
       //  this.recreate();
         }
+
+    @Override
+    public void decorate() {
+
+    }
 
     public void printPlayersName(){
         TextView text=((TextView)findViewById(R.id.playerOfChallenge));
@@ -91,4 +96,6 @@ public class ChallengeActivity extends MainView {
         startActivity(new Intent(ChallengeActivity.this, OptionsDuringGameActivity.class));
 
     }
+
+
 }

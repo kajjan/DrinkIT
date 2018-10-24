@@ -42,6 +42,15 @@ public class DrinkIT {
         return categories.get(indexOfActiveCategory).getName();
     }
 
+    public boolean atLeastOneCategoryChosen() {
+        for (Category c : categories) {
+            if (c.isActive()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * @return the ActiveChallengePoint from the indexOfActiveCategory in the categories list
      */
@@ -135,7 +144,6 @@ public class DrinkIT {
 
     }
 
-
     public boolean isAlreadyPlayed(GameRound gameRound) {
         Boolean b = false;
         List<GameRound> playedRounds;
@@ -207,12 +215,9 @@ public class DrinkIT {
      */
     public void succeededChallenge() {
         int point = players.get(indexOfActivePlayer).getPoint();
-
         int pointToAdd = categories.get(indexOfActiveCategory).getActiveChallengePoint();
         point += pointToAdd;
-
         players.get(indexOfActivePlayer).setPoint(point);
-
         addGameRound(true);
         playedRounds++;
         updateActivePlayer();
@@ -234,7 +239,6 @@ public class DrinkIT {
      */
     private void updateActivePlayer() {
         indexOfActivePlayer++;
-
         if (indexOfActivePlayer == players.size()) {
             String previousPlayer = players.get(indexOfActivePlayer - 1).getName();
             Collections.shuffle(players);
@@ -271,7 +275,6 @@ public class DrinkIT {
             System.out.println(categories.get(i).getName());
             System.out.println(categories.get(i).isActive());
         }
-
     }
 
     /**

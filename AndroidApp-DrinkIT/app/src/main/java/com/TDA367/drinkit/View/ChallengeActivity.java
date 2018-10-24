@@ -74,6 +74,8 @@ public class ChallengeActivity extends MainView implements Decorator {
 
 
 
+
+
     public void decorateNextActivity(String category, View view) {
         if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades")) {
            // new ChallengeWithoutPointView(challengeTask,challengeNextButton);
@@ -85,9 +87,9 @@ public class ChallengeActivity extends MainView implements Decorator {
 
             //startActivity(new Intent(ChallengeWithAnswerPageTwoActivity.this, TruthOrDarePageActivity.class));
         }else if (category.equals("Most Likely To") || category.equals("Rules") || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That")) {
-            new ChallengeWithoutPointView(view,ChallengeActivity.this, controller, hasButton, hasChallenge);
-
-        }else{
+                Decorator view1 = new NextButton(new ChallengeText(new ChallengeActivity()));
+                view1.decorate();
+            }else{
             System.out.println("Something is wrong with the code in ChallengeWithAnswerActivity..." + category);
         }
     }

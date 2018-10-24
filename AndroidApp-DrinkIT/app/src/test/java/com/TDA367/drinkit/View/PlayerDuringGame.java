@@ -47,7 +47,7 @@ public class PlayerDuringGame {
         cats.add(truthOrDare);
         cats.add(truthOrDare1);
 
-        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 0, null, 0, null, null);
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 0, null, 0, null);
         drinkIT.setNumberOfRounds(3);
         //drinkIT.createCompletedPlayersList();
         drinkIT.removePlayerDuringGame(player2.getName());

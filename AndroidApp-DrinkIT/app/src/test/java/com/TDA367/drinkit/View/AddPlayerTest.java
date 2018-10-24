@@ -106,7 +106,7 @@ public class AddPlayerTest {
          List<String> playersInPointOrder = new ArrayList<>();
          List<Player> testList = new ArrayList<>();
 
-        DrinkIT drinkit = new DrinkIT(playersList, 0, playersInPointOrder,0, null, 0, null, null);
+        DrinkIT drinkit = new DrinkIT(playersList, 0, playersInPointOrder,0, null, 0, null);
 
 
             drinkit.putListInPointOrder();

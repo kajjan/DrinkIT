@@ -21,9 +21,6 @@ public class DrinkIT {
     private List<Category> categories = new ArrayList<>(); //               6
     private int indexOfActiveCategory = -1;   //                            7
     private List<GameRound> playedRounds = new ArrayList<>(); //            8
-    private List<String> categoryNames = new ArrayList<>();//               10
-
-
 
 
     public DrinkIT() {}
@@ -47,10 +44,12 @@ public class DrinkIT {
     }
 
     public List<String> getCategoryNames () {
-        for (Category c : categories) {
-            categoryNames.add(c.getName());
-        }
-        return categoryNames;
+        List<String> res = new ArrayList<>();
+
+        for (Category c : categories)
+            res.add(c.getName());
+
+        return res;
     }
 
     /** Method which adds a player to the player list
@@ -123,19 +122,6 @@ public class DrinkIT {
     public String getActiveChallenge(){
             if(indexOfActiveCategory < 0) { indexOfActiveCategory = 0;}
             String activeChallenge = categories.get(indexOfActiveCategory).getChallengeToPlay();
-
-            /* isPlayedAgain makes the app crash inconsistently, unsure of why - needs more work before it can be used
-            boolean b = true;
-            while (b) {
-                if (!isAlreadyPlayed(players.get(indexOfActivePlayer), activeChallenge)) {
-                    //return activeChallenge;
-                    b = false;
-                } else {
-                    updateActiveChallenge();
-                    //getActiveChallenge();
-                }
-            }
-            */
 
         return activeChallenge;
     }
@@ -325,7 +311,6 @@ public class DrinkIT {
         playerInPointOrder.clear();
         categories.clear();
         playedRounds.clear();
-        categoryNames.clear();
         indexOfActiveCategory = -1;
         indexOfActivePlayer = 0;
         numberOfRounds = 0;
@@ -390,12 +375,10 @@ public class DrinkIT {
      * @param categories
      * @param indexOfActiveCategory
      * @param playedRounds
-     * @param categoryNames
      */
     public DrinkIT(List<Player> players, int numberOfRounds,
                    List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> categories,
-                   int indexOfActiveCategory, List<GameRound> playedRounds,
-                   List<String> categoryNames) {
+                   int indexOfActiveCategory, List<GameRound> playedRounds) {
         this.players = players;
         this.numberOfRounds = numberOfRounds;
         this.playerInPointOrder = playerInPointOrder;
@@ -403,7 +386,6 @@ public class DrinkIT {
         this.categories = categories;
         this.indexOfActiveCategory = indexOfActiveCategory;
         this.playedRounds = playedRounds;
-        this.categoryNames = categoryNames;
     }
 
     public List<String> getPlayerInPointOrder() {

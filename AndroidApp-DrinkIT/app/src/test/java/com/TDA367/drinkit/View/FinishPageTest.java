@@ -30,7 +30,6 @@ public class FinishPageTest {
     List<Category> cats = new ArrayList<>();
     List<GameRound> playedRounds = new ArrayList<>();
     List<String> challenges = new ArrayList<>();
-    List<String> categoryNames =new ArrayList<>();
     List<String>completeListOfPlayerNames= new ArrayList<>();
     String activeChallenge;
     Boolean a= true;
@@ -54,7 +53,7 @@ public class FinishPageTest {
        cats.add(truthOrDare1);
 
 
-       DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 0, cats, 0, playedRounds, categoryNames);
+       DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 0, cats, 0, playedRounds);
 
        drinkIT.setNumberOfRounds(3);
        //drinkIT.createCompletedPlayersList();
@@ -97,7 +96,7 @@ public class FinishPageTest {
         cats.add(truthOrDare1);
         List<String>playerInPointOrder1= new ArrayList<>();
 
-        DrinkIT drinkIT = new DrinkIT(playersList, 0, playerInPointOrder1, 0, cats, 0, playedRounds, categoryNames);
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, playerInPointOrder1, 0, cats, 0, playedRounds);
 
         drinkIT.setNumberOfRounds(3);
         drinkIT.putListInPointOrder();
@@ -107,7 +106,6 @@ public class FinishPageTest {
         List<String>playerInPointOrder= drinkIT.getPlayerInPointOrder();
         List<Player>players=drinkIT.getPlayers();
         playedRounds = drinkIT.getPlayedRounds();
-        categoryNames= drinkIT.getCategoryNames();
         cats=drinkIT.getCategories();
         int indexOfActivePlayer= drinkIT.getIndexOfActivePlayer();
         int numberOfRounds=drinkIT.getNumberOfRounds();
@@ -121,6 +119,5 @@ public class FinishPageTest {
         assert (indexOfActiveCategory==-1);
         assert (playedRounds.isEmpty());
         assert (cats.isEmpty());
-        assert (categoryNames.isEmpty());
     }
 }

@@ -53,7 +53,7 @@ public class ChallengeTest {
         playedRounds.add(gameRound);
         playedRounds.add(gameRound1);
 
-        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 2, cats, 0, playedRounds, null);
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 2, cats, 0, playedRounds);
 
         cats.add(truthOrDare);
         cats.add(truthOrDare1);
@@ -91,7 +91,7 @@ public class ChallengeTest {
         playedRounds.add(gameRound1);
         playedRounds.add(gameRound2);
 
-        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 2, cats, 0, playedRounds, null);
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 2, cats, 0, playedRounds);
 
         drinkIT.succeededChallenge(); //Increases the Point of player redViper.
 

@@ -1,4 +1,4 @@
-package com.TDA367.drinkit.View;
+package com.TDA367.drinkit.Model;
 
 import org.junit.Test;
 
@@ -61,6 +61,32 @@ public class PlayerDuringGameTest {
 
     @Test
     public void addPlayerDuringGame() {
+        playersList.clear();
+        playersList.add(player1);
+        playersList.add(player2);
+        boolean nameNotInList = true;
+
+        Challenge challenge = new Challenge("here is the first challenge", "here is the anser", 0);
+        Challenge challenge1 = new Challenge("here is the second challenge", "here is the anser", 0);
+
+
+        challenges.add(challenge);
+        challenges.add(challenge1);
+
+        Category truthOrDare = new Category("truthOrDare", "how to play", challenges);
+        Category truthOrDare1 = new Category("truthOrDare", "how to play", challenges);
+
+        cats.add(truthOrDare);
+        cats.add(truthOrDare1);
+
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, 0, null, 0);
+        drinkIT.setNumberOfRounds(3);
+
+        drinkIT.addPlayerDuringGame("Kurt");
+        List<Player> listOfPlayers =drinkIT.getPlayers();
+
+        assert(listOfPlayers.size()==3);
+
     }
 
 }

@@ -1,4 +1,4 @@
-package com.TDA367.drinkit.View;
+package com.TDA367.drinkit.Model;
 
 import org.junit.Test;
 

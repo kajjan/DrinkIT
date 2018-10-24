@@ -108,6 +108,7 @@ public class Controller {
         return model.buttonActive(i);
     }
 
+    public boolean atLeastOneCategoryChosen(){ return model.atLeastOneCategoryChosen();}
 
     public Challenge createChallenge(String challengeText, String answerText, int point) { return model.createChallenge(challengeText, answerText, point); }
 

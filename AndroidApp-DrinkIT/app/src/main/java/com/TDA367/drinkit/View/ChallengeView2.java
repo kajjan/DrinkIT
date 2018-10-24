@@ -10,6 +10,17 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
+
+/**
+ * View class: ChallengeView
+ *
+ * Some challenges has 2 views.
+ * This view is the second view of those categories.
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ *
+ *
+ */
 public class ChallengeView2 extends MainView{
 
 
@@ -27,6 +38,10 @@ public class ChallengeView2 extends MainView{
         setChallengeText();
         setSucceedFailbutton();
     }
+
+    /**
+     * A method that gets the active player of the challenge and prints it on the view.
+     */
     private void printPlayersName() {
         TextView playersName = new TextView(this);
         layoutParams =  new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -40,6 +55,9 @@ public class ChallengeView2 extends MainView{
         playersName.setText(getCtrl().getNameOfPlayer());
     }
 
+    /**
+     * A method that gets the active category of the challenge and prints it on the view.
+     */
     private void printCategory() {
         TextView activeCategoryText = new TextView(this);
         layoutParams =  new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -53,6 +71,10 @@ public class ChallengeView2 extends MainView{
     }
 
 
+    /**
+     * A method that gets the active challenge task of the challenge and prints it on the view.
+     * the method checks if the active category is a truth or a dare challenge if so we set the corresponding challenge as the text. Otherwise it gets the challenge answer from the model that is connected to the previous view.
+     */
     protected void setChallengeText(){
         TextView challengeText = new TextView(this);
         layoutParams = new LinearLayout.LayoutParams(1000,200);
@@ -79,6 +101,9 @@ public class ChallengeView2 extends MainView{
 
     }
 
+    /**
+     * A method that gets the point for the active challenge and prints it on the view.
+     */
     private void setChallengePoint(){
         TextView challengePoints = new TextView(this);
         LinearLayout.LayoutParams layoutPoints = new LinearLayout.LayoutParams(200, 50);
@@ -89,6 +114,10 @@ public class ChallengeView2 extends MainView{
         challengePoints.setText(getCtrl().getActiveChallengePoints() + " Points");       // view.setBackground(context.getResources().getDrawable(drawableId));
     }
 
+
+    /**
+     * A method that makes two buttons, succeed and fail button. The bbuttons are connected to an onClickListener buttonToNextPageListenerfail and buttonToNextPage
+     */
     public void setSucceedFailbutton(){
         //Succeed - Button
         Button succeedButton = new Button(this);

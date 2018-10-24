@@ -1,9 +1,7 @@
 package com.TDA367.drinkit.View;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -12,11 +10,26 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
+/**
+ * View class: ChallengeView1
+ *
+ * ChallengeView1 is the class that is the view of the challenge. (The first view of the challenge if it's a challenge with 2 views.)
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ *
+ *
+ */
 public class ChallengeView1 extends MainView {
 
     RelativeLayout relativeLayoutChallengeView1;
     LinearLayout.LayoutParams layoutParams;
 
+
+    /**
+     * calls the method decorate which in its turn calls the methods that should be called depending on the activeCategory.
+     * calls the method printPlayer and printActiveCategory which are the only thing that is always shown independently of the active category
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +41,9 @@ public class ChallengeView1 extends MainView {
         printActiveCategory();
     }
 
-
+    /**
+     * A method that gets the active player of the challenge and prints it on the view.
+     */
     private void printPlayersName() {
         TextView playersName = new TextView(this);
         layoutParams =  new LinearLayout.LayoutParams(
@@ -43,6 +58,9 @@ public class ChallengeView1 extends MainView {
         playersName.setText(getCtrl().getNameOfPlayer());
     }
 
+    /**
+     * A method that gets the active category of the challenge and prints it on the view.
+     */
     private void printActiveCategory(){
         TextView activeCategoryText = new TextView(this);
         layoutParams =  new LinearLayout.LayoutParams(
@@ -56,7 +74,9 @@ public class ChallengeView1 extends MainView {
         activeCategoryText.setText(getCtrl().getActiveCategory());
     }
 
-
+    /**
+     * A method that gets the active challenge task of the challenge and prints it on the view.
+     */
     private void setChallengeText(){
         TextView challengeText = new TextView(this);
         layoutParams = new LinearLayout.LayoutParams(1000,200);
@@ -70,7 +90,9 @@ public class ChallengeView1 extends MainView {
         challengeText.setText(getCtrl().getActiveChallenge());
     }
 
-
+    /**
+     * A method that gets the point for the active challenge and prints it on the view.
+     */
     private void setChallengePoint(){
         TextView challengePoints = new TextView(this);
         LinearLayout.LayoutParams layoutPoints = new LinearLayout.LayoutParams(200, 50);
@@ -81,7 +103,9 @@ public class ChallengeView1 extends MainView {
         challengePoints.setText(getCtrl().getActiveChallengePoints() + " Points");       // view.setBackground(context.getResources().getDrawable(drawableId));
     }
 
-
+    /**
+     * A method that makes a button to get to the next challenge. The button has a listener.
+     */
     private void setNextChallengeButton(){
         Button nextChallengeButton = new Button(this);
         layoutParams =  new LinearLayout.LayoutParams(1200, 180);
@@ -95,6 +119,11 @@ public class ChallengeView1 extends MainView {
         nextChallengeButton.setOnClickListener(nextChallengeButtonListener);
     }
 
+
+    /**
+     * an onClickListener that if clicked calls the failedChallenge method so that the active player and category increases with one.
+     * Recreates the view if there is a next challenge otherwise changes to the finishpage view
+     */
     private View.OnClickListener nextChallengeButtonListener = new View.OnClickListener() {
         public void onClick(View v) {
             getCtrl().failedChallenge();
@@ -108,11 +137,19 @@ public class ChallengeView1 extends MainView {
         }
     };
 
+
+    /**
+     * A method that checks if the game has a next challenges or if the game is done.
+     * @return true if there is a next challenge
+     */
     private boolean nextRound(){
         return getCtrl().nextRound();
     }
 
 
+    /**
+     * A method that creates a button to take the player to the second view of it's challenge. The button has an onClickListener buttonToNextPageListener.
+     */
     private void setNextViewButton(){
         Button nextChallengeButton = new Button(this);
         layoutParams = new LinearLayout.LayoutParams(1200, 180);
@@ -122,17 +159,14 @@ public class ChallengeView1 extends MainView {
         nextChallengeButton.setTextSize(20);
         nextChallengeButton.setText("Next Page");
         nextChallengeButton.setLayoutParams(layoutParams);
-        nextChallengeButton.setOnClickListener(buttonToNextPage);
         relativeLayoutChallengeView1.addView(nextChallengeButton);
         nextChallengeButton.setOnClickListener(buttonToNextPageListener);
     }
 
-    private View.OnClickListener buttonToNextPage = new View.OnClickListener() {
-        public void onClick(View v) {
-            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
-        }
-    };
 
+    /**
+     * A method that makes 2 buttons Truth- and DareButton which bboth are connected to the onCLickListner buttonToNextPageListener. And sets a text or between the buttons.
+     */
     private void setTruthOrDareButtons(){
         Button dareButton = new Button(this);
         dareButton.setText("Dare");
@@ -141,7 +175,7 @@ public class ChallengeView1 extends MainView {
         layoutParamsDare.setMargins(600, 1100, 0, 0); // left, top, right, bottom
         dareButton.setLayoutParams(layoutParamsDare);
         relativeLayoutChallengeView1.addView(dareButton);
-        dareButton.setOnClickListener(buttonToNextPage);
+        dareButton.setOnClickListener(buttonToNextPageListener);
 
         Button truthButton = new Button(this);
         truthButton.setText("Truth");
@@ -150,7 +184,7 @@ public class ChallengeView1 extends MainView {
         layoutParamsTruth.setMargins(100, 1100, 0, 0); //left, top, right, bottom
         truthButton.setLayoutParams(layoutParamsTruth);
         relativeLayoutChallengeView1.addView(truthButton);
-        truthButton.setOnClickListener(buttonToNextPage);
+        truthButton.setOnClickListener(buttonToNextPageListener);
 
 
         TextView orText = new TextView(this);
@@ -163,11 +197,15 @@ public class ChallengeView1 extends MainView {
 
     }
 
+    /**
+     * An onClickListener that if clicked changes the view too ChallengeView2. The second view of the same challenge.
+     */
     private View.OnClickListener buttonToNextPageListener = new View.OnClickListener() {
         public void onClick(View v) {
             startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
         }
     };
+
 
     public void challengeInstructionPage(View view) {
         startActivity(new Intent(ChallengeView1.this, ChallengeInstructionActivity.class));
@@ -177,6 +215,10 @@ public class ChallengeView1 extends MainView {
         startActivity(new Intent(ChallengeView1.this, OptionsDuringGameActivity.class));
     }
 
+    /**
+     * A method which depending of the input string calls different methods that sets buttons and texts on the view for the active challenge. Different view for the different categories
+     * @param category is a string of the games activeCategory.
+     */
     private void decorate(String category){
         if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades") ){
             setChallengePoint();

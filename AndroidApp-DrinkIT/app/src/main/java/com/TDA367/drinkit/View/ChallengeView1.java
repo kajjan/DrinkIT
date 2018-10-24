@@ -35,7 +35,7 @@ public class ChallengeView1 extends MainView {
         layoutParams =  new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.gravity = Gravity.CENTER;
-        layoutParams.topMargin = 390;
+        layoutParams.topMargin = 370;
         playersName.setGravity(Gravity.CENTER);
         playersName.setTextColor(Color.BLACK);
         playersName.setLayoutParams(layoutParams);
@@ -50,7 +50,7 @@ public class ChallengeView1 extends MainView {
         layoutParams =  new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.gravity = Gravity.CENTER;
-        layoutParams.topMargin = 560;
+        layoutParams.topMargin = 530;
         activeCategoryText.setGravity(Gravity.CENTER);
         activeCategoryText.setLayoutParams(layoutParams);
         activeCategoryText.setTextSize(22);
@@ -61,10 +61,13 @@ public class ChallengeView1 extends MainView {
 
     protected void setChallengeText(){
         TextView challengeText = new TextView(this);
-        layoutParams = new LinearLayout.LayoutParams(500, 200);
-        layoutParams.setMargins(200, 800, 0, 0); // left, top, right, bottom
+        layoutParams = new LinearLayout.LayoutParams(1000,200);
+        layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
+        layoutParams.topMargin = 820;
+        layoutParams.leftMargin = 20;
         challengeText.setLayoutParams(layoutParams);
         challengeText.setTextSize(20);
+        challengeText.setGravity(Gravity.CENTER_HORIZONTAL);
         relativeLayoutChallengeView1.addView(challengeText);
         challengeText.setText(getCtrl().getActiveChallenge());
     }
@@ -73,33 +76,41 @@ public class ChallengeView1 extends MainView {
     private void setChallengePoint(){
         TextView challengePoints = new TextView(this);
         LinearLayout.LayoutParams layoutPoints = new LinearLayout.LayoutParams(200, 50);
-        layoutPoints.setMargins(450, 1450, 0, 0); // left, top, right, bottom
+        layoutPoints.setMargins(450, 1550, 0, 0); // left, top, right, bottom
         challengePoints.setLayoutParams(layoutPoints);
-        challengePoints.setTextSize(17);
+        challengePoints.setTextSize(18);
         relativeLayoutChallengeView1.addView(challengePoints);
         challengePoints.setText(getCtrl().getActiveChallengePoints() + " Points");       // view.setBackground(context.getResources().getDrawable(drawableId));
     }
 
     public void setNextChallengeButton(){
         Button nextChallengeButton = new Button(this);
+        layoutParams =  new LinearLayout.LayoutParams(1200, 180);
+        layoutParams.topMargin=1300;
+        layoutParams.leftMargin=50;
+        layoutParams.rightMargin=50;
+        nextChallengeButton.setTextSize(20);
         nextChallengeButton.setText("Next Challenge");
-        layoutParams.setMargins(200, 1300, 0, 0); // left, top, right, bottom
         nextChallengeButton.setLayoutParams(layoutParams);
         relativeLayoutChallengeView1.addView(nextChallengeButton);
     }
 
-    public void setNextViewButton(){
-        Button nextViewButton = new Button(this);
-        nextViewButton.setText("Next Page");
-        layoutParams.setMargins(200, 1300, 0, 0); // left, top, right, bottom
-        nextViewButton.setLayoutParams(layoutParams);
-        relativeLayoutChallengeView1.addView(nextViewButton);
+    public void setNextViewPage() {
+        Button nextChallengeButton = new Button(this);
+        layoutParams = new LinearLayout.LayoutParams(1200, 180);
+        layoutParams.topMargin = 1300;
+        layoutParams.leftMargin = 50;
+        layoutParams.rightMargin = 50;
+        nextChallengeButton.setTextSize(20);
+        nextChallengeButton.setText("Next Page");
+        nextChallengeButton.setLayoutParams(layoutParams);
+        nextChallengeButton.setOnClickListener(buttonToNextPage);
+        relativeLayoutChallengeView1.addView(nextChallengeButton);
     }
 
-    private View.OnClickListener mThisButtonListener = new View.OnClickListener() {
+    private View.OnClickListener buttonToNextPage = new View.OnClickListener() {
         public void onClick(View v) {
             startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
-
         }
     };
 
@@ -113,7 +124,6 @@ public class ChallengeView1 extends MainView {
         relativeLayoutChallengeView1.addView(dareButton);
 
 
-
         Button truthButton = new Button(this);
         truthButton.setText("Truth");
         truthButton.setTextSize(25);
@@ -121,9 +131,7 @@ public class ChallengeView1 extends MainView {
         layoutParamsTruth.setMargins(100, 1100, 0, 0); //left, top, right, bottom
         truthButton.setLayoutParams(layoutParamsTruth);
         relativeLayoutChallengeView1.addView(truthButton);
-        truthButton.setOnClickListener(mThisButtonListener);
-
-
+        truthButton.setOnClickListener(buttonToNextPage);
 
 
         TextView orText = new TextView(this);
@@ -148,13 +156,14 @@ public class ChallengeView1 extends MainView {
         if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades") ){
             setChallengePoint();
             setChallengeText();
-            setNextViewButton();
+            setNextViewPage();
 
         }
         else if(category.equals("Truth or Dare")){
             setChallengeText();
             setTruthOrDareButtons();
             setChallengePoint();
+            setNextViewPage();
         }
         else if(category.equals("Most Likely To") || category.equals("Rules")  || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That") ) {
             setChallengeText();

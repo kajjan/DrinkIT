@@ -219,7 +219,7 @@ public class ChallengeView1 extends MainView {
             setNextChallengeButton();
         }
         else{
-            System.out.println("Something is wrong with the code in ChallengeWithAnswerActivity..." + category);
+            System.out.println("Something is wrong with the code in ChallengeView1..." + category);
         }
     }
 

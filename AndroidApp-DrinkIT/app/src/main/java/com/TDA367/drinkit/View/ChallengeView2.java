@@ -74,23 +74,25 @@ public class ChallengeView2 extends MainView{
     }
 
     public void setSucceedFailbutton(){
+        //Succeed - Button
+        Button succeedButton = new Button(this);
+        succeedButton.setText("Succeed");
+        succeedButton.setTextSize(20);
+        succeedButton.setBackgroundColor(0xFF48CB70);
+        LinearLayout.LayoutParams layoutParamsSuccedButton = new LinearLayout.LayoutParams(380, 180);
+        layoutParamsSuccedButton.setMargins(600, 1200, 0, 0); // left, top, right, bottom
+        succeedButton.setLayoutParams(layoutParamsSuccedButton);
+        relativeLayoutChallengeView2.addView(succeedButton);
+
+        //Dare - Button
         Button failButton = new Button(this);
         failButton.setText("Fail");
-        failButton.setTextSize(25);
-        LinearLayout.LayoutParams layoutParamsDare = new LinearLayout.LayoutParams(380, 180);
-        layoutParamsDare.setMargins(600, 1100, 0, 0); // left, top, right, bottom
-        failButton.setLayoutParams(layoutParamsDare);
+        failButton.setTextSize(20);
+        failButton.setBackgroundColor(0xFFFF6666);
+        LinearLayout.LayoutParams layoutParamsFailButton = new LinearLayout.LayoutParams(380, 180);
+        layoutParamsFailButton.setMargins(100, 1200, 0, 0); //left, top, right, bottom
+        failButton.setLayoutParams(layoutParamsFailButton);
         relativeLayoutChallengeView2.addView(failButton);
-        failButton.setOnClickListener(buttonToNextPageListenerFail);
-
-        Button succeedButton = new Button(this);
-        succeedButton.setText("Truth");
-        succeedButton.setTextSize(25);
-        LinearLayout.LayoutParams layoutParamsTruth = new LinearLayout.LayoutParams(380, 180);
-        layoutParamsTruth.setMargins(100, 1100, 0, 0); //left, top, right, bottom
-        succeedButton.setLayoutParams(layoutParamsTruth);
-        relativeLayoutChallengeView2.addView(succeedButton);
-        succeedButton.setOnClickListener(buttonToNextPageListenerSucceed);
     }
 
     private View.OnClickListener buttonToNextPageListenerFail = new View.OnClickListener() {

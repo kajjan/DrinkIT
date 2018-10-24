@@ -83,14 +83,9 @@ public class ChallengeView1 extends MainView {
         layoutParams.setMargins(200, 1300, 0, 0); // left, top, right, bottom
         nextViewButton.setLayoutParams(layoutParams);
         relativeLayoutChallengeView1.addView(nextViewButton);
+        nextViewButton.setOnClickListener(buttonToNextPageListener);
     }
 
-    private View.OnClickListener mThisButtonListener = new View.OnClickListener() {
-        public void onClick(View v) {
-            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
-
-        }
-    };
 
     private void setTruthOrDareButtons(){
         Button dareButton = new Button(this);
@@ -100,6 +95,7 @@ public class ChallengeView1 extends MainView {
         layoutParamsDare.setMargins(600, 1100, 0, 0); // left, top, right, bottom
         dareButton.setLayoutParams(layoutParamsDare);
         relativeLayoutChallengeView1.addView(dareButton);
+        dareButton.setOnClickListener(buttonToNextPageListener);
 
 
 
@@ -110,7 +106,7 @@ public class ChallengeView1 extends MainView {
         layoutParamsTruth.setMargins(100, 1100, 0, 0); //left, top, right, bottom
         truthButton.setLayoutParams(layoutParamsTruth);
         relativeLayoutChallengeView1.addView(truthButton);
-        truthButton.setOnClickListener(mThisButtonListener);
+        truthButton.setOnClickListener(buttonToNextPageListener);
 
 
 
@@ -124,6 +120,13 @@ public class ChallengeView1 extends MainView {
         relativeLayoutChallengeView1.addView(orText);
 
     }
+
+    private View.OnClickListener buttonToNextPageListener = new View.OnClickListener() {
+        public void onClick(View v) {
+            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
+
+        }
+    };
 
     public void challengeInstructionPage(View view) {
         startActivity(new Intent(ChallengeView1.this, ChallengeInstructionActivity.class));

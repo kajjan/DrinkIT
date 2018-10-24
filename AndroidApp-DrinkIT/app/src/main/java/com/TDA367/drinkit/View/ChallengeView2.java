@@ -10,16 +10,16 @@ import android.widget.TextView;
 public class ChallengeView2 extends MainView{
 
 
-    RelativeLayout relativeLayoutChallengeView1;
+    RelativeLayout relativeLayoutChallengeView2;
     LinearLayout.LayoutParams layoutParams;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_with_answer_page_two);
-        relativeLayoutChallengeView1 = findViewById(R.id.relativeLayoutChallengeView1);
+        relativeLayoutChallengeView2 = findViewById(R.id.relativeLayoutChallengeView2);
 
-       // printPlayersName();
+        printPlayersName();
         //printCategory();
         //decorate(getCtrl().getActiveCategory());
     }
@@ -28,7 +28,7 @@ public class ChallengeView2 extends MainView{
         layoutParams = new LinearLayout.LayoutParams(500, 200);
         layoutParams.setMargins(200, 200, 0, 0); // left, top, right, bottom
         playersName.setLayoutParams(layoutParams);
-        relativeLayoutChallengeView1.addView(playersName);
+        relativeLayoutChallengeView2.addView(playersName);
         playersName.setText(getCtrl().getNameOfPlayer());
     }
 
@@ -37,7 +37,7 @@ public class ChallengeView2 extends MainView{
         layoutParams = new LinearLayout.LayoutParams(500, 200);
         layoutParams.setMargins(200, 300, 0, 0); // left, top, right, bottom
         playersName.setLayoutParams(layoutParams);
-        relativeLayoutChallengeView1.addView(playersName);
+        relativeLayoutChallengeView2.addView(playersName);
         playersName.setText(getCtrl().getActiveCategory());
     }
 

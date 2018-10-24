@@ -10,13 +10,12 @@ public class GameRoundTest {
     List<Player> players = new ArrayList<>();
     List<Category> cats = new ArrayList<>();
     List<GameRound> playedRounds = new ArrayList<>();
-    List<String> challengesOne = new ArrayList<>();
-    List<String> challengesTwo = new ArrayList<>();
+    List<Challenge> challengesOne = new ArrayList<>();
+    List<Challenge> challengesTwo = new ArrayList<>();
     Category neverHaveIever;
     Category ToD;
     DrinkIT model;
     String activeChallenge;
-
 
     Player firstPlayer = new Player ("Zlatan");
     Player secondPlayer = new Player ("Captain America");
@@ -28,13 +27,13 @@ public class GameRoundTest {
         players.add(secondPlayer);
         players.add(thirdPlayer);
 
-        challengesOne.add("test1");
-        challengesOne.add("test2");
-        challengesTwo.add("test3");
-        challengesTwo.add("test4");
+        challengesOne.add(new Challenge("Here is a challenge", null, 0));
+        challengesOne.add(new Challenge("Here is a second challeng", null, 0));
+        challengesTwo.add(new Challenge("Here is a third challeng", null, 0));
+        challengesTwo.add(new Challenge("Here is a forth challeng", null, 0));
 
-        neverHaveIever = CategoryFactory.createCategory("NeverHaveIEver", "this is an instruction", challengesOne);
-        ToD = CategoryFactory.createCategory("TruthOrDare", "this is an instruction", challengesTwo);
+        neverHaveIever = new Category("NeverHaveIEver", "this is an instruction", challengesOne);
+        ToD = new Category("TruthOrDare", "this is an instruction", challengesTwo);
 
         cats.add(neverHaveIever);
         cats.add(ToD);
@@ -49,7 +48,6 @@ public class GameRoundTest {
             }
         }return true;
     }
-
 
     @Test
     public void addGameRound(){
@@ -70,14 +68,10 @@ public class GameRoundTest {
         assert(!playerNotInGameRounds(secondPlayer,playedRounds));
         assert(playerNotInGameRounds(thirdPlayer,playedRounds));
         assert(playedRounds.get(1).getChallenge()==cats.get(1).getActiveChallenge());
-
-
     }
 
     @Test
     public void isAlreadyPlayedTest(){
-
-
         model.addGameRound();
         System.out.println(cats.get(0).getActiveChallenge().getChallengeText());
         System.out.println(playedRounds.get(0).getChallenge().getChallengeText());
@@ -85,8 +79,6 @@ public class GameRoundTest {
         System.out.println(model.isAlreadyPlayed(players.get(0), cats.get(0).getActiveChallenge().getChallengeText()));
 
         assert (playedRounds.get(0).getPlayer()== players.get(0));
-
-
     }
 
 }

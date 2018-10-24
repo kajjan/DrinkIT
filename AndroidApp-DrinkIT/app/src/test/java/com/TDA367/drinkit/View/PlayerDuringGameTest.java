@@ -3,17 +3,14 @@ package com.TDA367.drinkit.View;
 import org.junit.Test;
 
 import com.TDA367.drinkit.Model.Category;
-import com.TDA367.drinkit.Model.CategoryFactory;
 import com.TDA367.drinkit.Model.Challenge;
-import com.TDA367.drinkit.Model.ChallengeFactory;
 import com.TDA367.drinkit.Model.DrinkIT;
-import com.TDA367.drinkit.Model.GameRound;
 import com.TDA367.drinkit.Model.Player;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class PlayerDuringGame {
+public class PlayerDuringGameTest {
 
 
     List<Player> playersList = new ArrayList<>();
@@ -21,7 +18,7 @@ public class PlayerDuringGame {
     Player player2 = new Player("Ida");
     Player player3 = new Player("Klas");
 
-    List<String> challenges = new ArrayList<>();
+    List<Challenge> challenges = new ArrayList<>();
     List<Category> cats = new ArrayList<>();
 
     Boolean a= true;
@@ -35,14 +32,18 @@ public class PlayerDuringGame {
         playersList.add(player3);
         boolean nameNotInList=true;
 
-        challenges.add("here is the challenge 1");
-        challenges.add("here is a challenge 2");
+        Challenge challenge = new Challenge("here is the first challenge", "here is the anser", 0);
+        Challenge challenge1 = new Challenge("here is the second challenge", "here is the anser", 0);
 
-        Category truthOrDare = CategoryFactory.createCategory("truthOrDare", "how to play", challenges);
-        Category truthOrDare1 = CategoryFactory.createCategory("truthOrDare", "how to play", challenges);
 
-        //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
-        //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
+        challenges.add(challenge);
+        challenges.add(challenge1);
+
+        Category truthOrDare = new Category("truthOrDare", "how to play", challenges);
+        Category truthOrDare1 = new Category("truthOrDare", "how to play", challenges);
+
+        //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challengeList, a);
+        //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challengeList, a );
 
         cats.add(truthOrDare);
         cats.add(truthOrDare1);

@@ -6,12 +6,14 @@ package com.TDA367.drinkit.Model;
  * @authors Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
 
-public abstract class Challenge {
+public class Challenge {
     private String challengeText;
+    String answerText;
     private int point;
 
-    public Challenge(String challenge, int point) {
+    public Challenge(String challenge, String answer, int point) {
         this.challengeText = challenge;
+        this.answerText = answer;
         this.point = point;
     }
 
@@ -33,6 +35,4 @@ public abstract class Challenge {
     public String getAnswer() {
         return null;
     }
-
-
 }

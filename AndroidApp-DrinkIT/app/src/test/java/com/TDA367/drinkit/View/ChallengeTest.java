@@ -5,12 +5,10 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 import com.TDA367.drinkit.Model.Category;
-import com.TDA367.drinkit.Model.CategoryFactory;
 import com.TDA367.drinkit.Model.DrinkIT;
 import com.TDA367.drinkit.Model.Player;
 import com.TDA367.drinkit.Model.GameRound;
 import com.TDA367.drinkit.Model.Challenge;
-import com.TDA367.drinkit.Model.ChallengeFactory;
 
 
 public class ChallengeTest {
@@ -19,8 +17,9 @@ public class ChallengeTest {
     Player khaleesi = new Player("Denaerys Targaryen");
     Player redViper = new Player("Oberyn Martell");
 
-    Challenge challenge = ChallengeFactory.createChallenge("Truth or Dare", "here lies a challenge 1");
-    Challenge challenge1 = ChallengeFactory.createChallenge("Truth or Dare", "here lies another one 2");
+    Challenge challenge = new Challenge("Truth or dare challenge 1 here", null, 0);
+    Challenge challenge1 = new Challenge("Truth or dare challenge 2 here", null, 0);
+    Challenge challenge2 = new Challenge("Truth or dare challenge 3 here", null, 1);
 
     GameRound gameRound = new GameRound(redViper, challenge);
     GameRound gameRound1 = new GameRound(redViper, challenge1);
@@ -29,7 +28,7 @@ public class ChallengeTest {
 
     List<Category> cats = new ArrayList<>();
     List<GameRound> playedRounds = new ArrayList<>();
-    List<String> challenges = new ArrayList<>();
+    List<Challenge> challengeList = new ArrayList<>();
     boolean a = true;
 
 
@@ -38,14 +37,11 @@ public class ChallengeTest {
         playersList.add(noOne);
         playersList.add(khaleesi);
         playersList.add(redViper);
-        challenges.add("here is the challenge 1");
-        challenges.add("here is a challenge 1");
+        challengeList.add(challenge);
+        challengeList.add(challenge1);
 
-        Category truthOrDare = CategoryFactory.createCategory("truthOrDare", "how to play", challenges);
-        Category truthOrDare1 = CategoryFactory.createCategory("truthOrDare", "how to play", challenges);
-
-        //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
-        //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
+        Category truthOrDare = new Category("Truth or dare", "how to play", challengeList);
+        Category truthOrDare1 = new Category("Truth or dare", "how to play", challengeList);
 
         cats.add(truthOrDare);
         cats.add(truthOrDare1);
@@ -75,14 +71,12 @@ public class ChallengeTest {
         playersList.add(noOne);
         playersList.add(khaleesi);
         playersList.add(redViper);
-        challenges.add("here is the challenge 1");
-        challenges.add("here is a challenge 1");
+        challengeList.add(challenge2);
+        challengeList.add(challenge1);
+        challengeList.add(challenge);
 
-        Category truthOrDare = CategoryFactory.createCategory("TruthOrDare", "how to play", challenges);
-        Category truthOrDare1 = CategoryFactory.createCategory("TruthOrDare", "how to play", challenges);
-
-        //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
-        //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
+        Category truthOrDare = new Category("Truth or dare", "how to play", challengeList);
+        Category truthOrDare1 = new Category("Truth or dare", "how to play", challengeList);
 
         cats.add(truthOrDare);
         cats.add(truthOrDare1);

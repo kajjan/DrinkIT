@@ -14,11 +14,6 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
 public class AddPlayerTest {
     String name = "Viktoria";
     String name2 = "Kajsa";
@@ -57,40 +52,6 @@ public class AddPlayerTest {
         assert (initialLength + 1 == endLength);
     }
 
-    /*
-    @Test //Tests if the list expands to the right size based duration
-    public void createCompleteListOfPlayers() {
-        Player galadriel = new Player("Galadriel");
-        Player arwen = new Player("Arwen");
-        Player aragorn = new Player("Aragorn");
-        Player elrond = new Player("Lord Elrond");
-
-        List<Player> completeListOfPlayers = new ArrayList<>();
-
-        playersList.add(galadriel);
-        playersList.add(arwen);
-        playersList.add(aragorn);
-        playersList.add(elrond);
-
-        int duration = 3;
-        // int duration = 5;
-        // int duration = 10;
-
-        DrinkIT drinkit = new DrinkIT(playersList, 0, null, 0, null, 0, null, null);
-
-
-        drinkit.setNumberOfRounds(duration); //multiplies players size with the chosen duration
-        //drinkit.createCompletedPlayersList(); //
-
-        int endlenght = completeListOfPlayers.size();
-
-        assert (endlenght == 12);
-        //assert(endlenght == 20);
-        //assert(endlenght == 40);
-
-
-    }
-*/
 
     @Test
     public void testPutListInOrder() {
@@ -108,7 +69,6 @@ public class AddPlayerTest {
 
         DrinkIT drinkit = new DrinkIT(playersList, 0, playersInPointOrder,0, null, 0, null);
 
-
             drinkit.putListInPointOrder();
 
             testList.add(noOne);
@@ -119,7 +79,6 @@ public class AddPlayerTest {
             playersInPointOrder.toString();
 
           //  assert(playersInPointOrder.equals(testList)); //TODO FIX HERE
-
 
 
         System.out.println(playersInPointOrder.toString());

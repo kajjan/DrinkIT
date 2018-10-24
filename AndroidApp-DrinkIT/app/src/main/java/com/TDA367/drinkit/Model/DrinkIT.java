@@ -19,7 +19,7 @@ public class DrinkIT {
     private List<Category> categories = new ArrayList<>(); //               6
     private int indexOfActiveCategory = -1;   //                            7
     private List<GameRound> playedRounds = new ArrayList<>(); //            8
-
+    private List<String> categoryNames = new ArrayList<>();
 
     public DrinkIT() {
     }
@@ -36,17 +36,6 @@ public class DrinkIT {
      */
     public int getActiveChallengePoints() {
         return categories.get(indexOfActiveCategory).getActiveChallengePoint();
-    }
-
-    /**
-     * A method with creates and adds a category to the list categories
-     *
-     * @param categoryName String
-     * @param instruction String
-     * @param challenges List String
-     */
-    public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges) {
-        categories.add(CategoryFactory.createCategory(categoryName, instruction, challenges));
     }
 
     public List<String> getCategoryNames() {
@@ -154,6 +143,19 @@ public class DrinkIT {
             indexOfActiveCategory = 0;
         }
         String activeChallenge = categories.get(indexOfActiveCategory).getChallengeToPlay();
+
+            /* isPlayedAgain makes the app crash inconsistently, unsure of why - needs more work before it can be used
+            boolean b = true;
+            while (b) {
+                if (!isAlreadyPlayed(players.get(indexOfActivePlayer), activeChallenge)) {
+                    //return activeChallenge;
+                    b = false;
+                } else {
+                    updateActiveChallenge();
+                    //getActiveChallenge();
+                }
+            }
+            */
 
         return activeChallenge;
     }
@@ -365,6 +367,24 @@ public class DrinkIT {
         indexOfActivePlayer = 0;
         numberOfRounds = 0;
     }
+
+
+    public Challenge createChallenge(String challengeText, String answerText, int point) {
+        return new Challenge(challengeText, answerText, point);
+    }
+
+    public Category createCategory(String name, String description, List<Challenge> challenges) {
+        Category cat = new Category(name, description, challenges);
+        categories.add(cat);
+        return cat;
+    }
+
+
+
+
+
+
+
 
     /**
      * Helpmethods for tests

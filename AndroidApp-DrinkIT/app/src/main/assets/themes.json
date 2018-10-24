@@ -1,0 +1,7 @@
+{"name" : "Themes",
+  "description" : "Here are the instructions for the category Themes",
+  "challenges" :
+  [ {"challenge" : "Marvel Movies", "point" : 3},
+    {"challenge" : "Spells in Harry Potter", "point" : 2}
+  ]
+}

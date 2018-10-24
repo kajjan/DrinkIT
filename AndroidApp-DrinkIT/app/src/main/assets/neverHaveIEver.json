@@ -1,0 +1,7 @@
+{"name" : "Never Have I Ever",
+  "description" : "Here are the instructions for the category Never Have I Ever",
+  "challenges" :
+  [ {"challenge" : "Never have I ever been thrown out of Gasquen", "point" : 3},
+    {"challenge" : "Never have I ever failed an exam", "point" : 2}
+  ]
+}

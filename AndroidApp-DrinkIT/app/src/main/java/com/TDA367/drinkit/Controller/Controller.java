@@ -2,6 +2,8 @@ package com.TDA367.drinkit.Controller;
 
 import java.util.List;
 
+import com.TDA367.drinkit.Model.Category;
+import com.TDA367.drinkit.Model.Challenge;
 import com.TDA367.drinkit.Model.DrinkIT;
 
 /**
@@ -27,6 +29,8 @@ public class Controller {
         playerNames = model.getAllPlayerNames();
         return playerNames;
     }
+
+
 
     public void removePlayerDuringGame(String playerName) {
         model.removePlayerDuringGame(playerName);
@@ -108,6 +112,16 @@ public class Controller {
     }
 
     public boolean buttonActive(int i){ return model.buttonActive(i);
+    }
+
+
+    public Challenge createChallenge(String challengeText, String answerText, int point) {
+        return model.createChallenge(challengeText, answerText, point);
+
+    }
+
+    public Category createCategory(String name, String description, List<Challenge> challenges) {
+        return model.createCategory(name, description, challenges);
     }
 
 }

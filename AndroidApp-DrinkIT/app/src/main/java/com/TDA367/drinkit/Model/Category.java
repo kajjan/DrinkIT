@@ -15,11 +15,9 @@ public class Category {
 
     private String name;
     private String instruction;
-    private List<String> challengesStrings = new ArrayList<>();
     private boolean active = false;
     private List<Challenge> challenges = new ArrayList<>();
     private int indexOfActiveChallenge = 0;
-
 
     public Category() { }
 
@@ -27,22 +25,11 @@ public class Category {
         this.name=name;
     }
 
-    public Category(String name, String instruction, List<String> challengesStrings, boolean active){
+    public Category(String name, String instruction, List<Challenge> challenges){
         this.name = name;
         this.instruction = instruction;
-        this.challengesStrings = challengesStrings;
-        this.active = active;
-        setListOfChallenges(challengesStrings);
-    }
-
-    /**
-     * Looks throgh challengeString list and then adds to challenges list via ChallengeFactory
-     * @param challengeString
-     */
-    private void setListOfChallenges(List<String> challengeString) {
-        for(String s: challengeString){
-            challenges.add(ChallengeFactory.createChallenge(name, s));
-        }
+        this.challenges = challenges;
+        this.active = false;
     }
 
     public void setActive() {
@@ -72,11 +59,6 @@ public class Category {
         return challenges.get(indexOfActiveChallenge).getChallengeText();
     }
 
-    //want to get rid of this one
-    public String getPreviousChallenge() {
-        return challenges.get(indexOfActiveChallenge-1).getChallengeText();
-    }
-
     /**
      * @return's the active challenge's point
      */
@@ -91,7 +73,7 @@ public class Category {
     public void increaseIndexOfActiveChallenge() {
         indexOfActiveChallenge++;
 
-        if(indexOfActiveChallenge==challenges.size()-1){
+        if(indexOfActiveChallenge==challenges.size()){
             Collections.shuffle(challenges);
             indexOfActiveChallenge=0;
         }

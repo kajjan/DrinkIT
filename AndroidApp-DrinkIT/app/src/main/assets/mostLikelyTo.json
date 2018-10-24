@@ -1,0 +1,7 @@
+{"name" : "Most Likely To",
+  "description" : "Here are the instructions for the category Most Likely To",
+  "challenges" :
+  [ {"challenge" : "Who is most likely to win the Hunger Games?", "point" : 3},
+    {"challenge" : "Who is most likely to be on reality TV?", "point" : 2}
+  ]
+}

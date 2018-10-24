@@ -10,12 +10,12 @@ import static org.junit.Assert.*;
 public class ChooseCategoryTest {
 
     List<Category> cats = new ArrayList<>();
-    List<String> challenges = new ArrayList<>();
+    List<Challenge> challenges = new ArrayList<>();
     DrinkIT model;
 
 
-    Category quiz = CategoryFactory.createCategory("Quiz", "this is an instruction", challenges);
-    Category charades = CategoryFactory.createCategory("Charades", "this is an instruction", challenges);
+    Category quiz = new Category("Quiz", "this is an instruction", challenges);
+    Category charades = new Category("Charades", "this is an instruction", challenges);
 
     public ChooseCategoryTest() {
 
@@ -23,37 +23,7 @@ public class ChooseCategoryTest {
         cats.add(charades);
 
         model = new DrinkIT(null, 0, null, 0, cats,-1, null);
-
     }
-/*
-    @Test
-    public void selectCategory() {
-
-        DrinkIT model = new DrinkIT();
-        boolean b = false;
-        List<Category> categories = model.getCategoryNames();
-        int initialLength = categories.size();
-
-        String category = "Charades";
-        String category2 = "Truth or truthordare";
-
-        //categories.add(new Category(category));
-        //categories.add(new Category(category2));
-
-
-        for (String s:model.getCategoryNames()){
-            if (category.equals(s)){
-                b=true;
-            }
-            System.out.println(s);
-        }
-
-        int endLength = categories.size();
-
-        assert (b);
-        assert (initialLength + 2 == endLength);
-
-    }*/
 
     @Test
     public void getNextCategory(){
@@ -83,7 +53,6 @@ public class ChooseCategoryTest {
         assert(!nextCategory.equals("Charades"));
         assert(nextCategory.equals("Quiz"));
    }
-
 
     @Test
     public void chooseCategory() {

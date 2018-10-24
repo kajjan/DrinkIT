@@ -104,7 +104,6 @@ public class FinishPageTest {
 
 
         List<Player>players=drinkIT.getPlayers();
-        playedRounds = drinkIT.getPlayedRounds();
         cats=drinkIT.getCategories();
         int indexOfActivePlayer= drinkIT.getIndexOfActivePlayer();
         int numberOfRounds=drinkIT.getNumberOfRounds();

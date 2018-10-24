@@ -12,16 +12,13 @@ import java.util.List;
  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
 
-//HEJ VICKAN <3<3<3<3<3<<3<3
-
 public class DrinkIT {
     private List<Player> players = new ArrayList<>(); //                    1
     private int numberOfRounds = 0;                     //                  2
     private int indexOfActivePlayer = 0; //                                 5
     private List<Category> categories = new ArrayList<>(); //               6
     private int indexOfActiveCategory = -1;   //                            7
-    private List<GameRound> playedRounds = new ArrayList<>(); //            8
-
+    private int playedRounds=0;
 
     public DrinkIT() {
     }
@@ -107,17 +104,24 @@ public class DrinkIT {
     /**
      * Method which adds a gameRound.
      */
-    public void addGameRound(){
-        playedRounds.add(new GameRound(players.get(indexOfActivePlayer),
-                categories.get(indexOfActiveCategory).getActiveChallenge()));
+    public void addGameRound(boolean challengeCompleted){
+        GameRound gameRound= new GameRound(players.get(indexOfActivePlayer),
+                categories.get(indexOfActiveCategory).getActiveChallenge());
+        gameRound.setSucceded(challengeCompleted);
+        gameRound.addPlayedRound(gameRound);
+
     }
 
 
-    public boolean isAlreadyPlayed(Player player, String challenge) {
+    public boolean isAlreadyPlayed(GameRound gameRound) {
         //if(playedRounds.size() < 3){return false;}
         Boolean b = false;
+        List<GameRound>playedRounds;
+        playedRounds=gameRound.getPlayedRounds();
+
+
         for (GameRound r : playedRounds) {
-            if (r.getChallenge().getChallengeText().equals(challenge) && r.getPlayer().equals(player)) {
+            if (r.getChallenge().getChallengeText().equals(gameRound.getChallenge().getChallengeText()) && r.getPlayer().getName().equals(gameRound.getPlayer().getName())) {
                 b = true;
             }
         }
@@ -179,8 +183,8 @@ public class DrinkIT {
 
         players.get(indexOfActivePlayer).setPoint(point);
 
-        addGameRound();
-        playedRounds.get(playedRounds.size() - 1).setSucceded(true);
+        addGameRound(true);
+        playedRounds++;
         updateActivePlayer();
         updateActiveChallenge();
     }
@@ -189,8 +193,8 @@ public class DrinkIT {
      * Method moves on to next gameRound without giving active player points
      */
     public void failedChallenge() {
-        addGameRound();
-        playedRounds.get(playedRounds.size() - 1).setSucceded(false);
+        addGameRound(false);
+        playedRounds++;
         updateActivePlayer();
         updateActiveChallenge();
     }
@@ -276,9 +280,9 @@ public class DrinkIT {
             sb.append(player.toString() + "\n");
 
         scoreText = sb.toString();
-        System.out.println("GAMEROUND HERE -->" + playedRounds);
+      /*  System.out.println("GAMEROUND HERE -->" + playedRounds);
         System.out.println(playedRounds.size());
-        System.out.println(playedRounds.toString());
+        System.out.println(playedRounds.toString());*/
         return scoreText;
     }
 
@@ -288,7 +292,7 @@ public class DrinkIT {
      * @return
      */
     public boolean nextRound() {
-        if (numberOfRounds > playedRounds.size()) {
+        if (numberOfRounds > playedRounds) {
             return true;
         }
         return false;
@@ -312,7 +316,7 @@ public class DrinkIT {
     public void clearTheGame() {
         players.clear();
         categories.clear();
-        playedRounds.clear();
+        playedRounds=0;
         indexOfActiveCategory = -1;
         indexOfActivePlayer = 0;
         numberOfRounds = 0;
@@ -347,10 +351,6 @@ public class DrinkIT {
 
     public List<Player> getPlayers() {
         return players;
-    }
-
-    public List<GameRound> getPlayedRounds() {
-        return playedRounds;
     }
 
     public List<Category> getCategories() {
@@ -396,6 +396,5 @@ public class DrinkIT {
         this.indexOfActivePlayer = indexOfActivePlayer;
         this.categories = categories;
         this.indexOfActiveCategory = indexOfActiveCategory;
-        this.playedRounds = playedRounds;
     }
 }

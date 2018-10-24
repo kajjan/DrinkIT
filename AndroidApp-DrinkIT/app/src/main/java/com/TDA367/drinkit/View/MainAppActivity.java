@@ -1,5 +1,6 @@
 package com.TDA367.drinkit.View;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import java.util.Scanner;
 
 import com.TDA367.drinkit.Controller.Controller;
 import com.TDA367.drinkit.Model.DrinkIT;
+import com.TDA367.drinkit.Services.CategoryStore;
 
 public class MainAppActivity extends AppCompatActivity {
 

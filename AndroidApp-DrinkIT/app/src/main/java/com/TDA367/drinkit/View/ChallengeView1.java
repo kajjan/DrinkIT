@@ -163,6 +163,24 @@ public class ChallengeView1 extends MainView {
         nextChallengeButton.setOnClickListener(buttonToNextPageListener);
     }
 
+    private void setChooseBetweenText() {
+        TextView chooseBetweenText = new TextView(this);
+        layoutParams = new LinearLayout.LayoutParams(1000,200);
+        layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
+        layoutParams.topMargin = 820;
+        layoutParams.leftMargin = 20;
+        chooseBetweenText.setLayoutParams(layoutParams);
+        chooseBetweenText.setTextSize(30);
+        chooseBetweenText.setText("Choose between...");
+        chooseBetweenText.setGravity(Gravity.CENTER_HORIZONTAL);
+        relativeLayoutChallengeView1.addView(chooseBetweenText);
+    }
+
+    private View.OnClickListener buttonToNextPage = new View.OnClickListener() {
+        public void onClick(View v) {
+            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
+        }
+    };
 
     /**
      * A method that makes 2 buttons Truth- and DareButton which bboth are connected to the onCLickListner buttonToNextPageListener. And sets a text or between the buttons.
@@ -175,7 +193,7 @@ public class ChallengeView1 extends MainView {
         layoutParamsDare.setMargins(600, 1100, 0, 0); // left, top, right, bottom
         dareButton.setLayoutParams(layoutParamsDare);
         relativeLayoutChallengeView1.addView(dareButton);
-        dareButton.setOnClickListener(buttonToNextPageListener);
+        dareButton.setOnClickListener(dareToNextPage);
 
         Button truthButton = new Button(this);
         truthButton.setText("Truth");
@@ -184,7 +202,7 @@ public class ChallengeView1 extends MainView {
         layoutParamsTruth.setMargins(100, 1100, 0, 0); //left, top, right, bottom
         truthButton.setLayoutParams(layoutParamsTruth);
         relativeLayoutChallengeView1.addView(truthButton);
-        truthButton.setOnClickListener(buttonToNextPageListener);
+        truthButton.setOnClickListener(truthToNextPage);
 
 
         TextView orText = new TextView(this);
@@ -202,6 +220,19 @@ public class ChallengeView1 extends MainView {
      */
     private View.OnClickListener buttonToNextPageListener = new View.OnClickListener() {
         public void onClick(View v) {
+            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
+        }
+    };
+
+    private View.OnClickListener truthToNextPage = new View.OnClickListener() {
+        public void onClick(View v) {
+            getCtrl().setTruthChallenge();
+            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
+        }
+    };
+    private View.OnClickListener dareToNextPage = new View.OnClickListener() {
+        public void onClick(View v) {
+            getCtrl().setDareChallenge();
             startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
         }
     };
@@ -226,6 +257,7 @@ public class ChallengeView1 extends MainView {
             setNextViewButton();
         }
         else if(category.equals("Truth or Dare")){
+            setChooseBetweenText();
             setTruthOrDareButtons();
             setChallengePoint();
         }
@@ -234,10 +266,9 @@ public class ChallengeView1 extends MainView {
             setNextChallengeButton();
         }
         else{
-            System.out.println("Something is wrong with the code in ChallengeWithAnswerActivity..." + category);
+            System.out.println("Something is wrong with the code in ChallengeView1..." + category);
         }
     }
-
 
 
 }

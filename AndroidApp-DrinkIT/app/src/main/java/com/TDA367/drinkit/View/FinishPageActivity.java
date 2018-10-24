@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-/** Activity which handles the finishPage
+/**
+ * Activity which handles the finishPage
  *
  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
@@ -23,8 +24,8 @@ public class FinishPageActivity extends MainView {
     /**
      * Prints the scoreBoard
      */
-    public void printScoreBoard(){
-        TextView text=((TextView)findViewById(R.id.printScoreBoard));
+    public void printScoreBoard() {
+        TextView text = ((TextView) findViewById(R.id.printScoreBoard));
         text.setText(getCtrl().getScoreBoard());
     }
 
@@ -34,6 +35,7 @@ public class FinishPageActivity extends MainView {
 
     /**
      * onClick method which ends the game
+     *
      * @param view View
      */
     public void endTheGameButton(View view) { getCtrl().endTheGame(); startActivity(new Intent(FinishPageActivity.this, StartPageActivity.class)); }

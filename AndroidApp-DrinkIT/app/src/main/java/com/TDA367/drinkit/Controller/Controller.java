@@ -20,7 +20,9 @@ public class Controller {
         this.model = model;
     }
 
-    public void initiateGame() { model.initiateGame(); }
+    public void initiateGame() {
+        model.initiateGame();
+    }
 
     public void addPlayer(String player) {
         model.addPlayer(player);
@@ -34,21 +36,23 @@ public class Controller {
         model.addPlayerDuringGame(playerName);
     }
 
-    public void setDuration(int duration){
+    public void setDuration(int duration) {
         model.setNumberOfRounds(duration);
     }
 
-    public String getNameOfPlayer(){
-            return model.getNameOfPlayer();
+    public String getNameOfPlayer() {
+        return model.getNameOfPlayer();
     }
 
-    public String getNextCategory(){
+    public String getNextCategory() {
         return model.getNextCategory();
     }
 
-    public String getCurrentCategory() { return model.getCurrentCategory(); }
+    public String getCurrentCategory() {
+        return model.getCurrentCategory();
+    }
 
-    public String getInstructions(){
+    public String getInstructions() {
         return model.getInstructions();
     }
 
@@ -58,7 +62,7 @@ public class Controller {
         model.failedChallenge();
     }
 
-    public void succeededChallenge(){
+    public void succeededChallenge() {
         model.succeededChallenge();
     }
 
@@ -66,41 +70,44 @@ public class Controller {
         model.chooseCategory(category);
     }
 
-    public String getScoreBoard(){
+    public String getScoreBoard() {
         return model.getScoreBoardText();
     }
 
-    public String getActiveCategory(){
+    public String getActiveCategory() {
         return model.getActiveCategory();
     }
 
-    public boolean nextRound(){
+    public boolean nextRound() {
         return model.nextRound();
     }
 
-    public void endTheGame(){
+    public void endTheGame() {
         model.clearTheGame();
     }
 
-    public void setTruthChallenge(){
+    public void setTruthChallenge() {
         model.setTruthChallenge();
     }
 
-    public void setDareChallenge(){
+    public void setDareChallenge() {
         model.setDareChallenge();
     }
 
-    public String getActiveChallenge() { return model.getActiveChallenge();}
+    public String getActiveChallenge() {
+        return model.getActiveChallenge();
+    }
 
     public String getActiveChallengesAnswer() { return model.getActiveChallengesAnswer(); }
 
-    public int getActiveChallengePoints(){
+    public int getActiveChallengePoints() {
         return model.getActiveChallengePoints();
     }
 
-    public boolean buttonActive(int i){ return model.buttonActive(i); }
+    public boolean buttonActive(int i) {
+        return model.buttonActive(i);
+    }
 
-    public boolean atLeastOneCategoryChosen() { boolean b = model.atLeastOneCategoryChosen(); return b; }
 
     public Challenge createChallenge(String challengeText, String answerText, int point) { return model.createChallenge(challengeText, answerText, point); }
 

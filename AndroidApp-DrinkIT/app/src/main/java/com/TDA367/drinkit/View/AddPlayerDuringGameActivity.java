@@ -2,7 +2,6 @@ package com.TDA367.drinkit.View;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;

@@ -2,12 +2,9 @@ package com.TDA367.drinkit.View;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Activity which handles the task to Remove a player during game on page two of a challenge

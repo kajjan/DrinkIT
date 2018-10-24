@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/** This class represents a Category
- *
+/**
+ * This class represents a Category
+ * <p>
  * The class mostly sets and gets its instances.
- *
- *  * @authors Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ * <p>
+ * * @authors Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
 
 public class Category {
@@ -19,13 +20,14 @@ public class Category {
     private List<Challenge> challenges = new ArrayList<>();
     private int indexOfActiveChallenge = 0;
 
-    public Category() { }
-
-    public Category(String name){
-        this.name=name;
+    public Category() {
     }
 
-    public Category(String name, String instruction, List<Challenge> challenges){
+    public Category(String name) {
+        this.name = name;
+    }
+
+    public Category(String name, String instruction, List<Challenge> challenges) {
         this.name = name;
         this.instruction = instruction;
         this.challenges = challenges;
@@ -66,15 +68,17 @@ public class Category {
      */
     public void increaseIndexOfActiveChallenge() {
         indexOfActiveChallenge++;
-        if(indexOfActiveChallenge==challenges.size()){
+
+        if (indexOfActiveChallenge == challenges.size()) {
             Collections.shuffle(challenges);
-            indexOfActiveChallenge=0;
+            indexOfActiveChallenge = 0;
         }
     }
 
     /**
      * @return's the index of the active challenge
      */
+
     public Challenge getActiveChallenge(){ return challenges.get(indexOfActiveChallenge); }
 
     public void shuffleChallenges() { Collections.shuffle(challenges); }

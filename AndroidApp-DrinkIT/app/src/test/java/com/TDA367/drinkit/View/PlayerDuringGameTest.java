@@ -6,6 +6,7 @@ import com.TDA367.drinkit.Model.Category;
 import com.TDA367.drinkit.Model.Challenge;
 import com.TDA367.drinkit.Model.DrinkIT;
 import com.TDA367.drinkit.Model.Player;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,16 +22,15 @@ public class PlayerDuringGameTest {
     List<Challenge> challenges = new ArrayList<>();
     List<Category> cats = new ArrayList<>();
 
-    Boolean a= true;
-
+    Boolean a = true;
 
 
     @Test
-    public void removePlayerDuringGame(){
+    public void removePlayerDuringGame() {
         playersList.add(player1);
         playersList.add(player2);
         playersList.add(player3);
-        boolean nameNotInList=true;
+        boolean nameNotInList = true;
 
         Challenge challenge = new Challenge("here is the first challenge", "here is the anser", 0);
         Challenge challenge1 = new Challenge("here is the second challenge", "here is the anser", 0);
@@ -42,31 +42,25 @@ public class PlayerDuringGameTest {
         Category truthOrDare = new Category("truthOrDare", "how to play", challenges);
         Category truthOrDare1 = new Category("truthOrDare", "how to play", challenges);
 
-        //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challengeList, a);
-        //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challengeList, a );
-
         cats.add(truthOrDare);
         cats.add(truthOrDare1);
 
-        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 0, null, 0, null);
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, 0, null, 0);
         drinkIT.setNumberOfRounds(3);
-        //drinkIT.createCompletedPlayersList();
         drinkIT.removePlayerDuringGame(player2.getName());
 
-        for(Player p: playersList){
-            if(p.equals(player2)){
-                nameNotInList=false;
+        for (Player p : playersList) {
+            if (p.equals(player2)) {
+                nameNotInList = false;
             }
         }
         assert (nameNotInList);
-        assert(playersList.size()==2);
+        assert (playersList.size() == 2);
     }
 
 
     @Test
-    public void addPlayerDuringGame(){
-
-
+    public void addPlayerDuringGame() {
     }
 
 }

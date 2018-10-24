@@ -18,7 +18,7 @@ public class DrinkIT {
     private int indexOfActivePlayer = 0;
     private List<Category> categories = new ArrayList<>();
     private int indexOfActiveCategory = -1;
-    private int playedRounds=0;
+    private int playedRounds = 0;
 
 
     public DrinkIT() {
@@ -91,11 +91,12 @@ public class DrinkIT {
 
     /**
      * Mathod removes a player from the lists players and completeListOfPlayer
+     *
      * @param playerName String of Player name
      */
     public void removePlayerDuringGame(String playerName) {
-        for(Player player:players){
-            if(player.getName().equals(playerName)){
+        for (Player player : players) {
+            if (player.getName().equals(playerName)) {
                 players.remove(player);
             }
         }
@@ -133,8 +134,8 @@ public class DrinkIT {
     /**
      * Method which adds a gameRound.
      */
-    public void addGameRound(boolean challengeCompleted){
-        GameRound gameRound= new GameRound(players.get(indexOfActivePlayer),
+    public void addGameRound(boolean challengeCompleted) {
+        GameRound gameRound = new GameRound(players.get(indexOfActivePlayer),
                 categories.get(indexOfActiveCategory).getActiveChallenge());
         gameRound.setSucceded(challengeCompleted);
         gameRound.addPlayedRound(gameRound);
@@ -143,9 +144,8 @@ public class DrinkIT {
 
     public boolean isAlreadyPlayed(GameRound gameRound) {
         Boolean b = false;
-        List<GameRound>playedRounds;
-        playedRounds=gameRound.getPlayedRounds();
-
+        List<GameRound> playedRounds;
+        playedRounds = gameRound.getPlayedRounds();
         for (GameRound r : playedRounds) {
             if (r.getChallenge().getChallengeText().equals(gameRound.getChallenge().getChallengeText()) && r.getPlayer().getName().equals(gameRound.getPlayer().getName())) {
                 b = true;
@@ -266,7 +266,6 @@ public class DrinkIT {
                 }
             }
         }
-        // endast för att printa och se att det funkar
         for (int i = 0; i < categories.size(); i++) {
             System.out.println(categories.get(i).getName());
             System.out.println(categories.get(i).isActive());
@@ -304,7 +303,8 @@ public class DrinkIT {
         }
     }
 
-    /** method that returns the whole scoreboard as one string.
+    /**
+     * method that returns the whole scoreboard as one string.
      *
      * @return String scoreText
      */
@@ -356,7 +356,7 @@ public class DrinkIT {
     public void clearTheGame() {
         players.clear();
         categories.clear();
-        playedRounds=0;
+        playedRounds = 0;
         indexOfActiveCategory = -1;
         indexOfActivePlayer = 0;
         numberOfRounds = 0;
@@ -378,7 +378,6 @@ public class DrinkIT {
 
 
     /**
-     *
      * Helpmethods for tests
      *
      * @param players Players
@@ -387,6 +386,7 @@ public class DrinkIT {
 
     /**
      * method for test
+     *
      * @return names
      */
     public List<String> getPlayerNames() {
@@ -406,6 +406,7 @@ public class DrinkIT {
 
     /**
      * setter for test
+     *
      * @param indexOfActivePlayer int
      */
     public void setIndexOfActivePlayer(int indexOfActivePlayer) {
@@ -427,18 +428,9 @@ public class DrinkIT {
 
     /**
      * Constructor for tests
-     *
-     * @param players
-     * @param numberOfRounds
-     * @param playerInPointOrder
-     * @param indexOfActivePlayer
-     * @param categories
-     * @param indexOfActiveCategory
-     * @param playedRounds
      */
-    public DrinkIT(List<Player> players, int numberOfRounds,
-                   List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> categories,
-                   int indexOfActiveCategory, List<GameRound> playedRounds) {
+    public DrinkIT(List<Player> players, int numberOfRounds, int indexOfActivePlayer, List<Category> categories,
+                   int indexOfActiveCategory) {
         this.players = players;
         this.numberOfRounds = numberOfRounds;
         this.indexOfActivePlayer = indexOfActivePlayer;

@@ -66,7 +66,7 @@ public class Category {
     public void increaseIndexOfActiveChallenge() {
         indexOfActiveChallenge++;
 
-        if(indexOfActiveChallenge==challenges.size()-1){
+        if(indexOfActiveChallenge==challenges.size()){
             Collections.shuffle(challenges);
             indexOfActiveChallenge=0;
         }

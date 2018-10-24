@@ -28,21 +28,14 @@ public class FinishPageActivity extends MainView {
         text.setText(getCtrl().getScoreBoard());
     }
 
-    //TODO continue implement this method
     public void continueTheGame(View view) {
-
+        //TODO implement this method
     }
 
     /**
      * onClick method which ends the game
      * @param view View
      */
-    public void endTheGameButton(View view) {
-        getCtrl().endTheGame();
-        startActivity(new Intent(FinishPageActivity.this, StartPageActivity.class));
-
-
-    }
-
+    public void endTheGameButton(View view) { getCtrl().endTheGame(); startActivity(new Intent(FinishPageActivity.this, StartPageActivity.class)); }
 
 }

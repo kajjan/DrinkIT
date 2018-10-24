@@ -45,11 +45,6 @@ public class MainAppActivity extends AppCompatActivity {
     /**
      * Method which creates and the startpage
      */
-    void showStartPage() {
-        Intent intent = new Intent(this, StartPageActivity.class);
-        startActivity(intent);
-    }
-
-
+    void showStartPage() { Intent intent = new Intent(this, StartPageActivity.class); startActivity(intent); }
 
 }

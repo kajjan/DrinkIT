@@ -20,19 +20,15 @@ public class OptionsDuringGameActivity extends MainView {
         setContentView(R.layout.activity_options_during_game);
     }
 
-
     public void exitOptionsPage(View view) {
         String currentPlayer = getCtrl().getNameOfPlayer();
         List<String> playerNames = getCtrl().getAllPlayerNames();
         String category;
-
         if (playerNames.contains(currentPlayer)) {
             category = getCtrl().getCurrentCategory();
-
         } else {
             category = getCtrl().getNextCategory();
         }
-
         startNextActivity(category);
     }
 
@@ -40,9 +36,7 @@ public class OptionsDuringGameActivity extends MainView {
      * Method which starts the new activity addPlayerDuringGameActivity
      * @param view View
      */
-    public void addNewPlayerDuringGame(View view) {
-        startActivity(new Intent(OptionsDuringGameActivity.this, AddPlayerDuringGameActivity.class));
-    }
+    public void addNewPlayerDuringGame(View view) { startActivity(new Intent(OptionsDuringGameActivity.this, AddPlayerDuringGameActivity.class)); }
 
     /**
      * Method starts the new Activity RemovePlayerDuringGamePageOneActivity
@@ -50,17 +44,13 @@ public class OptionsDuringGameActivity extends MainView {
      * Todo make it impossible to remove one player if there is only two players in the game.
      */
 
-    public void removeExistingPlayerDuringGame(View view) {
-        startActivity(new Intent(OptionsDuringGameActivity.this, RemovePlayerDuringGamePageOneActivity.class));
-    }
+    public void removeExistingPlayerDuringGame(View view) { startActivity(new Intent(OptionsDuringGameActivity.this, RemovePlayerDuringGamePageOneActivity.class)); }
 
     /**
      * Method to quit the game, starts new activity QuitDuringGameActivity
      * @param view View
      */
-    public void quitDuringGame(View view) {
-        startActivity(new Intent(OptionsDuringGameActivity.this, QuitDuringGameActivity.class));
-    }
+    public void quitDuringGame(View view) { startActivity(new Intent(OptionsDuringGameActivity.this, QuitDuringGameActivity.class)); }
 
     /**
      * Method to resume the game and exits optionsPage
@@ -74,8 +64,6 @@ public class OptionsDuringGameActivity extends MainView {
      * Starts new activity based on next category
      * @param category String
      */
-    public void startNextActivity(String category){
-        startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeView1.class));
-    }
+    public void startNextActivity(String category){ startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeView1.class)); }
 
 }

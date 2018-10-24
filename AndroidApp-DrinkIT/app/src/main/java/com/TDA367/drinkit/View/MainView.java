@@ -20,8 +20,7 @@ public class MainView extends AppCompatActivity {
         this.ctrl = ctrl;
     }
 
-    public MainView() {
-    }
+    public MainView() { }
 
     public Controller getCtrl() {
         return ctrl;

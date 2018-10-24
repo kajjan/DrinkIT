@@ -154,7 +154,6 @@ public class DrinkIT {
         return b;
     }
 
-
     public String getActiveChallenge() {
         if (indexOfActiveCategory < 0) {
             indexOfActiveCategory = 0;
@@ -231,7 +230,7 @@ public class DrinkIT {
     }
 
     /**
-     * This method makes sure the players TODO ASK ELIN!!!
+     * This method makes sure the players TODO ASK ELIN
      */
     private void updateActivePlayer() {
         indexOfActivePlayer++;
@@ -374,16 +373,17 @@ public class DrinkIT {
         return cat;
     }
 
+
     //--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
     /**
      *
      * Helpmethods for tests
      *
      * @param players Players
      */
-    public DrinkIT(List<Player> players) {
-        this.players = players;
-    }
+    public DrinkIT(List<Player> players) { this.players = players; }
 
     /**
      * method for test
@@ -398,17 +398,11 @@ public class DrinkIT {
         return names;
     }
 
-    public int getIndexOfActivePlayer() {
-        return indexOfActivePlayer;
-    }
+    public int getIndexOfActivePlayer() { return indexOfActivePlayer; }
 
-    public List<Player> getPlayers() {
-        return players;
-    }
+    public List<Player> getPlayers() { return players; }
 
-    public List<Category> getCategories() {
-        return categories;
-    }
+    public List<Category> getCategories() { return categories; }
 
     /**
      * setter for test
@@ -430,7 +424,6 @@ public class DrinkIT {
     public int getIndexOfActiveCategory() {
         return indexOfActiveCategory;
     }
-
 
     /**
      * Constructor for tests

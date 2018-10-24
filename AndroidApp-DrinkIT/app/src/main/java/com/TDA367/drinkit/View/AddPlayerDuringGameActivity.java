@@ -28,13 +28,10 @@ public class AddPlayerDuringGameActivity extends MainView implements TextWatcher
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player_during_game);
-
         playerToAdd = findViewById(R.id.playerToAdd);
         playerToAdd.addTextChangedListener(this);
-
         players = getCtrl().getAllPlayerNames();
     }
-
 
     public void exitOptionAddPlayerPage(View view) {
         finish();
@@ -42,6 +39,7 @@ public class AddPlayerDuringGameActivity extends MainView implements TextWatcher
 
     /**
      * Method which checks if player already exist in list of players
+     *
      * @param name String
      * @return numberOfTimes int
      */
@@ -57,7 +55,8 @@ public class AddPlayerDuringGameActivity extends MainView implements TextWatcher
 
     /**
      * Listener
-     * @param s CharSequence
+     *
+     * @param s     CharSequence
      * @param start int
      * @param count int
      * @param after int
@@ -69,10 +68,11 @@ public class AddPlayerDuringGameActivity extends MainView implements TextWatcher
 
     /**
      * Listener
-     * @param s CharSequence
-     * @param start int
+     *
+     * @param s      CharSequence
+     * @param start  int
      * @param before int
-     * @param count int
+     * @param count  int
      */
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -81,6 +81,7 @@ public class AddPlayerDuringGameActivity extends MainView implements TextWatcher
 
     /**
      * checks if the new player to add already exist and then sets the name
+     *
      * @param s editable
      */
     @Override
@@ -94,18 +95,19 @@ public class AddPlayerDuringGameActivity extends MainView implements TextWatcher
             if (sameName(name) >= 1) {
                 playerToAdd.setError("A new player cannot have the same name as an existing player");
             } else {
-                playerName =name;
+                playerName = name;
             }
         }
     }
 
     /**
      * Calls upon the controller and adds the player to playerslist
+     *
      * @param view View
      */
-    public void addPlayerToGame (View view){
-            getCtrl().addPlayerDuringGame(playerName);
-            startActivity(new Intent(AddPlayerDuringGameActivity.this, OptionsDuringGameActivity.class));
-        }
-
+    public void addPlayerToGame(View view) {
+        getCtrl().addPlayerDuringGame(playerName);
+        startActivity(new Intent(AddPlayerDuringGameActivity.this, OptionsDuringGameActivity.class));
     }
+
+}

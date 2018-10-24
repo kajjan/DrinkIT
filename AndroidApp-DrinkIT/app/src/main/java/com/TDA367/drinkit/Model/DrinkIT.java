@@ -437,12 +437,6 @@ public class DrinkIT {
 
     /**
      * Constructor for tests
-     *
-     * @param players
-     * @param numberOfRounds
-     * @param indexOfActivePlayer
-     * @param categories
-     * @param indexOfActiveCategory
      */
     public DrinkIT(List<Player> players, int numberOfRounds, int indexOfActivePlayer, List<Category> categories,
                    int indexOfActiveCategory) {

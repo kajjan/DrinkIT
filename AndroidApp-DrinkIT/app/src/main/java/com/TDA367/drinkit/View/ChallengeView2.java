@@ -1,7 +1,9 @@
 package com.TDA367.drinkit.View;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -20,25 +22,34 @@ public class ChallengeView2 extends MainView{
         relativeLayoutChallengeView2 = findViewById(R.id.relativeLayoutChallengeView2);
 
         printPlayersName();
-        //printCategory();
+        printCategory();
         //decorate(getCtrl().getActiveCategory());
     }
     private void printPlayersName() {
         TextView playersName = new TextView(this);
-        layoutParams = new LinearLayout.LayoutParams(500, 200);
-        layoutParams.setMargins(200, 200, 0, 0); // left, top, right, bottom
+        layoutParams =  new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.gravity = Gravity.CENTER;
+        layoutParams.topMargin = 390;
+        playersName.setGravity(Gravity.CENTER);
+        playersName.setTextColor(Color.BLACK);
         playersName.setLayoutParams(layoutParams);
+        playersName.setTextSize(50);
         relativeLayoutChallengeView2.addView(playersName);
         playersName.setText(getCtrl().getNameOfPlayer());
     }
 
     private void printCategory() {
-        TextView playersName = new TextView(this);
-        layoutParams = new LinearLayout.LayoutParams(500, 200);
-        layoutParams.setMargins(200, 300, 0, 0); // left, top, right, bottom
-        playersName.setLayoutParams(layoutParams);
-        relativeLayoutChallengeView2.addView(playersName);
-        playersName.setText(getCtrl().getActiveCategory());
+        TextView activeCategoryText = new TextView(this);
+        layoutParams =  new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.gravity = Gravity.CENTER;
+        layoutParams.topMargin = 560;
+        activeCategoryText.setGravity(Gravity.CENTER);
+        activeCategoryText.setLayoutParams(layoutParams);
+        activeCategoryText.setTextSize(22);
+        relativeLayoutChallengeView2.addView(activeCategoryText);
+        activeCategoryText.setText(getCtrl().getActiveCategory());
     }
 
 

@@ -7,6 +7,8 @@ import android.view.View;
 
 /**
  * This activity is the startpage of DrinkIT
+ *
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
 
 public class StartPageActivity extends MainView {

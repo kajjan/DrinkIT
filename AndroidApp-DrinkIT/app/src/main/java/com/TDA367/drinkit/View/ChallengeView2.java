@@ -55,10 +55,13 @@ public class ChallengeView2 extends MainView{
 
     protected void setChallengeText(){
         TextView challengeText = new TextView(this);
-        layoutParams = new LinearLayout.LayoutParams(500, 200);
-        layoutParams.setMargins(200, 800, 0, 0); // left, top, right, bottom
+        layoutParams = new LinearLayout.LayoutParams(1000,200);
+        layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
+        layoutParams.topMargin = 820;
+        layoutParams.leftMargin = 20;
         challengeText.setLayoutParams(layoutParams);
         challengeText.setTextSize(20);
+        challengeText.setGravity(Gravity.CENTER_HORIZONTAL);
         relativeLayoutChallengeView2.addView(challengeText);
         challengeText.setText(getCtrl().getActiveChallengesAnswer());
     }
@@ -66,9 +69,9 @@ public class ChallengeView2 extends MainView{
     private void setChallengePoint(){
         TextView challengePoints = new TextView(this);
         LinearLayout.LayoutParams layoutPoints = new LinearLayout.LayoutParams(200, 50);
-        layoutPoints.setMargins(450, 1450, 0, 0); // left, top, right, bottom
+        layoutPoints.setMargins(450, 1550, 0, 0); // left, top, right, bottom
         challengePoints.setLayoutParams(layoutPoints);
-        challengePoints.setTextSize(17);
+        challengePoints.setTextSize(18);
         relativeLayoutChallengeView2.addView(challengePoints);
         challengePoints.setText(getCtrl().getActiveChallengePoints() + " Points");       // view.setBackground(context.getResources().getDrawable(drawableId));
     }

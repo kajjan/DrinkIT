@@ -6,7 +6,8 @@ import com.TDA367.drinkit.Controller.Controller;
 
 
 /**
- * This Activity is the MainView which contains a controller from the controller class
+ * This Activity is the MainView which contains a controller from the controller class its also the
+ * superclass to all of DrinkIT view classes
  *
  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */

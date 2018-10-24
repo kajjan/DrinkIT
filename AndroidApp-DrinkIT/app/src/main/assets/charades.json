@@ -1,7 +1,7 @@
 {"name" : "Charades",
   "description" : "Here are the instructions for the category Charades",
   "challenges" :
-  [ {"challenge" : "Your charade to perform is Lord of The Rings!", "point" : 3},
-    {"challenge" : "Your charade to perform is Titanic!", "point" : 2}
+  [ {"challenge" : "Your next challenge is to perform a charade", "answer" : "Your charade to perform is  Lord of The Rings!", "point" : 3},
+    {"challenge" : "Your next challenge is to perform a charade", "answer" : "Your charade to perform is Titanic!", "point" : 2}
   ]
 }

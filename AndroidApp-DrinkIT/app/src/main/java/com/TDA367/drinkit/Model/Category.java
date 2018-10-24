@@ -20,6 +20,15 @@ public class Category {
         this.name=name;
     }
 
+    //for JSON
+    public Category(String name, String instruction, List<Challenge> challenges){
+        this.name = name;
+        this.instruction = instruction;
+        this.challenges = challenges;
+        this.active = false;
+    }
+
+    //for RAW
     public Category(String name, String instruction, List<String> challengesStrings, boolean active){
         this.name = name;
         this.instruction = instruction;
@@ -27,6 +36,7 @@ public class Category {
         this.active = active;
         setListOfChallenges(challengesStrings);
     }
+
 
     private void setListOfChallenges(List<String> challengeString) {
         for(String s: challengeString){

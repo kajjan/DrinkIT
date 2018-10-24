@@ -71,5 +71,6 @@ public class MainAppActivity extends AppCompatActivity {
     }
 
     MainView view = new MainView(ctrl);
+    CategoryStore categoryStore = new CategoryStore(ctrl);
 
 }

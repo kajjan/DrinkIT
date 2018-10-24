@@ -9,7 +9,6 @@ import android.widget.RelativeLayout;
 
 public class DurationActivity extends MainView {
 
-    Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,12 +18,10 @@ public class DurationActivity extends MainView {
     public void shortDuration(View view) {
         getCtrl().setDuration(3);
         startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
-
     }
 
     public void mediumDuration(View view) {
         getCtrl().setDuration(5);
-        String nextCategory = getCtrl().getNextCategory();
         startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
     }
 
@@ -33,7 +30,7 @@ public class DurationActivity extends MainView {
         startActivity(new Intent(DurationActivity.this, ChallengeActivity.class));
     }
 
-    }
+}
 
 
 

@@ -1,11 +1,11 @@
 package com.TDA367.drinkit.View;
 
+import android.content.Context;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class ChallengeText extends ChallengeDecorator{
-
 
     public ChallengeText(Decorator d) {
         super(d);

@@ -22,10 +22,10 @@ public class ChallengeView1 extends MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge);
         relativeLayoutChallengeView1 = findViewById(R.id.relativeLayoutChallengeView1);
+        decorate(getCtrl().getNextCategory());
 
         printPlayersName();
         printActiveCategory();
-        decorate(getCtrl().getActiveCategory());
     }
 
 
@@ -149,13 +149,9 @@ public class ChallengeView1 extends MainView {
 
     private View.OnClickListener buttonToNextPageListener = new View.OnClickListener() {
         public void onClick(View v) {
-            getCtrl().failedChallenge();
             startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
-
         }
     };
-
-
 
     public void challengeInstructionPage(View view) {
         startActivity(new Intent(ChallengeView1.this, ChallengeInstructionActivity.class));

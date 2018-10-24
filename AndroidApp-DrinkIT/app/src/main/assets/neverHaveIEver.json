@@ -1,0 +1,7 @@
+{"name" : "Never Have I Ever",
+  "description" : "Here are the instructions for the category Never Have I Ever",
+  "challenges" :
+  [ {"challenge" : "Your charade to perform is Lord of The Rings!", "point" : 3},
+    {"challenge" : "Your charade to perform is Titanic!", "point" : 2}
+  ]
+}

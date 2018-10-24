@@ -96,6 +96,13 @@ public class ChallengeView1 extends MainView {
         relativeLayoutChallengeView1.addView(nextViewButton);
     }
 
+    private View.OnClickListener mThisButtonListener = new View.OnClickListener() {
+        public void onClick(View v) {
+            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
+
+        }
+    };
+
     private void setTruthOrDareButtons(){
         Button dareButton = new Button(this);
         dareButton.setText("Dare");
@@ -104,9 +111,7 @@ public class ChallengeView1 extends MainView {
         layoutParamsDare.setMargins(600, 1100, 0, 0); // left, top, right, bottom
         dareButton.setLayoutParams(layoutParamsDare);
         relativeLayoutChallengeView1.addView(dareButton);
-        /*if(dareButton.performClick()){
-            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
-        }*/
+
 
 
         Button truthButton = new Button(this);
@@ -116,10 +121,11 @@ public class ChallengeView1 extends MainView {
         layoutParamsTruth.setMargins(100, 1100, 0, 0); //left, top, right, bottom
         truthButton.setLayoutParams(layoutParamsTruth);
         relativeLayoutChallengeView1.addView(truthButton);
-       /* if(truthButton.performClick()){
-            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
-        }
-*/
+        truthButton.setOnClickListener(mThisButtonListener);
+
+
+
+
         TextView orText = new TextView(this);
         orText.setText("or");
         orText.setTextSize(24);

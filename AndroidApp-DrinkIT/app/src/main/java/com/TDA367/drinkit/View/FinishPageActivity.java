@@ -28,7 +28,7 @@ public class FinishPageActivity extends MainView {
         text.setText(getCtrl().getScoreBoard());
     }
 
-    //TODO hur vill vi göra här? starta om på ifyllda namn
+    //TODO continue implement this method
     public void continueTheGame(View view) {
 
     }

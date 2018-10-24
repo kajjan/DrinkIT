@@ -19,7 +19,6 @@ public class InstructionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_instructions);
     }
 
-    //TODO Just nu bara tillbaka till startsidan, kanske borde vara tillbaka till föregående sida?
     /**
      * Exits the instructionspage and goes to StartPageActivity
      * @param view View

@@ -20,11 +20,7 @@ public class OptionsDuringGameActivity extends MainView {
         setContentView(R.layout.activity_options_during_game);
     }
 
-    /**
-     * Method which TODO
-     * @param view
-     */
-    //TODO player and category can be the same as earlier, but we haven't yet solved so it's the same challenge
+
     public void exitOptionsPage(View view) {
         String currentPlayer = getCtrl().getNameOfPlayer();
         List<String> playerNames = getCtrl().getAllPlayerNames();
@@ -51,6 +47,7 @@ public class OptionsDuringGameActivity extends MainView {
     /**
      * Method starts the new Activity RemovePlayerDuringGamePageOneActivity
      * @param view View
+     * Todo make it impossible to remove one player if there is only two players in the game.
      */
 
     public void removeExistingPlayerDuringGame(View view) {

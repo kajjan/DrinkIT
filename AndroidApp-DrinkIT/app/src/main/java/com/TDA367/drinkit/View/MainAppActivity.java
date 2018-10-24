@@ -30,19 +30,6 @@ public class MainAppActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
- /*       List<InputStream> inputStream = new ArrayList<>();
-
-        InputStream charades = getResources().openRawResource(getResources().getIdentifier("charades", "raw", getPackageName())); inputStream.add(charades);
-        InputStream neverHaveIEver = getResources().openRawResource(getResources().getIdentifier("neverhaveiever", "raw", getPackageName())); inputStream.add(neverHaveIEver);
-        InputStream mostLikelyto = getResources().openRawResource(getResources().getIdentifier("mostlikelyto", "raw", getPackageName())); inputStream.add(mostLikelyto);
-        InputStream quiz = getResources().openRawResource(getResources().getIdentifier("quiz", "raw", getPackageName())); inputStream.add(quiz);
-        InputStream rules = getResources().openRawResource(getResources().getIdentifier("rules", "raw", getPackageName())); inputStream.add(rules);
-        InputStream songs = getResources().openRawResource(getResources().getIdentifier("songs", "raw", getPackageName())); inputStream.add(songs);
-        InputStream themes = getResources().openRawResource(getResources().getIdentifier("themes", "raw", getPackageName())); inputStream.add(themes);
-        InputStream thisOrThat = getResources().openRawResource(getResources().getIdentifier("thisorthat", "raw", getPackageName())); inputStream.add(thisOrThat);
-        InputStream truthOrDare = getResources().openRawResource(getResources().getIdentifier("truthordare", "raw", getPackageName())); inputStream.add(truthOrDare);
-*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         showStartPage();
@@ -53,10 +40,6 @@ public class MainAppActivity extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
-
-  /*      for (InputStream is : inputStream) {
-            textFileScanner(is);
-        }*/
     }
 
     /**
@@ -68,20 +51,4 @@ public class MainAppActivity extends AppCompatActivity {
     }
 
     MainView view = new MainView(ctrl);
-/*
-    //TODO ska denna vara kvar efter fixet med nya JSON filerna
-    public void textFileScanner(InputStream is){
-        Scanner scan = new Scanner(is);
-        List<String> challengesToClass = new ArrayList<>();
-        String categoryName = scan.nextLine();
-        String instruction = scan.nextLine();
-        System.out.println(instruction);
-        while (scan.hasNextLine()) { //as long as there are challenges to get
-            String challenge = scan.nextLine();
-            challengesToClass.add(challenge);
-        }
-        model.createCategoryListOnCreate(categoryName, instruction, challengesToClass);
-    }
-*/
-
 }

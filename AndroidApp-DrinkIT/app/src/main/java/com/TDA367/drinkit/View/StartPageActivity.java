@@ -21,6 +21,7 @@ public class StartPageActivity extends MainView {
 
     /**
      * onClick(), starts the activity AddPlayerActivity when the start game button is pressed
+     *
      * @param view View
      */
     public void startGame(View view) {
@@ -31,6 +32,7 @@ public class StartPageActivity extends MainView {
     /**
      * onClick(), Starts the activity which shows the instructions, InstructionsActivity, when the
      * instructions button is pressed
+     *
      * @param view View
      */
     public void instructions(View view) {

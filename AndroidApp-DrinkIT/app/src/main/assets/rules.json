@@ -1,0 +1,7 @@
+{"name" : "Rules",
+  "description" : "Here are the instructions for the category Rules",
+  "challenges" :
+  [ {"challenge" : "You must play the rest of the game with you back towards the other players", "point" : 3},
+    {"challenge" : "For the remainder of the game, you may not call any of the other players by their names", "point" : 2}
+  ]
+}

@@ -12,6 +12,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A Class which handles the option to add a player during a game
+ *
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
+
 public class AddPlayerDuringGameActivity extends MainView implements TextWatcher {
 
     String playerName;
@@ -29,11 +35,17 @@ public class AddPlayerDuringGameActivity extends MainView implements TextWatcher
         players = getCtrl().getAllPlayerNames();
     }
 
+
     public void exitOptionAddPlayerPage(View view) {
         finish();
         //startActivity(new Intent(AddPlayerDuringGameActivity.this, OptionsDuringGameActivity.class));
     }
 
+    /**
+     * Method which checks if player already exist in list of players
+     * @param name String
+     * @return numberOfTimes int
+     */
     public int sameName(String name) {
         int numberOfTimes = 0;
         for (String s : players) {
@@ -44,16 +56,34 @@ public class AddPlayerDuringGameActivity extends MainView implements TextWatcher
         return numberOfTimes;
     }
 
+    /**
+     * Listener
+     * @param s CharSequence
+     * @param start int
+     * @param count int
+     * @param after int
+     */
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         Toast.makeText(this, "before changes", Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Listener
+     * @param s CharSequence
+     * @param start int
+     * @param before int
+     * @param count int
+     */
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         Toast.makeText(this, "during chances", Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * checks if the new player to add already exist and then sets the name
+     * @param s editable
+     */
     @Override
     public void afterTextChanged(Editable s) {
         Toast.makeText(this, "after changes", Toast.LENGTH_SHORT).show();
@@ -66,12 +96,15 @@ public class AddPlayerDuringGameActivity extends MainView implements TextWatcher
                 playerToAdd.setError("A new player cannot have the same name as an existing player");
             } else {
                 playerName =name;
-
             }
         }
     }
 
-        public void addPlayerToGame (View view){
+    /**
+     * Calls upon the controller and adds the player to playerslist
+     * @param view View
+     */
+    public void addPlayerToGame (View view){
             getCtrl().addPlayerDuringGame(playerName);
             startActivity(new Intent(AddPlayerDuringGameActivity.this, OptionsDuringGameActivity.class));
         }

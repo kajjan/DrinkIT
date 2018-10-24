@@ -13,6 +13,12 @@ import java.util.Scanner;
 import com.TDA367.drinkit.Controller.Controller;
 import com.TDA367.drinkit.Model.DrinkIT;
 
+/**
+ * This is the mainAppActivity class which starts the whole game
+ *
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
+
 public class MainAppActivity extends AppCompatActivity {
 
     DrinkIT model = new DrinkIT();
@@ -46,11 +52,15 @@ public class MainAppActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Method which creates and the startpage
+     */
     void showStartPage() {
         Intent intent = new Intent(this, StartPageActivity.class);
         startActivity(intent);
     }
 
+    //TODO ska denna vara kvar efter fixet med nya JSON filerna
     public void textFileScanner(InputStream is){
         Scanner scan = new Scanner(is);
         List<String> challengesToClass = new ArrayList<>();

@@ -5,6 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+/**
+ * Activity which handles help Instruction for the game
+ *
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
+
 public class InstructionsActivity extends AppCompatActivity {
 
     @Override
@@ -13,8 +19,12 @@ public class InstructionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_instructions);
     }
 
-    public void exitInstrucktions(View view) {
-        //just nu bara tillbaka till startsidan, kanske borde vara tillbaka till föregående sida?
+    //TODO Just nu bara tillbaka till startsidan, kanske borde vara tillbaka till föregående sida?
+    /**
+     * Exits the instructionspage and goes to StartPageActivity
+     * @param view View
+     */
+    public void exitInstructions(View view) {
             startActivity(new Intent(InstructionsActivity.this, StartPageActivity.class));
     }
 }

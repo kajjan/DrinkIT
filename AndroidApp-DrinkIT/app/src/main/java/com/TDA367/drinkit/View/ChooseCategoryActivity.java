@@ -15,6 +15,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This activity handles the view where the user chooses categories
+ *
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
 
 public class ChooseCategoryActivity extends MainView {
 
@@ -49,6 +54,11 @@ public class ChooseCategoryActivity extends MainView {
         categoryGrid = findViewById(R.id.categoryGrid);
     }
 
+    /**
+     * Sets background color on category buttons based on pressed or not
+     * @param v View
+     * @param i int
+     */
     @SuppressLint("ResourceAsColor")
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void changeButtonsColor(View v, int i) {
@@ -67,6 +77,10 @@ public class ChooseCategoryActivity extends MainView {
         return getCtrl().buttonActive(index);
     }
 
+    /**
+     * Takes the user to the next page which is the DurationActivity
+     * @param view
+     */
     public void nextToDurationPage(View view) {
         startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
 
@@ -76,7 +90,7 @@ public class ChooseCategoryActivity extends MainView {
     public void category1(View view) {
         changeButtonsColor(view, 0);
         getCtrl().chooseCategory(categoryNames.get(0));
-    } //hitta lösning, ev skapa enum i appen? på något sätt inte ge vyn tillåtelse att ändra eller se för mycket
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void category2(View view) {

@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/** This class represents a Category
+ *
+ * The class mostly sets and gets its instances.
+ *
+ *  * @authors Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
+
 public class Category {
 
     private String name;
@@ -28,6 +35,10 @@ public class Category {
         setListOfChallenges(challengesStrings);
     }
 
+    /**
+     * Looks throgh challengeString list and then adds to challenges list via ChallengeFactory
+     * @param challengeString
+     */
     private void setListOfChallenges(List<String> challengeString) {
         for(String s: challengeString){
             challenges.add(ChallengeFactory.createChallenge(name, s));
@@ -54,6 +65,9 @@ public class Category {
         return name;
     }
 
+    /**
+     * @return's gets ChallengeText from indexOfActiveChallenge, from the list challenges,
+     */
     public String getChallengeToPlay() {
         return challenges.get(indexOfActiveChallenge).getChallengeText();
     }
@@ -63,10 +77,17 @@ public class Category {
         return challenges.get(indexOfActiveChallenge-1).getChallengeText();
     }
 
+    /**
+     * @return's the active challenge's point
+     */
     public int getActiveChallengePoint(){
         return challenges.get(indexOfActiveChallenge).getPoint();
     }
 
+    /**
+     * Increases the index of the active challenge, and then shufles the challenges to then set the index of the
+     * active challenge to 0
+     */
     public void increaseIndexOfActiveChallenge() {
         indexOfActiveChallenge++;
 
@@ -76,7 +97,11 @@ public class Category {
         }
     }
 
+    /**
+     * @return's the index of the active challenge
+     */
     public Challenge getActiveChallenge(){
         return challenges.get(indexOfActiveChallenge);
     }
+
 }

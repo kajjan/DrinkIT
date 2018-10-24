@@ -16,7 +16,6 @@ public class QuitDuringGameActivity extends MainView {
 
     public void exitOptionQuitPage(View view) {
         finish();
-        //startActivity(new Intent(QuitDuringGameActivity.this, OptionsDuringGameActivity.class));
     }
 
     public void quitGame(View view) {

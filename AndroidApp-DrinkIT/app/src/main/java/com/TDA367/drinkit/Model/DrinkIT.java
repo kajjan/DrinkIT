@@ -105,7 +105,7 @@ public class DrinkIT {
     /**
      * Method which adds a gameRound.
      */
-    public void addGameRound() {
+    public void addGameRound(){
         playedRounds.add(new GameRound(players.get(indexOfActivePlayer),
                 categories.get(indexOfActiveCategory).getActiveChallenge()));
     }

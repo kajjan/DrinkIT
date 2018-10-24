@@ -15,7 +15,6 @@ import com.TDA367.drinkit.Model.DrinkIT;
 
 public class MainAppActivity extends AppCompatActivity {
 
-
     DrinkIT model = new DrinkIT();
     Controller ctrl = new Controller(model);
 
@@ -58,12 +57,9 @@ public class MainAppActivity extends AppCompatActivity {
         String categoryName = scan.nextLine();
         String instruction = scan.nextLine();
         System.out.println(instruction);
-        //ctrl.setChallengeInstruction(categoryName, instruction);
         while (scan.hasNextLine()) { //as long as there are challenges to get
             String challenge = scan.nextLine();
             challengesToClass.add(challenge);
-            //ctrl.setChallenge(categoryName, challenge);
-            //System.out.println("hello" + challenge);
         }
         model.createCategoryListOnCreate(categoryName, instruction, challengesToClass);
     }

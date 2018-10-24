@@ -5,12 +5,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.GridLayout;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,13 +54,13 @@ public class ChooseCategoryActivity extends MainView {
 
     /**
      * Sets background color on category buttons based on pressed or not
+     *
      * @param v View
      * @param i int
      */
     @SuppressLint("ResourceAsColor")
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void changeButtonsColor(View v, int i) {
-        Toast.makeText(ChooseCategoryActivity.this, "clicked at index" + i, Toast.LENGTH_SHORT).show();
         final Button buttonView = (Button) categoryGrid.getChildAt(i);
         if (buttonActive(i)) {
             buttonView.setBackgroundColor(unActiveBackgroundColor);
@@ -79,6 +77,7 @@ public class ChooseCategoryActivity extends MainView {
 
     /**
      * Takes the user to the next page which is the DurationActivity
+     *
      * @param view
      */
     public void nextToDurationPage(View view) {

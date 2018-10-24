@@ -27,7 +27,9 @@ public class Challenge {
     /**
      * @return int point
      */
-    public int getPoint() { return point; }
+    public int getPoint() {
+        return point;
+    }
 
     /**
      * @returns null since the answer get set later SE HIT NÄR CHALLENGES ÄR FIXAT

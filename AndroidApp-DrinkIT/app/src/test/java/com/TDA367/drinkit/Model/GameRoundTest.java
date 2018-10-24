@@ -15,15 +15,10 @@ public class GameRoundTest {
     Category neverHaveIever;
     Category ToD;
     DrinkIT model;
-    String activeChallenge;
 
-    Player firstPlayer = new Player ("Zlatan");
-    Player secondPlayer = new Player ("Captain America");
-    Player thirdPlayer = new Player ("Severus Snape");
-
-
-
-
+    Player firstPlayer = new Player("Zlatan");
+    Player secondPlayer = new Player("Captain America");
+    Player thirdPlayer = new Player("Severus Snape");
 
 
     public GameRoundTest() {
@@ -42,40 +37,20 @@ public class GameRoundTest {
         cats.add(neverHaveIever);
         cats.add(ToD);
 
-        model = new DrinkIT(players, 0, null, 0,  cats, 0, playedRounds);
+        model = new DrinkIT(players, 0, 0, cats, 0);
     }
 
-    public boolean playerNotInGameRounds(Player p, List<GameRound> r){
-        for(GameRound gr: r){
-            if(gr.getPlayer()==p){
+    public boolean playerNotInGameRounds(Player p, List<GameRound> r) {
+        for (GameRound gr : r) {
+            if (gr.getPlayer() == p) {
                 return false;
             }
-        }return true;
+        }
+        return true;
     }
 
     @Test
-    public void addGameRound(){
-        model.addGameRound(true);
-
-        assert(playedRounds.size()==1);
-        assert(playedRounds.get(0).getPlayer()==firstPlayer);
-        assert(!playerNotInGameRounds(firstPlayer,playedRounds));
-        assert(playerNotInGameRounds(secondPlayer,playedRounds));
-        assert(playedRounds.get(0).getChallenge()==cats.get(0).getActiveChallenge());
-
-        model.setIndexOfActiveCategory(1);
-        model.setIndexOfActivePlayer(1);
-
-        model.addGameRound(true);
-
-        assert(playedRounds.size()==2);
-        assert(!playerNotInGameRounds(secondPlayer,playedRounds));
-        assert(playerNotInGameRounds(thirdPlayer,playedRounds));
-        assert(playedRounds.get(1).getChallenge()==cats.get(1).getActiveChallenge());
-    }
-
-    @Test
-    public void isAlreadyPlayedTest(){
+    public void addGameRound() {
         players.clear();
         players.add(firstPlayer);
         players.add(secondPlayer);
@@ -88,8 +63,8 @@ public class GameRoundTest {
         cats.add(neverHaveIever);
         cats.add(ToD);
 
-        GameRound gameRound1= new GameRound(firstPlayer, neverHaveIever.getActiveChallenge());
-        GameRound gameRound2= new GameRound(secondPlayer, ToD.getActiveChallenge());
+        GameRound gameRound1 = new GameRound(firstPlayer, neverHaveIever.getActiveChallenge());
+        GameRound gameRound2 = new GameRound(secondPlayer, ToD.getActiveChallenge());
 
         challengesOne.add(new Challenge("test1", null, 2));
         challengesTwo.add(new Challenge("test2", null, 5));
@@ -97,7 +72,43 @@ public class GameRoundTest {
         playedRounds.add(gameRound1);
         playedRounds.add(gameRound2);
 
-        DrinkIT drinkIT = new DrinkIT(players, 0, null, 0, cats, 0, playedRounds);
+        DrinkIT drinkIT = new DrinkIT(players, 0, 0, cats, 0);
+
+
+        drinkIT.succeededChallenge(); //Increases the Point of player redViper.
+        drinkIT.succeededChallenge();
+
+
+        assert (playedRounds.size() == 2);
+        assert (!playerNotInGameRounds(secondPlayer, playedRounds));
+        assert (playerNotInGameRounds(thirdPlayer, playedRounds));
+        assert (playedRounds.get(1).getChallenge() == cats.get(1).getActiveChallenge());
+    }
+
+    @Test
+    public void isAlreadyPlayedTest() {
+        players.clear();
+        players.add(firstPlayer);
+        players.add(secondPlayer);
+
+
+        neverHaveIever = new Category("NeverHaveIEver", "this is an instruction", challengesOne);
+        ToD = new Category("TruthOrDare", "this is an instruction", challengesTwo);
+
+        cats.clear();
+        cats.add(neverHaveIever);
+        cats.add(ToD);
+
+        GameRound gameRound1 = new GameRound(firstPlayer, neverHaveIever.getActiveChallenge());
+        GameRound gameRound2 = new GameRound(secondPlayer, ToD.getActiveChallenge());
+
+        challengesOne.add(new Challenge("test1", null, 2));
+        challengesTwo.add(new Challenge("test2", null, 5));
+
+        playedRounds.add(gameRound1);
+        playedRounds.add(gameRound2);
+
+        DrinkIT drinkIT = new DrinkIT(players, 0, 0, cats, 0);
 
 
         drinkIT.succeededChallenge(); //Increases the Point of player redViper.
@@ -112,8 +123,6 @@ public class GameRoundTest {
         System.out.println(gameRound1.getPlayedRounds().get(0).getChallenge().getChallengeText());
 
         assert (model.isAlreadyPlayed(gameRound1));
-
-
     }
 
 }

@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.TDA367.drinkit.Model.Category;
 import com.TDA367.drinkit.Model.DrinkIT;
 import com.TDA367.drinkit.Model.Player;
@@ -33,7 +34,7 @@ public class ChallengeTest {
 
 
     @Test
-    public void failedChallenge(){
+    public void failedChallenge() {
         playersList.add(noOne);
         playersList.add(khaleesi);
         playersList.add(redViper);
@@ -49,7 +50,7 @@ public class ChallengeTest {
         playedRounds.add(gameRound);
         playedRounds.add(gameRound1);
 
-        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 2, cats, 0, playedRounds);
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, 2, cats, 0);
 
         cats.add(truthOrDare);
         cats.add(truthOrDare1);
@@ -61,9 +62,9 @@ public class ChallengeTest {
         int pointsRedViper = redViper.getPoint();
         int khaleesiPoint = khaleesi.getPoint();
 
-        assert(pointsNoOne==0);
-        assert (pointsRedViper==0);
-        assert(khaleesiPoint==0);
+        assert (pointsNoOne == 0);
+        assert (pointsRedViper == 0);
+        assert (khaleesiPoint == 0);
     }
 
     @Test //Test to see if Point setting works.
@@ -85,7 +86,7 @@ public class ChallengeTest {
         playedRounds.add(gameRound1);
         playedRounds.add(gameRound2);
 
-        DrinkIT drinkIT = new DrinkIT(playersList, 0, null, 2, cats, 0, playedRounds);
+        DrinkIT drinkIT = new DrinkIT(playersList, 0, 2, cats, 0);
 
         drinkIT.succeededChallenge(); //Increases the Point of player redViper.
 

@@ -38,6 +38,7 @@ public class OptionsDuringGameActivity extends MainView {
 
     /**
      * Method which starts the new activity addPlayerDuringGameActivity
+     *
      * @param view View
      */
     public void addNewPlayerDuringGame(View view) {
@@ -46,8 +47,9 @@ public class OptionsDuringGameActivity extends MainView {
 
     /**
      * Method starts the new Activity RemovePlayerDuringGamePageOneActivity
+     *
      * @param view View
-     * Todo make it impossible to remove one player if there is only two players in the game.
+     *             Todo make it impossible to remove one player if there is only two players in the game.
      */
 
     public void removeExistingPlayerDuringGame(View view) {
@@ -56,6 +58,7 @@ public class OptionsDuringGameActivity extends MainView {
 
     /**
      * Method to quit the game, starts new activity QuitDuringGameActivity
+     *
      * @param view View
      */
     public void quitDuringGame(View view) {
@@ -64,6 +67,7 @@ public class OptionsDuringGameActivity extends MainView {
 
     /**
      * Method to resume the game and exits optionsPage
+     *
      * @param view
      */
     public void resumeGame(View view) {
@@ -72,9 +76,10 @@ public class OptionsDuringGameActivity extends MainView {
 
     /**
      * Starts new activity based on next category
+     *
      * @param category String
      */
-    public void startNextActivity(String category){
+    public void startNextActivity(String category) {
         startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeView1.class));
     }
 

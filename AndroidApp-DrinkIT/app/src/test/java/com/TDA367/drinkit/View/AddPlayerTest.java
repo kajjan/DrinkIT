@@ -10,23 +10,14 @@ import com.TDA367.drinkit.Model.Player;
 import com.TDA367.drinkit.Controller.Controller;
 
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 public class AddPlayerTest {
     String name = "Viktoria";
     String name2 = "Kajsa";
     boolean b = false;
     boolean c = true;
-    boolean d = true;
     List<Player> playersList = new ArrayList<>();
     int initialLength = playersList.size();
     int countName = 0;
-
-    Player noOne = new Player("Arya Stark");
-    Player khaleesi = new Player("Daenerys Targaryen");
-    Player redViper = new Player("Oberyn Martell");
 
     DrinkIT model = new DrinkIT(playersList);
     Controller ctrl = new Controller(model);
@@ -52,39 +43,6 @@ public class AddPlayerTest {
         assert (initialLength + 1 == endLength);
     }
 
-
-    @Test
-    public void testPutListInOrder() {
-
-        playersList.add(khaleesi);
-        playersList.add(noOne);
-        playersList.add(redViper);
-
-        noOne.setPoint(3);
-        khaleesi.setPoint(2);
-        redViper.setPoint(0);
-
-         List<String> playersInPointOrder = new ArrayList<>();
-         List<Player> testList = new ArrayList<>();
-
-        DrinkIT drinkit = new DrinkIT(playersList, 0, playersInPointOrder,0, null, 0, null);
-
-            drinkit.putListInPointOrder();
-
-            testList.add(noOne);
-            testList.add(khaleesi);
-            testList.add(redViper);
-
-            testList.toString();
-            playersInPointOrder.toString();
-
-          //  assert(playersInPointOrder.equals(testList)); //TODO FIX HERE
-
-
-        System.out.println(playersInPointOrder.toString());
-
-        }
-
-    }
+}
 
 

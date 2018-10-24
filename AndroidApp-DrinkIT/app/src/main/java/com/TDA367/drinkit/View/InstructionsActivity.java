@@ -21,9 +21,10 @@ public class InstructionsActivity extends AppCompatActivity {
 
     /**
      * Exits the instructionspage and goes to StartPageActivity
+     *
      * @param view View
      */
     public void exitInstructions(View view) {
-            startActivity(new Intent(InstructionsActivity.this, StartPageActivity.class));
+        startActivity(new Intent(InstructionsActivity.this, StartPageActivity.class));
     }
 }

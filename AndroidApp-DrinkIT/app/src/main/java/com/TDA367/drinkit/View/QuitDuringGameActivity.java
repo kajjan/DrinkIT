@@ -2,7 +2,6 @@ package com.TDA367.drinkit.View;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.View;
 
 /**
@@ -22,6 +21,7 @@ public class QuitDuringGameActivity extends MainView {
 
     /**
      * Method which exits the OptionQuitPage
+     *
      * @param view View
      */
     public void exitOptionQuitPage(View view) {
@@ -30,6 +30,7 @@ public class QuitDuringGameActivity extends MainView {
 
     /**
      * Method which starts the new activity FinishPageActivty
+     *
      * @param view View
      */
     public void quitGame(View view) {

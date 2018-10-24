@@ -1,6 +1,5 @@
 package com.TDA367.drinkit.View;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -25,20 +24,21 @@ public class ChallengeInstructionActivity extends MainView {
      * Method which prints the category of the challenge
      */
     private void printCategory() {
-        TextView text=((TextView)findViewById(R.id.textChallengeCategory));
+        TextView text = ((TextView) findViewById(R.id.textChallengeCategory));
         text.setText(getCtrl().getActiveCategory());
     }
 
     /**
      * Method which prints the challenge instruction
      */
-    public void printChallengeInstruction(){
-        TextView text=((TextView)findViewById(R.id.challengeInstructionsText));
+    public void printChallengeInstruction() {
+        TextView text = ((TextView) findViewById(R.id.challengeInstructionsText));
         text.setText(getCtrl().getInstructions());
     }
 
     /**
      * exits the challenge onClick()
+     *
      * @param view View
      */
     public void exitChallengeInstruction(View view) {

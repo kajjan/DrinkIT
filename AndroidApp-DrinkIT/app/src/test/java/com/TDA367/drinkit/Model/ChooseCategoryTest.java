@@ -5,7 +5,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
 
 public class ChooseCategoryTest {
 
@@ -22,37 +21,37 @@ public class ChooseCategoryTest {
         cats.add(quiz);
         cats.add(charades);
 
-        model = new DrinkIT(null, 0, null, 0, cats,-1, null);
+        model = new DrinkIT(null, 0, 0, cats, -1);
     }
 
     @Test
-    public void getNextCategory(){
+    public void getNextCategory() {
 
-        for(Category c: cats){
-            if(c.getName().equals("Charades")){
+        for (Category c : cats) {
+            if (c.getName().equals("Charades")) {
                 c.setActive();
             }
-            if(c.getName().equals("Quiz")){
+            if (c.getName().equals("Quiz")) {
                 c.setInActive();
             }
         }
 
         String nextCategory = model.getNextCategory();
-        assert(nextCategory.equals("Charades"));
+        assert (nextCategory.equals("Charades"));
 
-        for(Category c: cats){
-            if(c.getName().equals("Charades")){
-               c.setInActive();
+        for (Category c : cats) {
+            if (c.getName().equals("Charades")) {
+                c.setInActive();
             }
-            if(c.getName().equals("Quiz")){
+            if (c.getName().equals("Quiz")) {
                 c.setActive();
             }
         }
 
         nextCategory = model.getNextCategory();
-        assert(!nextCategory.equals("Charades"));
-        assert(nextCategory.equals("Quiz"));
-   }
+        assert (!nextCategory.equals("Charades"));
+        assert (nextCategory.equals("Quiz"));
+    }
 
     @Test
     public void chooseCategory() {
@@ -65,26 +64,6 @@ public class ChooseCategoryTest {
 
         assert (quiz.isActive());
         assert (!charades.isActive());
-
     }
 
-    /*
-    @Test
-    public void atLeastOneCategoryChosen(){
-
-        cats.get(0).setActive();
-
-        assert(model.atLeastOneCategoryChosen());
-
-        for(Category c: cats){
-            if(c.getName().equals("Charades")){
-                c.setInActive();
-            }
-            if(c.getName().equals("Quiz")){
-                c.setInActive();
-            }
-        }
-        assert(!model.atLeastOneCategoryChosen());
-    }
-*/
 }

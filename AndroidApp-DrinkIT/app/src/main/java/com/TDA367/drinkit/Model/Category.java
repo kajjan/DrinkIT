@@ -28,21 +28,7 @@ public class Category {
         this.active = false;
     }
 
-    //for RAW
-    public Category(String name, String instruction, List<String> challengesStrings, boolean active){
-        this.name = name;
-        this.instruction = instruction;
-        this.challengesStrings = challengesStrings;
-        this.active = active;
-        setListOfChallenges(challengesStrings);
-    }
 
-
-    private void setListOfChallenges(List<String> challengeString) {
-        for(String s: challengeString){
-            challenges.add(ChallengeFactory.createChallenge(name, s));
-        }
-    }
 
     public void setActive() {
         this.active = true;

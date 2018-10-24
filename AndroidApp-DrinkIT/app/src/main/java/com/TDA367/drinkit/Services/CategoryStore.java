@@ -60,8 +60,6 @@ public class CategoryStore {
         System.out.println(name);
     }
 
-
-
     List<Challenge> createChallengeList(JSONArray challengeArray) throws Exception {
         List<Challenge> challengeList = new ArrayList<>();
 

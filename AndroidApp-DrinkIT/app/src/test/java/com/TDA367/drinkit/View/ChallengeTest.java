@@ -5,12 +5,10 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 import com.TDA367.drinkit.Model.Category;
-import com.TDA367.drinkit.Model.CategoryFactory;
 import com.TDA367.drinkit.Model.DrinkIT;
 import com.TDA367.drinkit.Model.Player;
 import com.TDA367.drinkit.Model.GameRound;
 import com.TDA367.drinkit.Model.Challenge;
-import com.TDA367.drinkit.Model.ChallengeFactory;
 
 
 public class ChallengeTest {

@@ -20,6 +20,8 @@ public class Controller {
         this.model = model;
     }
 
+    public void initiateGame() { model.initiateGame(); }
+
     public void addPlayer(String player) {
         model.addPlayer(player);
     }
@@ -29,7 +31,6 @@ public class Controller {
         playerNames = model.getAllPlayerNames();
         return playerNames;
     }
-
 
 
     public void removePlayerDuringGame(String playerName) {
@@ -57,7 +58,6 @@ public class Controller {
     public String getInstructions(){
         return model.getInstructions();
     }
-
 
     public List<String> getCategoryNames() {
         List<String> categoryNames;

@@ -1,7 +1,9 @@
 {"name" : "thisOrThat",
   "description" : "Here are the instructions for the category This or That",
   "challenges" :
-  [ {"challenge" : "Would you rather never be able to close your mouth or open your eyes?", "point" : 3},
-    {"challenge" : "Would you rather never drink again or forever be slightly hungover?", "point" : 2}
+  [ {"challenge" : "Would you rather never be able to close your mouth or open your eyes?", "point" : 0},
+    {"challenge" : "Would you rather never drink again or forever be slightly hungover?", "point" : 0},
+    {"challenge" : "Would you rather code in Java or C?", "point" : 0},
+    {"challenge" : "Would you rather be super rich or super smart?", "point" : 0}
   ]
 }

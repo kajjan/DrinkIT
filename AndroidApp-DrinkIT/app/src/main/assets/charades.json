@@ -1,7 +1,11 @@
 {"name" : "Charades",
   "description" : "Here are the instructions for the category Charades",
   "challenges" :
-  [ {"challenge" : "Your next challenge is to perform a charade", "answer" : "Your charade to perform is  Lord of The Rings!", "point" : 3},
-    {"challenge" : "Your next challenge is to perform a charade", "answer" : "Your charade to perform is Titanic!", "point" : 2}
+  [ {"challenge" : "Your next challenge is to perform a charade", "answer" : "Your charade to perform is  Lord of The Rings!", "point" : 4},
+    {"challenge" : "Your next challenge is to perform a charade", "answer" : "Your charade to perform is Titanic!", "point" : 3},
+    {"challenge" : "Your next challenge is to perform a charade", "answer" : "Your charade to perform is a cow!", "point" : 3},
+    {"challenge" : "Your next challenge is to perform a charade", "answer" : "Your charade to perform is a boxing match!", "point" : 4},
+    {"challenge" : "Your next challenge is to perform a charade", "answer" : "Your charade to perform is someone drinking wine!", "point" : 3},
+    {"challenge" : "Your next challenge is to perform a charade", "answer" : "Your charade to perform is Miley Cyrus' Wrecking Ball!", "point" : 3}
   ]
 }

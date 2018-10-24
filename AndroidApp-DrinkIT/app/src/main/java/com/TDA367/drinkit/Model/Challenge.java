@@ -8,7 +8,7 @@ package com.TDA367.drinkit.Model;
 
 public class Challenge {
     private String challengeText;
-    String answerText;
+    private String answerText;
     private int point;
 
     public Challenge(String challenge, String answer, int point) {
@@ -33,6 +33,6 @@ public class Challenge {
      * @returns null since the answer get set later SE HIT NÄR CHALLENGES ÄR FIXAT
      */
     public String getAnswer() {
-        return null;
+        return answerText;
     }
 }

@@ -19,9 +19,19 @@ public class DrinkIT {
     private List<Category> categories = new ArrayList<>(); //               6
     private int indexOfActiveCategory = -1;   //                            7
     private List<GameRound> playedRounds = new ArrayList<>(); //            8
-    private List<String> categoryNames = new ArrayList<>();
 
     public DrinkIT() {
+    }
+
+    /**
+     * Prepares the game for a new game which will statistically be different from previously played games, making it more interesting
+     */
+    public void initiateGame() {
+        Collections.shuffle(players);
+        Collections.shuffle(categories);
+        for (Category c : categories) {
+            c.shuffleChallenges();
+        }
     }
 
     /**

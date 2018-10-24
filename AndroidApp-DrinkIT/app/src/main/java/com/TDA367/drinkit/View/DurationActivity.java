@@ -24,6 +24,7 @@ public class DurationActivity extends MainView {
      */
     public void shortDuration(View view) {
         getCtrl().setDuration(3);
+        getCtrl().initiateGame();
         String nextCategory = getCtrl().getNextCategory();
         startNextActivity(nextCategory);
     }
@@ -34,6 +35,7 @@ public class DurationActivity extends MainView {
      */
     public void mediumDuration(View view) {
         getCtrl().setDuration(5);
+        getCtrl().initiateGame();
         String nextCategory = getCtrl().getNextCategory();
         startNextActivity(nextCategory);
     }
@@ -44,6 +46,7 @@ public class DurationActivity extends MainView {
      */
     public void longDuration(View view) {
         getCtrl().setDuration(10);
+        getCtrl().initiateGame();
         String nextCategory = getCtrl().getNextCategory();
         startNextActivity(nextCategory);
     }

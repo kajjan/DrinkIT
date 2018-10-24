@@ -68,6 +68,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
 
     /**
      * //Method that saves all of the players and send it to the controller
+     *
      * @param view View
      */
     public void namesSubmitClick(View view) {
@@ -116,6 +117,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
 
     /**
      * Method that checks if player already exists in list players
+     *
      * @param i int
      * @return boolean true or false
      */
@@ -135,6 +137,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
 
     /**
      * Method which checks if player already exist in list of players
+     *
      * @param name String
      * @return numberOfTimes int
      */
@@ -149,41 +152,43 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
     }
 
 
-    /** listener
-     * @param s CharSequence
+    /**
+     * listener
+     *
+     * @param s     CharSequence
      * @param start int
      * @param count int
      * @param after int
      */
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-        //Toast.makeText(this, "before changes", Toast.LENGTH_SHORT).show();
     }
 
-    /** listener
-     * @param s CharSequence
-     * @param start int
-     * @param count int
+    /**
+     * listener
+     *
+     * @param s      CharSequence
+     * @param start  int
+     * @param count  int
      * @param before int
      */
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-      //  Toast.makeText(this, "during chances", Toast.LENGTH_SHORT).show();
     }
 
     /**
      * TODO
+     *
      * @param s Editable
      */
     @Override
     public void afterTextChanged(Editable s) {
-       // Toast.makeText(this, "after changes", Toast.LENGTH_SHORT).show();
         String name = s.toString().trim();
 
         if (playerOne.getText().hashCode() == s.hashCode()) {
             name = playerOne.getText().toString().trim();
 
-           if (sameName(name) > 1) {
+            if (sameName(name) > 1) {
                 playerOne.setError("Can't type in same name twice");
             } else {
                 players.add(name);

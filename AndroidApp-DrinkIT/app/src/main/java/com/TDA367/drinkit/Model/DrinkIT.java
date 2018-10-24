@@ -20,6 +20,7 @@ public class DrinkIT {
     private int indexOfActiveCategory = -1;
     private int playedRounds=0;
 
+
     public DrinkIT() {
     }
 
@@ -132,7 +133,6 @@ public class DrinkIT {
     }
 
     public boolean isAlreadyPlayed(GameRound gameRound) {
-        //if(playedRounds.size() < 3){return false;}
         Boolean b = false;
         List<GameRound>playedRounds;
         playedRounds=gameRound.getPlayedRounds();
@@ -151,20 +151,6 @@ public class DrinkIT {
             indexOfActiveCategory = 0;
         }
         String activeChallenge = categories.get(indexOfActiveCategory).getChallengeToPlay();
-
-            /* isPlayedAgain makes the app crash inconsistently, unsure of why - needs more work before it can be used
-            boolean b = true;
-            while (b) {
-                if (!isAlreadyPlayed(players.get(indexOfActivePlayer), activeChallenge)) {
-                    //return activeChallenge;
-                    b = false;
-                } else {
-                    updateActiveChallenge();
-                    //getActiveChallenge();
-                }
-            }
-            */
-
         return activeChallenge;
     }
 
@@ -323,9 +309,6 @@ public class DrinkIT {
             sb.append(player.toString() + "\n");
 
         scoreText = sb.toString();
-      /*  System.out.println("GAMEROUND HERE -->" + playedRounds);
-        System.out.println(playedRounds.size());
-        System.out.println(playedRounds.toString());*/
         return scoreText;
     }
 
@@ -382,7 +365,9 @@ public class DrinkIT {
         return cat;
     }
 
+    //--------------------------------------------------------------------------------------------------------------------------------------------------
     /**
+     *
      * Helpmethods for tests
      *
      * @param players Players

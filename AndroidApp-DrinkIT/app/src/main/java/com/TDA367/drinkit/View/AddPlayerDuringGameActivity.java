@@ -38,7 +38,6 @@ public class AddPlayerDuringGameActivity extends MainView implements TextWatcher
 
     public void exitOptionAddPlayerPage(View view) {
         finish();
-        //startActivity(new Intent(AddPlayerDuringGameActivity.this, OptionsDuringGameActivity.class));
     }
 
     /**

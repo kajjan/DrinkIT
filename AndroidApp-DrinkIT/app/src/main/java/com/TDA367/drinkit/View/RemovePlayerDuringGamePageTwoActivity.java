@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  Activity which handles the task to Remove a player during game on page two of a challenge
+ * Activity which handles the task to Remove a player during game on page two of a challenge
  *
  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
@@ -25,12 +25,13 @@ public class RemovePlayerDuringGamePageTwoActivity extends MainView {
         setContentView(R.layout.activity_remove_player_during_game_page_two);
         playerName = (String) getIntent().getStringExtra("PLAYER_NAME");
 
-        TextView questionForRemove = (TextView)findViewById(R.id.removePlayerText);
+        TextView questionForRemove = (TextView) findViewById(R.id.removePlayerText);
         questionForRemove.setText("Are you sure you want to remove player " + playerName + " from the game?");
     }
 
     /**
      * Exits the optionRemovePlayerPage
+     *
      * @param view View
      */
     public void exitOptionRemovePlayerPage(View view) {
@@ -39,6 +40,7 @@ public class RemovePlayerDuringGamePageTwoActivity extends MainView {
 
     /**
      * removes the chosen player and goes to the activity OptionsDuringGameActivity
+     *
      * @param view
      */
     public void removePlayer(View view) {
@@ -46,7 +48,6 @@ public class RemovePlayerDuringGamePageTwoActivity extends MainView {
         startActivity(new Intent(RemovePlayerDuringGamePageTwoActivity.this, OptionsDuringGameActivity.class));
 
     }
-
 
 
 }

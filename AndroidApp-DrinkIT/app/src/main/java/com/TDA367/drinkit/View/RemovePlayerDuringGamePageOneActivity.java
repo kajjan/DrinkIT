@@ -18,7 +18,7 @@ import java.util.List;
 public class RemovePlayerDuringGamePageOneActivity extends MainView {
 
     List<String> playerNames = new ArrayList<>(10);
-    List <Button> buttons = new ArrayList<>();
+    List<Button> buttons = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +49,8 @@ public class RemovePlayerDuringGamePageOneActivity extends MainView {
         buttons.add(btn9);
         buttons.add(btn10);
 
-        for (int i=0; i<buttons.size(); i++) {
-            if (i<playerNames.size()) {
+        for (int i = 0; i < buttons.size(); i++) {
+            if (i < playerNames.size()) {
                 buttons.get(i).setText(playerNames.get(i));
             } else {
                 buttons.get(i).setVisibility(View.INVISIBLE);
@@ -62,16 +62,17 @@ public class RemovePlayerDuringGamePageOneActivity extends MainView {
 
     /**
      * Method exit the OptionRemovePlayerPage
+     *
      * @param view View
      */
     public void exitOptionRemovePlayerPage(View view) {
         finish();
-        //startActivity(new Intent(RemovePlayerDuringGamePageOneActivity.this, OptionsDuringGameActivity.class));
     }
 
 
     /**
      * These methods removes the chosen player
+     *
      * @param view View
      */
     public void playerOneSelected(View view) {

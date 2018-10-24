@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,17 +21,15 @@ public class ChallengeView2 extends MainView{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_with_answer_page_two);
         relativeLayoutChallengeView2 = findViewById(R.id.relativeLayoutChallengeView2);
-
         printPlayersName();
         printCategory();
         setChallengePoint();
         setChallengeText();
-        //decorate(getCtrl().getActiveCategory());
+        setSucceedFailbutton();
     }
     private void printPlayersName() {
         TextView playersName = new TextView(this);
-        layoutParams =  new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams =  new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.gravity = Gravity.CENTER;
         layoutParams.topMargin = 390;
         playersName.setGravity(Gravity.CENTER);
@@ -43,8 +42,7 @@ public class ChallengeView2 extends MainView{
 
     private void printCategory() {
         TextView activeCategoryText = new TextView(this);
-        layoutParams =  new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams =  new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.gravity = Gravity.CENTER;
         layoutParams.topMargin = 560;
         activeCategoryText.setGravity(Gravity.CENTER);
@@ -54,13 +52,6 @@ public class ChallengeView2 extends MainView{
         activeCategoryText.setText(getCtrl().getActiveCategory());
     }
 
-    public void challengeInstructionPage(View view) {
-        startActivity(new Intent(ChallengeView2.this, ChallengeInstructionActivity.class));
-    }
-
-    public void optionsDuringGamePage(View view) {
-        startActivity(new Intent(ChallengeView2.this, OptionsDuringGameActivity.class));
-    }
 
     protected void setChallengeText(){
         TextView challengeText = new TextView(this);
@@ -69,9 +60,8 @@ public class ChallengeView2 extends MainView{
         challengeText.setLayoutParams(layoutParams);
         challengeText.setTextSize(20);
         relativeLayoutChallengeView2.addView(challengeText);
-        challengeText.setText(getCtrl().getActiveChallenge());
+        challengeText.setText(getCtrl().getActiveChallengesAnswer());
     }
-
 
     private void setChallengePoint(){
         TextView challengePoints = new TextView(this);
@@ -81,6 +71,62 @@ public class ChallengeView2 extends MainView{
         challengePoints.setTextSize(17);
         relativeLayoutChallengeView2.addView(challengePoints);
         challengePoints.setText(getCtrl().getActiveChallengePoints() + " Points");       // view.setBackground(context.getResources().getDrawable(drawableId));
+    }
+
+    public void setSucceedFailbutton(){
+        Button failButton = new Button(this);
+        failButton.setText("Fail");
+        failButton.setTextSize(25);
+        LinearLayout.LayoutParams layoutParamsDare = new LinearLayout.LayoutParams(380, 180);
+        layoutParamsDare.setMargins(600, 1100, 0, 0); // left, top, right, bottom
+        failButton.setLayoutParams(layoutParamsDare);
+        relativeLayoutChallengeView2.addView(failButton);
+        failButton.setOnClickListener(buttonToNextPageListenerFail);
+
+        Button succeedButton = new Button(this);
+        succeedButton.setText("Truth");
+        succeedButton.setTextSize(25);
+        LinearLayout.LayoutParams layoutParamsTruth = new LinearLayout.LayoutParams(380, 180);
+        layoutParamsTruth.setMargins(100, 1100, 0, 0); //left, top, right, bottom
+        succeedButton.setLayoutParams(layoutParamsTruth);
+        relativeLayoutChallengeView2.addView(succeedButton);
+        succeedButton.setOnClickListener(buttonToNextPageListenerSucceed);
+    }
+
+    private View.OnClickListener buttonToNextPageListenerFail = new View.OnClickListener() {
+        public void onClick(View v) {
+            getCtrl().failedChallenge();
+            if(nextRound()) {
+                startActivity(new Intent(ChallengeView2.this, ChallengeView1.class));
+            }
+            else{
+                startActivity(new Intent(ChallengeView2.this, FinishPageActivity.class));
+            }
+        }
+    };
+
+    private View.OnClickListener buttonToNextPageListenerSucceed = new View.OnClickListener() {
+        public void onClick(View v) {
+            getCtrl().succeededChallenge();
+            if(nextRound()) {
+                startActivity(new Intent(ChallengeView2.this, ChallengeView1.class));
+            }
+            else{
+                startActivity(new Intent(ChallengeView2.this, FinishPageActivity.class));
+
+            }
+        }
+    };
+
+    public void challengeInstructionPage(View view) {
+        startActivity(new Intent(ChallengeView2.this, ChallengeInstructionActivity.class));
+    }
+
+    public void optionsDuringGamePage(View view) {
+        startActivity(new Intent(ChallengeView2.this, OptionsDuringGameActivity.class));
+    }
+    public boolean nextRound(){
+        return getCtrl().nextRound();
     }
 
 }

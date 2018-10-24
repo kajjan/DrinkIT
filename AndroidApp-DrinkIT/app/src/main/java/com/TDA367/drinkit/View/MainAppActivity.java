@@ -25,8 +25,8 @@ public class MainAppActivity extends AppCompatActivity {
 
     DrinkIT model = new DrinkIT();
     Controller ctrl = new Controller(model);
-
     CategoryStore categoryStore = new CategoryStore(ctrl);
+    MainView view = new MainView(ctrl);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class MainAppActivity extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
-    }
+   }
 
     /**
      * Method which creates and the startpage
@@ -50,5 +50,6 @@ public class MainAppActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    MainView view = new MainView(ctrl);
+
+
 }

@@ -86,4 +86,8 @@ public class Category {
         return challenges.get(indexOfActiveChallenge);
     }
 
+    public void shuffleChallenges() {
+        Collections.shuffle(challenges);
+    }
+
 }

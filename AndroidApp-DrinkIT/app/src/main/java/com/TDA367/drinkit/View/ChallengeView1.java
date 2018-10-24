@@ -141,7 +141,7 @@ public class ChallengeView1 extends MainView {
         layoutParamsDare.setMargins(600, 1100, 0, 0); // left, top, right, bottom
         dareButton.setLayoutParams(layoutParamsDare);
         relativeLayoutChallengeView1.addView(dareButton);
-        dareButton.setOnClickListener(nextChallengeButtonListener);
+        dareButton.setOnClickListener(buttonToNextPage);
 
         Button truthButton = new Button(this);
         truthButton.setText("Truth");
@@ -150,7 +150,7 @@ public class ChallengeView1 extends MainView {
         layoutParamsTruth.setMargins(100, 1100, 0, 0); //left, top, right, bottom
         truthButton.setLayoutParams(layoutParamsTruth);
         relativeLayoutChallengeView1.addView(truthButton);
-        truthButton.setOnClickListener(nextChallengeButtonListener);
+        truthButton.setOnClickListener(buttonToNextPage);
 
 
         TextView orText = new TextView(this);
@@ -184,7 +184,6 @@ public class ChallengeView1 extends MainView {
             setNextViewButton();
         }
         else if(category.equals("Truth or Dare")){
-            setChallengeText();
             setTruthOrDareButtons();
             setChallengePoint();
         }

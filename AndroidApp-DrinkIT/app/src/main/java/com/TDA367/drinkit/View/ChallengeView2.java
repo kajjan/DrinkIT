@@ -63,7 +63,20 @@ public class ChallengeView2 extends MainView{
         challengeText.setTextSize(20);
         challengeText.setGravity(Gravity.CENTER_HORIZONTAL);
         relativeLayoutChallengeView2.addView(challengeText);
-        challengeText.setText(getCtrl().getActiveChallengesAnswer());
+        if(getCtrl().getActiveCategory().equals("Truth")){
+            getCtrl().setTruthChallenge();
+            challengeText.setText(getCtrl().getActiveChallenge());
+            System.out.println(getCtrl().getActiveChallenge());
+        }
+        else if(getCtrl().getActiveCategory().equals("Dare")){
+            getCtrl().setDareChallenge();
+            challengeText.setText(getCtrl().getActiveChallenge());
+            System.out.println(getCtrl().getActiveChallenge());
+        }
+        else{
+            challengeText.setText(getCtrl().getActiveChallengesAnswer());
+        }
+
     }
 
     private void setChallengePoint(){

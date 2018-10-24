@@ -26,8 +26,6 @@ public class CategoryStore {
         JSONObject categoryJSON = new JSONObject(txt);
 
 
-
-
     }
 
     String readAssetFile(String file) throws Exception {

@@ -22,7 +22,7 @@ public class ChooseCategoryTest {
         cats.add(quiz);
         cats.add(charades);
 
-        model = new DrinkIT(null, 0, null, 0, cats,-1, null, null);
+        model = new DrinkIT(null, 0, null, 0, cats,-1, null);
 
     }
 /*

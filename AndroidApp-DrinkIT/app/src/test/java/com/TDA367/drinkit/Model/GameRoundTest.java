@@ -39,7 +39,7 @@ public class GameRoundTest {
         cats.add(neverHaveIever);
         cats.add(ToD);
 
-        model = new DrinkIT(players, 0, null, 0,  cats, 0, playedRounds, null);
+        model = new DrinkIT(players, 0, null, 0,  cats, 0, playedRounds);
     }
 
     public boolean playerNotInGameRounds(Player p, List<GameRound> r){

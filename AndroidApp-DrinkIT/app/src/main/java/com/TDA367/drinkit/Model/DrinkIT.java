@@ -6,27 +6,23 @@ import java.util.List;
 
 /**
  * Model class: DrinkIT
- *
+ * <p>
  * DrinkIT is the model in the MCV modelling of the application and acts as the interface to the code.
+ *
  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
- *
- *
  */
 
 public class DrinkIT {
     private List<Player> players = new ArrayList<>(); //                    1
     private int numberOfRounds = 0;                     //                  2
-    private List<String> playerInPointOrder = new ArrayList<>(); //         4
     private int indexOfActivePlayer = 0; //                                 5
     private List<Category> categories = new ArrayList<>(); //               6
     private int indexOfActiveCategory = -1;   //                            7
     private List<GameRound> playedRounds = new ArrayList<>(); //            8
-    private List<String> categoryNames = new ArrayList<>();//               10
 
 
-
-
-    public DrinkIT() {}
+    public DrinkIT() {
+    }
 
     public String getActiveCategory() {
         return categories.get(indexOfActiveCategory).getName();
@@ -38,22 +34,26 @@ public class DrinkIT {
 
     /**
      * A method with creates and adds a category to the list categories
+     *
      * @param categoryName
      * @param instruction
      * @param challenges
      */
-    public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges ) {
-            categories.add(CategoryFactory.createCategory(categoryName,instruction,challenges));
+    public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges) {
+        categories.add(CategoryFactory.createCategory(categoryName, instruction, challenges));
     }
 
-    public List<String> getCategoryNames () {
-        for (Category c : categories) {
-            categoryNames.add(c.getName());
-        }
-        return categoryNames;
+    public List<String> getCategoryNames() {
+        List<String> res = new ArrayList<>();
+
+        for (Category c : categories)
+            res.add(c.getName());
+
+        return res;
     }
 
-    /** Method which adds a player to the player list
+    /**
+     * Method which adds a player to the player list
      *
      * @param name
      */
@@ -71,10 +71,11 @@ public class DrinkIT {
 
     /**
      * Mathod removes a player from the lists players and completeListOfPlayer
+     *
      * @param playerName
      */
     public void removePlayerDuringGame(String playerName) {
-        for (int i=0; i<players.size(); i++) {
+        for (int i = 0; i < players.size(); i++) {
             if (players.get(i).getName().equals(playerName)) {
                 players.remove(i);
             }
@@ -108,22 +109,23 @@ public class DrinkIT {
     }
 
 
-    public String getActiveChallenge(){
-            if(indexOfActiveCategory < 0) { indexOfActiveCategory = 0;}
-            String activeChallenge = categories.get(indexOfActiveCategory).getChallengeToPlay();
-
-            /* isPlayedAgain makes the app crash inconsistently, unsure of why - needs more work before it can be used
-            boolean b = true;
-            while (b) {
-                if (!isAlreadyPlayed(players.get(indexOfActivePlayer), activeChallenge)) {
-                    //return activeChallenge;
-                    b = false;
-                } else {
-                    updateActiveChallenge();
-                    //getActiveChallenge();
-                }
+    public boolean isAlreadyPlayed(Player player, String challenge) {
+        //if(playedRounds.size() < 3){return false;}
+        Boolean b = false;
+        for (GameRound r : playedRounds) {
+            if (r.getChallenge().getChallengeText().equals(challenge) && r.getPlayer().equals(player)) {
+                b = true;
             }
-            */
+        }
+        return b;
+    }
+
+
+    public String getActiveChallenge() {
+        if (indexOfActiveCategory < 0) {
+            indexOfActiveCategory = 0;
+        }
+        String activeChallenge = categories.get(indexOfActiveCategory).getChallengeToPlay();
 
         return activeChallenge;
     }
@@ -132,15 +134,15 @@ public class DrinkIT {
         return categories.get(indexOfActiveCategory).getActiveChallenge().getAnswer();
     }
 
-    public String getNextCategory(){
+    public String getNextCategory() {
         String nextCategory = "none";
         Collections.shuffle(categories);
         indexOfActiveCategory++;
         while (nextCategory.equals("none")) {
-            if(indexOfActiveCategory == categories.size()){
+            if (indexOfActiveCategory == categories.size()) {
                 indexOfActiveCategory = 0;
             }
-            if (categories.get(indexOfActiveCategory).isActive()){
+            if (categories.get(indexOfActiveCategory).isActive()) {
                 nextCategory = categories.get(indexOfActiveCategory).getName();
                 System.out.println(nextCategory);
             } else {
@@ -158,7 +160,7 @@ public class DrinkIT {
         return currentCategory;
     }
 
-    public String getInstructions(){
+    public String getInstructions() {
         return categories.get(indexOfActiveCategory).getInstruction();
     }
 
@@ -174,7 +176,7 @@ public class DrinkIT {
         players.get(indexOfActivePlayer).setPoint(point);
 
         addGameRound();
-        playedRounds.get(playedRounds.size()-1).setSucceded(true);
+        playedRounds.get(playedRounds.size() - 1).setSucceded(true);
         updateActivePlayer();
         updateActiveChallenge();
     }
@@ -184,7 +186,7 @@ public class DrinkIT {
      */
     public void failedChallenge() {
         addGameRound();
-        playedRounds.get(playedRounds.size()-1).setSucceded(false);
+        playedRounds.get(playedRounds.size() - 1).setSucceded(false);
         updateActivePlayer();
         updateActiveChallenge();
     }
@@ -192,13 +194,13 @@ public class DrinkIT {
     private void updateActivePlayer() {
         indexOfActivePlayer++;
 
-        if (indexOfActivePlayer==players.size()) {
-            String previousPlayer = players.get(indexOfActivePlayer-1).getName();
+        if (indexOfActivePlayer == players.size()) {
+            String previousPlayer = players.get(indexOfActivePlayer - 1).getName();
             Collections.shuffle(players);
-            while (players.get(0).getName()==previousPlayer) {
+            while (players.get(0).getName() == previousPlayer) {
                 Collections.shuffle(players);
             }
-            indexOfActivePlayer=0;
+            indexOfActivePlayer = 0;
         }
     }
 
@@ -208,6 +210,7 @@ public class DrinkIT {
 
     /**
      * Method which sets chosen Cetegories to active and inactive based onClick, in view
+     *
      * @param category
      */
     public void chooseCategory(String category) {
@@ -221,7 +224,7 @@ public class DrinkIT {
             }
         }
         // endast för att printa och se att det funkar
-        for (int i = 0; i< categories.size(); i++) {
+        for (int i = 0; i < categories.size(); i++) {
             System.out.println(categories.get(i).getName());
             System.out.println(categories.get(i).isActive());
         }
@@ -230,13 +233,14 @@ public class DrinkIT {
 
     /**
      * Checks if category button in list categories is Active
+     *
      * @param i
      * @return
      */
-    public boolean buttonActive(int i){
+    public boolean buttonActive(int i) {
         boolean b = false;
-        if(categories.get(i).isActive()){
-            b=true;
+        if (categories.get(i).isActive()) {
+            b = true;
         }
         return b;
     }
@@ -247,8 +251,8 @@ public class DrinkIT {
     public void putListInPointOrder() {
         for (int i = 0; i < players.size(); i++) {
             Player s = players.get(i);
-            if(i<players.size()-1) {
-                for (int j = i; j <players.size() ; j++) {
+            if (i < players.size() - 1) {
+                for (int j = i; j < players.size(); j++) {
                     while (s.getPoint() < players.get(j).getPoint()) {
                         Collections.swap(players, i, j);
                     }
@@ -256,14 +260,6 @@ public class DrinkIT {
                 }
             }
         }
-        for (Player c : players) {
-            playerInPointOrder.add(playerToString(c));
-        }
-    }
-
-    //method that makes a list that write the players name and its point in a list of strings.
-    private String playerToString(Player player){ //private
-        return player.getName() + " " + player.getPoint() + " Points";
     }
 
     //method that returns the whole scoreboard as one string.
@@ -271,12 +267,12 @@ public class DrinkIT {
         putListInPointOrder();
         String scoreText;
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < playerInPointOrder.size(); i++) {
 
-            sb.append(playerInPointOrder.get(i) + "\n");
-        }
+        for (Player player : players)
+            sb.append(player.toString() + "\n");
+
         scoreText = sb.toString();
-        System.out.println("GAMEROUND HERE -->"+playedRounds);
+        System.out.println("GAMEROUND HERE -->" + playedRounds);
         System.out.println(playedRounds.size());
         System.out.println(playedRounds.toString());
         return scoreText;
@@ -284,6 +280,7 @@ public class DrinkIT {
 
     /**
      * Method that keep track if the game is done and if the view should change to the finishPage
+     *
      * @return
      */
     public boolean nextRound() {
@@ -293,34 +290,33 @@ public class DrinkIT {
         return false;
     }
 
-    public void setTruthChallenge(){
-        while(!(getActiveChallenge()).contains("truth")) {
-                categories.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
+    public void setTruthChallenge() {
+        while (!(getActiveChallenge()).contains("truth")) {
+            categories.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
         }
     }
 
-    public void setDareChallenge(){
-        while(!(getActiveChallenge()).contains("dare")) {
-                categories.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
+    public void setDareChallenge() {
+        while (!(getActiveChallenge()).contains("dare")) {
+            categories.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
         }
     }
 
     /**
-     *  Method that clears the model for a possible new round
+     * Method that clears the model for a possible new round
      */
     public void clearTheGame() {
         players.clear();
-        playerInPointOrder.clear();
         categories.clear();
         playedRounds.clear();
-        categoryNames.clear();
         indexOfActiveCategory = -1;
         indexOfActivePlayer = 0;
         numberOfRounds = 0;
-        }
+    }
 
     /**
-     *  Helpmethods for tests
+     * Helpmethods for tests
+     *
      * @param players
      */
     public DrinkIT(List<Player> players) {
@@ -329,6 +325,7 @@ public class DrinkIT {
 
     /**
      * method for test
+     *
      * @return
      */
     public List<String> getPlayerNames() {
@@ -340,13 +337,17 @@ public class DrinkIT {
         return names;
     }
 
-    public int getIndexOfActivePlayer(){
+    public int getIndexOfActivePlayer() {
         return indexOfActivePlayer;
     }
 
-    public List<Player> getPlayers(){ return players;}
+    public List<Player> getPlayers() {
+        return players;
+    }
 
-    public List<GameRound> getPlayedRounds(){return playedRounds; }
+    public List<GameRound> getPlayedRounds() {
+        return playedRounds;
+    }
 
     public List<Category> getCategories() {
         return categories;
@@ -360,17 +361,21 @@ public class DrinkIT {
 
     /**
      * setter for tests
+     *
      * @param indexOfActiveCategory
      */
     public void setIndexOfActiveCategory(int indexOfActiveCategory) {
         this.indexOfActiveCategory = indexOfActiveCategory;
     }
 
-    public int getIndexOfActiveCategory(){ return indexOfActiveCategory;}
+    public int getIndexOfActiveCategory() {
+        return indexOfActiveCategory;
+    }
 
 
     /**
      * Constructor for tests
+     *
      * @param players
      * @param numberOfRounds
      * @param playerInPointOrder
@@ -378,34 +383,15 @@ public class DrinkIT {
      * @param categories
      * @param indexOfActiveCategory
      * @param playedRounds
-     * @param categoryNames
      */
     public DrinkIT(List<Player> players, int numberOfRounds,
                    List<String> playerInPointOrder, int indexOfActivePlayer, List<Category> categories,
-                   int indexOfActiveCategory, List<GameRound> playedRounds,
-                   List<String> categoryNames) {
+                   int indexOfActiveCategory, List<GameRound> playedRounds) {
         this.players = players;
         this.numberOfRounds = numberOfRounds;
-        this.playerInPointOrder = playerInPointOrder;
         this.indexOfActivePlayer = indexOfActivePlayer;
         this.categories = categories;
         this.indexOfActiveCategory = indexOfActiveCategory;
         this.playedRounds = playedRounds;
-        this.categoryNames = categoryNames;
     }
-
-    public boolean isAlreadyPlayed(Player player, String challenge) {
-        //if(playedRounds.size() < 3){return false;}
-        Boolean b = false;
-        for (GameRound r : playedRounds) {
-            if (r.getChallenge().getChallengeText().equals(challenge) && r.getPlayer().equals(player)) {
-                b = true;
-            }
-        }
-        return b;
-    }
-    public List<String> getPlayerInPointOrder() {
-        return playerInPointOrder;
-    }
-
 }

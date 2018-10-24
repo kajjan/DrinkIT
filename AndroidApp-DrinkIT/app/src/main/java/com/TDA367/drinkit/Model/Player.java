@@ -1,7 +1,6 @@
 package com.TDA367.drinkit.Model;
 
 public class Player { //gör privte om möjligt, se över övriga instanser i klass
-
     private String name;
     private int point;
 
@@ -22,6 +21,9 @@ public class Player { //gör privte om möjligt, se över övriga instanser i kl
         this.point = point;
     }
 
-
-
+    //method that makes a list that write the players name and its point in a list of strings.
+    @Override
+    public String toString() { //private
+        return getName() + " " + getPoint() + " Points";
+    }
 }

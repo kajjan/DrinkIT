@@ -66,4 +66,25 @@ public class ChooseCategoryTest {
         assert (!charades.isActive());
     }
 
+    @Test
+    public void atLeastOnCategoryChoosen(){
+        boolean b = model.atLeastOneCategoryChosen();
+        assert (!b);
+        quiz.setInActive();
+        model.chooseCategory("Quiz");
+        b =model.atLeastOneCategoryChosen();
+        assert (b);
+
+
+    }
+
+    @Test
+    public void buttonActive(){
+        boolean b= model.buttonActive(0);
+        assert (!b);
+        quiz.setActive();
+        b=model.buttonActive(0);
+        assert (b);
+    }
+
 }

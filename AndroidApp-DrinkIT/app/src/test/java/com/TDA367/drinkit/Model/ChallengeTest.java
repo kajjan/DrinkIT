@@ -1,15 +1,10 @@
-package com.TDA367.drinkit.View;
+package com.TDA367.drinkit.Model;
 
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.TDA367.drinkit.Model.Category;
-import com.TDA367.drinkit.Model.DrinkIT;
-import com.TDA367.drinkit.Model.Player;
-import com.TDA367.drinkit.Model.GameRound;
-import com.TDA367.drinkit.Model.Challenge;
 
 
 public class ChallengeTest {

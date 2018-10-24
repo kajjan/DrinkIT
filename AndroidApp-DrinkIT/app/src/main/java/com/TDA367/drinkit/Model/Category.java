@@ -10,7 +10,7 @@ import java.util.List;
  * The class mostly sets and gets its instances. (????)
  * VAD SKA MAN SÄGA?
  *
- *  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ *  * @authors Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
 
 public class Category {

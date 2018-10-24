@@ -1,5 +1,11 @@
 package com.TDA367.drinkit.Model;
 
+/**
+ * This is the Player class which contain a String name and an int point
+ *
+ * @authors Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
+
 public class Player { //gör privte om möjligt, se över övriga instanser i klass
 
     private String name;

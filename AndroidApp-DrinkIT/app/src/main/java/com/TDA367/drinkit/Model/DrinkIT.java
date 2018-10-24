@@ -25,7 +25,6 @@ public class DrinkIT {
 
 
 
-
     public DrinkIT() {}
 
     public String getActiveCategory() {
@@ -46,6 +45,10 @@ public class DrinkIT {
             categories.add(CategoryFactory.createCategory(categoryName,instruction,challenges));
     }
 
+    /** Method looks through Category list and adds the elements as Strings to
+     * the list categoryNames
+     * @return String list categoryNames
+     */
     public List<String> getCategoryNames () {
         for (Category c : categories) {
             categoryNames.add(c.getName());
@@ -61,6 +64,11 @@ public class DrinkIT {
         players.add(new Player(name));
     }
 
+
+    /**
+     * Method goes through Player list players and adds the players names to string list
+     * @return String list playerNames
+     */
     public List<String> getAllPlayerNames() {
         List<String> playerNames = new ArrayList<>(10);
         for (Player p : players) {
@@ -81,12 +89,20 @@ public class DrinkIT {
         }
     }
 
+    /**
+     * Method takes in String playerName and adds it to the players list as a new Player
+     * and then shuffles players list
+     */
     public void addPlayerDuringGame(String playerName) {
         System.out.println("I want to add player " + playerName + " to the game!");
         addPlayer(playerName);
         Collections.shuffle(players);
     }
 
+    /**
+     * sets numberOfRound to the players list size multiplied with the
+     * users chosen duration
+     */
     public void setNumberOfRounds(int duration) {
         numberOfRounds = players.size() * duration;
     }
@@ -95,19 +111,26 @@ public class DrinkIT {
         return numberOfRounds;
     }
 
+    /**
+     * @returns name of indexOfActivePlayer from the players list
+     */
     public String getNameOfPlayer() {
         return players.get(indexOfActivePlayer).getName();
     }
 
     /**
-     * Method which adds a gameRound.
+     * Method which adds a new gameRound to the game
      */
     public void addGameRound(){
         playedRounds.add(new GameRound(players.get(indexOfActivePlayer),
                 categories.get(indexOfActiveCategory).getActiveChallenge()));
     }
 
-
+    /**
+     * @param player
+     * @param challenge
+     * @returns boolean b as true if
+     */
     public boolean isAlreadyPlayed(Player player, String challenge) {
         //if(playedRounds.size() < 3){return false;}
         Boolean b = false;
@@ -201,6 +224,9 @@ public class DrinkIT {
         updateActiveChallenge();
     }
 
+    /**
+     * This method makes sure the players ASK ELIN!!!
+     */
     private void updateActivePlayer() {
         indexOfActivePlayer++;
 
@@ -214,6 +240,9 @@ public class DrinkIT {
         }
     }
 
+    /**
+     * gets the indexOfActiveCategory from categories list and increases the indexOfActiveChallenge
+     */
     private void updateActiveChallenge() {
         categories.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
     }
@@ -278,7 +307,10 @@ public class DrinkIT {
         return player.getName() + " " + player.getPoint() + " Points";
     }
 
-    //method that returns the whole scoreboard as one string.
+    /** method that returns the whole scoreboard as one string.
+     *
+     * @return String scoreText
+     */
     public String getScoreBoardText() {
         putListInPointOrder();
         String scoreText;
@@ -310,6 +342,7 @@ public class DrinkIT {
                 categories.get(indexOfActiveCategory).increaseIndexOfActiveChallenge();
         }
     }
+
 
     public void setDareChallenge(){
         while(!(getActiveChallenge()).contains("dare")) {

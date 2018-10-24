@@ -1,5 +1,11 @@
 package com.TDA367.drinkit.Model;
 
+/**
+ * This is the GameRound class which connects a Player and a Challenge to make a GameRound
+ *
+ *  @authors Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
+
 public class GameRound {
 
     private Player player;

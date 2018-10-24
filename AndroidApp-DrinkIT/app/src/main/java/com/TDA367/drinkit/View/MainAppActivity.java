@@ -13,6 +13,12 @@ import java.util.Scanner;
 import com.TDA367.drinkit.Controller.Controller;
 import com.TDA367.drinkit.Model.DrinkIT;
 
+/**
+ * This is the mainAppActivity class which starts the whole game
+ *
+ * @authors Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
+
 public class MainAppActivity extends AppCompatActivity {
 
 

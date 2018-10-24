@@ -12,13 +12,14 @@ import com.TDA367.drinkit.Model.Challenge;
 
 
 public class ChallengeTest {
-   List<Player> playersList = new ArrayList<>();
+    List<Player> playersList = new ArrayList<>();
     Player noOne = new Player("Arya Stark");
     Player khaleesi = new Player("Denaerys Targaryen");
     Player redViper = new Player("Oberyn Martell");
 
     Challenge challenge = new Challenge("Truth or dare challenge 1 here", null, 0);
     Challenge challenge1 = new Challenge("Truth or dare challenge 2 here", null, 0);
+    Challenge challenge2 = new Challenge("Truth or dare challenge 3 here", null, 1);
 
     GameRound gameRound = new GameRound(redViper, challenge);
     GameRound gameRound1 = new GameRound(redViper, challenge1);
@@ -70,8 +71,9 @@ public class ChallengeTest {
         playersList.add(noOne);
         playersList.add(khaleesi);
         playersList.add(redViper);
-        challengeList.add(challenge);
+        challengeList.add(challenge2);
         challengeList.add(challenge1);
+        challengeList.add(challenge);
 
         Category truthOrDare = new Category("Truth or dare", "how to play", challengeList);
         Category truthOrDare1 = new Category("Truth or dare", "how to play", challengeList);

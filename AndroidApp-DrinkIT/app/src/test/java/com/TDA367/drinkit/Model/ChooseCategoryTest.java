@@ -23,37 +23,7 @@ public class ChooseCategoryTest {
         cats.add(charades);
 
         model = new DrinkIT(null, 0, null, 0, cats,-1, null, null);
-
     }
-/*
-    @Test
-    public void selectCategory() {
-
-        DrinkIT model = new DrinkIT();
-        boolean b = false;
-        List<Category> categories = model.getCategoryNames();
-        int initialLength = categories.size();
-
-        String category = "Charades";
-        String category2 = "Truth or truthordare";
-
-        //categories.add(new Category(category));
-        //categories.add(new Category(category2));
-
-
-        for (String s:model.getCategoryNames()){
-            if (category.equals(s)){
-                b=true;
-            }
-            System.out.println(s);
-        }
-
-        int endLength = categories.size();
-
-        assert (b);
-        assert (initialLength + 2 == endLength);
-
-    }*/
 
     @Test
     public void getNextCategory(){
@@ -84,7 +54,6 @@ public class ChooseCategoryTest {
         assert(nextCategory.equals("Quiz"));
    }
 
-
     @Test
     public void chooseCategory() {
 
@@ -99,23 +68,4 @@ public class ChooseCategoryTest {
 
     }
 
-    /*
-    @Test
-    public void atLeastOneCategoryChosen(){
-
-        cats.get(0).setActive();
-
-        assert(model.atLeastOneCategoryChosen());
-
-        for(Category c: cats){
-            if(c.getName().equals("Charades")){
-                c.setInActive();
-            }
-            if(c.getName().equals("Quiz")){
-                c.setInActive();
-            }
-        }
-        assert(!model.atLeastOneCategoryChosen());
-    }
-*/
 }

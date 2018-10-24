@@ -17,7 +17,6 @@ public class GameRoundTest {
     DrinkIT model;
     String activeChallenge;
 
-
     Player firstPlayer = new Player ("Zlatan");
     Player secondPlayer = new Player ("Captain America");
     Player thirdPlayer = new Player ("Severus Snape");
@@ -50,7 +49,6 @@ public class GameRoundTest {
         }return true;
     }
 
-
     @Test
     public void addGameRound(){
         model.addGameRound();
@@ -70,14 +68,10 @@ public class GameRoundTest {
         assert(!playerNotInGameRounds(secondPlayer,playedRounds));
         assert(playerNotInGameRounds(thirdPlayer,playedRounds));
         assert(playedRounds.get(1).getChallenge()==cats.get(1).getActiveChallenge());
-
-
     }
 
     @Test
     public void isAlreadyPlayedTest(){
-
-
         model.addGameRound();
         System.out.println(cats.get(0).getActiveChallenge().getChallengeText());
         System.out.println(playedRounds.get(0).getChallenge().getChallengeText());
@@ -85,8 +79,6 @@ public class GameRoundTest {
         System.out.println(model.isAlreadyPlayed(players.get(0), cats.get(0).getActiveChallenge().getChallengeText()));
 
         assert (playedRounds.get(0).getPlayer()== players.get(0));
-
-
     }
 
 }

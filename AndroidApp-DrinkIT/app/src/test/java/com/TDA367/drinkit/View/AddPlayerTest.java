@@ -14,11 +14,6 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
 public class AddPlayerTest {
     String name = "Viktoria";
     String name2 = "Kajsa";
@@ -74,7 +69,6 @@ public class AddPlayerTest {
 
         DrinkIT drinkit = new DrinkIT(playersList, 0, playersInPointOrder,0, null, 0, null, null);
 
-
             drinkit.putListInPointOrder();
 
             testList.add(noOne);
@@ -85,7 +79,6 @@ public class AddPlayerTest {
             playersInPointOrder.toString();
 
           //  assert(playersInPointOrder.equals(testList)); //TODO FIX HERE
-
 
 
         System.out.println(playersInPointOrder.toString());

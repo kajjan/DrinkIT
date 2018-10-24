@@ -12,6 +12,8 @@ import java.util.List;
  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
 
+//HEJ VICKAN <3<3<3<3<3<<3<3
+
 public class DrinkIT {
     private List<Player> players = new ArrayList<>(); //                    1
     private int numberOfRounds = 0;                     //                  2

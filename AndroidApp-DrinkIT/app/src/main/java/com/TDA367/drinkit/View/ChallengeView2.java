@@ -23,6 +23,8 @@ public class ChallengeView2 extends MainView{
 
         printPlayersName();
         printCategory();
+        setChallengePoint();
+        setChallengeText();
         //decorate(getCtrl().getActiveCategory());
     }
     private void printPlayersName() {
@@ -52,7 +54,6 @@ public class ChallengeView2 extends MainView{
         activeCategoryText.setText(getCtrl().getActiveCategory());
     }
 
-
     public void challengeInstructionPage(View view) {
         startActivity(new Intent(ChallengeView2.this, ChallengeInstructionActivity.class));
     }
@@ -60,4 +61,26 @@ public class ChallengeView2 extends MainView{
     public void optionsDuringGamePage(View view) {
         startActivity(new Intent(ChallengeView2.this, OptionsDuringGameActivity.class));
     }
+
+    protected void setChallengeText(){
+        TextView challengeText = new TextView(this);
+        layoutParams = new LinearLayout.LayoutParams(500, 200);
+        layoutParams.setMargins(200, 800, 0, 0); // left, top, right, bottom
+        challengeText.setLayoutParams(layoutParams);
+        challengeText.setTextSize(20);
+        relativeLayoutChallengeView2.addView(challengeText);
+        challengeText.setText(getCtrl().getActiveChallenge());
+    }
+
+
+    private void setChallengePoint(){
+        TextView challengePoints = new TextView(this);
+        LinearLayout.LayoutParams layoutPoints = new LinearLayout.LayoutParams(200, 50);
+        layoutPoints.setMargins(450, 1450, 0, 0); // left, top, right, bottom
+        challengePoints.setLayoutParams(layoutPoints);
+        challengePoints.setTextSize(17);
+        relativeLayoutChallengeView2.addView(challengePoints);
+        challengePoints.setText(getCtrl().getActiveChallengePoints() + " Points");       // view.setBackground(context.getResources().getDrawable(drawableId));
+    }
+
 }

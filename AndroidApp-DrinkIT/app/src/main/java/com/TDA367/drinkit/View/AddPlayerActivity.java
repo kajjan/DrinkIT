@@ -88,7 +88,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
 
         for (int i = 0; i < players.size(); i++) {
             if (players.get(i).isEmpty()) {
-            } else if (sameName(i)) {
+            } else if (isSameName(i)) {
                 numberOfSameNamesAdded++;
             } else {
                 getCtrl().addPlayer(players.get(i));
@@ -120,7 +120,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
      * @param i int
      * @return boolean true or false
      */
-    public boolean sameName(int i) {
+    public boolean isSameName(int i) {
         int numberOfTimes = 0;
         for (String name : players) {
             if (name.equals(players.get(i))) {
@@ -140,7 +140,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
      * @param name String
      * @return numberOfTimes int
      */
-    public int sameName(String name) {
+    public int numberOfTimesSameName(String name) {
         int numberOfTimes = 0;
         for (int i = 0; i < players.size(); i++) {
             if (name.equals(players.get(i))) {
@@ -187,7 +187,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
         if (playerOne.getText().hashCode() == s.hashCode()) {
             name = playerOne.getText().toString().trim();
 
-            if (sameName(name) > 1) {
+            if (numberOfTimesSameName(name) > 1) {
                 playerOne.setError("Can't type in same name twice");
             } else {
                 players.add(name);
@@ -204,7 +204,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
         if (playerTwo.getText().hashCode() == s.hashCode()) {
             name = playerTwo.getText().toString().trim();
 
-            if (sameName(name) > 1) {
+            if (numberOfTimesSameName(name) > 1) {
                 playerTwo.setError("Can't type in same name twice");
             } else {
                 players.add(name);
@@ -221,7 +221,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
             name = playerThree.getText().toString().trim();
 
 
-            if (sameName(name) > 1) {
+            if (numberOfTimesSameName(name) > 1) {
                 playerThree.setError("Can't type in same name twice");
             } else {
                 players.add(name);
@@ -239,7 +239,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
             name = playerFour.getText().toString().trim();
 
 
-            if (sameName(name) > 1) {
+            if (numberOfTimesSameName(name) > 1) {
                 playerFour.setError("Can't type in same name twice");
             } else {
                 players.add(name);
@@ -257,7 +257,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
         if (playerFive.getText().hashCode() == s.hashCode()) {
             name = playerFive.getText().toString().trim();
 
-            if (sameName(name) > 1) {
+            if (numberOfTimesSameName(name) > 1) {
                 playerFive.setError("Can't type in same name twice");
             } else {
                 players.add(name);
@@ -274,7 +274,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
         if (playerSix.getText().hashCode() == s.hashCode()) {
             name = playerSix.getText().toString().trim();
 
-            if (sameName(name) > 1) {
+            if (numberOfTimesSameName(name) > 1) {
                 playerSix.setError("Can't type in same name twice");
             } else {
                 players.add(name);
@@ -291,7 +291,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
         if (playerSeven.getText().hashCode() == s.hashCode()) {
             name = playerSeven.getText().toString().trim();
 
-            if (sameName(name) > 1) {
+            if (numberOfTimesSameName(name) > 1) {
                 playerSeven.setError("Can't type in same name twice");
             } else {
                 players.add(name);
@@ -308,7 +308,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
         if (playerEight.getText().hashCode() == s.hashCode()) {
             name = playerEight.getText().toString().trim();
 
-            if (sameName(name) > 1) {
+            if (numberOfTimesSameName(name) > 1) {
                 playerEight.setError("Can't type in same name twice");
             } else {
                 players.add(name);
@@ -325,7 +325,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
         if (playerNine.getText().hashCode() == s.hashCode()) {
             name = playerNine.getText().toString().trim();
 
-            if (sameName(name) > 1) {
+            if (numberOfTimesSameName(name) > 1) {
                 playerNine.setError("Can't type in same name twice");
             } else {
                 players.add(name);
@@ -341,7 +341,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
         if (playerTen.getText().hashCode() == s.hashCode()) {
             name = playerTen.getText().toString().trim();
 
-            if (sameName(name) > 1) {
+            if (numberOfTimesSameName(name) > 1) {
                 playerTen.setError("Can't type in same name twice");
             } else {
                 players.add(name);

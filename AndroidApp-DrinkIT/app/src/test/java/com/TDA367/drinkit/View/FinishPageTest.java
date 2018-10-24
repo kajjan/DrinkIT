@@ -103,7 +103,6 @@ public class FinishPageTest {
         drinkIT.clearTheGame();
 
 
-        List<String>playerInPointOrder= drinkIT.getPlayerInPointOrder();
         List<Player>players=drinkIT.getPlayers();
         playedRounds = drinkIT.getPlayedRounds();
         cats=drinkIT.getCategories();
@@ -113,7 +112,6 @@ public class FinishPageTest {
 
         assert (playersList.isEmpty());
         assert (players.isEmpty());
-        assert (playerInPointOrder.isEmpty());
         assert (indexOfActivePlayer==0);
         assert (numberOfRounds==0);
         assert (indexOfActiveCategory==-1);

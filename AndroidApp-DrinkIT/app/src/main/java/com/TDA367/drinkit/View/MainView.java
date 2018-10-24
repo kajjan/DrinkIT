@@ -17,10 +17,5 @@ public class MainView extends AppCompatActivity {
         return ctrl;
     }
 
-    //public boolean previousPageWasOptions;
-
-    //public void setPreviousPageWasOptions(boolean previousPageWasOptions) { this.previousPageWasOptions = previousPageWasOptions; }
-
-    //public boolean getPreviousPageWasOptions() { return previousPageWasOptions; }
 }
 

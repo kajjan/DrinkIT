@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 public class FinishPageActivity extends MainView {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,7 +14,6 @@ public class FinishPageActivity extends MainView {
 
         printScoreBoard();
     }
-
 
     public void printScoreBoard(){
         TextView text=((TextView)findViewById(R.id.printScoreBoard));

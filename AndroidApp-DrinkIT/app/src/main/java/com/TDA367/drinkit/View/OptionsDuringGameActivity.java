@@ -29,7 +29,6 @@ public class OptionsDuringGameActivity extends MainView {
         startNextActivity(category);
     }
 
-
     public void addNewPlayerDuringGame(View view) {
         startActivity(new Intent(OptionsDuringGameActivity.this, AddPlayerDuringGameActivity.class));
     }
@@ -48,8 +47,6 @@ public class OptionsDuringGameActivity extends MainView {
 
     public void startNextActivity(String category){
         startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeView1.class));
-
-
     }
 
 }

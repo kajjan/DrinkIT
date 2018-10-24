@@ -149,5 +149,4 @@ public class RemovePlayerDuringGamePageOneActivity extends MainView {
         startActivity(intent);
     }
 
-
 }

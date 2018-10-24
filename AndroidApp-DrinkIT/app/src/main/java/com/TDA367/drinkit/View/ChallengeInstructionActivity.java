@@ -15,7 +15,6 @@ public class ChallengeInstructionActivity extends MainView {
         printCategory();
     }
 
-
     private void printCategory() {
         TextView text=((TextView)findViewById(R.id.textChallengeCategory));
         text.setText(getCtrl().getActiveCategory());

@@ -108,18 +108,6 @@ public class DrinkIT {
     }
 
 
-    public boolean isAlreadyPlayed(Player player, String challenge) {
-        //if(playedRounds.size() < 3){return false;}
-        Boolean b = false;
-        for (GameRound r : playedRounds) {
-            if (r.getChallenge().getChallengeText().equals(challenge) && r.getPlayer().equals(player)) {
-                b = true;
-            }
-        }
-        return b;
-    }
-
-
     public String getActiveChallenge(){
             if(indexOfActiveCategory < 0) { indexOfActiveCategory = 0;}
             String activeChallenge = categories.get(indexOfActiveCategory).getChallengeToPlay();
@@ -406,6 +394,16 @@ public class DrinkIT {
         this.categoryNames = categoryNames;
     }
 
+    public boolean isAlreadyPlayed(Player player, String challenge) {
+        //if(playedRounds.size() < 3){return false;}
+        Boolean b = false;
+        for (GameRound r : playedRounds) {
+            if (r.getChallenge().getChallengeText().equals(challenge) && r.getPlayer().equals(player)) {
+                b = true;
+            }
+        }
+        return b;
+    }
     public List<String> getPlayerInPointOrder() {
         return playerInPointOrder;
     }

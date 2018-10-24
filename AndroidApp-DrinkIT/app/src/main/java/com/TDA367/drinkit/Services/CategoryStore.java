@@ -27,12 +27,17 @@ public class CategoryStore {
 
     public void readChallenges(Context context) throws Exception {
         assets = context.getAssets();
+        String[] fileList = assets.list("");
 
-        for (String file : assets.list("/"))
-            processCategory(file);
+        for (String file : fileList)
+            if (hasJsonExtention(file))
+                processCategory(file);
 
     }
 
+    private boolean hasJsonExtention(String file){
+        return file.endsWith(".json");
+    }
 
     void processCategory(String file) throws Exception {
         String txt = readAssetFile(file);
@@ -51,6 +56,7 @@ public class CategoryStore {
 
     void addNewCategoryToList(String name, String description, List<Challenge> challengeList) {
         categories.add(ctrl.createCategory(name, description, challengeList));
+        System.out.println(name);
     }
 
 
@@ -87,8 +93,7 @@ public class CategoryStore {
     }
 
 
-
-
-
-
+    public List<Category> getCategories() {
+        return categories;
+    }
 }

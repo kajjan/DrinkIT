@@ -5,6 +5,7 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.TDA367.drinkit.Controller.Controller;
+import com.TDA367.drinkit.Model.Category;
 import com.TDA367.drinkit.Model.DrinkIT;
 
 import org.json.JSONObject;
@@ -25,11 +26,13 @@ public class CategoryStoreTest {
     DrinkIT model = new DrinkIT();
     Controller ctrl = new Controller(model);
 
+    CategoryStore catstore = new CategoryStore(ctrl);
+
     @Test
     public void jsonTest() {
-        CategoryStore catstore = new CategoryStore(ctrl);
-        String file = "/Users/elineriksson/Documents/Github/DrinkIT/AndroidApp-DrinkIT/app/src/main/assets/charades.json";
+        //String file = "/Users/elineriksson/Documents/Github/DrinkIT/AndroidApp-DrinkIT/app/src/main/assets/charades.json";
 
+        String file = "/Users/lisaf/Desktop/TDA367/DrinkIT/AndroidApp-DrinkIT>/app/src/main/assets/charades.json";
         try {
             InputStream stream = new FileInputStream(file);
             String txt = catstore.readStream(stream);
@@ -43,16 +46,24 @@ public class CategoryStoreTest {
     }
 
 
+    @Test
     public void readChallengesTest() {
-        CategoryStore catstore = new CategoryStore();
 
         try {
             catstore.readChallenges(appContext);
+            System.out.println("LOOK HERE--> " + catstore.getCategories().get(2).getName());
 
         }
         catch (Exception e){
             e.printStackTrace();
         }
+
+        for (Category c : catstore.getCategories()){
+            System.out.println(c.getName());
+        }
+        assert(catstore.getCategories().size()==9);
+        assert(catstore.getCategories().get(0).getName().equals("Charades"));
+        assert(catstore.getCategories().get(5).getInstruction().equals("Here are the instructions for the category Songs"));
 
 
     }

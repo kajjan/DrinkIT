@@ -35,17 +35,18 @@ public class DrinkIT {
     public int getActiveChallengePoints() {
         return categories.get(indexOfActiveCategory).getActiveChallengePoint();
     }
-
+/*
     /**
      * A method with creates and adds a category to the list categories
      * @param categoryName
      * @param instruction
      * @param challenges
      */
+    /*
     public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges ) {
             categories.add(CategoryFactory.createCategory(categoryName,instruction,challenges));
     }
-
+*/
     public List<String> getCategoryNames () {
         for (Category c : categories) {
             categoryNames.add(c.getName());
@@ -337,7 +338,9 @@ public class DrinkIT {
     }
 
     public Category createCategory(String name, String description, List<Challenge> challenges) {
-        return new Category(name, description, challenges);
+        Category cat = new Category(name, description, challenges);
+        categories.add(cat);
+        return cat;
     }
 
 

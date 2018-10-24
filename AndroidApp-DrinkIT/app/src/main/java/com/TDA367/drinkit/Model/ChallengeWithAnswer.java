@@ -5,7 +5,7 @@ public class ChallengeWithAnswer extends Challenge {
     String answer;
 
     public ChallengeWithAnswer(String challenge, String answer, int point) {
-        super(challenge, point);
+        super(challenge, null, point);
         this.answer = answer;
     }
 

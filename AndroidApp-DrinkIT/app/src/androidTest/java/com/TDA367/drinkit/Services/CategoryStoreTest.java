@@ -4,12 +4,14 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.TDA367.drinkit.Controller.Controller;
+import com.TDA367.drinkit.Model.DrinkIT;
+
 import org.json.JSONObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 
 import static org.junit.Assert.assertEquals;
@@ -19,10 +21,13 @@ public class CategoryStoreTest {
 
     Context appContext = InstrumentationRegistry.getTargetContext();
 
+    //is it correct to add these here?
+    DrinkIT model = new DrinkIT();
+    Controller ctrl = new Controller(model);
 
     @Test
     public void jsonTest() {
-        CategoryStore catstore = new CategoryStore();
+        CategoryStore catstore = new CategoryStore(ctrl);
         String file = "/Users/elineriksson/Documents/Github/DrinkIT/AndroidApp-DrinkIT/app/src/main/assets/charades.json";
 
         try {

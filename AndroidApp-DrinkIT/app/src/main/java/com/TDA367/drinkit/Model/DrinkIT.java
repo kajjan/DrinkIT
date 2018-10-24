@@ -329,7 +329,23 @@ public class DrinkIT {
         indexOfActiveCategory = -1;
         indexOfActivePlayer = 0;
         numberOfRounds = 0;
-        }
+    }
+
+
+    public Challenge createChallenge(String challengeText, String answerText, int point) {
+        return new Challenge(challengeText, answerText, point);
+    }
+
+    public Category createCategory(String name, String description, List<Challenge> challenges) {
+        return new Category(name, description, challenges);
+    }
+
+
+
+
+
+
+
 
     /**
      *  Helpmethods for tests

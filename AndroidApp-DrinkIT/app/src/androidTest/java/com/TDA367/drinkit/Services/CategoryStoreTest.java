@@ -12,7 +12,7 @@ public class CategoryStoreTest {
 
 
     @Test
-    public void jsonTest() throws IOException {
+    public void jsonTest() {
         CategoryStore catstore = new CategoryStore();
         String file = "/Users/elineriksson/Documents/Github/DrinkIT/AndroidApp-DrinkIT/app/src/main/assets/charades.json";
 

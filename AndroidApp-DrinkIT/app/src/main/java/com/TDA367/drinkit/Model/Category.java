@@ -28,6 +28,8 @@ public class Category {
         this.active = false;
     }
 
+
+
     public void setActive() {
         this.active = true;
     }

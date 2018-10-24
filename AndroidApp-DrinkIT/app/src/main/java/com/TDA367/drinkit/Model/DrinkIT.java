@@ -14,16 +14,14 @@ import java.util.List;
  */
 
 public class DrinkIT {
-    private List<Player> players = new ArrayList<>(); //                    1
-    private int numberOfRounds = 0;                     //                  2
-    private List<String> playerInPointOrder = new ArrayList<>(); //         4
-    private int indexOfActivePlayer = 0; //                                 5
-    private List<Category> categories = new ArrayList<>(); //               6
-    private int indexOfActiveCategory = -1;   //                            7
-    private List<GameRound> playedRounds = new ArrayList<>(); //            8
-    private List<String> categoryNames = new ArrayList<>();//               10
-
-
+    private List<Player> players = new ArrayList<>();
+    private int numberOfRounds = 0;
+    private List<String> playerInPointOrder = new ArrayList<>();
+    private int indexOfActivePlayer = 0;
+    private List<Category> categories = new ArrayList<>();
+    private int indexOfActiveCategory = -1;
+    private List<GameRound> playedRounds = new ArrayList<>();
+    private List<String> categoryNames = new ArrayList<>();
 
 
     public DrinkIT() {}
@@ -35,18 +33,7 @@ public class DrinkIT {
     public int getActiveChallengePoints() {
         return categories.get(indexOfActiveCategory).getActiveChallengePoint();
     }
-/*
-    /**
-     * A method with creates and adds a category to the list categories
-     * @param categoryName
-     * @param instruction
-     * @param challenges
-     */
-    /*
-    public void createCategoryListOnCreate(String categoryName, String instruction, List<String> challenges ) {
-            categories.add(CategoryFactory.createCategory(categoryName,instruction,challenges));
-    }
-*/
+
     public List<String> getCategoryNames () {
         for (Category c : categories) {
             categoryNames.add(c.getName());
@@ -142,6 +129,7 @@ public class DrinkIT {
     }
 
     public String getActiveChallengesAnswer() {
+        System.out.println(categories.get(indexOfActiveCategory).getActiveChallenge().getAnswer());
         return categories.get(indexOfActiveCategory).getActiveChallenge().getAnswer();
     }
 

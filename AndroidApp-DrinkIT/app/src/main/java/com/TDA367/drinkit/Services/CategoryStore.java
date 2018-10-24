@@ -71,6 +71,8 @@ public class CategoryStore {
 
             challengeList.add(ctrl.createChallenge(challenge, answer, point));
         }
+
+        System.out.println(challengeList.size());
         return challengeList;
     }
 

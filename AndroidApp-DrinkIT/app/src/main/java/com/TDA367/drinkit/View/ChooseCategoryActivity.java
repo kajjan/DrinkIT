@@ -82,7 +82,11 @@ public class ChooseCategoryActivity extends MainView {
      * @param view
      */
     public void nextToDurationPage(View view) {
-        startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
+        if (getCtrl().atLeastOneCategoryChosen()) {
+            startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
+        } else {
+            System.out.println("No category is chosen");
+        }
 
     }
 

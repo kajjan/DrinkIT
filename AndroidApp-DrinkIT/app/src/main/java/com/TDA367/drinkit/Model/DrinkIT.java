@@ -42,6 +42,15 @@ public class DrinkIT {
         return categories.get(indexOfActiveCategory).getName();
     }
 
+    public boolean atLeastOneCategoryChosen() {
+        for (Category c : categories) {
+            if (c.isActive()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * @return the ActiveChallengePoint from the indexOfActiveCategory in the categories list
      */

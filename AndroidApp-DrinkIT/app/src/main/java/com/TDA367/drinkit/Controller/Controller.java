@@ -26,16 +26,9 @@ public class Controller {
         model.addPlayer(player);
     }
 
-    public List<String> getAllPlayerNames() {
-        List<String> playerNames;
-        playerNames = model.getAllPlayerNames();
-        return playerNames;
-    }
+    public List<String> getAllPlayerNames() { List<String> playerNames = model.getAllPlayerNames(); return playerNames; }
 
-
-    public void removePlayerDuringGame(String playerName) {
-        model.removePlayerDuringGame(playerName);
-    }
+    public void removePlayerDuringGame(String playerName) { model.removePlayerDuringGame(playerName); }
 
     public void addPlayerDuringGame(String playerName) {
         model.addPlayerDuringGame(playerName);
@@ -59,11 +52,7 @@ public class Controller {
         return model.getInstructions();
     }
 
-    public List<String> getCategoryNames() {
-        List<String> categoryNames;
-        categoryNames = model.getCategoryNames();
-        return categoryNames;
-    }
+    public List<String> getCategoryNames() { List<String> categoryNames = model.getCategoryNames(); return categoryNames; }
 
     public void failedChallenge() {
         model.failedChallenge();
@@ -103,25 +92,17 @@ public class Controller {
 
     public String getActiveChallenge() { return model.getActiveChallenge();}
 
-    public String getActiveChallengesAnswer() {
-        return model.getActiveChallengesAnswer();
-    }
+    public String getActiveChallengesAnswer() { return model.getActiveChallengesAnswer(); }
 
     public int getActiveChallengePoints(){
         return model.getActiveChallengePoints();
     }
 
-    public boolean buttonActive(int i){ return model.buttonActive(i);
-    }
+    public boolean buttonActive(int i){ return model.buttonActive(i); }
 
+    public boolean atLeastOneCategoryChosen() { boolean b = model.atLeastOneCategoryChosen(); return b; }
 
-    public Challenge createChallenge(String challengeText, String answerText, int point) {
-        return model.createChallenge(challengeText, answerText, point);
+    public Challenge createChallenge(String challengeText, String answerText, int point) { return model.createChallenge(challengeText, answerText, point); }
 
-    }
-
-    public Category createCategory(String name, String description, List<Challenge> challenges) {
-        return model.createCategory(name, description, challenges);
-    }
-
+    public Category createCategory(String name, String description, List<Challenge> challenges) { return model.createCategory(name, description, challenges); }
 }

@@ -15,13 +15,18 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This activity handles the view where the user chooses categories
+ *
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
 
 public class ChooseCategoryActivity extends MainView {
 
     GridLayout categoryGrid;
     List<String> categoryNames = new ArrayList<>();
-    final int unActiveBackgroundColor= Color.WHITE;
-    final int activeBackgroundColor= Color.GRAY;
+    final int unActiveBackgroundColor = Color.WHITE;
+    final int activeBackgroundColor = Color.GRAY;
     List<Button> categoryButtons = new ArrayList<>();
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
 
@@ -42,7 +47,7 @@ public class ChooseCategoryActivity extends MainView {
         categoryButtons.add(btn8 = findViewById(R.id.catEight));
         categoryButtons.add(btn9 = findViewById(R.id.catNine));
 
-        for (int i=0; i<categoryButtons.size(); i++) {
+        for (int i = 0; i < categoryButtons.size(); i++) {
             categoryButtons.get(i).setText(categoryNames.get(i));
         }
 
@@ -72,106 +77,128 @@ public class ChooseCategoryActivity extends MainView {
     }
 
 
-                @SuppressLint("ResourceAsColor")
-                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-                public void changeButtonsColor(View v, int i) {
-                    Toast.makeText(ChooseCategoryActivity.this, "clicked at index" + i, Toast.LENGTH_SHORT).show();
-                    final Button buttonView= (Button) categoryGrid.getChildAt(i);
-                    if(buttonActive(i)){
-                        buttonView.setBackgroundColor(unActiveBackgroundColor);
+    /**
+     * Sets background color on category buttons based on pressed or not
+     * @param v View
+     * @param i int
+     */
+    @SuppressLint("ResourceAsColor")
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void changeButtonsColor(View v, int i) {
+        Toast.makeText(ChooseCategoryActivity.this, "clicked at index" + i, Toast.LENGTH_SHORT).show();
+        final Button buttonView = (Button) categoryGrid.getChildAt(i);
+        if (buttonActive(i)) {
+            buttonView.setBackgroundColor(unActiveBackgroundColor);
+        } else if (!buttonActive(i)) {
+            buttonView.setBackgroundColor(activeBackgroundColor);
 
-                    }
-                    else if(!buttonActive(i)){
-                        buttonView.setBackgroundColor(activeBackgroundColor);
-
-                    }
-                }
-
-    public int getColorOfButton(int i){
-        int color = 0;
-        if(buttonActive(i)){
-            color= unActiveBackgroundColor;
         }
-        else if(!buttonActive(i)){
-            color=activeBackgroundColor;
+    }
+
+    //TODO KALLAS ALDRIG PÅ
+    public int getColorOfButton(int i) {
+        int color = 0;
+        if (buttonActive(i)) {
+            color = unActiveBackgroundColor;
+        } else if (!buttonActive(i)) {
+            color = activeBackgroundColor;
         }
         return color;
     }
 
-
-    public boolean buttonActive(int index){
+    /**
+     *
+     * @param index int
+     * @return booelan b
+     */
+    public boolean buttonActive(int index) {
         boolean b = getCtrl().buttonActive(index);
         return b;
     }
 
+    /**
+     * Takes the user to the next page which is the DurationActivity
+     * @param view
+     */
     public void nextToDurationPage(View view) {
         //if (getCtrl().atLeastOneCategoryChosen()) {
-            startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
+        startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
         //} else {
-         //   System.out.println("Please select a category before moving forward"); //visual feedback till användaren på skärmen istället
+        //   System.out.println("Please select a category before moving forward"); //visual feedback till användaren på skärmen istället
         //}
     }
 
+    //TODO KALLAS ALDRIG PÅ
     public void returnToAddPlayersPage(View view) {
         startActivity(new Intent(ChooseCategoryActivity.this, AddPlayerActivity.class));
     }
 
+    /**
+     * gets the names of the chosen categories and adds to a String list categoryNames
+     * @return String categoryNames
+     */
     private List<String> getCategoryNames() {
         categoryNames = getCtrl().getCategoryNames();
         return categoryNames;
     }
 
-
+    /**
+     * TODO
+     * @param view View
+     */
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void category1(View view) {
         changeButtonsColor(view, 0);
         getCtrl().chooseCategory(categoryNames.get(0));
-    } //hitta lösning, ev skapa enum i appen? på något sätt inte ge vyn tillåtelse att ändra eller se för mycket
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void category2(View view) {
         changeButtonsColor(view, 1);
-        getCtrl().chooseCategory(categoryNames.get(1));}
+        getCtrl().chooseCategory(categoryNames.get(1));
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void category3(View view) {
         changeButtonsColor(view, 2);
-        getCtrl().chooseCategory(categoryNames.get(2));}
+        getCtrl().chooseCategory(categoryNames.get(2));
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void category4(View view) {
         changeButtonsColor(view, 3);
-        getCtrl().chooseCategory(categoryNames.get(3));}
+        getCtrl().chooseCategory(categoryNames.get(3));
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void category5(View view) {
         changeButtonsColor(view, 4);
-        getCtrl().chooseCategory(categoryNames.get(4));}
+        getCtrl().chooseCategory(categoryNames.get(4));
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void category6(View view) {
         changeButtonsColor(view, 5);
-        getCtrl().chooseCategory(categoryNames.get(5));}
+        getCtrl().chooseCategory(categoryNames.get(5));
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void category7(View view) {
         changeButtonsColor(view, 6);
-        getCtrl().chooseCategory(categoryNames.get(6));}
+        getCtrl().chooseCategory(categoryNames.get(6));
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void category8(View view) {
         changeButtonsColor(view, 7);
-        getCtrl().chooseCategory(categoryNames.get(7));}
+        getCtrl().chooseCategory(categoryNames.get(7));
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void category9(View view) {
         changeButtonsColor(view, 8);
-        getCtrl().chooseCategory(categoryNames.get(8));}
-
-
-
-
-
+        getCtrl().chooseCategory(categoryNames.get(8));
+    }
 
 
 }

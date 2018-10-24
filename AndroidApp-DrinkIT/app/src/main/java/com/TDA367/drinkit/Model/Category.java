@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/** This class represents a Category and has a players name, challenge instruction, list of challenges as strings,
- *  a boolean active set to false, a list of Challenges, and the index of active challenge set to 0.
+/** This class represents a Category
  *
- * The class mostly sets and gets its instances. (????)
- * VAD SKA MAN SÄGA?
+ * The class mostly sets and gets its instances.
  *
  *  * @authors Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */

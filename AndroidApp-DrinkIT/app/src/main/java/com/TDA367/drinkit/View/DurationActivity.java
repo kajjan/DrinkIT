@@ -4,6 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+/**
+ * Activity which handles chosen duration input from user
+ *
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
 
 public class DurationActivity extends MainView {
 
@@ -13,24 +18,40 @@ public class DurationActivity extends MainView {
         setContentView(R.layout.activity_duration);
     }
 
+    /**
+     * If the chosen duration is "short" the duration sets to 3
+     * @param view View
+     */
     public void shortDuration(View view) {
         getCtrl().setDuration(3);
         String nextCategory = getCtrl().getNextCategory();
         startNextActivity(nextCategory);
     }
 
+    /**
+     * If the chosen duration is "medium" the duration sets to 5
+     * @param view View
+     */
     public void mediumDuration(View view) {
         getCtrl().setDuration(5);
         String nextCategory = getCtrl().getNextCategory();
         startNextActivity(nextCategory);
     }
 
+    /**
+     * If the chosen duration is "long" the duration sets to 10
+     * @param view View
+     */
     public void longDuration(View view) {
         getCtrl().setDuration(10);
         String nextCategory = getCtrl().getNextCategory();
         startNextActivity(nextCategory);
     }
 
+    /**
+     * Start next activity based on chosen shuffled Categories
+     * @param category Category
+     */
     public void startNextActivity(String category){
         if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades") ){
             //Dubbelvy med poäng

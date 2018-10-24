@@ -13,6 +13,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This Activity is the part of the view where players add themselves to the game
+ *
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
 
 public class AddPlayerActivity extends MainView implements TextWatcher {
 
@@ -61,8 +66,11 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
 
     }
 
-
-    public void namesSubmitClick(View view) { //Method that saves all of the players and send it to the controller
+    /**
+     * //Method that saves all of the players and send it to the controller
+     * @param view View
+     */
+    public void namesSubmitClick(View view) {
         players.clear();
         int numberOfNamesAdded = 0;
         int numberOfSameNamesAdded = 0;
@@ -99,12 +107,19 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
     }
 
 
+    /**
+     * Method which makes it impossible to only be one player
+     */
     public void atLeastTwoPlayersErrorMessage() {
         playerTwo.setError("At least two people must be added");
     }
 
-
-    public boolean sameName(int i) { //Method that checks if player already exists in list
+    /**
+     * Method that checks if player already exists in list players
+     * @param i int
+     * @return boolean true or false
+     */
+    public boolean sameName(int i) {
         int numberOfTimes = 0;
         for (String name : players) {
             if (name.equals(players.get(i))) {
@@ -118,7 +133,11 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
         return false;
     }
 
-
+    /**
+     * Method which checks if player already exist in list of players
+     * @param name String
+     * @return numberOfTimes int
+     */
     public int sameName(String name) {
         int numberOfTimes = 0;
         for (int i = 0; i < players.size(); i++) {
@@ -130,22 +149,35 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
     }
 
 
+    /** listener
+     * @param s CharSequence
+     * @param start int
+     * @param count int
+     * @param after int
+     */
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-        Toast.makeText(this, "before changes", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "before changes", Toast.LENGTH_SHORT).show();
     }
 
+    /** listener
+     * @param s CharSequence
+     * @param start int
+     * @param count int
+     * @param before int
+     */
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-        Toast.makeText(this, "during chances", Toast.LENGTH_SHORT).show();
-
-
-
+      //  Toast.makeText(this, "during chances", Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * TODO
+     * @param s Editable
+     */
     @Override
     public void afterTextChanged(Editable s) {
-        Toast.makeText(this, "after changes", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "after changes", Toast.LENGTH_SHORT).show();
         String name = s.toString().trim();
 
         if (playerOne.getText().hashCode() == s.hashCode()) {

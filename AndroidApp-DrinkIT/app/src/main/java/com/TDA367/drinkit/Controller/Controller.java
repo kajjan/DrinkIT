@@ -4,6 +4,13 @@ import java.util.List;
 
 import com.TDA367.drinkit.Model.DrinkIT;
 
+/**
+ * As part of the MVC pattern this is the controller of the application. It takes input from the views and calls
+ * on methods in the model.
+ *
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
+
 public class Controller {
     DrinkIT model;
 
@@ -102,4 +109,5 @@ public class Controller {
 
     public boolean buttonActive(int i){ return model.buttonActive(i);
     }
+
 }

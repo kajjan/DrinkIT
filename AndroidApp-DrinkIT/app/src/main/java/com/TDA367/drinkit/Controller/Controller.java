@@ -23,6 +23,8 @@ public class Controller {
         return playerNames;
     }
 
+
+
     public void removePlayerDuringGame(String playerName) {
         model.removePlayerDuringGame(playerName);
     }

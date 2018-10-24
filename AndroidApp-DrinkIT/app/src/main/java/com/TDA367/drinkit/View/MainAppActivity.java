@@ -17,14 +17,15 @@ import com.TDA367.drinkit.Services.CategoryStore;
 
 public class MainAppActivity extends AppCompatActivity {
 
-
     DrinkIT model = new DrinkIT();
     Controller ctrl = new Controller(model);
+
+    CategoryStore categoryStore = new CategoryStore(ctrl);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        List<InputStream> inputStream = new ArrayList<>();
+ /*       List<InputStream> inputStream = new ArrayList<>();
 
         InputStream charades = getResources().openRawResource(getResources().getIdentifier("charades", "raw", getPackageName())); inputStream.add(charades);
         InputStream neverHaveIEver = getResources().openRawResource(getResources().getIdentifier("neverhaveiever", "raw", getPackageName())); inputStream.add(neverHaveIEver);
@@ -35,25 +36,30 @@ public class MainAppActivity extends AppCompatActivity {
         InputStream themes = getResources().openRawResource(getResources().getIdentifier("themes", "raw", getPackageName())); inputStream.add(themes);
         InputStream thisOrThat = getResources().openRawResource(getResources().getIdentifier("thisorthat", "raw", getPackageName())); inputStream.add(thisOrThat);
         InputStream truthOrDare = getResources().openRawResource(getResources().getIdentifier("truthordare", "raw", getPackageName())); inputStream.add(truthOrDare);
-
+*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         showStartPage();
-
         model.clearTheGame();
 
-        for (InputStream is : inputStream) {
-            textFileScanner(is);
+        try{
+            categoryStore.readChallenges(getApplicationContext());
+        }catch (Exception e){
+            e.printStackTrace();
         }
-    }
 
+  /*      for (InputStream is : inputStream) {
+            textFileScanner(is);
+        }*/
+    }
 
     void showStartPage() {
         Intent intent = new Intent(this, StartPageActivity.class);
         startActivity(intent);
     }
 
+    MainView view = new MainView(ctrl);
+/*
     public void textFileScanner(InputStream is){
         Scanner scan = new Scanner(is);
         List<String> challengesToClass = new ArrayList<>();
@@ -69,8 +75,6 @@ public class MainAppActivity extends AppCompatActivity {
         }
         model.createCategoryListOnCreate(categoryName, instruction, challengesToClass);
     }
-
-    MainView view = new MainView(ctrl);
-    CategoryStore categoryStore = new CategoryStore(ctrl);
+*/
 
 }

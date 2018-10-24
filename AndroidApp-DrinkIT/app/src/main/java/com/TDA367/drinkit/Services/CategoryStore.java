@@ -7,6 +7,7 @@ import com.TDA367.drinkit.Model.Category;
 import com.TDA367.drinkit.Model.Challenge;
 import com.TDA367.drinkit.Model.DrinkIT;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -67,7 +68,7 @@ public class CategoryStore {
         for (int i=0; i<challengeArray.length(); i++) {
             JSONObject row = challengeArray.getJSONObject(i);
             String challenge = row.getString("challenge");
-            String answer = row.getString("answer");
+            String answer = getAnswer(row);
             int point = row.getInt("point");
 
             challengeList.add(ctrl.createChallenge(challenge, answer, point));
@@ -75,8 +76,17 @@ public class CategoryStore {
         return challengeList;
     }
 
+    private String getAnswer(JSONObject object) {
+        String answer = null; // "No answer available. :-(";
 
+        try {
+            object.getString("answer");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
+        return answer;
+    }
 
     String readAssetFile(String file) throws Exception {
         InputStream stream = assets.open(file);

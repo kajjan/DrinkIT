@@ -9,6 +9,12 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Activity which handles the task to Remove a player during game on page one of a challenge
+ *
+ * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ */
+
 public class RemovePlayerDuringGamePageOneActivity extends MainView {
 
     List<String> playerNames = new ArrayList<>(10);
@@ -54,11 +60,20 @@ public class RemovePlayerDuringGamePageOneActivity extends MainView {
 
     }
 
+    /**
+     * Method exit the OptionRemovePlayerPage
+     * @param view View
+     */
     public void exitOptionRemovePlayerPage(View view) {
         finish();
         //startActivity(new Intent(RemovePlayerDuringGamePageOneActivity.this, OptionsDuringGameActivity.class));
     }
 
+
+    /**
+     * These methods removes the chosen player
+     * @param view View
+     */
     public void playerOneSelected(View view) {
         Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);
         intent.putExtra("PLAYER_NAME", buttons.get(0).getText());

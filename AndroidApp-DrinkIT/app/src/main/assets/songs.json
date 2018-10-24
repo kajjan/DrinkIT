@@ -1,7 +1,7 @@
 {"name" : "Songs",
   "description" : "Here are the instructions for the category Songs",
   "challenges" :
-  [ {"challenge" : "Your song to perform is the theme song from How I Met Your Mother!", "point" : 3},
-    {"challenge" : "Your song to perform is Stad i Ljus by Tommy Körberg!", "point" : 2}
+  [ {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is the theme song from How I Met Your Mother!", "point" : 3},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is Stad i Ljus by Tommy Körberg!", "point" : 2}
   ]
 }

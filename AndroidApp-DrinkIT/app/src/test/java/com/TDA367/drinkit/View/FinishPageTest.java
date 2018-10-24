@@ -45,8 +45,8 @@ public class FinishPageTest {
        Category truthOrDare = new Category("TruthOrDare", "Here are the instructions for this category", challenges);
        Category truthOrDare1 = new Category("TruthOrDare", "Here are the instructions for this category", challenges);
 
-       //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
-       //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
+       //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challengeList, a);
+       //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challengeList, a );
 
        cats.add(truthOrDare);
        cats.add(truthOrDare1);
@@ -88,8 +88,8 @@ public class FinishPageTest {
         Category truthOrDare = new Category("TruthOrDare", "how to play", challenges);
         Category truthOrDare1 = new Category("TruthOrDare", "how to play", challenges);
 
-        //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
-        //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
+        //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challengeList, a);
+        //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challengeList, a);
 
         cats.add(truthOrDare);
         cats.add(truthOrDare1);

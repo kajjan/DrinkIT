@@ -18,7 +18,7 @@ public class CategoryStore {
 
     Controller ctrl;
 
-    public CategoryStore (Controller ctrl) {
+    public CategoryStore(Controller ctrl) {
         this.ctrl = ctrl;
     }
 
@@ -92,7 +92,6 @@ public class CategoryStore {
         stream.close();
         return txt;
     }
-
 
     String readStream(InputStream stream) throws Exception {
         byte[] buffer = new byte[stream.available()];

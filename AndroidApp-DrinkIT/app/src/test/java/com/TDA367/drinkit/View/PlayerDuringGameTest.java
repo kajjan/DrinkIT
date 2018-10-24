@@ -42,8 +42,8 @@ public class PlayerDuringGameTest {
         Category truthOrDare = new Category("truthOrDare", "how to play", challenges);
         Category truthOrDare1 = new Category("truthOrDare", "how to play", challenges);
 
-        //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
-        //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
+        //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challengeList, a);
+        //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challengeList, a );
 
         cats.add(truthOrDare);
         cats.add(truthOrDare1);

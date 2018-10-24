@@ -83,6 +83,7 @@ public class ChallengeView2 extends MainView{
         layoutParamsSuccedButton.setMargins(600, 1200, 0, 0); // left, top, right, bottom
         succeedButton.setLayoutParams(layoutParamsSuccedButton);
         relativeLayoutChallengeView2.addView(succeedButton);
+        succeedButton.setOnClickListener(buttonToNextPageListenerSucceed);
 
         //Dare - Button
         Button failButton = new Button(this);
@@ -93,6 +94,8 @@ public class ChallengeView2 extends MainView{
         layoutParamsFailButton.setMargins(100, 1200, 0, 0); //left, top, right, bottom
         failButton.setLayoutParams(layoutParamsFailButton);
         relativeLayoutChallengeView2.addView(failButton);
+        failButton.setOnClickListener(buttonToNextPageListenerFail);
+
     }
 
     private View.OnClickListener buttonToNextPageListenerFail = new View.OnClickListener() {

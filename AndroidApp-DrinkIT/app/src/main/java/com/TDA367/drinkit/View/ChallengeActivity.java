@@ -25,17 +25,16 @@ public class ChallengeActivity extends MainView implements Decorator {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-//setContentView(R.layout.activity_challenge_task);
         setContentView(R.layout.activity_challenge_base);
         View contentView = findViewById(R.id.challenge_base);
         nextCategory = getCtrl().getNextCategory();
-        decorateNextActivity(nextCategory, contentView);
+        decorateNextActivity("Rules");
         printPlayersName();
         printCategory();
         }
 
         public ChallengeActivity(){
-      //  this.recreate();
+
         }
 
     @Override
@@ -76,7 +75,7 @@ public class ChallengeActivity extends MainView implements Decorator {
 
 
 
-    public void decorateNextActivity(String category, View view) {
+    public void decorateNextActivity(String category) {
         if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades")) {
            // new ChallengeWithoutPointView(challengeTask,challengeNextButton);
             //kalla på svarssidan, vart???

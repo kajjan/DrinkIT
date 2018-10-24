@@ -1,6 +1,5 @@
 package com.TDA367.drinkit.View;
 
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 

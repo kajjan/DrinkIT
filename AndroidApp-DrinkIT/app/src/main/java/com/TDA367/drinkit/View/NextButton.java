@@ -1,6 +1,5 @@
 package com.TDA367.drinkit.View;
 
-import android.content.Context;
 import android.widget.Button;
 
 

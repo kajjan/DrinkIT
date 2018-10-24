@@ -10,8 +10,8 @@ public class GameRoundTest {
     List<Player> players = new ArrayList<>();
     List<Category> cats = new ArrayList<>();
     List<GameRound> playedRounds = new ArrayList<>();
-    List<String> challengesOne = new ArrayList<>();
-    List<String> challengesTwo = new ArrayList<>();
+    List<Challenge> challengesOne = new ArrayList<>();
+    List<Challenge> challengesTwo = new ArrayList<>();
     Category neverHaveIever;
     Category ToD;
     DrinkIT model;
@@ -28,13 +28,13 @@ public class GameRoundTest {
         players.add(secondPlayer);
         players.add(thirdPlayer);
 
-        challengesOne.add("test1");
-        challengesOne.add("test2");
-        challengesTwo.add("test3");
-        challengesTwo.add("test4");
+        challengesOne.add(new Challenge("Here is a challenge", null, 0));
+        challengesOne.add(new Challenge("Here is a second challeng", null, 0));
+        challengesTwo.add(new Challenge("Here is a third challeng", null, 0));
+        challengesTwo.add(new Challenge("Here is a forth challeng", null, 0));
 
-        neverHaveIever = CategoryFactory.createCategory("NeverHaveIEver", "this is an instruction", challengesOne);
-        ToD = CategoryFactory.createCategory("TruthOrDare", "this is an instruction", challengesTwo);
+        neverHaveIever = new Category("NeverHaveIEver", "this is an instruction", challengesOne);
+        ToD = new Category("TruthOrDare", "this is an instruction", challengesTwo);
 
         cats.add(neverHaveIever);
         cats.add(ToD);

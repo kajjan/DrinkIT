@@ -18,8 +18,8 @@ public class FinishPageTest {
     Player player2 = new Player("Ida");
 
 
-    Challenge challenge = ChallengeFactory.createChallenge("Truth or Dare", "here lies a challenge 1");
-    Challenge challenge1 = ChallengeFactory.createChallenge("Truth or Dare", "here lies another one 2");
+    Challenge challenge = new Challenge("here is the first challenge", "here is the anser", 0);
+    Challenge challenge1 = new Challenge("here is the second challenge", "here is the anser", 0);
 
     GameRound gameRound = new GameRound(player1, challenge);
     GameRound gameRound1 = new GameRound(player2, challenge1);
@@ -27,7 +27,7 @@ public class FinishPageTest {
 
     List<Category> cats = new ArrayList<>();
     List<GameRound> playedRounds = new ArrayList<>();
-    List<String> challenges = new ArrayList<>();
+    List<Challenge> challenges = new ArrayList<>();
     List<String> categoryNames =new ArrayList<>();
     List<String>completeListOfPlayerNames= new ArrayList<>();
     String activeChallenge;
@@ -39,11 +39,11 @@ public class FinishPageTest {
        playersList.add(player2);
 
        int i = playersList.size();
-       challenges.add("here is the challenge 1");
-       challenges.add("here is a challenge 2");
+       challenges.add(challenge);
+       challenges.add(challenge1);
 
-       Category truthOrDare = CategoryFactory.createCategory("TruthOrDare", "how to play", challenges);
-       Category truthOrDare1 = CategoryFactory.createCategory("TruthOrDare", "how to play", challenges);
+       Category truthOrDare = new Category("TruthOrDare", "Here are the instructions for this category", challenges);
+       Category truthOrDare1 = new Category("TruthOrDare", "Here are the instructions for this category", challenges);
 
        //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
        //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a );
@@ -82,11 +82,11 @@ public class FinishPageTest {
         playersList.add(player2);
 
         int i = playersList.size();
-        challenges.add("here is the challenge 1");
-        challenges.add("here is a challenge 2");
+        challenges.add(challenge);
+        challenges.add(challenge1);
 
-        Category truthOrDare = CategoryFactory.createCategory("TruthOrDare", "how to play", challenges);
-        Category truthOrDare1 = CategoryFactory.createCategory("TruthOrDare", "how to play", challenges);
+        Category truthOrDare = new Category("TruthOrDare", "how to play", challenges);
+        Category truthOrDare1 = new Category("TruthOrDare", "how to play", challenges);
 
         //TruthOrDareCategory truthOrDare = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);
         //TruthOrDareCategory truthOrDare1 = new TruthOrDareCategory("truthOrDare", "how to play", challenges, a);

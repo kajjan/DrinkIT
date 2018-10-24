@@ -10,12 +10,12 @@ import static org.junit.Assert.*;
 public class ChooseCategoryTest {
 
     List<Category> cats = new ArrayList<>();
-    List<String> challenges = new ArrayList<>();
+    List<Challenge> challenges = new ArrayList<>();
     DrinkIT model;
 
 
-    Category quiz = CategoryFactory.createCategory("Quiz", "this is an instruction", challenges);
-    Category charades = CategoryFactory.createCategory("Charades", "this is an instruction", challenges);
+    Category quiz = new Category("Quiz", "this is an instruction", challenges);
+    Category charades = new Category("Charades", "this is an instruction", challenges);
 
     public ChooseCategoryTest() {
 

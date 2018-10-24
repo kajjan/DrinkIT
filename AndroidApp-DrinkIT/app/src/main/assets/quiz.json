@@ -1,7 +1,7 @@
 {"name" : "Quiz",
   "description" : "Here are the instructions for the category Quiz",
   "challenges" :
-  [ {"challenge" : "Who gave the famous speech 'I Have a Dream'?", "point" : 3},
-    {"challenge" : "Who was Ada Lovelace?", "point" : 2}
+  [ {"challenge" : "Who gave the famous speech 'I Have a Dream'?", "answer" : "Martin Luther King, Jr", "point" : 3},
+    {"challenge" : "Who was Ada Lovelace?", "answer" : "She was a mathematician, and is often regarded as the world first programmer", "point" : 2}
   ]
 }

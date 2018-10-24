@@ -24,7 +24,9 @@ public class ChallengeFactory {
         int number = Integer.parseInt(numberInString);
         String text = challenge.replaceAll("[0-9]+", "");
 
-        return (new ChallengeWithPoints(text, number));
+        String answer = "";
+
+        return (new ChallengeWithPoints(text, answer, number));
     }
 
     private static Challenge createChallengeWithAnswer(String challenge) {
@@ -40,7 +42,8 @@ public class ChallengeFactory {
     }
 
     private static Challenge createChallengeWithoutPoint(String challenge) {
-        return (new ChallengeWithoutPoint(challenge, 0));
+        String answer = "";
+        return (new ChallengeWithoutPoint(challenge, answer, 0));
     }
 
 

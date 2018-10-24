@@ -1,0 +1,7 @@
+{"name" : "truthOrDare",
+  "description" : "Here are the instructions for the category Truth Or Dare",
+  "challenges" :
+  [ {"challenge" : "Truth, what makes you cry?", "point" : 3},
+    {"challenge" : "Dare, do five squats!", "point" : 2}
+  ]
+}

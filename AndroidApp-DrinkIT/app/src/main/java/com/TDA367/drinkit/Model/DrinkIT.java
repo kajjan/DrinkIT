@@ -75,12 +75,14 @@ public class DrinkIT {
      * @param playerName
      */
     public void removePlayerDuringGame(String playerName) {
-        for (int i = 0; i < players.size(); i++) {
-            if (players.get(i).getName().equals(playerName)) {
-                players.remove(i);
+        for(Player player:players){
+            if(player.getName().equals(playerName)){
+                players.remove(player);
             }
         }
     }
+
+
 
     public void addPlayerDuringGame(String playerName) {
         System.out.println("I want to add player " + playerName + " to the game!");

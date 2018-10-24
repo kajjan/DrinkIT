@@ -13,26 +13,10 @@ public class ChallengeWithoutPointActivity extends MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_without_point);
 
-        printPlayersName();
-        printCategory();
-        printChallenge();
     }
 
 
-    public void printPlayersName(){
-        TextView text=((TextView)findViewById(R.id.textViewPlayerChallengeWithoutPoint));
-        text.setText(getCtrl().getNameOfPlayer());
-    }
 
-    public void printCategory(){
-        TextView text=((TextView)findViewById(R.id.challengeCategory));
-        text.setText(getCtrl().getActiveCategory());
-    }
-
-    public void printChallenge(){
-        TextView text=((TextView)findViewById(R.id.textViewChallengeWithoutPoint));
-        text.setText(getCtrl().getActiveChallenge());
-    }
 
     public void nextButtonWithoutPoint(View view) {
         getCtrl().failedChallenge();

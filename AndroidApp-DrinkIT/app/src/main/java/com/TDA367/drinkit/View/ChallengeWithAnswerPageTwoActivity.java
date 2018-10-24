@@ -93,7 +93,6 @@ public class ChallengeWithAnswerPageTwoActivity extends MainView {
         else{
             System.out.println("Something is wrong with the code in ChallengeWithAnswerActivity..." + category);
         }
-
     }
 
 }

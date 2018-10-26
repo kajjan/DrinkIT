@@ -79,7 +79,6 @@ public class DrinkIT {
 
     /**
      * Method goes through Player list players and adds the players names to string list
-     *
      * @return String list playerNames
      */
     public List<String> getAllPlayerNames() {
@@ -102,7 +101,6 @@ public class DrinkIT {
             }
         }
     }
-
 
     /**
      * Method takes in String playerName and adds it to the players list as a new Player
@@ -156,7 +154,6 @@ public class DrinkIT {
         return b;
     }
 
-
     public String getActiveChallenge() {
         if (indexOfActiveCategory < 0) {
             indexOfActiveCategory = 0;
@@ -167,7 +164,6 @@ public class DrinkIT {
 
     /**
      * Gets answer of the activeChallenge of the activeCategory in the list categories
-     *
      * @return nextCategory string
      */
     public String getActiveChallengesAnswer() {
@@ -195,7 +191,6 @@ public class DrinkIT {
     /**
      * If the indexOfActiveCategory in categories is active, the name of the currentCategory is
      * returned
-     *
      * @return the currentCategory
      */
     public String getCurrentCategory() {
@@ -235,7 +230,7 @@ public class DrinkIT {
     }
 
     /**
-     * This method makes sure the players TODO ASK ELIN!!!
+     * This method makes sure the players TODO ASK ELIN
      */
     private void updateActivePlayer() {
         indexOfActivePlayer++;
@@ -378,16 +373,16 @@ public class DrinkIT {
         return cat;
     }
 
+
     //--------------------------------------------------------------------------------------------------------------------------------------------------
+
 
     /**
      * Helpmethods for tests
      *
      * @param players Players
      */
-    public DrinkIT(List<Player> players) {
-        this.players = players;
-    }
+    public DrinkIT(List<Player> players) { this.players = players; }
 
     /**
      * method for test
@@ -403,17 +398,11 @@ public class DrinkIT {
         return names;
     }
 
-    public int getIndexOfActivePlayer() {
-        return indexOfActivePlayer;
-    }
+    public int getIndexOfActivePlayer() { return indexOfActivePlayer; }
 
-    public List<Player> getPlayers() {
-        return players;
-    }
+    public List<Player> getPlayers() { return players; }
 
-    public List<Category> getCategories() {
-        return categories;
-    }
+    public List<Category> getCategories() { return categories; }
 
     /**
      * setter for test
@@ -436,7 +425,6 @@ public class DrinkIT {
     public int getIndexOfActiveCategory() {
         return indexOfActiveCategory;
     }
-
 
     /**
      * Constructor for tests

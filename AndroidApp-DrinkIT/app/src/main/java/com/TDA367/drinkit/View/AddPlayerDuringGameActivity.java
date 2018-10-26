@@ -27,13 +27,10 @@ public class AddPlayerDuringGameActivity extends MainView implements TextWatcher
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player_during_game);
-
         playerToAdd = findViewById(R.id.playerToAdd);
         playerToAdd.addTextChangedListener(this);
-
         players = getCtrl().getAllPlayerNames();
     }
-
 
     public void exitOptionAddPlayerPage(View view) {
         finish();

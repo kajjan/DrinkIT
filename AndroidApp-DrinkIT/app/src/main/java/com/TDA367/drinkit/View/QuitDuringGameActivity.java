@@ -18,7 +18,6 @@ public class QuitDuringGameActivity extends MainView {
         setContentView(R.layout.activity_quit_during_game);
     }
 
-
     /**
      * Method which exits the OptionQuitPage
      *
@@ -33,8 +32,6 @@ public class QuitDuringGameActivity extends MainView {
      *
      * @param view View
      */
-    public void quitGame(View view) {
-        startActivity(new Intent(QuitDuringGameActivity.this, FinishPageActivity.class));
-    }
+    public void quitGame(View view) { startActivity(new Intent(QuitDuringGameActivity.this, FinishPageActivity.class)); }
 
 }

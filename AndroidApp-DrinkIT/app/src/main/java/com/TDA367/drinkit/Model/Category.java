@@ -42,9 +42,7 @@ public class Category {
         this.active = false;
     }
 
-    public boolean isActive() {
-        return active;
-    }
+    public boolean isActive() { return active; }
 
     public String getInstruction() {
         return instruction;
@@ -57,16 +55,12 @@ public class Category {
     /**
      * @return's gets ChallengeText from indexOfActiveChallenge, from the list challenges,
      */
-    public String getChallengeToPlay() {
-        return challenges.get(indexOfActiveChallenge).getChallengeText();
-    }
+    public String getChallengeToPlay() { return challenges.get(indexOfActiveChallenge).getChallengeText(); }
 
     /**
      * @return's the active challenge's point
      */
-    public int getActiveChallengePoint() {
-        return challenges.get(indexOfActiveChallenge).getPoint();
-    }
+    public int getActiveChallengePoint(){ return challenges.get(indexOfActiveChallenge).getPoint(); }
 
     /**
      * Increases the index of the active challenge, and then shufles the challenges to then set the index of the
@@ -84,12 +78,9 @@ public class Category {
     /**
      * @return's the index of the active challenge
      */
-    public Challenge getActiveChallenge() {
-        return challenges.get(indexOfActiveChallenge);
-    }
 
-    public void shuffleChallenges() {
-        Collections.shuffle(challenges);
-    }
+    public Challenge getActiveChallenge(){ return challenges.get(indexOfActiveChallenge); }
+
+    public void shuffleChallenges() { Collections.shuffle(challenges); }
 
 }

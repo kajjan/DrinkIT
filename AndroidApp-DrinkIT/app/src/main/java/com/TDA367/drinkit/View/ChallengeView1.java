@@ -19,10 +19,8 @@ import android.widget.TextView;
  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
 public class ChallengeView1 extends MainView {
-
     RelativeLayout relativeLayoutChallengeView1;
     LinearLayout.LayoutParams layoutParams;
-
 
     /**
      * calls the method decorate which in its turn calls the methods that should be called depending on the activeCategory.
@@ -36,7 +34,6 @@ public class ChallengeView1 extends MainView {
         setContentView(R.layout.activity_challenge);
         relativeLayoutChallengeView1 = findViewById(R.id.relativeLayoutChallengeView1);
         decorate(getCtrl().getNextCategory());
-
         printPlayersName();
         printActiveCategory();
     }
@@ -119,7 +116,6 @@ public class ChallengeView1 extends MainView {
         nextChallengeButton.setOnClickListener(nextChallengeButtonListener);
     }
 
-
     /**
      * an onClickListener that if clicked calls the failedChallenge method so that the active player and category increases with one.
      * Recreates the view if there is a next challenge otherwise changes to the finishpage view
@@ -131,11 +127,9 @@ public class ChallengeView1 extends MainView {
                 recreate();
             } else {
                 startActivity(new Intent(ChallengeView1.this, FinishPageActivity.class));
-
             }
         }
     };
-
 
     /**
      * A method that checks if the game has a next challenges or if the game is done.
@@ -145,7 +139,6 @@ public class ChallengeView1 extends MainView {
     private boolean nextRound() {
         return getCtrl().nextRound();
     }
-
 
     /**
      * A method that creates a button to take the player to the second view of it's challenge. The button has an onClickListener buttonToNextPageListener.
@@ -204,7 +197,6 @@ public class ChallengeView1 extends MainView {
         relativeLayoutChallengeView1.addView(truthButton);
         truthButton.setOnClickListener(truthToNextPage);
 
-
         TextView orText = new TextView(this);
         orText.setText("or");
         orText.setTextSize(24);
@@ -212,7 +204,6 @@ public class ChallengeView1 extends MainView {
         layoutParamsOrText.setMargins(510, 1150, 0, 0);
         orText.setLayoutParams(layoutParamsOrText);
         relativeLayoutChallengeView1.addView(orText);
-
     }
 
     /**
@@ -236,7 +227,6 @@ public class ChallengeView1 extends MainView {
             startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
         }
     };
-
 
     public void challengeInstructionPage(View view) {
         startActivity(new Intent(ChallengeView1.this, ChallengeInstructionActivity.class));

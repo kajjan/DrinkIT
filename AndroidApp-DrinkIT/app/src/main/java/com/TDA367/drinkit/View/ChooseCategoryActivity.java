@@ -48,7 +48,6 @@ public class ChooseCategoryActivity extends MainView {
         for (int i = 0; i < categoryButtons.size(); i++) {
             categoryButtons.get(i).setText(categoryNames.get(i));
         }
-
         categoryGrid = findViewById(R.id.categoryGrid);
     }
 
@@ -64,10 +63,8 @@ public class ChooseCategoryActivity extends MainView {
         final Button buttonView = (Button) categoryGrid.getChildAt(i);
         if (buttonActive(i)) {
             buttonView.setBackgroundColor(unActiveBackgroundColor);
-
         } else if (!buttonActive(i)) {
             buttonView.setBackgroundColor(activeBackgroundColor);
-
         }
     }
 
@@ -86,7 +83,6 @@ public class ChooseCategoryActivity extends MainView {
         } else {
             System.out.println("No category is chosen");
         }
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)

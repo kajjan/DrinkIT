@@ -19,9 +19,7 @@ import android.widget.TextView;
  *
  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
-public class ChallengeView2 extends MainView {
-
-
+public class ChallengeView2 extends MainView{
     RelativeLayout relativeLayoutChallengeView2;
     LinearLayout.LayoutParams layoutParams;
 
@@ -68,7 +66,6 @@ public class ChallengeView2 extends MainView {
         activeCategoryText.setText(getCtrl().getActiveCategory());
     }
 
-
     /**
      * A method that gets the active challenge task of the challenge and prints it on the view.
      * the method checks if the active category is a truth or a dare challenge if so we set the corresponding challenge as the text. Otherwise it gets the challenge answer from the model that is connected to the previous view.
@@ -102,7 +99,6 @@ public class ChallengeView2 extends MainView {
         relativeLayoutChallengeView2.addView(challengePoints);
         challengePoints.setText(getCtrl().getActiveChallengePoints() + " Points");       // view.setBackground(context.getResources().getDrawable(drawableId));
     }
-
 
     /**
      * A method that makes two buttons, succeed and fail button. The bbuttons are connected to an onClickListener buttonToNextPageListenerfail and buttonToNextPage
@@ -155,16 +151,11 @@ public class ChallengeView2 extends MainView {
         }
     };
 
-    public void challengeInstructionPage(View view) {
-        startActivity(new Intent(ChallengeView2.this, ChallengeInstructionActivity.class));
-    }
+    public void challengeInstructionPage(View view) { startActivity(new Intent(ChallengeView2.this, ChallengeInstructionActivity.class)); }
 
-    public void optionsDuringGamePage(View view) {
-        startActivity(new Intent(ChallengeView2.this, OptionsDuringGameActivity.class));
-    }
+    public void optionsDuringGamePage(View view) { startActivity(new Intent(ChallengeView2.this, OptionsDuringGameActivity.class)); }
 
-    public boolean nextRound() {
+    public boolean nextRound(){
         return getCtrl().nextRound();
     }
-
 }

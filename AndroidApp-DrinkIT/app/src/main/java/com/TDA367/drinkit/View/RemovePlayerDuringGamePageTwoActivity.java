@@ -31,20 +31,13 @@ public class RemovePlayerDuringGamePageTwoActivity extends MainView {
      *
      * @param view View
      */
-    public void exitOptionRemovePlayerPage(View view) {
-        startActivity(new Intent(RemovePlayerDuringGamePageTwoActivity.this, OptionsDuringGameActivity.class));
-    }
+    public void exitOptionRemovePlayerPage(View view) { startActivity(new Intent(RemovePlayerDuringGamePageTwoActivity.this, OptionsDuringGameActivity.class)); }
 
     /**
      * removes the chosen player and goes to the activity OptionsDuringGameActivity
      *
      * @param view
      */
-    public void removePlayer(View view) {
-        getCtrl().removePlayerDuringGame(playerName);
-        startActivity(new Intent(RemovePlayerDuringGamePageTwoActivity.this, OptionsDuringGameActivity.class));
-
-    }
-
+    public void removePlayer(View view) { getCtrl().removePlayerDuringGame(playerName); startActivity(new Intent(RemovePlayerDuringGamePageTwoActivity.this, OptionsDuringGameActivity.class)); }
 
 }

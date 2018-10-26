@@ -23,10 +23,7 @@ public class StartPageActivity extends MainView {
      *
      * @param view View
      */
-    public void startGame(View view) {
-        startActivity(new Intent(StartPageActivity.this, AddPlayerActivity.class));
-
-    }
+    public void startGame(View view) { startActivity(new Intent(StartPageActivity.this, AddPlayerActivity.class)); }
 
     /**
      * onClick(), Starts the activity which shows the instructions, InstructionsActivity, when the
@@ -34,7 +31,5 @@ public class StartPageActivity extends MainView {
      *
      * @param view View
      */
-    public void instructions(View view) {
-        startActivity(new Intent(StartPageActivity.this, InstructionsActivity.class));
-    }
+    public void instructions(View view) { startActivity(new Intent(StartPageActivity.this, InstructionsActivity.class)); }
 }

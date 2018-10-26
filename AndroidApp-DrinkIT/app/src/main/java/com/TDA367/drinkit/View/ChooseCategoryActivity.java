@@ -5,12 +5,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.GridLayout;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +25,7 @@ public class ChooseCategoryActivity extends MainView {
     List<String> categoryNames = new ArrayList<>();
     final int unActiveBackgroundColor = Color.WHITE;
     final int activeBackgroundColor = Color.GRAY;
-    List<Button> categoryButtons = new ArrayList<>();
+    List<Button> categoryButtons = new ArrayList<>();  // cache category names
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -35,7 +33,7 @@ public class ChooseCategoryActivity extends MainView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_category);
-        getCategoryNames();
+        categoryNames = getCtrl().getCategoryNames();
 
         categoryButtons.add(btn1 = findViewById(R.id.catOne));
         categoryButtons.add(btn2 = findViewById(R.id.catTwo));
@@ -50,102 +48,43 @@ public class ChooseCategoryActivity extends MainView {
         for (int i = 0; i < categoryButtons.size(); i++) {
             categoryButtons.get(i).setText(categoryNames.get(i));
         }
-
-        /*
-        btn1 = findViewById(R.id.catOne);
-        btn1.setText(categoryNames.get(0));
-        Button btn2 = findViewById(R.id.catTwo);
-        btn2.setText(presentableCategoryNames.get(1));
-        Button btn3 = findViewById(R.id.catThree);
-        btn3.setText(presentableCategoryNames.get(2));
-        Button btn4 = findViewById(R.id.catFour);
-        btn4.setText(presentableCategoryNames.get(3));
-        Button btn5 = findViewById(R.id.catFive);
-        btn5.setText(presentableCategoryNames.get(4));
-        Button btn6 = findViewById(R.id.catSix);
-        btn6.setText(presentableCategoryNames.get(5));
-        Button btn7 = findViewById(R.id.catSeven);
-        btn7.setText(presentableCategoryNames.get(6));
-        Button btn8 = findViewById(R.id.catEight);
-        btn8.setText(presentableCategoryNames.get(7));
-        Button btn9 = findViewById(R.id.catNine);
-        btn9.setText(presentableCategoryNames.get(8));
-        */
-
-        categoryGrid = (GridLayout) findViewById(R.id.categoryGrid);
-        // setSingleEvent(categoryGrid);
+        categoryGrid = findViewById(R.id.categoryGrid);
     }
-
 
     /**
      * Sets background color on category buttons based on pressed or not
+     *
      * @param v View
      * @param i int
      */
     @SuppressLint("ResourceAsColor")
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void changeButtonsColor(View v, int i) {
-        Toast.makeText(ChooseCategoryActivity.this, "clicked at index" + i, Toast.LENGTH_SHORT).show();
         final Button buttonView = (Button) categoryGrid.getChildAt(i);
         if (buttonActive(i)) {
             buttonView.setBackgroundColor(unActiveBackgroundColor);
         } else if (!buttonActive(i)) {
             buttonView.setBackgroundColor(activeBackgroundColor);
-
         }
     }
 
-    //TODO KALLAS ALDRIG PÅ
-    public int getColorOfButton(int i) {
-        int color = 0;
-        if (buttonActive(i)) {
-            color = unActiveBackgroundColor;
-        } else if (!buttonActive(i)) {
-            color = activeBackgroundColor;
-        }
-        return color;
-    }
-
-    /**
-     *
-     * @param index int
-     * @return booelan b
-     */
     public boolean buttonActive(int index) {
-        boolean b = getCtrl().buttonActive(index);
-        return b;
+        return getCtrl().buttonActive(index);
     }
 
     /**
      * Takes the user to the next page which is the DurationActivity
+     *
      * @param view
      */
     public void nextToDurationPage(View view) {
-        //if (getCtrl().atLeastOneCategoryChosen()) {
-        startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
-        //} else {
-        //   System.out.println("Please select a category before moving forward"); //visual feedback till användaren på skärmen istället
-        //}
+        if (getCtrl().atLeastOneCategoryChosen()) {
+            startActivity(new Intent(ChooseCategoryActivity.this, DurationActivity.class));
+        } else {
+            System.out.println("No category is chosen");
+        }
     }
 
-    //TODO KALLAS ALDRIG PÅ
-    public void returnToAddPlayersPage(View view) {
-        startActivity(new Intent(ChooseCategoryActivity.this, AddPlayerActivity.class));
-    }
-
-    /**
-     * gets the names of the chosen categories and adds to a String list categoryNames
-     * @return String categoryNames
-     */
-    private List<String> getCategoryNames() {
-        categoryNames = getCtrl().getCategoryNames();
-        return categoryNames;
-    }
-
-    /**
-     * TODO
-     * @param view View
-     */
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void category1(View view) {
         changeButtonsColor(view, 0);
@@ -199,6 +138,5 @@ public class ChooseCategoryActivity extends MainView {
         changeButtonsColor(view, 8);
         getCtrl().chooseCategory(categoryNames.get(8));
     }
-
 
 }

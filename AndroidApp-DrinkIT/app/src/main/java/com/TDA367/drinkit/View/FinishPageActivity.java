@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-/** Activity which handles the finishPage
+/**
+ * Activity which handles the finishPage
  *
  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
 
 public class FinishPageActivity extends MainView {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,26 +24,20 @@ public class FinishPageActivity extends MainView {
     /**
      * Prints the scoreBoard
      */
-    public void printScoreBoard(){
-        TextView text=((TextView)findViewById(R.id.printScoreBoard));
+    public void printScoreBoard() {
+        TextView text = ((TextView) findViewById(R.id.printScoreBoard));
         text.setText(getCtrl().getScoreBoard());
     }
 
-    //TODO hur vill vi göra här? starta om på ifyllda namn
     public void continueTheGame(View view) {
-
+        //TODO implement this method
     }
 
     /**
      * onClick method which ends the game
+     *
      * @param view View
      */
-    public void endTheGameButton(View view) {
-        getCtrl().endTheGame();
-        startActivity(new Intent(FinishPageActivity.this, StartPageActivity.class));
-
-
-    }
-
+    public void endTheGameButton(View view) { getCtrl().endTheGame(); startActivity(new Intent(FinishPageActivity.this, StartPageActivity.class)); }
 
 }

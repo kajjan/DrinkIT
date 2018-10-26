@@ -1,0 +1,10 @@
+{"name" : "Rules",
+  "description" : "Here are the instructions for the category Rules",
+  "challenges" :
+  [ {"challenge" : "You must play the rest of the game with your back towards the other players", "point" : 0},
+    {"challenge" : "For the remainder of the game, you may not call any of the other players by their names", "point" : 0},
+    {"challenge" : "You are the question master. For the remainder of the game, if anyone answers your questions, they have to drink", "point" : 0},
+    {"challenge" : "During the next 5 rounds, you may only speak in rhymes", "point" : 0},
+    {"challenge" : "During the next 3 rounds, you must speak with your hand acting as a sock puppet", "point" : 0}
+  ]
+}

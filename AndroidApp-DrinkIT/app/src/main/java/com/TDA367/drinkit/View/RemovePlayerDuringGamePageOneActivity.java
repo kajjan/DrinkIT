@@ -2,7 +2,6 @@ package com.TDA367.drinkit.View;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
 
@@ -18,7 +17,7 @@ import java.util.List;
 public class RemovePlayerDuringGamePageOneActivity extends MainView {
 
     List<String> playerNames = new ArrayList<>(10);
-    List <Button> buttons = new ArrayList<>();
+    List<Button> buttons = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,73 +48,57 @@ public class RemovePlayerDuringGamePageOneActivity extends MainView {
         buttons.add(btn9);
         buttons.add(btn10);
 
-        for (int i=0; i<buttons.size(); i++) {
-            if (i<playerNames.size()) {
+        for (int i = 0; i < buttons.size(); i++) {
+            if (i < playerNames.size()) {
                 buttons.get(i).setText(playerNames.get(i));
             } else {
                 buttons.get(i).setVisibility(View.INVISIBLE);
                 //buttons.get(i).setText("no player at this index");
             }
         }
-
     }
 
     /**
      * Method exit the OptionRemovePlayerPage
+     *
      * @param view View
      */
     public void exitOptionRemovePlayerPage(View view) {
         finish();
-        //startActivity(new Intent(RemovePlayerDuringGamePageOneActivity.this, OptionsDuringGameActivity.class));
     }
-
 
     /**
      * These methods removes the chosen player
+     *
      * @param view View
      */
     public void playerOneSelected(View view) {
         Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);
         intent.putExtra("PLAYER_NAME", buttons.get(0).getText());
-
-        System.out.println(buttons.get(0).getText());
-
         startActivity(intent);
     }
 
     public void playerTwoSelected(View view) {
         Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);
         intent.putExtra("PLAYER_NAME", buttons.get(1).getText());
-
-        System.out.println(buttons.get(1).getText());
-
         startActivity(intent);
     }
 
     public void playerThreeSelected(View view) {
         Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);
         intent.putExtra("PLAYER_NAME", buttons.get(2).getText());
-
-        System.out.println(buttons.get(2).getText());
-
         startActivity(intent);
     }
 
     public void playerFourSelected(View view) {
         Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);
         intent.putExtra("PLAYER_NAME", buttons.get(3).getText());
-
-        System.out.println(buttons.get(3).getText());
-
         startActivity(intent);
     }
 
     public void playerFiveSelected(View view) {
         Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);
         intent.putExtra("PLAYER_NAME", buttons.get(4).getText());
-
-        System.out.println(buttons.get(4).getText());
-
         startActivity(intent);
     }
 
@@ -131,38 +114,25 @@ public class RemovePlayerDuringGamePageOneActivity extends MainView {
     public void playerSevenSelected(View view) {
         Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);
         intent.putExtra("PLAYER_NAME", buttons.get(6).getText());
-
-        System.out.println(buttons.get(6).getText());
-
         startActivity(intent);
     }
 
     public void playerEightSelected(View view) {
         Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);
         intent.putExtra("PLAYER_NAME", buttons.get(7).getText());
-
-        System.out.println(buttons.get(7).getText());
-
         startActivity(intent);
     }
 
     public void playerNineSelected(View view) {
         Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);
         intent.putExtra("PLAYER_NAME", buttons.get(8).getText());
-
-        System.out.println(buttons.get(8).getText());
-
         startActivity(intent);
     }
 
     public void playerTenSelected(View view) {
         Intent intent = new Intent(RemovePlayerDuringGamePageOneActivity.this, RemovePlayerDuringGamePageTwoActivity.class);
         intent.putExtra("PLAYER_NAME", buttons.get(9).getText());
-
-        System.out.println(buttons.get(9).getText());
-
         startActivity(intent);
     }
-
 
 }

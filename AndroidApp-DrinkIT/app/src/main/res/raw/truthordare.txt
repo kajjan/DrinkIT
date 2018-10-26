@@ -1,8 +1,0 @@
-TruthOrDare
-truthOrDare write instructions here
-dare Do five squats 5
-dare Down your neighbours drink 6
-dare Eat the strongest thing you can find in the room 8
-truth What makes you cry? 6
-truth What's the most embarrassing thing that's happened to you in school? 4
-truth What's the lowest score you've ever gotten on an exam? 7

@@ -1,0 +1,11 @@
+{"name" : "Truth or Dare",
+  "description" : "Here are the instructions for the category Truth Or Dare",
+  "challenges" :
+  [ {"challenge" : "Truth, what makes you cry?", "point" : 6},
+    {"challenge" : "Truth, What's the most embarrassing thing that's happened to you in school?", "point" : 4},
+    {"challenge" : "Truth, What's the lowest score you've ever gotten on an exam?", "point" : 7},
+    {"challenge" : "Dare, do five squats", "point" : 5},
+    {"challenge" : "Down your neighbours drink", "point" : 6},
+    {"challenge" : "Eat the spiciest thing you can find in the room", "point" : 8}
+  ]
+}

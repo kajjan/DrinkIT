@@ -1,11 +1,13 @@
 package com.TDA367.drinkit.View;
+
 import android.support.v7.app.AppCompatActivity;
-import android.widget.GridLayout;
 
 import com.TDA367.drinkit.Controller.Controller;
 
+
 /**
- * This Activity is the MainView which contains a controller from the controller class
+ * This Activity is the MainView which contains a controller from the controller class its also the
+ * superclass to all of DrinkIT view classes
  *
  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
@@ -18,16 +20,10 @@ public class MainView extends AppCompatActivity {
         this.ctrl = ctrl;
     }
 
-    public MainView(){}
+    public MainView() { }
 
     public Controller getCtrl() {
         return ctrl;
     }
-
-    //public boolean previousPageWasOptions;
-
-    //public void setPreviousPageWasOptions(boolean previousPageWasOptions) { this.previousPageWasOptions = previousPageWasOptions; }
-
-    //public boolean getPreviousPageWasOptions() { return previousPageWasOptions; }
 }
 

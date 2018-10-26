@@ -1,0 +1,10 @@
+{"name" : "Never Have I Ever",
+  "description" : "Here are the instructions for the category Never Have I Ever",
+  "challenges" :
+  [ {"challenge" : "Never have I ever been thrown out of Gasquen", "point" : 0},
+    {"challenge" : "Never have I ever failed an exam", "point" : 0},
+    {"challenge" : "Never have I ever created an app", "point" : 0},
+    {"challenge" : "Never have I ever been out of the country", "point" : 0},
+    {"challenge" : "Never have I ever been awake for 24 hours", "point" : 0}
+  ]
+}

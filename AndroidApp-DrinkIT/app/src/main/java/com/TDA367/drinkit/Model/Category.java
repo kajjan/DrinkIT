@@ -4,45 +4,34 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/** This class represents a Category
- *
+/**
+ * This class represents a Category
+ * <p>
  * The class mostly sets and gets its instances.
- *
- *  * @authors Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
+ * <p>
+ * * @authors Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
 
 public class Category {
 
     private String name;
     private String instruction;
-    private List<String> challengesStrings = new ArrayList<>();
     private boolean active = false;
     private List<Challenge> challenges = new ArrayList<>();
     private int indexOfActiveChallenge = 0;
 
-
-    public Category() { }
-
-    public Category(String name){
-        this.name=name;
+    public Category() {
     }
 
-    public Category(String name, String instruction, List<String> challengesStrings, boolean active){
+    public Category(String name) {
+        this.name = name;
+    }
+
+    public Category(String name, String instruction, List<Challenge> challenges) {
         this.name = name;
         this.instruction = instruction;
-        this.challengesStrings = challengesStrings;
-        this.active = active;
-        setListOfChallenges(challengesStrings);
-    }
-
-    /**
-     * Looks throgh challengeString list and then adds to challenges list via ChallengeFactory
-     * @param challengeString
-     */
-    private void setListOfChallenges(List<String> challengeString) {
-        for(String s: challengeString){
-            challenges.add(ChallengeFactory.createChallenge(name, s));
-        }
+        this.challenges = challenges;
+        this.active = false;
     }
 
     public void setActive() {
@@ -53,9 +42,7 @@ public class Category {
         this.active = false;
     }
 
-    public boolean isActive() {
-        return active;
-    }
+    public boolean isActive() { return active; }
 
     public String getInstruction() {
         return instruction;
@@ -68,21 +55,12 @@ public class Category {
     /**
      * @return's gets ChallengeText from indexOfActiveChallenge, from the list challenges,
      */
-    public String getChallengeToPlay() {
-        return challenges.get(indexOfActiveChallenge).getChallengeText();
-    }
-
-    //want to get rid of this one
-    public String getPreviousChallenge() {
-        return challenges.get(indexOfActiveChallenge-1).getChallengeText();
-    }
+    public String getChallengeToPlay() { return challenges.get(indexOfActiveChallenge).getChallengeText(); }
 
     /**
      * @return's the active challenge's point
      */
-    public int getActiveChallengePoint(){
-        return challenges.get(indexOfActiveChallenge).getPoint();
-    }
+    public int getActiveChallengePoint(){ return challenges.get(indexOfActiveChallenge).getPoint(); }
 
     /**
      * Increases the index of the active challenge, and then shufles the challenges to then set the index of the
@@ -91,17 +69,18 @@ public class Category {
     public void increaseIndexOfActiveChallenge() {
         indexOfActiveChallenge++;
 
-        if(indexOfActiveChallenge==challenges.size()-1){
+        if (indexOfActiveChallenge == challenges.size()) {
             Collections.shuffle(challenges);
-            indexOfActiveChallenge=0;
+            indexOfActiveChallenge = 0;
         }
     }
 
     /**
      * @return's the index of the active challenge
      */
-    public Challenge getActiveChallenge(){
-        return challenges.get(indexOfActiveChallenge);
-    }
+
+    public Challenge getActiveChallenge(){ return challenges.get(indexOfActiveChallenge); }
+
+    public void shuffleChallenges() { Collections.shuffle(challenges); }
 
 }

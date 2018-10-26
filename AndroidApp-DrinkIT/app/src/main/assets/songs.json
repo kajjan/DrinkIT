@@ -1,0 +1,21 @@
+{"name" : "Songs",
+  "description" : "Here are the instructions for the category Songs",
+  "challenges" :
+  [ {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is the theme song from How I Met Your Mother!", "point" : 4},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is Bohemian Rhapsody by Queen!", "point" : 2},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is Gangman Style by Psy!", "point" : 3},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is Africa by Toto!", "point" : 3},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is The Lithuanian national anthem!", "point" : 14},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is The theme song from The Big Bang Theory!", "point" : 2},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is Twinkle Twinkle Little Star!", "point" : 2},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is I'll Be There For You, The Rembrandts!", "point" : 3},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is What Does The Fox Say by Ylvis!", "point" : 3},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is Sandstorm by Darude!", "point" : 4},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is Fairytale of New York by The Pogues!", "point" : 5},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is Four Seasons by Vivaldi!", "point" : 9},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is Party Rock Anthem by LMFAO!", "point" : 4},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is Levels by Avicii!", "point" : 3},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is Blackbird by The Beatles!", "point" : 5},
+    {"challenge" : "Your next challenge is to perform a song however you like, but without lyrics!", "answer" : "Your song to perform is Greyhound  by Swedish House Mafia!", "point" : 7}
+  ]
+}

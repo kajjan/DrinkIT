@@ -1,0 +1,12 @@
+{"name" : "Themes",
+  "description" : "Here are the instructions for the category Themes",
+  "challenges" :
+  [ {"challenge" : "Marvel Movies", "point" : 0},
+    {"challenge" : "Spells in Harry Potter", "point" : 0},
+    {"challenge" : "Characters from Friends", "point" : 0},
+    {"challenge" : "Beer Brands", "point" : 0},
+    {"challenge" : "Houses in Game of Thrones", "point" : 0},
+    {"challenge" : "Sitcoms", "point" : 0},
+    {"challenge" : "Capitals of European countries", "point" : 0}
+  ]
+}

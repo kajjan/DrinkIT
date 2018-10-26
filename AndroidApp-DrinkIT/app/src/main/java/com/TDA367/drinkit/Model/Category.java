@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * This class represents a Category
  * <p>
- * The class mostly sets and gets its instances.
+ * The
  * <p>
  * * @authors Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */

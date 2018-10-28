@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChallengeView2">
+    tools:context=".ChallengePageTwo">
 
     <RelativeLayout
         android:id="@+id/relativeLayoutChallengeView2"

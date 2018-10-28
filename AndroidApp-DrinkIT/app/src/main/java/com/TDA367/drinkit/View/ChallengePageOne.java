@@ -12,13 +12,13 @@ import android.widget.TextView;
 
 
 /**
- * View class: ChallengeView1
+ * View class: ChallengePageOne
  * <p>
- * ChallengeView1 is the class that is the view of the challenge. (The first view of the challenge if it's a challenge with 2 views.)
+ * ChallengePageOne is the class that is the view of the challenge. (The first view of the challenge if it's a challenge with 2 views.)
  *
  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
-public class ChallengeView1 extends MainView {
+public class ChallengePageOne extends MainView {
     RelativeLayout relativeLayoutChallengeView1;
     LinearLayout.LayoutParams layoutParams;
 
@@ -126,7 +126,7 @@ public class ChallengeView1 extends MainView {
             if (nextRound()) {
                 recreate();
             } else {
-                startActivity(new Intent(ChallengeView1.this, FinishPageActivity.class));
+                startActivity(new Intent(ChallengePageOne.this, FinishPageActivity.class));
             }
         }
     };
@@ -171,7 +171,7 @@ public class ChallengeView1 extends MainView {
 
     private View.OnClickListener buttonToNextPage = new View.OnClickListener() {
         public void onClick(View v) {
-            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
+            startActivity(new Intent(ChallengePageOne.this, ChallengePageTwo.class));
         }
     };
 
@@ -207,33 +207,33 @@ public class ChallengeView1 extends MainView {
     }
 
     /**
-     * An onClickListener that if clicked changes the view too ChallengeView2. The second view of the same challenge.
+     * An onClickListener that if clicked changes the view too ChallengePageTwo. The second view of the same challenge.
      */
     private View.OnClickListener buttonToNextPageListener = new View.OnClickListener() {
         public void onClick(View v) {
-            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
+            startActivity(new Intent(ChallengePageOne.this, ChallengePageTwo.class));
         }
     };
 
     private View.OnClickListener truthToNextPage = new View.OnClickListener() {
         public void onClick(View v) {
             getCtrl().setTruthChallenge();
-            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
+            startActivity(new Intent(ChallengePageOne.this, ChallengePageTwo.class));
         }
     };
     private View.OnClickListener dareToNextPage = new View.OnClickListener() {
         public void onClick(View v) {
             getCtrl().setDareChallenge();
-            startActivity(new Intent(ChallengeView1.this, ChallengeView2.class));
+            startActivity(new Intent(ChallengePageOne.this, ChallengePageTwo.class));
         }
     };
 
     public void challengeInstructionPage(View view) {
-        startActivity(new Intent(ChallengeView1.this, ChallengeInstructionActivity.class));
+        startActivity(new Intent(ChallengePageOne.this, ChallengeInstructionActivity.class));
     }
 
     public void optionsDuringGamePage(View view) {
-        startActivity(new Intent(ChallengeView1.this, OptionsDuringGameActivity.class));
+        startActivity(new Intent(ChallengePageOne.this, OptionsDuringGameActivity.class));
     }
 
     /**
@@ -254,7 +254,7 @@ public class ChallengeView1 extends MainView {
             setChallengeText();
             setNextChallengeButton();
         } else {
-            System.out.println("Something is wrong with the code in ChallengeView1..." + category);
+            System.out.println("Something is wrong with the code in ChallengePageOne..." + category);
         }
     }
 

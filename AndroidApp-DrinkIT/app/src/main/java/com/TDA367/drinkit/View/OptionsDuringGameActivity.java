@@ -69,6 +69,6 @@ public class OptionsDuringGameActivity extends MainView {
      *
      * @param category String
      */
-    public void startNextActivity(String category){ startActivity(new Intent(OptionsDuringGameActivity.this, ChallengeView1.class)); }
+    public void startNextActivity(String category){ startActivity(new Intent(OptionsDuringGameActivity.this, ChallengePageOne.class)); }
 
 }

@@ -61,11 +61,11 @@ public class DurationActivity extends MainView {
      */
     public void startNextActivity(String category) {
         if (category.equals("Quiz") || category.equals("Songs") || category.equals("Charades")) {
-            startActivity(new Intent(DurationActivity.this, ChallengeView1.class));
+            startActivity(new Intent(DurationActivity.this, ChallengePageOne.class));
         } else if (category.equals("Truth or Dare")) {
-            startActivity(new Intent(DurationActivity.this, ChallengeView1.class));
+            startActivity(new Intent(DurationActivity.this, ChallengePageOne.class));
         } else if (category.equals("Most Likely To") || category.equals("Rules") || category.equals("Never Have I Ever") || category.equals("Themes") || category.equals("This or That"))
-            startActivity(new Intent(DurationActivity.this, ChallengeView1.class));
+            startActivity(new Intent(DurationActivity.this, ChallengePageOne.class));
         else {
             System.out.println("Something is wrong with the code in DurationActivity...");
         }

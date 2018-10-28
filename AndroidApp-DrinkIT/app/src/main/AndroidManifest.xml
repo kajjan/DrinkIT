@@ -39,8 +39,8 @@
         <activity
             android:name=".RemovePlayerDuringGamePageTwoActivity"
             android:label="@string/title_activity_remove_player_during_game_page_two" />
-        <activity android:name=".ChallengeView1"></activity>
-        <activity android:name=".ChallengeView2"></activity>
+        <activity android:name=".ChallengePageOne"></activity>
+        <activity android:name=".ChallengePageTwo"></activity>
 
     </application>
 

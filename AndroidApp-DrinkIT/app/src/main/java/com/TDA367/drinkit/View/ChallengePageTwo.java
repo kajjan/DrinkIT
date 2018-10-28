@@ -19,7 +19,7 @@ import android.widget.TextView;
  *
  * @author Kajsa Bjäräng, Viktoria Enderstein, Elin Eriksson, Lisa Fahlbeck, Alice Olsson
  */
-public class ChallengeView2 extends MainView{
+public class ChallengePageTwo extends MainView{
     RelativeLayout relativeLayoutChallengeView2;
     LinearLayout.LayoutParams layoutParams;
 
@@ -132,9 +132,9 @@ public class ChallengeView2 extends MainView{
         public void onClick(View v) {
             getCtrl().failedChallenge();
             if (nextRound()) {
-                startActivity(new Intent(ChallengeView2.this, ChallengeView1.class));
+                startActivity(new Intent(ChallengePageTwo.this, ChallengePageOne.class));
             } else {
-                startActivity(new Intent(ChallengeView2.this, FinishPageActivity.class));
+                startActivity(new Intent(ChallengePageTwo.this, FinishPageActivity.class));
             }
         }
     };
@@ -143,17 +143,17 @@ public class ChallengeView2 extends MainView{
         public void onClick(View v) {
             getCtrl().succeededChallenge();
             if (nextRound()) {
-                startActivity(new Intent(ChallengeView2.this, ChallengeView1.class));
+                startActivity(new Intent(ChallengePageTwo.this, ChallengePageOne.class));
             } else {
-                startActivity(new Intent(ChallengeView2.this, FinishPageActivity.class));
+                startActivity(new Intent(ChallengePageTwo.this, FinishPageActivity.class));
 
             }
         }
     };
 
-    public void challengeInstructionPage(View view) { startActivity(new Intent(ChallengeView2.this, ChallengeInstructionActivity.class)); }
+    public void challengeInstructionPage(View view) { startActivity(new Intent(ChallengePageTwo.this, ChallengeInstructionActivity.class)); }
 
-    public void optionsDuringGamePage(View view) { startActivity(new Intent(ChallengeView2.this, OptionsDuringGameActivity.class)); }
+    public void optionsDuringGamePage(View view) { startActivity(new Intent(ChallengePageTwo.this, OptionsDuringGameActivity.class)); }
 
     public boolean nextRound(){
         return getCtrl().nextRound();

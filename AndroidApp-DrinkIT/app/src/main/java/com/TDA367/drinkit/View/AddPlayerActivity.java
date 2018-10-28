@@ -112,6 +112,7 @@ public class AddPlayerActivity extends MainView implements TextWatcher {
      */
     public void atLeastTwoPlayersErrorMessage() {
         playerTwo.setError("At least two people must be added");
+        //players.clear();
     }
 
     /**
